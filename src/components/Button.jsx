@@ -31,7 +31,7 @@ const Button = ({ name, to }) => {
       <button
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
-        className="px-6 py-2 pr-0 rounded-full transition-all flex items-center
+        className="px-6 py-2 pr-0 font-semibold rounded-full transition-all flex items-center
         duration-300 active:scale-95 cursor-pointer text-primary
         bg-white/10 backdrop-blur-md border border-primary-foreground/20
         shadow-[0_8px_32px_rgba(0,0,0,0.25)] hover:bg-primary hover:text-primary-foreground text-lg "
