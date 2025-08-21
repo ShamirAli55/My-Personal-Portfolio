@@ -1,9 +1,9 @@
 import ReactLenis from "lenis/react";
 import Navbar from "../components/Navbar";
 import ThemeToggle from "../components/ThemeToggle";
-import Hero from "../components/Hero";
+import Hero from "../sections/Hero";
 import OverLay from "../components/OverLay";
-import About from "../components/About";
+import About from "../sections/About";
 
 const HomePage = () => {
   return (
