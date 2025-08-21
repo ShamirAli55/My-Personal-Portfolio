@@ -47,14 +47,14 @@ const Navbar = () => {
           )}
         </div>
 
-        <div className="items-center shadow-[0_8px_32px_rgba(0,0,0,0.25)] bg-white/10 backdrop-blur-md border border-primary-foreground/20 justify-between gap-x-10 py-2 px-6 rounded-full hidden md:flex">
+        <div className="items-center shadow-[0_8px_32px_rgba(0,0,0,0.25)] bg-white/15 backdrop-blur-md border border-primary-foreground/20 justify-between gap-x-10 py-2 px-6 rounded-full hidden md:flex">
           {navItems.map((item, index) => (
             <Link
-              className="text-sm  font-semibold text-primary opacity-85 cursor-pointer  textline showborder"
+              className="text-sm font-light text-primary  cursor-pointer  textline showborder"
               to={item.href}
-              duration={150}
+              duration={180}
               smooth={true}
-              offset={-50}
+              offset={15}
               key={index}
             >
               {item.name}

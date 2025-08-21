@@ -59,7 +59,7 @@ const EmailCopyButton = () => {
     <button
       onClick={copyToClipboard}
       className="p-3 md:px-6 md:py-3 rounded-full font-semibold transition-all flex items-center whitespace-nowrap
-        duration-300  shadow-[0_8px_32px_rgba(0,0,0,0.25)] active:scale-95 cursor-pointer text-opposite hover:bg-primary hover:text-primary-foreground origin-bottom-right bg-white/10 backdrop-blur-md border border-primary-foreground/20"
+        duration-300 text-sm shadow-[0_8px_32px_rgba(0,0,0,0.25)] active:scale-95 cursor-pointer text-opposite hover:bg-primary hover:text-primary-foreground origin-bottom-right bg-white/10 backdrop-blur-md border border-primary-foreground/20"
     >
       Copy Email Address
       <span className="ml-2 relative">

@@ -17,7 +17,7 @@ const words = [
       <StarsBackground/>
       </div>
       <div className=" h-full w-full relative">
-        <h1 className="text-[15px] md:text-5xl font-bold pt-38 pb-18 md:px-28 capitalize leading-[45px] md:leading-[65px]">
+        <h1 className="text-[17.1px] md:text-5xl font-bold pt-38 pb-18 md:px-28 capitalize leading-[45px] md:leading-[65px]">
           I craft seamless digital experiences <span className="inline-block">while learning and growing every</span> 
           day
         </h1>
