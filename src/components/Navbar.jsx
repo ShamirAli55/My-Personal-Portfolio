@@ -8,7 +8,7 @@ const Navbar = () => {
     localStorage.getItem("theme") === "dark"
   );
 
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
