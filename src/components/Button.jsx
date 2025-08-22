@@ -47,11 +47,9 @@ const Button = ({ name, to }) => {
           text-primary md:text-sm text-lg
           bg-white/10 backdrop-blur-md border border-primary-foreground/20 
           shadow-[0_8px_32px_rgba(0,0,0,0.25)]
-          hover:text-primary
-          butn_overlay                 /* class is always present; CSS only applies on md+ */
-          md:hover:text-primary-foreground md:active:text-primary-foreground
-        "
-      >
+          hover:text-primary-foreground
+          butn_overlay         
+          ">
         <span>{name}</span>
         <span className="pl-2">
           <div className="relative bg-primary text-primary h-8 w-8 rounded-full overflow-hidden md:right-[-30%]">
