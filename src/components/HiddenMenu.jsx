@@ -32,7 +32,7 @@ const HiddenMenu = ({ isOpen, onClose }) => {
   }, {});
 
   return (
-    <div className="min-h-[70vh] md:w-1/2 top-[50%] md:left-[25%] absolute z-[200] ">
+    <div className="min-h-[70vh] md:w-1/2 w-[80%] left-[10%] top-[50%] md:left-[25%] absolute z-[200] ">
       <div className="h-full w-full shadow-[0_8px_32px_rgba(0,0,0,0.25)] bg-background/25 backdrop-blur-xl border border-primary-foreground/20 rounded-xl">
 
         <div className="flex items-center justify-between px-8 py-3 w-full relative border-b">
