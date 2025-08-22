@@ -18,9 +18,9 @@ html, body, #root {
     --color-exact:hsl(var(--exact));
     --color-opposite:hsl(var(--opposite));
     --color-shadow:hsl(var(--shadow));
+    --color-bento-background:hsl(var(--bento-background));
 
 
-    --color-card:hsl(var(--card));
     --animate-float: float 6s ease-in-out infinite;
     --animate-pulse-subtle:pulse-subtle 4s ease-in-out infinite;
     --animate-fade-in:fade-in 0.7s ease-out forwards;
@@ -110,6 +110,7 @@ html.dark {
   --exact:222 47% 4%;
   --opposite:0, 0%, 100%;            
   --shadow:278, 8%, 75%; 
+  --bento-background:0, 0%, 16%;
 }
   html
   {
