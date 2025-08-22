@@ -22,15 +22,15 @@ const About = () => {
   "
       >
         {/* Card 1 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-3 rounded-xl bg-bento-background p-4 relative duration-200 overflow-hidden pointer-events-none">
+        <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-2 md:row-span-3 rounded-xl bg-bento-background p-4 relative duration-200 overflow-hidden pointer-events-none z-10">
           <div className="z-10 flex flex-col justify-end md:justify-center h-full pt-12">
-            <p className="text-5xl md:text-7xl font-semibold pt-45">Teck Stack</p>
-            <p className="text-sm md:text-xl px-2 md:px-22 md:pt-10  pt-12">
+            <p className="text-4xl md:text-7xl font-semibold pt-45">Teck Stack</p>
+            <p className="text-sm md:text-xl px-2 md:px-22 md:pt-10 py-6">
               A blend of code and creativity. I combine languages, frameworks,
               and tools to turn <span className="whitespace-nowrap md:whitespace-normal">ideas into smooth, interactive experiences.</span> 
             </p>
           </div>
-          <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
+          <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125 z-[-1]">
             <Frameworks />
           </div>
         </div>
