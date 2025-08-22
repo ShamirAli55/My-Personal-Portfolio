@@ -48,7 +48,7 @@ const Button = ({ name, to }) => {
           bg-white/10 backdrop-blur-md border border-primary-foreground/20 
           shadow-[0_8px_32px_rgba(0,0,0,0.25)]
           hover:text-primary-foreground
-          butn_overlay         
+          butn_overlay overflow-hidden       
           ">
         <span>{name}</span>
         <span className="pl-2">

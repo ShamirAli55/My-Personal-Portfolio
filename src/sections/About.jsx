@@ -23,9 +23,9 @@ const About = () => {
       >
         {/* Card 1 */}
         <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-3 rounded-xl bg-bento-background p-4 relative duration-200 overflow-hidden pointer-events-none">
-          <div className="z-10 flex flex-col justify-end md:justify-center h-full">
+          <div className="z-10 flex flex-col justify-end md:justify-center h-full pt-12">
             <p className="text-5xl md:text-7xl font-semibold pt-45">Teck Stack</p>
-            <p className="text-sm md:text-xl px-2 md:px-8 md:pt-12 pb-22 pt-12">
+            <p className="text-sm md:text-xl px-2 md:px-22 md:pt-10  pt-12">
               A blend of code and creativity. I combine languages, frameworks,
               and tools to turn <span className="whitespace-nowrap md:whitespace-normal">ideas into smooth, interactive experiences.</span> 
             </p>
@@ -36,7 +36,7 @@ const About = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-3 rounded-xl bg-bento-background p-4 relative overflow-hidden">
+        <div className="col-span-1 sm:col-span-full md:col-span-3 rounded-xl bg-bento-background p-5 relative overflow-hidden">
           <div
             ref={grid2Container}
             className="flex items-center justify-center w-full h-full"
