@@ -25,7 +25,7 @@ const About = () => {
         <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-3 rounded-xl bg-bento-background p-4 relative duration-200 overflow-hidden pointer-events-none">
           <div className="z-10 flex flex-col justify-end md:justify-center h-full">
             <p className="text-5xl md:text-7xl font-semibold pt-45">Teck Stack</p>
-            <p className="text-sm md:text-xl px-6 md:px-8 md:pt-12 pb-22 pt-12">
+            <p className="text-sm md:text-xl px-2 md:px-8 md:pt-12 pb-22 pt-12">
               A blend of code and creativity. I combine languages, frameworks,
               and tools to turn ideas into smooth, interactive experiences.
             </p>
@@ -83,12 +83,12 @@ const About = () => {
           <div className="h-full z-10 w-full text-left px-8 flex flex-col md:justify-between">
             <div className="pointer-events-none">
               <p className=" text-4xl py-4">Time Zone</p>
-              <p className="text-sm md:text-xl w-1/2">
+              <p className="text-sm md:text-xl w-2/3  md:w-1/2">
                 I'm based in Mars, and open to remote work worldwide.
               </p>
             </div>
 
-            <div className="flex items-center gap-2 py-15 text-primary cursor-pointer ">
+            <div className="flex items-center gap-2 pt-6 md:py-15 text-primary cursor-pointer ">
               <MapPin size={30} color="hsl(var(--primary))" />
               <span className="text-sm md:text-xl ">Islamabad, Pakistan</span>
             </div>
