@@ -10,8 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/drei": "^10.7.3",
-    "@react-three/fiber": "^9.3.0",
     "@tailwindcss/vite": "^4.1.12",
     "clsx": "^2.1.1",
     "cobe": "^0.6.4",

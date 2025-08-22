@@ -1,5 +1,6 @@
 import EmailCopyButton from "../components/EmailCopyButton";
 import Card from "../components/Card";
+import { Frameworks } from "../components/Frameworks";
 import { Globe } from "../components/Globe";
 import { useRef } from "react";
 import { MapPin } from "lucide-react";
@@ -21,7 +22,18 @@ const About = () => {
   "
       >
         {/* Card 1 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-3 rounded-xl bg-amber-200 p-4 flex items-center justify-center"></div>
+        <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-3 rounded-xl bg-bento-background p-4 relative duration-200 overflow-hidden pointer-events-none">
+          <div className="z-10 flex flex-col justify-end md:justify-center h-full">
+            <p className="text-5xl md:text-7xl font-semibold pt-45">Teck Stack</p>
+            <p className="text-sm md:text-xl px-6 md:px-8 md:pt-12 pb-22 pt-12">
+              A blend of code and creativity. I combine languages, frameworks,
+              and tools to turn ideas into smooth, interactive experiences.
+            </p>
+          </div>
+          <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
+            <Frameworks />
+          </div>
+        </div>
 
         {/* Card 2 */}
         <div className="col-span-1 sm:col-span-full md:col-span-3 rounded-xl bg-bento-background p-4 relative overflow-hidden">
@@ -86,9 +98,7 @@ const About = () => {
           </figure>
         </div>
         {/* Card 4 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl bg-bento-background p-4 flex items-center justify-center">
-          <p>Extra Info</p>
-        </div>
+        <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl bg-bento-background p-4 flex items-center justify-center"></div>
 
         {/* Card 5 */}
         <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl bg-bento-background p-4">
