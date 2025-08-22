@@ -2,10 +2,13 @@ import { navItems } from "../constants";
 import { Link } from "react-scroll";
 import { AppWindowMac } from "lucide-react";
 import { useEffect, useState } from "react";
+import HiddenMenu from "./HiddenMenu";
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("theme") === "dark"
   );
+
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
@@ -29,8 +32,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[200]">
+    <header className="fixed top-0 left-0 right-0 z-[199]">
       <nav className="flex justify-between items-center px-5 pt-8 pb-4 text-foreground">
+        {isOpen && <HiddenMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />}
         <div className="h-12">
           {isDarkMode ? (
             <img
@@ -62,7 +66,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="cursor-pointer">
+        <div className="cursor-pointer" onClick={()=>setIsOpen((prev)=>!prev)}>
           <AppWindowMac color="hsl(var(--primary))" />
         </div>
       </nav>
