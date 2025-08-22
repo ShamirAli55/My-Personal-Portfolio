@@ -1,8 +1,8 @@
 import EmailCopyButton from "../components/EmailCopyButton";
 import Card from "../components/Card";
-import {Globe} from "../components/Globe";
+import { Globe } from "../components/Globe";
 import { useRef } from "react";
-import {MapPin} from 'lucide-react';
+import { MapPin } from "lucide-react";
 
 const About = () => {
   const grid2Container = useRef();
@@ -29,7 +29,7 @@ const About = () => {
             ref={grid2Container}
             className="flex items-center justify-center w-full h-full"
           >
-            <p className="flex items-end text-5xl text-gray-500">
+            <p className="flex items-end text-5xl text-primary/60 pointer-events-none">
               CODE IS CRAFT
             </p>
 
@@ -66,34 +66,34 @@ const About = () => {
           </div>
         </div>
 
-   
+        {/* Card 3 */}
         <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-2 rounded-xl bg-bento-background p-4 relative overflow-hidden z-10 text-primary">
-        <div className="h-full z-10 w-full text-left px-8 flex flex-col md:justify-between">
-          <div className="pointer-events-none">
-            <p className=" text-4xl py-4">Time Zone</p>
-            <p className="text-sm md:text-xl w-1/2">
-              I'm based in Mars, and open to remote work worldwide.
-            </p>
-          </div>
+          <div className="h-full z-10 w-full text-left px-8 flex flex-col md:justify-between">
+            <div className="pointer-events-none">
+              <p className=" text-4xl py-4">Time Zone</p>
+              <p className="text-sm md:text-xl w-1/2">
+                I'm based in Mars, and open to remote work worldwide.
+              </p>
+            </div>
 
             <div className="flex items-center gap-2 py-15 text-primary cursor-pointer ">
-             <MapPin size={30} color="hsl(var(--primary))"/>
-             <span className="text-sm md:text-xl ">Islamabad, Pakistan</span>
+              <MapPin size={30} color="hsl(var(--primary))" />
+              <span className="text-sm md:text-xl ">Islamabad, Pakistan</span>
             </div>
-        
-        </div>
+          </div>
           <figure className="absolute top-40 -right-50 md:right-[-25%] md:top-[5%]">
             <Globe />
           </figure>
         </div>
-
+        {/* Card 4 */}
         <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl bg-bento-background p-4 flex items-center justify-center">
           <p>Extra Info</p>
         </div>
 
+        {/* Card 5 */}
         <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl bg-bento-background p-4">
           <div className="flex flex-col justify-center items-center py-5 px-2">
-            <h2 className="text-xl md:text-2xl font-bold mb-4 text-primary">
+            <h2 className="text-xl md:text-2xl font-bold mb-6 text-primary">
               Do you want to start a project together?
             </h2>
             <div>
@@ -102,7 +102,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Card 5 */}
+        {/* Card 6 */}
         <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl bg-bento-background p-4 flex items-center justify-center">
           <p>Flexible Timezones</p>
         </div>

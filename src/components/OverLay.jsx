@@ -2,7 +2,7 @@ import React from 'react'
 
 const OverLay = () => {
   return (
-    <section className='h-screen w-full fixed top-0 left-0 z-[-1] background'>
+    <section className='h-screen w-full fixed inset-0 z-[-1] background'>
     </section>
   )
 }

@@ -11,7 +11,6 @@ const HomePage = () => {
     <>
       <ReactLenis root={true}>
         <section id="home" className="w-full min-h-screen relative z-[10] ">
-          <OverLay />
           <Navbar />
           <Hero />
           <About />
