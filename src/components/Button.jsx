@@ -1,47 +1,63 @@
 import { Link } from "react-scroll";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ArrowRight } from "lucide-react";
 
 const Button = ({ name, to }) => {
   const arrRef = useRef(null);
 
+  const isMdUp = () =>
+    typeof window !== "undefined" &&
+    window.matchMedia("(min-width: 768px)").matches;
+
   const handleEnter = () => {
-    gsap.to(arrRef.current, {
-      right: "-140%",
-      duration: 0.5,
-    });
+    if (!isMdUp() || !arrRef.current) return;
+    gsap.to(arrRef.current, { right: "-140%", duration: 0.5, ease: "power2.out" });
   };
 
   const handleLeave = () => {
-    gsap.to(arrRef.current, {
-      right: "-55%",
-      duration: 0.5,
-    });
+    if (!isMdUp() || !arrRef.current) return;
+    gsap.to(arrRef.current, { right: "-55%", duration: 0.5, ease: "power2.out" });
   };
 
+  // keep initial position in sync across resizes
+  useEffect(() => {
+    const sync = () => {
+      if (!arrRef.current) return;
+      if (isMdUp()) {
+        gsap.set(arrRef.current, { right: "-55%" });
+      } else {
+        // clear so it doesn't stay off-screen when returning to mobile
+        gsap.set(arrRef.current, { clearProps: "right" });
+      }
+    };
+    sync();
+    window.addEventListener("resize", sync);
+    return () => window.removeEventListener("resize", sync);
+  }, []);
+
   return (
-    <Link
-      to={to}
-      smooth={true}
-      duration={500}
-      offset={-50}
-      className="relative"
-    >
+    <Link to={to} smooth duration={500} offset={-50} className="relative">
       <button
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
-        className="px-4 md:px-6 py-2 md:font-bold rounded-full transition-all flex items-center md:justify-between
-        duration-300 active:scale-95 cursor-pointer text-primary md:text-sm text-lg
-        bg-white/10 backdrop-blur-md border border-primary-foreground/20 
-        shadow-[0_8px_32px_rgba(0,0,0,0.25)] butn_overlay hover:text-primary-foreground active:text-primary-foreground"
+        className="
+          px-4 md:px-6 py-2 md:font-bold rounded-full transition-all flex items-center md:justify-between
+          duration-300 active:scale-95 cursor-pointer 
+          text-primary md:text-sm text-lg
+          bg-white/10 backdrop-blur-md border border-primary-foreground/20 
+          shadow-[0_8px_32px_rgba(0,0,0,0.25)]
+          hover:text-primary
+          butn_overlay                 /* class is always present; CSS only applies on md+ */
+          md:hover:text-primary-foreground md:active:text-primary-foreground
+        "
       >
-       <span> {name}</span>
+        <span>{name}</span>
         <span className="pl-2">
           <div className="relative bg-primary text-primary h-8 w-8 rounded-full overflow-hidden md:right-[-30%]">
             <div
               ref={arrRef}
-              className="absolute flex items-center gap-2 top-1/2 right-[-50%] -translate-x-1/2 -translate-y-1/2"
+              className="absolute flex items-center gap-2 top-1/2 right-[-55%] -translate-x-1/2 -translate-y-1/2"
             >
               <ArrowRight size={20} color="hsl(var(--background))" />
               <ArrowRight size={20} color="hsl(var(--background))" />
