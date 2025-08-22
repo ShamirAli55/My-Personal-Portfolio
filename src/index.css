@@ -225,6 +225,37 @@ html.dark {
 }
 
 
+
+.butn_overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.butn_overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%;       
+  width: 100%;
+  height: 100%;
+  background-color: hsl(var(--primary));
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.butn_overlay > * {
+  position: relative;
+  z-index: 1; 
+}
+
+.butn_overlay:hover::after {
+  right: 0;     
+  opacity: 1;   
+}
+
+
 #root
 {
   max-width: 100%;
