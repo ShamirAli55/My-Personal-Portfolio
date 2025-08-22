@@ -27,7 +27,7 @@ const About = () => {
             <p className="text-5xl md:text-7xl font-semibold pt-45">Teck Stack</p>
             <p className="text-sm md:text-xl px-2 md:px-8 md:pt-12 pb-22 pt-12">
               A blend of code and creativity. I combine languages, frameworks,
-              and tools to turn ideas into smooth, interactive experiences.
+              and tools to turn <span className="whitespace-nowrap md:whitespace-normal">ideas into smooth, interactive experiences.</span> 
             </p>
           </div>
           <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
