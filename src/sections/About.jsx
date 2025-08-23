@@ -1,5 +1,6 @@
 import EmailCopyButton from "../components/EmailCopyButton";
 import Card from "../components/Card";
+import ImageWrapper from "../components/ImageWrapper";
 import { Frameworks } from "../components/Frameworks";
 import { Globe } from "../components/Globe";
 import { useRef } from "react";
@@ -122,27 +123,14 @@ const About = () => {
 
       <div className="min-h-screen w-full mt-12 md:mt-28 flex flex-col md:flex-row items-center md:px-22">
         <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12">
-          {/* Left: Image / Avatar */}
-
-          <div className="flex justify-center md:justify-start w-full ">
-            <div className="w-full md:w-[450px] h-80 md:h-[450px] rounded-2xl bg-gradient-to-tr from-purple-500 to-blue-500 p-[3px]">
-              <div className="w-full h-full bg-neutral-900 rounded-2xl flex items-center justify-center">
-                {/* Profile Image */}
-                <img
-                  src="assets/images/Profile_image.png"
-                  alt="Shamir Ali"
-                  className="rounded-2xl object-cover w-full h-full"
-                />
-              </div>
-            </div>
-          </div>
+          <ImageWrapper />
 
           {/* Right: About Content */}
           <div className="space-y-6 text-left ml-2 leading-[20px]">
             <h1 className="text-3xl hidden md:block md:text-5xl font-bold">
               About Me
             </h1>
-            <p className="text-primary text-md px-0.5 w-[95%] md:w-full tracking-tight md:tracking-normal md:text-[17.5px] leading-[22px] font-light">
+            <p className="text-primary text-md px-2 md:px-0.5 w-full tracking-tight md:tracking-normal md:text-[17.5px] leading-[22px] font-light">
               I build for the web because UI and animations keep me engaged
               there’s nothing more satisfying than bringing interfaces to life.
               Using the MERN stack and a solid foundation in JavaScript, I
@@ -152,16 +140,16 @@ const About = () => {
               the web.
             </p>
 
-            <p className="text-primary text-md px-0.5 w-[95%] md:w-full tracking-tight md:tracking-normal md:text-[17.5px] leading-[22px] py-2 font-light">
+            <p className="text-primary text-md px-2 md:px-0.5 w-full tracking-tight md:tracking-normal md:text-[17.5px] leading-[22px] py-2 font-light">
               I’m always chasing the perfect balance between design and code,
               tweaking pixels and logic until the experience feels just right.
-              On the academic side, I’m strengthening my skills in <br/> C++ and
+              On the academic side, I’m strengthening my skills in C++ and
               diving into Python, sharpening the problem-solving foundations
               that enable me to tackle projects beyond web development.
             </p>
-            <p className="text-primary md:text-md md:py-2 tracking-tighter px-0.2 md:tracking-wide leading-[22px] ">
-              🌍
-              <span className="text-primary md:text-primary/60 text-xs md:text-md font-bold">
+            <p className="text-primary md:text-center px-2 md:text-md md:py-2 tracking-tight px-0.2 md:tracking-wider leading-[22px] ">
+              <span className="hidden md:inline">🌍</span>
+              <span className="text-primary md:text-primary/60 text-xs md:text-md font-semibold">
                 {" "}
                 Beyond code, I thrive on sleek design and fresh tech vibes.
               </span>
