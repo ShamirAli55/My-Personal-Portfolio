@@ -116,6 +116,8 @@ const About = () => {
         </div>
       </div>
 
+      <h1 className="text-3xl  md:hidden font-bold text-white pt-8">About Me</h1>
+
       <div className="min-h-screen w-full mt-12 md:mt-28 flex flex-col md:flex-row items-center md:px-22">
         <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12">
           {/* Left: Image / Avatar */}
@@ -125,7 +127,7 @@ const About = () => {
               <div className="w-full h-full bg-neutral-900 rounded-2xl flex items-center justify-center">
                 {/* Profile Image */}
                 <img
-                  src="/profile.png"
+                  src="https://plus.unsplash.com/premium_photo-1710695570402-83df3571880b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBvcnRyYWl0c3xlbnwwfHwwfHx8MA%3D%3D"
                   alt="Shamir Ali"
                   className="rounded-2xl object-cover w-full h-full"
                 />
@@ -134,12 +136,11 @@ const About = () => {
           </div>
 
           {/* Right: About Content */}
-          <div className="space-y-6 text-center md:text-left ml-2">
-            <h1 className="text-3xl md:text-5xl font-bold text-white">
+          <div className="space-y-6 text-left ml-2 leading-[20px]">
+            <h1 className="text-3xl hidden md:block md:text-5xl font-bold text-white">
               About Me
             </h1>
-
-            <p className="text-primary text-md">
+            <p className="text-primary text-sm md:text-[17px] tracking-wider leading-[20px]">
               I build for the web because UI and animations keep me hooked —
               nothing’s more fun than making interfaces feel alive. With the
               MERN stack (MongoDB, Express, React, Node.js) and a solid base in
@@ -149,7 +150,7 @@ const About = () => {
               logic until it just feels right.
             </p>
 
-            <p className="text-primary text-md">
+            <p className="text-primary text-sm md:text-[17px] tracking-wider leading-[20px]">
               On the academic side, I’m deepening my understanding of C++ and
               starting to explore Python, sharpening the fundamentals that make
               me a better problem-solver and preparing me to branch into areas
