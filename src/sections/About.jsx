@@ -142,7 +142,7 @@ const About = () => {
             <h1 className="text-3xl hidden md:block md:text-5xl font-bold">
               About Me
             </h1>
-            <p className="text-primary text-md px-0.5 w-[95%] md:w-full tracking-tight md:text-[17.5px] leading-[22px] font-light">
+            <p className="text-primary text-md px-0.5 w-[95%] md:w-full tracking-tight md:tracking-normal md:text-[17.5px] leading-[22px] font-light">
               I build for the web because UI and animations keep me engaged
               there’s nothing more satisfying than bringing interfaces to life.
               Using the MERN stack and a solid foundation in JavaScript, I
@@ -152,16 +152,16 @@ const About = () => {
               the web.
             </p>
 
-            <p className="text-primary text-md px-0.5 w-[95%] md:w-full tracking-tight md:text-[17.5px] leading-[22px] py-2 font-light">
+            <p className="text-primary text-md px-0.5 w-[95%] md:w-full tracking-tight md:tracking-normal md:text-[17.5px] leading-[22px] py-2 font-light">
               I’m always chasing the perfect balance between design and code,
               tweaking pixels and logic until the experience feels just right.
-              On the academic side, I’m strengthening my skills in C++ and
+              On the academic side, I’m strengthening my skills in <br/> C++ and
               diving into Python, sharpening the problem-solving foundations
               that enable me to tackle projects beyond web development.
             </p>
-            <p className="text-primary md:text-md md:py-6 tracking-tighter px-0.2 md:tracking-wide leading-[22px] ">
+            <p className="text-primary md:text-md md:py-2 tracking-tighter px-0.2 md:tracking-wide leading-[22px] ">
               🌍
-              <span className="text-primary/60 text-xs md:text-md font-bold">
+              <span className="text-primary md:text-primary/60 text-xs md:text-md font-bold">
                 {" "}
                 Beyond code, I thrive on sleek design and fresh tech vibes.
               </span>
