@@ -39,7 +39,7 @@ const About = () => {
             ref={grid2Container}
             className="flex items-center justify-center w-full h-full"
           >
-            <p className="flex items-end text-5xl text-primary/60 pointer-events-none">
+            <p className="flex items-end text-5xl text-primary/60 pointer-events-none cursor-none">
               CODE IS CRAFT
             </p>
 
@@ -81,7 +81,7 @@ const About = () => {
           <div className="h-full z-10 w-full text-left px-8 flex flex-col md:justify-between">
             <div className="pointer-events-none">
               <p className=" text-4xl py-4">Time Zone</p>
-              <p className="text-sm md:text-xl w-2/3  md:w-1/2">
+              <p className="text-xs md:text-xl w-2/3  md:w-1/2">
                 I'm based in Mars, and open to remote work worldwide.
               </p>
             </div>
@@ -138,29 +138,33 @@ const About = () => {
           </div>
 
           {/* Right: About Content */}
-          <div className="space-y-6 text-left ml-2 leading-[20px] px-1 md:px-0">
+          <div className="space-y-6 text-left ml-2 leading-[20px]">
             <h1 className="text-3xl hidden md:block md:text-5xl font-bold">
               About Me
             </h1>
-            <p className="text-primary text-xs  md:px-1  tracking-tight md:text-[17.5px] md:tracking-tight leading-[22px]">
-              I build for the web because UI and animations keep me hooked
-              nothing’s more fun than making interfaces feel alive. With the
-              MERN stack (MongoDB, Express, React, Node.js) and a solid base in
-              JavaScript and PHP, I turn rough ideas into smooth, functional,
-              and aesthetic experiences. Always chasing that perfect mix of
-              design and code, I’m the kind of developer who tweaks pixels and
-              logic until it just feels right.
+            <p className="text-primary text-md px-0.5 w-[95%] md:w-full tracking-tight md:text-[17.5px] leading-[22px] font-light">
+              I build for the web because UI and animations keep me engaged
+              there’s nothing more satisfying than bringing interfaces to life.
+              Using the MERN stack and a solid foundation in JavaScript, I
+              transform rough ideas into smooth, functional, and intuitive
+              experiences. I also work with GSAP, Framer Motion, Swiper, Lenis,
+              and I’m currently exploring Three.js to bring 3D interactions to
+              the web.
             </p>
 
-            <p className="text-primary  md:px-1 tracking-tight md:text-[17.5px] md:tracking-tight leading-[22px]">
-              On the academic side, I’m deepening my understanding of C++ and
-              starting to explore Python, sharpening the fundamentals that make
-              me a better problem-solver and preparing me to branch into areas
-              beyond web.
+            <p className="text-primary text-md px-0.5 w-[95%] md:w-full tracking-tight md:text-[17.5px] leading-[22px] py-2 font-light">
+              I’m always chasing the perfect balance between design and code,
+              tweaking pixels and logic until the experience feels just right.
+              On the academic side, I’m strengthening my skills in C++ and
+              diving into Python, sharpening the problem-solving foundations
+              that enable me to tackle projects beyond web development.
             </p>
-            <p className="text-gray-400  md:text-md md:py-6">
-              🌍 Beyond code, I thrive on sleek design  and
-              fresh tech vibes.
+            <p className="text-primary md:text-md md:py-6 tracking-tighter px-0.2 md:tracking-wide leading-[22px] ">
+              🌍
+              <span className="text-primary/60 text-xs md:text-md font-bold">
+                {" "}
+                Beyond code, I thrive on sleek design and fresh tech vibes.
+              </span>
             </p>
           </div>
         </div>

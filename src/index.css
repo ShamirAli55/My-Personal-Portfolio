@@ -111,6 +111,8 @@ html, body, #root {
   --exact:133 0% 5%;
   --opposite: 222 47% 4%;
   --shadow:282, 100%, 69%;
+  --bento-background:210, 2%, 80%;
+
 }
 
 html.dark {
