@@ -116,68 +116,52 @@ const About = () => {
         </div>
       </div>
 
+      <div className="min-h-screen w-full mt-12 md:mt-28 flex flex-col md:flex-row items-center md:px-22">
+        <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12">
+          {/* Left: Image / Avatar */}
 
-
-
-      <div className="min-h-screen w-full mt-12 md:mt-28 flex flex-col md:flex-row items-center">
-
-               <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12 items-center">
-        {/* Left: Image / Avatar */}
-        <div className="flex justify-center">
-          <div className="w-56 h-56 rounded-2xl bg-gradient-to-tr from-purple-500 to-blue-500 p-[3px]">
-            <div className="w-full h-full bg-neutral-900 rounded-2xl flex items-center justify-center">
-              {/* Placeholder image */}
-              <img
-                src="/profile.png"
-                alt="Shamir Ali"
-                className="rounded-2xl object-cover w-full h-full"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Right: About Content */}
-        <div className="space-y-6">
-          <h2 className="text-4xl font-bold tracking-tight">About Me</h2>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            I’m <span className="text-purple-400">Shamir Ali</span>, a Software
-            Engineering student passionate about turning ideas into smooth,
-            interactive experiences. With a foundation in{" "}
-            <span className="font-semibold">C++ (OOP, Data Structures)</span>{" "}
-            and hands-on experience in{" "}
-            <span className="font-semibold">
-              HTML, CSS, JavaScript, React.js, PHP, and MySQL
-            </span>
-            , I enjoy building projects that blend{" "}
-            <span className="italic">logic with creativity</span>.
-          </p>
-
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div className="p-4 rounded-xl bg-neutral-800/60 hover:bg-neutral-800 transition">
-              <h3 className="text-xl font-semibold mb-2">🚀 Currently Exploring</h3>
-              <p className="text-gray-300 text-sm">
-                React animations, UI/UX design patterns, and backend development
-                for scalable apps.
-              </p>
-            </div>
-            <div className="p-4 rounded-xl bg-neutral-800/60 hover:bg-neutral-800 transition">
-              <h3 className="text-xl font-semibold mb-2">🤝 What I Value</h3>
-              <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
-                <li>Clean, maintainable code</li>
-                <li>User-friendly design</li>
-                <li>Collaboration & learning</li>
-                <li>Exploring new tools</li>
-              </ul>
+          <div className="flex justify-center md:justify-start w-full ">
+            <div className="w-full md:w-[450px] h-80 md:h-[450px] rounded-2xl bg-gradient-to-tr from-purple-500 to-blue-500 p-[3px]">
+              <div className="w-full h-full bg-neutral-900 rounded-2xl flex items-center justify-center">
+                {/* Profile Image */}
+                <img
+                  src="/profile.png"
+                  alt="Shamir Ali"
+                  className="rounded-2xl object-cover w-full h-full"
+                />
+              </div>
             </div>
           </div>
 
-          <p className="text-gray-400 text-sm">
-            🌍 Beyond code: I enjoy exploring modern web designs, studying
-            software principles, and keeping up with creative tech trends.
-          </p>
-        </div>
-      </div>
+          {/* Right: About Content */}
+          <div className="space-y-6 text-center md:text-left ml-2">
+            <h1 className="text-3xl md:text-5xl font-bold text-white">
+              About Me
+            </h1>
 
+            <p className="text-primary text-md">
+              I build for the web because UI and animations keep me hooked —
+              nothing’s more fun than making interfaces feel alive. With the
+              MERN stack (MongoDB, Express, React, Node.js) and a solid base in
+              JavaScript and PHP, I turn rough ideas into smooth, functional,
+              and aesthetic experiences. Always chasing that perfect mix of
+              design and code, I’m the kind of developer who tweaks pixels and
+              logic until it just feels right.
+            </p>
+
+            <p className="text-primary text-md">
+              On the academic side, I’m deepening my understanding of C++ and
+              starting to explore Python, sharpening the fundamentals that make
+              me a better problem-solver and preparing me to branch into areas
+              beyond web.
+            </p>
+
+            <p className="text-gray-400 text-md">
+              🌍 Beyond code: I enjoy exploring modern web design, studying
+              software principles, and keeping up with creative tech trends.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
