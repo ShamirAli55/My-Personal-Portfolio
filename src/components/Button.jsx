@@ -38,31 +38,32 @@ const Button = ({ name, to }) => {
 
   return (
     <Link to={to} smooth duration={500} offset={-50} className="relative">
-      <button
-        onMouseEnter={handleEnter}
-        onMouseLeave={handleLeave}
-        className="
-          px-4 md:px-6 py-2 md:font-bold rounded-full transition-all flex items-center md:justify-between
-          duration-300 active:scale-95 cursor-pointer 
-          text-primary md:text-sm text-lg
-          bg-white/10 backdrop-blur-md border border-primary-foreground/20 
-          shadow-[0_8px_32px_rgba(0,0,0,0.25)]
-          hover:text-primary-foreground
-          butn_overlay overflow-hidden       
-          ">
-        <span>{name}</span>
-        <span className="pl-2">
-          <div className="relative bg-primary text-primary h-8 w-8 rounded-full overflow-hidden md:right-[-30%]">
-            <div
-              ref={arrRef}
-              className="absolute flex items-center gap-2 top-1/2 right-[-55%] -translate-x-1/2 -translate-y-1/2"
-            >
-              <ArrowRight size={20} color="hsl(var(--background))" />
-              <ArrowRight size={20} color="hsl(var(--background))" />
-            </div>
-          </div>
-        </span>
-      </button>
+<button
+  onMouseEnter={handleEnter}
+  onMouseLeave={handleLeave}
+  className="
+    px-4 md:px-6 py-2 md:font-bold rounded-full transition-all flex items-center md:justify-between
+    duration-300 active:scale-95 cursor-pointer 
+    text-primary md:text-sm text-lg
+    bg-white/10 backdrop-blur-md border border-primary-foreground/20 
+    shadow-[0_8px_32px_hsl(var(--opposite)/0.3)] 
+    butn_overlay overflow-hidden
+  "
+>
+  <span>{name}</span>
+  <span className="pl-2">
+    <div className="relative bg-primary h-8 w-8 rounded-full overflow-hidden md:right-[-30%]">
+      <div
+        ref={arrRef}
+        className="absolute flex items-center gap-2 top-1/2 right-[-55%] -translate-x-1/2 -translate-y-1/2"
+      >
+        <ArrowRight size={20} color="hsl(var(--background))" />
+        <ArrowRight size={20} color="hsl(var(--background))" />
+      </div>
+    </div>
+  </span>
+</button>
+
     </Link>
   );
 };

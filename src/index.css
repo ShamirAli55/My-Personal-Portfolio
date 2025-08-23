@@ -243,25 +243,9 @@ html.dark {
   transition: box-shadow 0.3s ease, filter 0.3s ease;
 }
 
-@media (min-width: 768px) {
-  .butn_overlay {
-    position: relative;
-    overflow: hidden;
-  }
-}
-
-.butn_overlay::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 0; 
-  background-color: hsl(var(--primary));
-  opacity: 0;
-  transition: all 0.4s ease-in-out;
-  pointer-events: none;
-  z-index: 0;
+.butn_overlay {
+  position: relative;
+  overflow: hidden;
 }
 
 .butn_overlay > * {
@@ -269,10 +253,31 @@ html.dark {
   z-index: 1;
 }
 
-.butn_overlay:hover::after {
-  width: 100%; 
-  opacity: 1;
+@media (min-width: 768px) {
+  .butn_overlay {
+    @apply hover:text-primary-foreground;
+  }
+
+  .butn_overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0; 
+    background-color: hsl(var(--primary));
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .butn_overlay:hover::after {
+    width: 100%;
+    opacity: 1;
+  }
 }
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px; 
   height: 8px;  
