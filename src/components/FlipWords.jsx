@@ -7,7 +7,6 @@ export const FlipWords = ({ words, duration = 3000, className }) => {
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
 
-  // Observe visibility
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -15,7 +14,7 @@ export const FlipWords = ({ words, duration = 3000, className }) => {
           setIsVisible(entry.isIntersecting);
         });
       },
-      { threshold: 0.3 } // trigger when 30% of element is visible
+      { threshold: 0.3 } 
     );
 
     if (containerRef.current) observer.observe(containerRef.current);
@@ -26,7 +25,6 @@ export const FlipWords = ({ words, duration = 3000, className }) => {
     };
   }, []);
 
-  // Word flipping logic, only runs if visible
   useEffect(() => {
     if (!isVisible) return;
 
