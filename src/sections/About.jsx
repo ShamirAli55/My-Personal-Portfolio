@@ -11,7 +11,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen w-full px-6 py-10 bg-background"
+      className="min-h-screen w-full px-6 py-10 bg-background text-primary"
     >
       <div className="grid gap-6 grid-cols-1 md:grid-cols-6 auto-rows-[200px]">
         {/* Card 1 */}
@@ -116,7 +116,7 @@ const About = () => {
         </div>
       </div>
 
-      <h1 className="text-3xl  md:hidden font-bold text-white pt-8">
+      <h1 className="text-3xl  md:hidden font-bold text-primary pt-8">
         About Me
       </h1>
 
@@ -129,7 +129,7 @@ const About = () => {
               <div className="w-full h-full bg-neutral-900 rounded-2xl flex items-center justify-center">
                 {/* Profile Image */}
                 <img
-                  src="../../src/assets/images/Profile_image.png"
+                  src="assets/images/Profile_image.png"
                   alt="Shamir Ali"
                   className="rounded-2xl object-cover w-full h-full"
                 />
@@ -139,7 +139,7 @@ const About = () => {
 
           {/* Right: About Content */}
           <div className="space-y-6 text-left ml-2 leading-[20px]">
-            <h1 className="text-3xl hidden md:block md:text-5xl font-bold text-white">
+            <h1 className="text-3xl hidden md:block md:text-5xl font-bold">
               About Me
             </h1>
             <p className="text-primary text-sm md:text-[17px] tracking-wider leading-[20px]">
