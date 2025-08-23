@@ -91,7 +91,7 @@ const About = () => {
               <span className="text-sm md:text-xl ">Islamabad, Pakistan</span>
             </div>
           </div>
-          <figure className="absolute top-40 -right-50 md:right-[-25%] md:top-[5%]">
+          <figure className="absolute top-40 -right-50 md:right-[-25%] md:top-[5%] cursor-grab">
             <Globe />
           </figure>
         </div>
@@ -116,7 +116,9 @@ const About = () => {
         </div>
       </div>
 
-      <h1 className="text-3xl  md:hidden font-bold text-white pt-8">About Me</h1>
+      <h1 className="text-3xl  md:hidden font-bold text-white pt-8">
+        About Me
+      </h1>
 
       <div className="min-h-screen w-full mt-12 md:mt-28 flex flex-col md:flex-row items-center md:px-22">
         <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12">
@@ -127,7 +129,7 @@ const About = () => {
               <div className="w-full h-full bg-neutral-900 rounded-2xl flex items-center justify-center">
                 {/* Profile Image */}
                 <img
-                  src="https://plus.unsplash.com/premium_photo-1710695570402-83df3571880b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBvcnRyYWl0c3xlbnwwfHwwfHx8MA%3D%3D"
+                  src="../../src/assets/images/Profile_image.png"
                   alt="Shamir Ali"
                   className="rounded-2xl object-cover w-full h-full"
                 />
@@ -156,10 +158,9 @@ const About = () => {
               me a better problem-solver and preparing me to branch into areas
               beyond web.
             </p>
-
             <p className="text-gray-400 text-md">
-              🌍 Beyond code: I enjoy exploring modern web design, studying
-              software principles, and keeping up with creative tech trends.
+              🌍 Beyond code, I thrive on sleek design, sharp principles, and
+              fresh tech vibes.
             </p>
           </div>
         </div>
