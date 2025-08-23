@@ -138,12 +138,12 @@ const About = () => {
           </div>
 
           {/* Right: About Content */}
-          <div className="space-y-6 text-left ml-2 leading-[20px]">
+          <div className="space-y-6 text-left ml-2 leading-[20px] px-1 md:px-0">
             <h1 className="text-3xl hidden md:block md:text-5xl font-bold">
               About Me
             </h1>
-            <p className="text-primary text-sm md:text-[17px] tracking-wider leading-[20px]">
-              I build for the web because UI and animations keep me hooked —
+            <p className="text-primary text-xs  md:px-1  tracking-tight md:text-[17.5px] md:tracking-tight leading-[22px]">
+              I build for the web because UI and animations keep me hooked
               nothing’s more fun than making interfaces feel alive. With the
               MERN stack (MongoDB, Express, React, Node.js) and a solid base in
               JavaScript and PHP, I turn rough ideas into smooth, functional,
@@ -152,14 +152,14 @@ const About = () => {
               logic until it just feels right.
             </p>
 
-            <p className="text-primary text-sm md:text-[17px] tracking-wider leading-[20px]">
+            <p className="text-primary  md:px-1 tracking-tight md:text-[17.5px] md:tracking-tight leading-[22px]">
               On the academic side, I’m deepening my understanding of C++ and
               starting to explore Python, sharpening the fundamentals that make
               me a better problem-solver and preparing me to branch into areas
               beyond web.
             </p>
-            <p className="text-gray-400 text-md">
-              🌍 Beyond code, I thrive on sleek design, sharp principles, and
+            <p className="text-gray-400  md:text-md md:py-6">
+              🌍 Beyond code, I thrive on sleek design  and
               fresh tech vibes.
             </p>
           </div>
