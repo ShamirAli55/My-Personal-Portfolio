@@ -13,21 +13,19 @@ const About = () => {
       id="about"
       className="min-h-screen w-full px-6 py-10 bg-background"
     >
-      <div
-        className="
-    grid gap-6
-    grid-cols-1
-    md:grid-cols-6
-    auto-rows-[200px]
-  "
-      >
+      <div className="grid gap-6 grid-cols-1 md:grid-cols-6 auto-rows-[200px]">
         {/* Card 1 */}
         <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-2 md:row-span-3 rounded-xl bg-bento-background p-4 relative duration-200 overflow-hidden pointer-events-none z-10">
           <div className="z-10 flex flex-col justify-end md:justify-center h-full pt-12">
-            <p className="text-4xl md:text-7xl font-semibold pt-45">Teck Stack</p>
+            <p className="text-4xl md:text-7xl font-semibold pt-45">
+              Teck Stack
+            </p>
             <p className="text-sm md:text-xl px-2 md:px-22 md:pt-10 py-6">
               A blend of code and creativity. I combine languages, frameworks,
-              and tools to turn <span className="whitespace-nowrap md:whitespace-normal">ideas into smooth, interactive experiences.</span> 
+              and tools to turn{" "}
+              <span className="whitespace-nowrap md:whitespace-normal">
+                ideas into smooth, interactive experiences.
+              </span>
             </p>
           </div>
           <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125 z-[-1]">
@@ -116,6 +114,70 @@ const About = () => {
         <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl bg-bento-background p-4 flex items-center justify-center">
           <p>Flexible Timezones</p>
         </div>
+      </div>
+
+
+
+
+      <div className="min-h-screen w-full mt-12 md:mt-28 flex flex-col md:flex-row items-center">
+
+               <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12 items-center">
+        {/* Left: Image / Avatar */}
+        <div className="flex justify-center">
+          <div className="w-56 h-56 rounded-2xl bg-gradient-to-tr from-purple-500 to-blue-500 p-[3px]">
+            <div className="w-full h-full bg-neutral-900 rounded-2xl flex items-center justify-center">
+              {/* Placeholder image */}
+              <img
+                src="/profile.png"
+                alt="Shamir Ali"
+                className="rounded-2xl object-cover w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Right: About Content */}
+        <div className="space-y-6">
+          <h2 className="text-4xl font-bold tracking-tight">About Me</h2>
+          <p className="text-lg text-gray-300 leading-relaxed">
+            I’m <span className="text-purple-400">Shamir Ali</span>, a Software
+            Engineering student passionate about turning ideas into smooth,
+            interactive experiences. With a foundation in{" "}
+            <span className="font-semibold">C++ (OOP, Data Structures)</span>{" "}
+            and hands-on experience in{" "}
+            <span className="font-semibold">
+              HTML, CSS, JavaScript, React.js, PHP, and MySQL
+            </span>
+            , I enjoy building projects that blend{" "}
+            <span className="italic">logic with creativity</span>.
+          </p>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="p-4 rounded-xl bg-neutral-800/60 hover:bg-neutral-800 transition">
+              <h3 className="text-xl font-semibold mb-2">🚀 Currently Exploring</h3>
+              <p className="text-gray-300 text-sm">
+                React animations, UI/UX design patterns, and backend development
+                for scalable apps.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-neutral-800/60 hover:bg-neutral-800 transition">
+              <h3 className="text-xl font-semibold mb-2">🤝 What I Value</h3>
+              <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+                <li>Clean, maintainable code</li>
+                <li>User-friendly design</li>
+                <li>Collaboration & learning</li>
+                <li>Exploring new tools</li>
+              </ul>
+            </div>
+          </div>
+
+          <p className="text-gray-400 text-sm">
+            🌍 Beyond code: I enjoy exploring modern web designs, studying
+            software principles, and keeping up with creative tech trends.
+          </p>
+        </div>
+      </div>
+
       </div>
     </section>
   );

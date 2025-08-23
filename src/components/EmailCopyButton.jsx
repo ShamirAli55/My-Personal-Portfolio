@@ -1,10 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { Copy, CopyCheck } from "lucide-react";
-import {cn} from "../lib/utils.js"
+
 const EmailCopyButton = () => {
   const CopyRef = useRef(null);
-  const NotifyRef = useRef(null);
   const [Copied, setIsCopied] = useState(false);
   const email = "shamirali9779@gmail.com";
 
@@ -27,32 +26,13 @@ const EmailCopyButton = () => {
           rotate: 10,
           opacity: 0.7,
         })
-        .from(
-          NotifyRef.current,
-          {
-            y: 20,
-            opacity: 0,
-            duration: 0.2,
-          },
-          "<"
-        )
-        .to(NotifyRef.current, {
+        .to(CopyRef.current, {
           y: 0,
+          rotate: 0,
           opacity: 1,
           duration: 0.5,
           ease: "power2.out",
-        })
-        .from(
-          CopyRef.current,
-          {
-            y: 0,
-            rotate: 0,
-            opacity: 1,
-            duration: 0.5,
-            ease: "power2.out",
-          },
-          "<"
-        );
+        });
     }
   }, [Copied]);
 
@@ -62,18 +42,22 @@ const EmailCopyButton = () => {
       className="p-3 md:px-6 md:py-3 rounded-full font-semibold transition-all flex items-center whitespace-nowrap
         duration-300 text-sm shadow-[0_8px_32px_rgba(0,0,0,0.25)] active:scale-95 cursor-pointer text-opposite hover:bg-primary hover:text-primary-foreground origin-bottom-right bg-white/10 backdrop-blur-md border border-primary-foreground/20"
     >
-      Copy Email Address
-      <span className="ml-2 relative">
+      <div className="relative">
+        <p className={Copied ? "invisible absolute" : "visible"}>
+          Copy Email Address
+        </p>
+        <p
+          className={
+            Copied ? "visible text-sm text-green-500" : "invisible absolute"
+          }
+        >
+          Email Address Copied!
+        </p>
+      </div>
+
+      <span className="ml-2 relative" ref={CopyRef}>
         {Copied ? (
-          <>
-            <CopyCheck ref={CopyRef} className="h-6 w-6 object-cover" />
-            <div
-              className={cn("absolute top-10 -right-5" ,"text-sm pointer-events-none whitespace-nowrap rounded-lg px-4 py-2 text-green-500")}
-              ref={NotifyRef}
-            >
-              <p>Email Copied Successfully !</p>
-            </div>
-          </>
+          <CopyCheck className="h-6 w-6 object-cover" />
         ) : (
           <Copy className="h-6 w-6 object-cover" />
         )}
