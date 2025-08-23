@@ -16,7 +16,7 @@ const About = () => {
     >
       <div className="grid gap-6 grid-cols-1 md:grid-cols-6 auto-rows-[200px]">
         {/* Card 1 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-2 md:row-span-3 rounded-xl bg-bento-background p-4 relative duration-200 overflow-hidden pointer-events-none z-10">
+        <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-2  md:row-span-3 rounded-xl  p-4 relative duration-200 overflow-hidden pointer-events-none z-10 border border-opposite/20 transition shadow-md">
           <div className="z-10 flex flex-col justify-end md:justify-center h-full pt-12">
             <p className="text-4xl md:text-7xl font-semibold pt-45">
               Teck Stack
@@ -35,7 +35,7 @@ const About = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-3 rounded-xl bg-bento-background p-5 relative overflow-hidden">
+        <div className="col-span-1 sm:col-span-full md:col-span-3 rounded-xl p-5 relative border border-opposite/20 transition duration-300 shadow-md overflow-hidden">
           <div
             ref={grid2Container}
             className="flex items-center justify-center w-full h-full"
@@ -78,7 +78,7 @@ const About = () => {
         </div>
 
         {/* Card 3 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-2 rounded-xl bg-bento-background p-4 relative overflow-hidden z-10 text-primary">
+        <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-2 rounded-xl border border-opposite/20 transition duration-300 shadow-md p-4 relative overflow-hidden z-10 text-primary">
           <div className="h-full z-10 w-full text-left px-8 flex flex-col md:justify-between">
             <div className="pointer-events-none">
               <p className=" text-4xl py-4">Time Zone</p>
@@ -97,10 +97,10 @@ const About = () => {
           </figure>
         </div>
         {/* Card 4 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl bg-bento-background p-4 flex items-center justify-center"></div>
+        <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl p-4 flex border border-opposite/20 transition duration-300 shadow-md items-center justify-center"></div>
 
         {/* Card 5 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl bg-bento-background p-4">
+        <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-lg border border-opposite/20 transition duration-300 shadow-md p-4">
           <div className="flex flex-col justify-center items-center py-5 px-2">
             <h2 className="text-xl md:text-2xl font-bold mb-6 text-primary">
               Do you want to start a project together?
@@ -112,7 +112,7 @@ const About = () => {
         </div>
 
         {/* Card 6 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl bg-bento-background p-4 flex items-center justify-center">
+        <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl border border-opposite/20 transition duration-300 shadow-md p-4 flex items-center justify-center">
           <p>Flexible Timezones</p>
         </div>
       </div>

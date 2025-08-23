@@ -122,9 +122,9 @@ html.dark {
   --primary-foreground:222 47% 4%;/* #e5e7eb → light gray */
 
   --exact:222 47% 4%;
-  --opposite:0, 0%, 100%;            
+  --opposite:0, 0%, 87%;            
   --shadow:278, 8%, 75%; 
-  --bento-background:0, 0%, 16%;
+  --bento-background:0, 4%, 89%;
 }
   html
   {

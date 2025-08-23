@@ -4,7 +4,8 @@ import ThemeToggle from "../components/ThemeToggle";
 import Hero from "../sections/Hero";
 import OverLay from "../components/OverLay";
 import About from "../sections/About";
-import Contact from "../sections/Skills";
+import Skills from "../sections/Skills";
+import Projects from "../sections/Projects";
 
 const HomePage = () => {
   return (
@@ -14,7 +15,8 @@ const HomePage = () => {
           <Navbar />
           <Hero />
           <About />
-          <Contact />
+          <Skills />
+          {/* <Projects /> */}
           <ThemeToggle />
         </section>
       </ReactLenis>
