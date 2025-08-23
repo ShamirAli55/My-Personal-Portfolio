@@ -1,4 +1,3 @@
-// import { Newspaper } from 'lucide-react';
 // import React, { useEffect, useState } from 'react'
 
 // function StarBackground() {
@@ -60,7 +59,7 @@
 //         setMeteors(newMeteors);
 //     }  
 //   return (
-//     <div className='fixed inset-0 overflow-hidden pointer-events-none z-0'>
+//     <div className='absolute inset-0 overflow-hidden pointer-events-none z-0'>
 //         {stars.map((star)=>{
 //            return <div key={star.id} className="star animate-pulse-subtle" 
 //             style={{
@@ -91,11 +90,12 @@
 
 // export default StarBackground
 
+
 import React from 'react'
 
 const StarsBackground = () => {
   return (
-<></>
+    <div></div>
   )
 }
 

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { Copy, CopyCheck } from "lucide-react";
+import {cn} from "../lib/utils.js"
 const EmailCopyButton = () => {
   const CopyRef = useRef(null);
   const NotifyRef = useRef(null);
@@ -67,7 +68,7 @@ const EmailCopyButton = () => {
           <>
             <CopyCheck ref={CopyRef} className="h-6 w-6 object-cover" />
             <div
-              className="absolute top-10 -right-5 md:-top-2 md:-right-60 text-sm pointer-events-none whitespace-nowrap rounded-lg px-4 py-2 text-green-500"
+              className={cn("absolute top-10 -right-5" ,"text-sm pointer-events-none whitespace-nowrap rounded-lg px-4 py-2 text-green-500")}
               ref={NotifyRef}
             >
               <p>Email Copied Successfully !</p>

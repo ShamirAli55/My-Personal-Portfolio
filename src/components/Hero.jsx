@@ -35,7 +35,7 @@ const words = [
         </h3>
         <div className="flex flex-col md:flex-row items-center md:justify-center gap-10 md:gap-x-15 p-10 relative">
           <Button name={"Let's Connect"} to={"contact"} />
-          <EmailCopyButton />
+          <EmailCopyButton/>
         </div>
       </div>
     </section>
