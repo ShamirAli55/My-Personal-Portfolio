@@ -187,7 +187,7 @@ html.dark {
   transform: translateX(-100%);
 }
 
-
+/* Hover in → slide left → right */
 .showborder:hover.textline::after {
   animation: slideIn 0.5s forwards;
 }

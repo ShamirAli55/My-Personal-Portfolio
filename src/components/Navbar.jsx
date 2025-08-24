@@ -1,6 +1,6 @@
 import { navItems } from "../constants";
 import { Link } from "react-scroll";
-import { AppWindowMac,Snowflake } from "lucide-react";
+import { AppWindowMac, Snowflake } from "lucide-react";
 import { useEffect, useState } from "react";
 import HiddenMenu from "./HiddenMenu";
 const Navbar = () => {
@@ -10,6 +10,10 @@ const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleAnimation = (e) => {
+    e.currentTarget.classList.add("showborder");
+  };
+  
   useEffect(() => {
     const observer = new MutationObserver(() => {
       setIsDarkMode(document.documentElement.classList.contains("dark"));
@@ -38,23 +42,22 @@ const Navbar = () => {
           <HiddenMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
         )}
         <div className="h-12">
-         <Link to={"home"}
-                duration={180}
-                smooth={true}
-                offset={15} 
-              > {isDarkMode ? (
-            <img
-              src="/assets/logo.svg"
-              className="h-full object-cover cursor-pointer"
-              alt="Logo"
-            />
-          ) : (
-            <img
-              src="/assets/Dark_logo.png"
-              className="h-full object-cover cursor-pointer"
-              alt="Logo"
-            />
-          )}</Link>
+          <Link to={"home"} duration={180} smooth={true} offset={15}>
+            {" "}
+            {isDarkMode ? (
+              <img
+                src="/assets/logo.svg"
+                className="h-full object-cover cursor-pointer"
+                alt="Logo"
+              />
+            ) : (
+              <img
+                src="/assets/Dark_logo.png"
+                className="h-full object-cover cursor-pointer"
+                alt="Logo"
+              />
+            )}
+          </Link>
         </div>
 
         <div className="items-center shadow-[0_8px_32px_rgba(0,0,0,0.25)] bg-white/15 backdrop-blur-md border border-primary-foreground/20 justify-between gap-x-10 py-2 px-6 rounded-full hidden md:flex">
@@ -62,12 +65,13 @@ const Navbar = () => {
             .filter((item) => item.category === "Navigation")
             .map((item, index) => (
               <Link
-                className="text-sm font-light text-primary cursor-pointer textline showborder"
+                className="text-sm font-light text-primary cursor-pointer textline "
                 to={item.href}
                 duration={180}
                 smooth={true}
                 offset={15}
                 key={index}
+                onMouseEnter={(e) => handleAnimation(e)}
               >
                 {item.name}
               </Link>
@@ -78,7 +82,7 @@ const Navbar = () => {
           className="cursor-pointer"
           onClick={() => setIsOpen((prev) => !prev)}
         >
-          <Snowflake  color="hsl(var(--primary))" />
+          <Snowflake color="hsl(var(--primary))" />
         </div>
       </nav>
     </header>
