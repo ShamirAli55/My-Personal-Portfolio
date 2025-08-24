@@ -1,9 +1,11 @@
 import { navItems } from "../constants";
 import { Link } from "react-scroll";
 import { AppWindowMac, Snowflake } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState ,useRef} from "react";
 import HiddenMenu from "./HiddenMenu";
+import gsap from "gsap";
 const Navbar = () => {
+  const MenuRef = useRef(null);
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("theme") === "dark"
   );
@@ -14,6 +16,11 @@ const Navbar = () => {
     e.currentTarget.classList.add("showborder");
   };
   
+  const HandleRotate = ()=>
+  {
+      gsap.to(MenuRef.current, { display:"inline-block",rotate: 90, duration: .8 });
+
+  }
   useEffect(() => {
     const observer = new MutationObserver(() => {
       setIsDarkMode(document.documentElement.classList.contains("dark"));
@@ -34,7 +41,6 @@ const Navbar = () => {
       window.removeEventListener("storage", handleStorage);
     };
   }, []);
-
   return (
     <header className="fixed top-0 left-0 right-0 z-[199]">
       <nav className="flex justify-between items-center px-5 pt-8 pb-4 text-foreground">
@@ -82,7 +88,7 @@ const Navbar = () => {
           className="cursor-pointer"
           onClick={() => setIsOpen((prev) => !prev)}
         >
-          <Snowflake color="hsl(var(--primary))" />
+          <Snowflake color="hsl(var(--primary))" onClick={()=>HandleRotate()} ref={MenuRef}/>
         </div>
       </nav>
     </header>
