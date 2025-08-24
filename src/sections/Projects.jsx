@@ -9,7 +9,6 @@ const Projects = () => {
   const ImgRef = useRef(null);
   const [cursorImage, setCursorImage] = useState(null);
 
-  // 🟢 Store last known cursor position
   const posRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -20,7 +19,6 @@ const Projects = () => {
     };
 
     const scrollHandler = () => {
-      // reuse stored x, y instead of re-triggering fake animation
       animateCursor();
     };
 
@@ -77,7 +75,6 @@ const Projects = () => {
 
   return (
     <section id="projects" className="min-h-screen w-full pt-32 relative">
-      {/* Cursor Circle */}
       <div
         ref={CrsrRef}
         className="fixed h-22 top-0 w-22 rounded-full pointer-events-none z-[999] opacity-0"
@@ -94,7 +91,6 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Circular Rotating Text */}
         <div className="absolute animate-spin-slow text-[12px] font-semibold tracking-[4px] text-white uppercase">
           <svg viewBox="0 0 120 120" className="w-22 h-22 fill-current">
             <defs>
@@ -125,7 +121,6 @@ const Projects = () => {
           </h2>
         </div>
 
-        {/* Preview Image */}
         <div
           ref={ImgRef}
           className="hidden md:block fixed h-56 w-92 rounded-xl overflow-hidden 
@@ -140,9 +135,10 @@ const Projects = () => {
           )}
         </div>
 
-        {/* Projects List */}
         <div className="flex flex-col gap-6 md:gap-0 relative">
           {myProjects.map((project) => (
+            
+            
             <div
               key={project.id}
               className="group bg-card rounded-lg overflow-hidden shadow-sm 
@@ -153,7 +149,6 @@ const Projects = () => {
               onMouseEnter={() => handleMouseEnter(project.image)}
               onMouseLeave={handleMouseLeave}
             >
-              {/* Mobile preview image */}
               <div className="h-48 overflow-hidden mb-4 md:hidden rounded-lg pointer-events-none">
                 <img
                   src={project.image}
@@ -182,7 +177,8 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Links */}
+
+
               <div className="flex justify-end items-center space-x-4 mt-4 md:mt-0 cursor-pointer">
                 <a
                   href={project.demoUrl}
@@ -202,6 +198,7 @@ const Projects = () => {
                 </a>
               </div>
             </div>
+
           ))}
         </div>
 
