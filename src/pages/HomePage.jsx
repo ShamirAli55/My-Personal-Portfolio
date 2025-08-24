@@ -16,7 +16,7 @@ const HomePage = () => {
           <Hero />
           <About />
           <Skills />
-          {/* <Projects /> */}
+          <Projects />
           <ThemeToggle />
         </section>
       </ReactLenis>

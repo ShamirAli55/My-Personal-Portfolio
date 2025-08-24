@@ -4,7 +4,7 @@ const Skills = () => {
   return (
     <section id="skills" className="min-h-screen w-full bg-primary-foreground text-primary cursor-pointer flex flex-col items-center justify-center py-20">
     
-      <div className="mb-12 text-center">
+      <div className="mb-22 text-center">
         <p className="uppercase tracking-widest text-opposite-400 text-sm">My Skills</p>
         <h2 className="text-4xl md:text-5xl font-bold">
         Fuel for  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Innovation</span>

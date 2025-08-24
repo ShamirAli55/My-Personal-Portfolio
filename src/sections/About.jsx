@@ -92,9 +92,9 @@ const About = () => {
               <span className="text-sm md:text-xl ">Islamabad, Pakistan</span>
             </div>
           </div>
-          <figure className="absolute top-40 -right-50 md:right-[-25%] md:top-[5%] cursor-grab">
+          {/* <figure className="absolute top-40 -right-50 md:right-[-25%] md:top-[5%] cursor-grab">
             <Globe />
-          </figure>
+          </figure> */}
         </div>
         {/* Card 4 */}
         <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl p-4 flex border border-opposite/20 transition duration-300 shadow-md items-center justify-center"></div>

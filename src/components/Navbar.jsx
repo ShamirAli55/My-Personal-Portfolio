@@ -1,6 +1,6 @@
 import { navItems } from "../constants";
 import { Link } from "react-scroll";
-import { AppWindowMac } from "lucide-react";
+import { AppWindowMac,Snowflake } from "lucide-react";
 import { useEffect, useState } from "react";
 import HiddenMenu from "./HiddenMenu";
 const Navbar = () => {
@@ -38,19 +38,23 @@ const Navbar = () => {
           <HiddenMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
         )}
         <div className="h-12">
-          {isDarkMode ? (
+         <Link to={"home"}
+                duration={180}
+                smooth={true}
+                offset={15} 
+              > {isDarkMode ? (
             <img
               src="/assets/logo.svg"
-              className="h-full object-cover"
+              className="h-full object-cover cursor-pointer"
               alt="Logo"
             />
           ) : (
             <img
               src="/assets/Dark_logo.png"
-              className="h-full object-cover"
+              className="h-full object-cover cursor-pointer"
               alt="Logo"
             />
-          )}
+          )}</Link>
         </div>
 
         <div className="items-center shadow-[0_8px_32px_rgba(0,0,0,0.25)] bg-white/15 backdrop-blur-md border border-primary-foreground/20 justify-between gap-x-10 py-2 px-6 rounded-full hidden md:flex">
@@ -74,7 +78,7 @@ const Navbar = () => {
           className="cursor-pointer"
           onClick={() => setIsOpen((prev) => !prev)}
         >
-          <AppWindowMac color="hsl(var(--primary))" />
+          <Snowflake  color="hsl(var(--primary))" />
         </div>
       </nav>
     </header>
