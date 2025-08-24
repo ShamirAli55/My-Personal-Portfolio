@@ -96,6 +96,7 @@ html, body, #root {
         transform:rotate(215deg) translateX(-200px);
       }
     }
+    
 }
 
 @layer base
@@ -170,28 +171,49 @@ html.dark {
   background-size: 100% 100%;
 }
 
-@utility textline
-{
+.textline {
   position: relative;
+  overflow: hidden;
 }
-.textline::after
-{
-  content:"";
-  height:100%;
-  width:0%;
-  border-bottom: 2px solid hsl(var(--foreground));
-  transition:all 0.3s ease-in-out;
-  display: block;
+
+.textline::after {
+  content: "";
   position: absolute;
-  transform-origin: right;
-  top:0;
-  left:0;
   bottom: 0;
-}
-.showborder:hover.textline::after
-{
+  left: 0;
   width: 100%;
+  height: 2px;
+  background-color: hsl(var(--foreground));
+  transform: translateX(-100%);
 }
+
+
+.showborder:hover.textline::after {
+  animation: slideIn 0.5s forwards;
+}
+
+.showborder.textline::after {
+  animation: slideOut 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
 @utility hey
 {
   animation-name:Waving;
@@ -307,6 +329,7 @@ html.dark {
   scrollbar-color: rgb(195, 195, 195) transparent;
 }
 
+
 .projects_overlay{
   position: relative;
   overflow: hidden;
@@ -318,9 +341,6 @@ html.dark {
 }
 
 @media (min-width: 768px) {
-  .projects_overlay {
-    @apply hover:text-primary-foreground;
-  }
 
   .projects_overlay::after {
     content: "";
@@ -329,10 +349,14 @@ html.dark {
     left: 0;
     height: 100%;
     width:100%; 
-    background-color: hsl(var(--primary));
+ background: linear-gradient(
+  to right,
+  hsl(262 83% 58%),
+  hsl(330 81% 60%)
+);
     opacity: 0;
     transform-origin:top center;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
     pointer-events: none;
     z-index: 0;
   }
@@ -341,9 +365,19 @@ html.dark {
     opacity: 1;
     top:0%;
   }
-  .projects_overlay:hover *{
-    @apply text-primary-foreground border-opposite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
 }
 
 #root
