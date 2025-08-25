@@ -2,25 +2,26 @@ import {
   Home,
   User,
   Code,
-  Folder,
   Mail,
+  Folder,
   BookOpen,
   Github,
   Linkedin,
   Twitter,
+  BookHeart,
+  Link2,
 } from "lucide-react";
 
 export const navItems = [
-  { name: "Home", href: " ", icon: Home, category: "Navigation" },
-  { name: "About", href: "about", icon: User, category: "Navigation" },
-  { name: "Work", href: "work", icon: Code, category: "Navigation" },
-  { name: "Contact", href: "contact", icon: Mail, category: "Navigation" },
-  { name: "More", icon: Folder, category: "Navigation" },
+  { name: "Home", href: "/", icon: Home, category: "Navigation" },
+  { name: "About", href: "/about", icon: User, category: "Navigation" },
+  { name: "Work", href: "/work", icon: Code, category: "Navigation" },
+  { name: "Contact", href: "/contact", icon: Mail, category: "Navigation" },
 
-  { name: "Links", href: "links", icon: Folder, category: "personal" },
-  { name: "Info", href: "info", icon: Folder, category: "personal" },
+  { name: "Links", href: "/links", icon: Link2, category: "Personal" },
+  { name: "Info", href: "/info", icon: BookHeart, category: "Personal" },
 
-  { name: "Blog", href: "blog", icon: BookOpen, category: "Resources" },
+  { name: "Blog", href: "/blog", icon: BookOpen, category: "Resources" },
 
   {
     name: "GitHub",

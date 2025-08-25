@@ -92,7 +92,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="absolute animate-spin-slow text-[12px] font-semibold tracking-[4px] text-white uppercase">
+        <div className="absolute animate-spin-slow text-[12px] font-semibold tracking-[3px] text-white uppercase">
           <svg viewBox="0 0 120 120" className="w-22 h-22 fill-current">
             <defs>
               <path
@@ -102,7 +102,7 @@ const Projects = () => {
             </defs>
             <text>
               <textPath href="#circlePath" startOffset="0%">
-                • View Details • View Details •
+                • View Details • View Details
               </textPath>
             </text>
           </svg>
@@ -200,7 +200,7 @@ const Projects = () => {
 
         <div className="w-full flex items-center justify-center mt-12 pb-8">
           <MagneticButton>
-          <Button name={"More Projects"} to={"projects"} />
+            <Button name={"More Projects"} to={"projects"} />
           </MagneticButton>
         </div>
       </div>

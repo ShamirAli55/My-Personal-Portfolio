@@ -21,20 +21,24 @@ const HiddenMenu = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
+  // Filter links based on search
   const filteredItems = navItems.filter((item) =>
     item.name.toLowerCase().includes(query.toLowerCase())
   );
 
+  // Group by category
   const grouped = filteredItems.reduce((acc, item) => {
     if (!acc[item.category]) acc[item.category] = [];
     acc[item.category].push(item);
     return acc;
   }, {});
 
-  return (
-    <div className="min-h-[70vh] md:w-1/2 w-[80%] left-[10%] top-[50%] md:left-[25%] absolute z-[200] ">
-      <div className="h-full w-full shadow-[0_8px_32px_rgba(0,0,0,0.25)] bg-background/25 backdrop-blur-xl border border-primary-foreground/20 rounded-xl">
+  const categoryOrder = ["Navigation", "Personal", "Resources", "Social"];
+  const sortedCategories = categoryOrder.filter((cat) => grouped[cat]);
 
+  return (
+    <div className="min-h-[70vh] md:w-1/2 w-[80%] left-[10%] top-[50%] md:left-[25%] absolute z-[200]">
+      <div className="h-full w-full shadow-[0_8px_32px_rgba(0,0,0,0.25)] bg-background/25 backdrop-blur-xl border border-primary-foreground/20 rounded-xl">
         <div className="flex items-center justify-between px-8 py-3 w-full relative border-b">
           <div className="flex items-center relative w-full">
             <Search className="absolute left-3 text-primary" size={18} />
@@ -47,7 +51,7 @@ const HiddenMenu = ({ isOpen, onClose }) => {
             />
           </div>
           <button
-            className="ml-4 cursor-pointer text-xs border border-primary rounded-lg px-3 py-1"
+            className="ml-4 cursor-pointer text-xs border border-primary/20 rounded-lg px-3 py-1"
             onClick={onClose}
           >
             Esc
@@ -55,8 +59,8 @@ const HiddenMenu = ({ isOpen, onClose }) => {
         </div>
 
         <div className="max-h-[60vh] overflow-y-auto custom-scrollbar">
-          {Object.keys(grouped).length > 0 ? (
-            Object.keys(grouped).map((category) => (
+          {sortedCategories.length > 0 ? (
+            sortedCategories.map((category) => (
               <div key={category} className="mt-4">
                 <h4 className="text-left px-8 pb-2 text-xs uppercase text-primary/40 tracking-wider">
                   {category}
@@ -67,16 +71,27 @@ const HiddenMenu = ({ isOpen, onClose }) => {
                     <NavLink
                       key={item.name}
                       to={item.href}
-                      smooth
-                      duration={200}
-                      offset={15}
                       onClick={onClose}
-                      className="block"
+                      className={({ isActive }) =>
+                        ` px-8 py-2 w-full flex items-center text-primary gap-3 cursor-pointer rounded-lg 
+                         ${isActive ? "bg-primary/5" : "hover:bg-primary/10"}`
+                      }
                     >
-                      <div className="flex items-center gap-3 px-8 py-2 w-full cursor-pointer hover:bg-primary/10">
-                        <item.icon size={18} className="text-primary" />
-                        <span className="text-sm">{item.name}</span>
-                      </div>
+                      {({ isActive }) => (
+                        <>
+                          <div
+                            className={`w-8 h-8 flex items-center justify-center rounded-lg 
+                              ${
+                                isActive
+                                  ? "bg-opposite text-primary-foreground"
+                                  : "bg-primary/10 text-primary"
+                              }`}
+                          >
+                            <item.icon size={16} />
+                          </div>
+                          <span className="text-sm">{item.name}</span>
+                        </>
+                      )}
                     </NavLink>
                   ) : (
                     <a
@@ -87,8 +102,10 @@ const HiddenMenu = ({ isOpen, onClose }) => {
                       onClick={onClose}
                       className="block"
                     >
-                      <div className="flex items-center gap-3 px-8 py-2 w-full cursor-pointer hover:bg-primary/10">
-                        <item.icon size={18} className="text-primary" />
+                      <div className="flex items-center gap-3 px-8 py-2 w-full cursor-pointer hover:bg-primary/10 rounded-lg">
+                        <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+                          <item.icon size={16} />
+                        </div>
                         <span className="text-sm">{item.name}</span>
                       </div>
                     </a>
