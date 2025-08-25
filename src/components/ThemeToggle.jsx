@@ -15,14 +15,14 @@ const ThemeToggle = () => {
       gsap.set(ActiveTheme.current, {
         x: "50%",
         backgroundColor: "rgba(59,130,246,0.4)",
-      }); // blue
+      });
     } else {
       document.documentElement.classList.remove("dark");
       setIsDarkMode(false);
       gsap.set(ActiveTheme.current, {
         x: "-50%",
         backgroundColor: "rgba(253,224,71,0.4)",
-      }); // yellow
+      }); 
     }
   }, []);
 
@@ -33,7 +33,7 @@ const ThemeToggle = () => {
       setIsDarkMode(false);
       gsap.to(ActiveTheme.current, {
         x: "-50%",
-        backgroundColor: "rgba(253,224,71,0.4)", // yellow
+        backgroundColor: "rgba(253,224,71,0.4)", 
         duration: 0.5,
         ease: "power2.inOut",
       });
@@ -43,7 +43,7 @@ const ThemeToggle = () => {
       setIsDarkMode(true);
       gsap.to(ActiveTheme.current, {
         x: "50%",
-        backgroundColor: "rgba(59,130,246,0.4)", // blue
+        backgroundColor: "rgba(59,130,246,0.4)", 
         duration: 0.5,
         ease: "power2.inOut",
       });
@@ -60,10 +60,9 @@ const ThemeToggle = () => {
           )}
         ></div>
 
-        {/* Button */}
         <button
           onClick={HandleThemeToggle}
-          className="text-zinc-600 flex items-center relative z-10 p-2 w-full justify-between outline-0"
+          className="text-zinc-600 flex items-center relative z-10 p-2 w-full justify-between outline-0 cursor-pointer"
         >
           <span>
             <Sun className="text-yellow-400" size={17} />

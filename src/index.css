@@ -18,6 +18,7 @@ html, body, #root {
     --color-opposite:hsl(var(--opposite));
     --color-shadow:hsl(var(--shadow));
     --color-bento-background:hsl(var(--bento-background));
+    --color-footer:hsl(var(--footer));
 
 
     --animate-float: float 6s ease-in-out infinite;
@@ -112,6 +113,7 @@ html, body, #root {
   --opposite: 222 47% 4%;
   --shadow:282, 100%, 69%;
   --bento-background:210, 2%, 80%;
+  --footer:240, 14%, 94%;
 
 }
 
@@ -126,6 +128,8 @@ html.dark {
   --opposite:0, 0%, 87%;            
   --shadow:278, 8%, 75%; 
   --bento-background:0, 4%, 89%;
+  --footer:0, 0%, 5%;
+
 }
   html
   {
@@ -168,7 +172,9 @@ html.dark {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNjbGX_nLD5oYspEtkNB4fIWepHsccxJfaqeUv1PfO6yCG6u_Aag_KujuirD8Yxpwtfy4&usqp=CAU');
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .textline {
@@ -184,7 +190,7 @@ html.dark {
   width: 100%;
   height: 2px;
   background-color: hsl(var(--foreground));
-  transform: translateX(-100%);
+  transform: translateX(-110%);
 }
 
 /* Hover in → slide left → right */
@@ -210,7 +216,7 @@ html.dark {
     transform: translateX(0%);
   }
   to {
-    transform: translateX(100%);
+    transform: translateX(110%);
   }
 }
 
