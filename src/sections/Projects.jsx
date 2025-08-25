@@ -74,7 +74,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="min-h-screen w-full pt-32 relative">
+    <section id="projects" className="min-h-screen w-full pt-32 relative text-primary bg-background opacity-95">
       <div
         ref={CrsrRef}
         className="fixed h-22 top-0 w-22 rounded-full pointer-events-none z-[999] opacity-0"
