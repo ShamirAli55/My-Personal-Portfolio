@@ -12,11 +12,17 @@ const ThemeToggle = () => {
     if (Theme === "dark") {
       document.documentElement.classList.add("dark");
       setIsDarkMode(true);
-      gsap.set(ActiveTheme.current, { x: "50%", backgroundColor: "rgba(59,130,246,0.4)" }); // blue
+      gsap.set(ActiveTheme.current, {
+        x: "50%",
+        backgroundColor: "rgba(59,130,246,0.4)",
+      }); // blue
     } else {
       document.documentElement.classList.remove("dark");
       setIsDarkMode(false);
-      gsap.set(ActiveTheme.current, { x: "-50%", backgroundColor: "rgba(253,224,71,0.4)" }); // yellow
+      gsap.set(ActiveTheme.current, {
+        x: "-50%",
+        backgroundColor: "rgba(253,224,71,0.4)",
+      }); // yellow
     }
   }, []);
 
@@ -46,8 +52,7 @@ const ThemeToggle = () => {
 
   return (
     <div>
-      <div className="relative h-9 w-18 text-center rounded-full flex items-center justify-center overflow-hidden shadow-[0_8px_32px_hsl(var(--opposite)/0.2)] bg-white/10 border border-primary-foreground/20">
-
+      <div className="relative h-9 w-18 text-center rounded-full flex items-center justify-center overflow-hidden shadow-[0_8px_32px_hsl(var(--opposite)/0.2)] bg-white/10">
         <div
           ref={ActiveTheme}
           className={cn(

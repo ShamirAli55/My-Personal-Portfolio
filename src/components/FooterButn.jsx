@@ -13,7 +13,7 @@ const FooterButn = ({ name, to }) => {
   const handleEnter = () => {
     if (!isMdUp() || !txtRef.current) return;
     gsap.to(txtRef.current, {
-      top: "-70%",
+      top: "-100%", // cleaner slide-up
       duration: 0.5,
       ease: "power2.out",
     });
@@ -22,7 +22,7 @@ const FooterButn = ({ name, to }) => {
   const handleLeave = () => {
     if (!isMdUp() || !txtRef.current) return;
     gsap.to(txtRef.current, {
-      top: "25%",
+      top: "0%", // reset to start position
       duration: 0.5,
       ease: "power2.out",
     });
@@ -32,7 +32,7 @@ const FooterButn = ({ name, to }) => {
     const sync = () => {
       if (!txtRef.current) return;
       if (isMdUp()) {
-        gsap.set(txtRef.current, { top: "25%" }); // text starts visible
+        gsap.set(txtRef.current, { top: "0%" }); // start at 0
       } else {
         gsap.set(txtRef.current, { clearProps: "top" });
       }
@@ -47,24 +47,25 @@ const FooterButn = ({ name, to }) => {
       <div
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
-        className="px-12 py-4 transition-all h-10 w-full relative overflow-hidden text-left"
+        className="px-12 py-4 transition-all h-10 w-full relative overflow-hidden text-left hover:text-primary"
       >
         <div
           ref={txtRef}
-          className="absolute flex flex-col gap-3 justify-start items-start left-0"
+          className="absolute flex flex-col gap-3 left-0"
         >
-          <span className="flex text-[10px] md:text-xl font-light">
-            <span>{name}</span>
-            <span className="my-1 mx-2">
-              <ArrowUpRight size={18} color="hsl(var(--opposite))" />
+          {[...Array(2)].map((_, i) => (
+            <span
+              key={i}
+              className="flex items-center text-[10px] md:text-xl font-light"
+            >
+              <span>{name}</span>
+              <ArrowUpRight
+                size={18}
+                className="ml-2"
+                color="hsl(var(--opposite))"
+              />
             </span>
-          </span>
-          <span className="flex text-[10px] md:text-xl font-light">
-            <span>{name}</span>
-            <span className="my-1 mx-2">
-              <ArrowUpRight size={18} color="hsl(var(--opposite))" />
-            </span>
-          </span>
+          ))}
         </div>
       </div>
     </NavLink>

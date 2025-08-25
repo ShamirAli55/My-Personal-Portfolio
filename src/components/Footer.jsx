@@ -32,24 +32,16 @@ const Footer = () => {
           <div className="h-1/2 w-full md:h-full md:w-1/2 rounded-lg">
             <div className="flex items-start justify-around">
               <div className="text-left">
-                <h1 className="text-lg font-bold">General</h1>
+                <h1 className="text-xl font-bold pb-2">General</h1>
                 {Navigation.map((item, index) => (
                   <FooterButn name={item.name} to={item.href} key={index} />
                 ))}
               </div>
 
-              <div>
-                <h1 className="text-lg font-bold text-left">Social</h1>
+              <div className="text-left">
+                <h1 className="text-xl font-bold pb-2">Social</h1>
                 {socialLinks.map((item, index) => (
-                  <NavLink
-                    key={index}
-                    className="flex items-center gap-x-2 pt-2"
-                    to={item.href}
-                  >
-                    <h4 className="text-[10px] md:text-lg font-light">
-                      {item.name}
-                    </h4>
-                  </NavLink>
+                  <FooterButn name={item.name} to={item.href} key={index} />
                 ))}
               </div>
             </div>
