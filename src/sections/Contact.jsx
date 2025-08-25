@@ -1,11 +1,11 @@
 import Button from "../components/Button";
+import { NavLink } from "react-router-dom";
 const Contact = () => {
   return (
     <section
       id="contact"
       className="w-full min-h-screen flex flex-col justify-center items-center px-6 py-16 text-center text-primary bg-background opacity-95"
     >
-      {/* Logo / Icon placeholder */}
       <div className="mb-6">
         <div className="w-20 h-20 flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-2xl font-bold">
           AB
@@ -17,7 +17,6 @@ const Contact = () => {
         CREATE
       </h1>
 
-      {/* Button */}
       <div className="py-4">
         <Button name={"Get In Touch"} to={"contact"} />
       </div>

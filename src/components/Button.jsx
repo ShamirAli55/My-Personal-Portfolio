@@ -1,4 +1,4 @@
-import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ArrowRight } from "lucide-react";
@@ -43,7 +43,7 @@ const Button = ({ name, to }) => {
   }, []);
 
   return (
-    <Link to={to} smooth duration={500} offset={-50} className="relative">
+    <NavLink to={to} smooth duration={500} offset={-50} className="relative">
       <button
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
@@ -69,7 +69,7 @@ const Button = ({ name, to }) => {
           </div>
         </span>
       </button>
-    </Link>
+    </NavLink>
   );
 };
 
