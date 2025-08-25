@@ -8,7 +8,7 @@ const Contact = () => {
         CODE <span className="text-blue-500">ANIMATE</span> CREATE
       </h1>
 
-      <div className="py-4">
+      <div className="py-8">
         <MagneticButton>
           <Button name={"Get In Touch"} to={"contact"} />
         </MagneticButton>

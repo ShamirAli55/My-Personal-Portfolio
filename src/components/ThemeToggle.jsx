@@ -12,11 +12,11 @@ const ThemeToggle = () => {
     if (Theme === "dark") {
       document.documentElement.classList.add("dark");
       setIsDarkMode(true);
-      gsap.set(ActiveTheme.current, { x: "50%" });
+      gsap.set(ActiveTheme.current, { x: "50%", backgroundColor: "rgba(59,130,246,0.4)" }); // blue
     } else {
       document.documentElement.classList.remove("dark");
       setIsDarkMode(false);
-      gsap.set(ActiveTheme.current, { x: "-50%" });
+      gsap.set(ActiveTheme.current, { x: "-50%", backgroundColor: "rgba(253,224,71,0.4)" }); // yellow
     }
   }, []);
 
@@ -27,6 +27,7 @@ const ThemeToggle = () => {
       setIsDarkMode(false);
       gsap.to(ActiveTheme.current, {
         x: "-50%",
+        backgroundColor: "rgba(253,224,71,0.4)", // yellow
         duration: 0.5,
         ease: "power2.inOut",
       });
@@ -36,6 +37,7 @@ const ThemeToggle = () => {
       setIsDarkMode(true);
       gsap.to(ActiveTheme.current, {
         x: "50%",
+        backgroundColor: "rgba(59,130,246,0.4)", // blue
         duration: 0.5,
         ease: "power2.inOut",
       });
@@ -44,22 +46,25 @@ const ThemeToggle = () => {
 
   return (
     <div>
-      <div className="absolute right-5 h-10 w-22 text-center rounded-full bg-gray-800 flex items-center justify-center  overflow-hidden">
+      <div className="relative h-9 w-18 text-center rounded-full flex items-center justify-center overflow-hidden shadow-[0_8px_32px_hsl(var(--opposite)/0.2)] bg-white/10 border border-primary-foreground/20">
+
         <div
           ref={ActiveTheme}
           className={cn(
-            "h-full w-1/2 rounded-full absolute bg-slate-300 opacity-35 pointer-events-none"
+            "h-full w-1/2 rounded-full absolute pointer-events-none transition-colors"
           )}
         ></div>
+
+        {/* Button */}
         <button
           onClick={HandleThemeToggle}
-          className="text-zinc-600 flex items-center relative z-10 p-3 w-full justify-between"
+          className="text-zinc-600 flex items-center relative z-10 p-2 w-full justify-between outline-0"
         >
           <span>
-            <Sun className="text-yellow-400" size={20} />
+            <Sun className="text-yellow-400" size={17} />
           </span>
           <span>
-            <Moon className="text-white" size={20} />
+            <Moon className="text-opposite" size={17} />
           </span>
         </button>
       </div>
