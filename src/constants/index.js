@@ -15,7 +15,7 @@ import {
 export const navItems = [
   { name: "Home", href: "/", icon: Home, category: "Navigation" },
   { name: "About", href: "/about", icon: User, category: "Navigation" },
-  { name: "Work", href: "/work", icon: Code, category: "Navigation" },
+  { name: "Work", href: "/projects", icon: Code, category: "Navigation" },
   { name: "Contact", href: "/contact", icon: Mail, category: "Navigation" },
 
   { name: "Links", href: "/links", icon: Link2, category: "Personal" },

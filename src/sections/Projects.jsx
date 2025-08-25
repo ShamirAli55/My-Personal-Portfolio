@@ -1,5 +1,6 @@
 import { ExternalLink, Github, Eye } from "lucide-react";
 import { myProjects } from "../constants";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import MagneticButton from "../components/MagneticButn";
 import { useRef, useState, useEffect } from "react";
@@ -8,7 +9,9 @@ import gsap from "gsap";
 const Projects = () => {
   const CrsrRef = useRef(null);
   const ImgRef = useRef(null);
+    const navigate = useNavigate();
   const [cursorImage, setCursorImage] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(null); 
 
   const posRef = useRef({ x: 0, y: 0 });
 
@@ -31,7 +34,7 @@ const Projects = () => {
         x: x - 40,
         y: y - 60,
         opacity: cursorImage ? 1 : 0,
-        duration: 0.2,
+        duration: .8,
         ease: "power3.out",
       });
 
@@ -76,6 +79,14 @@ const Projects = () => {
 
   return (
     <section className="min-h-screen w-full pt-32 relative text-primary bg-background opacity-95">
+      {/* Project Details Modal */}
+      {selectedProject && (
+        <ProjectDetails
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
+
       <div
         ref={CrsrRef}
         className="fixed h-22 top-0 w-22 rounded-full pointer-events-none z-[999] opacity-0"
@@ -147,6 +158,7 @@ const Projects = () => {
                 projects_overlay relative"
               onMouseEnter={() => handleMouseEnter(project.image)}
               onMouseLeave={handleMouseLeave}
+                onClick={() => navigate(`/projects/${project.id}`)} // 👈 open ProjectDetails
             >
               <div className="h-48 overflow-hidden mb-4 md:hidden rounded-lg pointer-events-none">
                 <img
@@ -182,6 +194,7 @@ const Projects = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                  onClick={(e) => e.stopPropagation()} // 👈 stop bubbling
                 >
                   <ExternalLink size={20} />
                 </a>
@@ -190,6 +203,7 @@ const Projects = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                  onClick={(e) => e.stopPropagation()} // 👈 stop bubbling
                 >
                   <Github size={20} />
                 </a>

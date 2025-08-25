@@ -5,7 +5,7 @@ import OverLay from "./components/OverLay";
 import HomePage from "./pages/HomePage";
 import ErrorPage from "./pages/ErrorPage";
 import ContactPage from "./pages/ContactPage";
-
+import ProjectPage from "./pages/ProjectPage"
 const App = () => {
   return (
     <ReactLenis root={true}>
@@ -15,7 +15,8 @@ const App = () => {
         <Routes>
           <Route index path="/" element={<HomePage />} />
           <Route path="/about" element={<ContactPage />} />
-          <Route path="/work" element={<ContactPage />} />
+          <Route path="/projects" element={<ProjectPage />} />
+          <Route path="/projects/:id" element={<ProjectPage />} />
           <Route path="/link" element={<ContactPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/error" element={<ErrorPage />} />
