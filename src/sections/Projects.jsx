@@ -1,6 +1,7 @@
 import { ExternalLink, Github, Eye } from "lucide-react";
 import { myProjects } from "../constants";
 import Button from "../components/Button";
+import MagneticButton from "../components/MagneticButn";
 import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 
@@ -74,7 +75,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="min-h-screen w-full pt-32 relative text-primary bg-background opacity-95">
+    <section className="min-h-screen w-full pt-32 relative text-primary bg-background opacity-95">
       <div
         ref={CrsrRef}
         className="fixed h-22 top-0 w-22 rounded-full pointer-events-none z-[999] opacity-0"
@@ -137,8 +138,6 @@ const Projects = () => {
 
         <div className="flex flex-col gap-6 md:gap-0 relative">
           {myProjects.map((project) => (
-            
-            
             <div
               key={project.id}
               className="group bg-card rounded-lg overflow-hidden shadow-sm 
@@ -177,8 +176,6 @@ const Projects = () => {
                 </div>
               </div>
 
-
-
               <div className="flex justify-end items-center space-x-4 mt-4 md:mt-0 cursor-pointer">
                 <a
                   href={project.demoUrl}
@@ -198,12 +195,13 @@ const Projects = () => {
                 </a>
               </div>
             </div>
-
           ))}
         </div>
 
-        <div className="w-full flex items-center justify-center mt-12">
+        <div className="w-full flex items-center justify-center mt-12 pb-8">
+          <MagneticButton>
           <Button name={"More Projects"} to={"projects"} />
+          </MagneticButton>
         </div>
       </div>
     </section>

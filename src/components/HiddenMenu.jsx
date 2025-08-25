@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
 import { navItems } from "../constants";
-import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
 
 const HiddenMenu = ({ isOpen, onClose }) => {
   const [query, setQuery] = useState("");
@@ -64,7 +64,7 @@ const HiddenMenu = ({ isOpen, onClose }) => {
 
                 {grouped[category].map((item) =>
                   item.href ? (
-                    <Link
+                    <NavLink
                       key={item.name}
                       to={item.href}
                       smooth
@@ -77,7 +77,7 @@ const HiddenMenu = ({ isOpen, onClose }) => {
                         <item.icon size={18} className="text-primary" />
                         <span className="text-sm">{item.name}</span>
                       </div>
-                    </Link>
+                    </NavLink>
                   ) : (
                     <a
                       key={item.name}

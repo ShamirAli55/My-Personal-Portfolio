@@ -2,7 +2,7 @@ import { skills } from "../constants"
 
 const Skills = () => {
   return (
-    <section id="skills" className="min-h-screen w-full bg-primary-foreground text-primary opacity-95 cursor-pointer flex flex-col items-center justify-center py-20">
+    <section className="min-h-screen w-full bg-primary-foreground text-primary opacity-95 cursor-pointer flex flex-col items-center justify-center py-20">
     
       <div className="mb-22 text-center">
         <p className="uppercase tracking-widest text-opposite-400 text-sm">My Skills</p>
@@ -11,7 +11,7 @@ const Skills = () => {
         </h2>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-4 max-w-5xl px-4 ">
+      <div className="flex flex-wrap justify-center gap-4 max-w-5xl md:max-w-[1100px] md:px-24 ">
         {skills.map((skill, index) => (
           <div 
             key={index}
