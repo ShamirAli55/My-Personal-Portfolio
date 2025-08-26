@@ -117,7 +117,7 @@ const Navbar = () => {
               More
             </span>
             <div
-              className="absolute right-0 top-full mt-4 invisible opacity-0 
+              className="absolute left-1/2 -translate-x-2/3 top-full mt-4 invisible opacity-0 
               group-hover:visible group-hover:opacity-100 
               transition-all duration-200 ease-in-out
               grid grid-cols-6 auto-rows-[140px] gap-4 p-4 rounded-2xl shadow-xl 

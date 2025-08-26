@@ -9,9 +9,9 @@ import gsap from "gsap";
 const Projects = () => {
   const CrsrRef = useRef(null);
   const ImgRef = useRef(null);
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [cursorImage, setCursorImage] = useState(null);
-  const [selectedProject, setSelectedProject] = useState(null); 
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const posRef = useRef({ x: 0, y: 0 });
 
@@ -34,7 +34,7 @@ const Projects = () => {
         x: x - 40,
         y: y - 60,
         opacity: cursorImage ? 1 : 0,
-        duration: .8,
+        duration: 0.8,
         ease: "power3.out",
       });
 
@@ -79,7 +79,6 @@ const Projects = () => {
 
   return (
     <section className="min-h-screen w-full pt-32 relative text-primary bg-background opacity-95">
-      {/* Project Details Modal */}
       {selectedProject && (
         <ProjectDetails
           project={selectedProject}
@@ -121,14 +120,14 @@ const Projects = () => {
       </div>
 
       <div className="container mx-auto max-w-5xl md:mx-0 md:max-w-7xl cursor-pointer">
-        <div className="mb-22 text-center">
+        <div className="mb-22 text-center capitalize">
           <p className="uppercase tracking-widest text-opposite-400 text-sm">
             My Projects
           </p>
           <h2 className="text-4xl md:text-5xl font-bold whitespace-nowrap">
-            Fuel for{" "}
+            Chapters of{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
-              Innovation
+              Creation
             </span>
           </h2>
         </div>
@@ -158,7 +157,7 @@ const Projects = () => {
                 projects_overlay relative"
               onMouseEnter={() => handleMouseEnter(project.image)}
               onMouseLeave={handleMouseLeave}
-                onClick={() => navigate(`/projects/${project.id}`)} // 👈 open ProjectDetails
+              onClick={() => navigate(`/projects/${project.id}`)} // 👈 open ProjectDetails
             >
               <div className="h-48 overflow-hidden mb-4 md:hidden rounded-lg pointer-events-none">
                 <img
