@@ -58,18 +58,18 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="md:text-left w-full flex flex-col md:flex-row items-center justify-center  text-center px-2 pr-8 md:px-8 pb-8 md:pt-4 cursor-pointer overflow-hidden">
-        <div className="text-xs md:text-md whitespace-nowrap px-4 flex flex-col md:flex-row gap-x-5">
+      <div className="w-full flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-16 py-6 gap-4 md:gap-0 text-center md:text-left">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-6 text-xs md:text-md">
           <p>© {date.getFullYear()} Shamir Ali. All rights reserved</p>
-          <div className="py-3 md:pt-0 flex gap-x-5">
+          <div className="flex gap-2 md:gap-4">
             <p>Privacy Policy</p>
             <p>Terms & Conditions</p>
           </div>
         </div>
 
-        <div className="w-full flex flex-col md:flex-row items-center justify-center md:justify-end gap-4 cursor-pointer mt-1 md:mt-0">
+        <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6 mt-2 md:mt-0">
           <ThemeToggle />
-          <div className="flex gap-4 justify-evenly pr-8">
+          <div className="flex gap-3 md:gap-4">
             <a href="https://github.com/ShamirAli55" target="_blank">
               <Github className="w-5 h-5 md:h-6 md:w-6" />
             </a>
@@ -83,11 +83,10 @@ const Footer = () => {
         </div>
       </div>
 
-      <div>
-        <p className="pb-4 text-xs md:text-lg md:pt-1 md:pb-10">
-          Crafted with ❤️ by Shamir Ali | Full Stack Developer
-        </p>
-      </div>
+      <p className="text-xs md:text-lg py-6 w-full md:w-auto text-center">
+        Crafted with ❤️ by Shamir Ali | Full Stack Developer
+      </p>
+
     </section>
   );
 };

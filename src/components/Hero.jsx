@@ -12,12 +12,12 @@ const words = [
 ]
 
   return (
-    <section className="container min-h-screen w-full flex items-start text-primary bg-background opacity-95 relative overflow-x-hidden">
+    <section className="container min-h-screen w-full flex items-start text-primary bg-background opacity-95 relative overflow-x-hidden font-[Funnel-Sans]">
       <div>
       <StarsBackground/>
       </div>
       <div className=" h-full w-full relative">
-        <h1 className="text-sm md:text-5xl font-bold pt-38 pb-18 md:px-28 capitalize leading-[45px] md:leading-[65px]">
+        <h1 className="text-[15px] md:text-5xl font-bold pt-38 pb-18 md:px-28 capitalize leading-[45px] md:leading-[65px]">
           I craft seamless digital experiences <span className="inline-block">while learning and growing every</span> 
           day
         </h1>

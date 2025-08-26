@@ -13,7 +13,7 @@ const FooterButn = ({ name, to }) => {
   const handleEnter = () => {
     if (!isMdUp() || !txtRef.current) return;
     gsap.to(txtRef.current, {
-      top: "-100%", // cleaner slide-up
+      top: "-100%", 
       duration: 0.5,
       ease: "power2.out",
     });
@@ -22,7 +22,7 @@ const FooterButn = ({ name, to }) => {
   const handleLeave = () => {
     if (!isMdUp() || !txtRef.current) return;
     gsap.to(txtRef.current, {
-      top: "0%", // reset to start position
+      top: "0%", 
       duration: 0.5,
       ease: "power2.out",
     });
