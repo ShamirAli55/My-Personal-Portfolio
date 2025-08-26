@@ -14,20 +14,34 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const posRef = useRef({ x: 0, y: 0 });
-
   useEffect(() => {
+    let isDesktop = window.innerWidth >= 768;
+    if (CrsrRef.current) gsap.set(CrsrRef.current, { opacity: 0 });
+    if (ImgRef.current) gsap.set(ImgRef.current, { opacity: 0 });
     const moveHandler = (e) => {
+      if (!isDesktop) return;
+
       posRef.current.x = e.clientX;
       posRef.current.y = e.clientY;
       animateCursor();
     };
 
     const scrollHandler = () => {
+      if (!isDesktop) return;
       animateCursor();
     };
 
+    const resizeHandler = () => {
+      isDesktop = window.innerWidth >= 768; // ✅ update on resize
+      if (!isDesktop) {
+        // hide cursor immediately on mobile
+        if (CrsrRef.current) gsap.set(CrsrRef.current, { opacity: 0 });
+        if (ImgRef.current) gsap.set(ImgRef.current, { opacity: 0 });
+      }
+    };
+
     const animateCursor = () => {
-      if (!CrsrRef.current) return;
+      if (!CrsrRef.current || !isDesktop) return;
       const { x, y } = posRef.current;
 
       gsap.to(CrsrRef.current, {
@@ -54,10 +68,12 @@ const Projects = () => {
 
     window.addEventListener("mousemove", moveHandler);
     window.addEventListener("scroll", scrollHandler);
+    window.addEventListener("resize", resizeHandler);
 
     return () => {
       window.removeEventListener("mousemove", moveHandler);
       window.removeEventListener("scroll", scrollHandler);
+      window.removeEventListener("resize", resizeHandler);
     };
   }, [cursorImage]);
 
@@ -88,7 +104,8 @@ const Projects = () => {
 
       <div
         ref={CrsrRef}
-        className="fixed h-22 top-0 w-22 rounded-full pointer-events-none z-[999] opacity-0"
+        className="md:opacity-100 fixed h-22 top-0 w-22 rounded-full pointer-events-none z-[999]"
+        style={{ opacity: 0 }}
       >
         <div
           className="absolute inset-0 rounded-full bg-opposite/10 backdrop-blur-xl 
@@ -126,9 +143,7 @@ const Projects = () => {
           </p>
           <h2 className="text-4xl md:text-5xl font-bold">
             Code{" "}
-            <span className="text-transparent  gradient-text">
-              Chronicles
-            </span>
+            <span className="text-transparent  gradient-text">Chronicles</span>
           </h2>
         </div>
 

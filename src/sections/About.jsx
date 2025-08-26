@@ -40,7 +40,7 @@ const About = () => {
             ref={grid2Container}
             className="flex items-center justify-center w-full h-full"
           >
-            <p className="flex items-end text-5xl text-primary/60 pointer-events-none cursor-none">
+            <p className="flex items-end text-3xl md:text-5xl text-primary/60 pointer-events-none cursor-none">
               CODE IS CRAFT
             </p>
 
