@@ -5,7 +5,8 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ErrorPage from "./pages/ErrorPage";
 import ContactPage from "./pages/ContactPage";
-import ProjectPage from "./pages/ProjectPage"
+import ProjectPage from "./pages/ProjectPage";
+import LinksPage from "./pages/LinksPage";
 const App = () => {
   return (
     <ReactLenis root={true}>
@@ -16,7 +17,7 @@ const App = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/projects" element={<ProjectPage />} />
           <Route path="/projects/:id" element={<ProjectPage />} />
-          <Route path="/link" element={<ContactPage />} />
+          <Route path="/links" element={<LinksPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/error" element={<ErrorPage />} />
         </Routes>

@@ -2,12 +2,12 @@
 @import 'tailwindcss';
 @font-face {
   font-family: Funnel-Sans;
-  src: url('/public/fonts/FunnelSans-VariableFont_wght.ttf');
+  src: url('/fonts/FunnelSans-VariableFont_wght.ttf');
 }
 
 @font-face {
   font-family:Funnel-Display;
-  src: url('/public/fonts/FunnelDisplay-VariableFont_wght.ttf');
+  src: url('/fonts/FunnelDisplay-VariableFont_wght.ttf');
 }
 
 
