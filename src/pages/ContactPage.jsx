@@ -3,7 +3,7 @@ import { cn } from "../lib/utils.js";
 import { navItems } from "../constants";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
-
+import Footer from "../components/Footer";
 const Contact = () => {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
@@ -15,10 +15,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_0run0sc", 
-        "template_lpj6dcb", 
+        "service_0run0sc",
+        "template_lpj6dcb",
         formRef.current,
-        "OyEtgvFhagNjh2D6g" 
+        "OyEtgvFhagNjh2D6g"
       )
       .then(
         () => {
@@ -35,12 +35,14 @@ const Contact = () => {
       );
   };
 
-
   const socials = navItems.filter((item) => item.category === "Social");
 
   return (
-    <section id="contact" className="min-h-screen w-full py-20 bg-background md:pt-42">
-      <div className="container mx-auto max-w-6xl">
+    <section
+      id="contact"
+      className="min-h-screen w-full  bg-background md:pt-42"
+    >
+      <div className="container mx-auto max-w-6xl mb-22">
         <div className="mb-22 text-center">
           <p className="uppercase tracking-widest text-opposite-400 text-sm">
             Get in touch
@@ -102,7 +104,7 @@ const Contact = () => {
 
             <div>
               <h4 className="font-medium mb-4">Connect with me</h4>
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center">
                 {socials.map((social, idx) => (
                   <a
                     key={idx}
@@ -118,7 +120,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="bg-card p-8 rounded-xl shadow-md">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
@@ -195,6 +196,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </section>
   );
 };

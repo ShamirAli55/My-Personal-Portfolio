@@ -52,10 +52,8 @@ const Navbar = () => {
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
-  // Helper to check if current path matches
   const isActive = (href) => location.pathname === href;
 
-  // Check if we're inside a "More" link
   const isMoreActive = navItems
     .filter((item) => item.category !== "Navigation")
     .some((item) => location.pathname === item.href);
@@ -67,7 +65,6 @@ const Navbar = () => {
           <HiddenMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
         )}
 
-        {/* Logo */}
         <div className="h-12">
           {isDarkMode ? (
             <img
@@ -84,7 +81,6 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Desktop Nav */}
         <div className="items-center shadow-[0_8px_32px_rgba(0,0,0,0.25)] bg-white/15 backdrop-blur-md border border-primary-foreground/20 justify-between gap-x-10 py-1.5 px-6 rounded-full hidden md:flex">
           {navItems
             .filter((item) => item.category === "Navigation")
@@ -124,7 +120,10 @@ const Navbar = () => {
               w-[720px] z-50"
             >
               {navItems
-                .filter((item) => item.category !== "Navigation" && item.category !== "Social")
+                .filter(
+                  (item) =>
+                    item.category !== "Navigation" && item.category !== "Social"
+                )
                 .map((item, idx) => (
                   <NavLink
                     key={idx}
@@ -138,7 +137,7 @@ const Navbar = () => {
                     } 
                     ${
                       idx % 7 === 0
-                        ? "col-span-2 row-span-2" 
+                        ? "col-span-2 row-span-2"
                         : "col-span-2 row-span-1"
                     }`}
                   >
