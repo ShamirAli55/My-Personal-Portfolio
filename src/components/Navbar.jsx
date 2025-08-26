@@ -105,7 +105,6 @@ const Navbar = () => {
               </NavLink>
             ))}
 
-          {/* More Section */}
           <div className="relative group">
             <span
               className={`text-sm font-light cursor-pointer ${
@@ -134,7 +133,7 @@ const Navbar = () => {
                       const group = document.activeElement;
                       if (group) group.blur();
                     }}
-                    className={`flex flex-col items-start justify-center rounded-xl bg-black/5 dark:bg-white/5 p-4 hover:bg-black/10 dark:hover:bg-white/10 transition-all ${
+                    className={`flex flex-col items-start justify-center text-primary rounded-xl bg-opposite/5 p-4 hover:bg-opposite/20 transition-all ${
                       isActive(item.href) ? "ring-2 ring-primary" : ""
                     } 
                     ${
