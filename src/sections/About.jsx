@@ -125,9 +125,8 @@ const About = () => {
         <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12">
           <ImageWrapper />
 
-          {/* Right: About Content */}
-          <div className="space-y-6 text-left ml-2 leading-[20px]">
-            <h1 className="text-3xl hidden md:block md:text-5xl font-bold">
+          <div className="space-y-6 text-left ml-2 leading-[20px] font-[Funnel-Display]">
+            <h1 className="text-3xl hidden md:block md:text-5xl font-bold font-[Funnel-Sans]">
               About Me
             </h1>
             <p className="text-primary text-md px-2 md:px-0.5 w-full tracking-tight md:tracking-normal md:text-[17.5px] leading-[22px] font-light">
