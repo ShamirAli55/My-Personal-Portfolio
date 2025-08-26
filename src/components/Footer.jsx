@@ -58,12 +58,16 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-left flex items-center justify-between px-2 pr-8 md:px-8 pb-8 md:pt-4 cursor-pointer overflow-hidden">
-        <p className="text-[8px] md:text-[15px] whitespace-nowrap px-4">
-          © {date.getFullYear()} Shamir Ali. All rights reserved
-        </p>
+      <div className="md:text-left w-full flex flex-col md:flex-row items-center justify-center  text-center px-2 pr-8 md:px-8 pb-8 md:pt-4 cursor-pointer overflow-hidden">
+        <div className="text-xs md:text-md whitespace-nowrap px-4 flex flex-col md:flex-row gap-x-5">
+          <p>© {date.getFullYear()} Shamir Ali. All rights reserved</p>
+          <div className="py-3 md:pt-0 flex gap-x-5">
+            <p>Privacy Policy</p>
+            <p>Terms & Conditions</p>
+          </div>
+        </div>
 
-        <div className=" flex items-center gap-4 cursor-pointer mt-16 md:mt-0">
+        <div className="w-full flex flex-col md:flex-row items-center justify-center md:justify-end gap-4 cursor-pointer mt-1 md:mt-0">
           <ThemeToggle />
           <div className="flex gap-4 justify-evenly pr-8">
             <a href="https://github.com/ShamirAli55" target="_blank">

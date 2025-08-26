@@ -32,7 +32,7 @@ const FooterButn = ({ name, to }) => {
     const sync = () => {
       if (!txtRef.current) return;
       if (isMdUp()) {
-        gsap.set(txtRef.current, { top: "0%" }); // start at 0
+        gsap.set(txtRef.current, { top: "0%" }); 
       } else {
         gsap.set(txtRef.current, { clearProps: "top" });
       }
@@ -51,7 +51,7 @@ const FooterButn = ({ name, to }) => {
       >
         <div
           ref={txtRef}
-          className="absolute flex flex-col gap-3 left-0"
+          className="absolute flex flex-col md:gap-3 gap-1.5 left-0"
         >
           {[...Array(2)].map((_, i) => (
             <span
@@ -61,7 +61,7 @@ const FooterButn = ({ name, to }) => {
               <span>{name}</span>
               <ArrowUpRight
                 size={18}
-                className="ml-2"
+                className="ml-2 hidden md:block"
                 color="hsl(var(--opposite))"
               />
             </span>
