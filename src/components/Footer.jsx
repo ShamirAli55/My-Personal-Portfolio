@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <section className="min-h-fit w-full overflow-hidden relative bg-background">
       <div
-        className="h-[45vh] w-full px-8 md:px-16 pt-4 pb-4 relative 
+        className="h-[45vh] w-full px-8 md:px-16 pt-4 pb-36 md:pb-4 relative 
        border border-footer/40 
        shadow-[0_0_25px_rgba(0,0,0,0.2)] 
         rounded-xl bg-footer"
@@ -34,17 +34,21 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="h-1/2 w-full md:h-full md:w-1/2 rounded-lg pt-12 md:pt-0">
+          <div className="h-1/2 w-full md:h-full md:w-1/2 rounded-lg md:pt-0 pt-6">
             <div className="flex items-start justify-around">
               <div className="text-left">
-                <h1 className="text-xl text-primary/50 font-semibold pb-2">General</h1>
+                <h1 className="text-md text-primary/50 font-semibold md:pb-2">
+                  General
+                </h1>
                 {Navigation.map((item, index) => (
                   <FooterButn name={item.name} to={item.href} key={index} />
                 ))}
               </div>
 
               <div className="text-left">
-                <h1 className="text-xl text-primary/50 font-semibold pb-2">Social</h1>
+                <h1 className="text-md text-primary/50 font-semibold md:pb-2">
+                  Social
+                </h1>
                 {socialLinks.map((item, index) => (
                   <FooterButn name={item.name} to={item.href} key={index} />
                 ))}
@@ -54,7 +58,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-left flex items-center justify-between px-2 pr-8  md:px-8 pb-8 pt-28 md:pt-4 cursor-pointer overflow-hidden">
+      <div className="text-left flex items-center justify-between px-2 pr-8 md:px-8 pb-8 md:pt-4 cursor-pointer overflow-hidden">
         <p className="text-[8px] md:text-[15px] whitespace-nowrap px-4">
           © {date.getFullYear()} Shamir Ali. All rights reserved
         </p>
@@ -63,13 +67,13 @@ const Footer = () => {
           <ThemeToggle />
           <div className="flex gap-4 justify-evenly pr-8">
             <a href="https://github.com/ShamirAli55" target="_blank">
-              <Github />
+              <Github className="w-5 h-5 md:h-6 md:w-6" />
             </a>
             <a href="" target="_blank">
-              <Linkedin />
+              <Linkedin className="w-5 h-5 md:h-6 md:w-6" />
             </a>
             <a href="#" target="_blank">
-              <Twitter />
+              <Twitter className="w-5 h-5 md:h-6 md:w-6" />
             </a>
           </div>
         </div>
