@@ -7,10 +7,13 @@ import HiddenMenu from "./HiddenMenu";
 const Navbar = () => {
   const MenuRef = useRef(null);
   const location = useLocation();
+
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("theme") === "dark"
   );
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // right-side hidden menu
+  const [isMoreOpen, setIsMoreOpen] = useState(false); // controlled by hover + timers
+  const closeTimerRef = useRef(null);
 
   const handleAnimation = (e) => {
     e.currentTarget.classList.add("showborder");
@@ -45,12 +48,61 @@ const Navbar = () => {
       }
       if (e.key === "Escape") {
         setIsOpen(false);
+        setIsMoreOpen(false);
+        if (closeTimerRef.current) {
+          clearTimeout(closeTimerRef.current);
+          closeTimerRef.current = null;
+        }
       }
     };
 
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
+
+  useEffect(() => {
+    if (isMoreOpen) {
+      setIsMoreOpen(false);
+      if (closeTimerRef.current) {
+        clearTimeout(closeTimerRef.current);
+        closeTimerRef.current = null;
+      }
+    }
+  }, [location.pathname]);
+
+
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) {
+        clearTimeout(closeTimerRef.current);
+        closeTimerRef.current = null;
+      }
+    };
+  }, []);
+
+  const openMore = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setIsMoreOpen(true);
+  };
+
+  const scheduleCloseMore = (delay = 180) => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = setTimeout(() => {
+      setIsMoreOpen(false);
+      closeTimerRef.current = null;
+    }, delay);
+  };
+
+  const handleMoreLinkClick = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setIsMoreOpen(false);
+  };
 
   const isActive = (href) => location.pathname === href;
 
@@ -88,9 +140,7 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive: navIsActive }) =>
                   `text-sm font-light cursor-pointer textline ${
-                    navIsActive
-                      ? "underline underline-offset-4 text-primary"
-                      : "text-primary"
+                    navIsActive ? "text-primary font-bold" : "text-primary"
                   }`
                 }
                 to={item.href}
@@ -101,7 +151,11 @@ const Navbar = () => {
               </NavLink>
             ))}
 
-          <div className="relative group">
+          <div
+            className="relative"
+            onMouseEnter={openMore}
+            onMouseLeave={() => scheduleCloseMore(180)}
+          >
             <span
               className={`text-sm font-light cursor-pointer ${
                 isMoreActive
@@ -111,13 +165,17 @@ const Navbar = () => {
             >
               More
             </span>
+
             <div
-              className="absolute left-1/2 -translate-x-2/3 top-full mt-4 invisible opacity-0 
-              group-hover:visible group-hover:opacity-100 
-              transition-all duration-200 ease-in-out
-              grid grid-cols-6 auto-rows-[140px] gap-4 p-4 rounded-2xl shadow-xl 
-              bg-background backdrop-blur-md border border-primary-foreground/20 
-              w-[720px] z-50"
+              className={`absolute left-1/2 -translate-x-2/3 top-full mt-4 
+                grid grid-cols-6 auto-rows-[140px] gap-4 p-4 rounded-2xl shadow-xl 
+                bg-background backdrop-blur-md border border-primary-foreground/20 
+                w-[720px] z-50 transform transition-all duration-150
+                ${
+                  isMoreOpen
+                    ? "opacity-100 visible translate-y-0 pointer-events-auto"
+                    : "opacity-0 invisible -translate-y-1 pointer-events-none"
+                }`}
             >
               {navItems
                 .filter(
@@ -128,10 +186,7 @@ const Navbar = () => {
                   <NavLink
                     key={idx}
                     to={item.href}
-                    onClick={() => {
-                      const group = document.activeElement;
-                      if (group) group.blur();
-                    }}
+                    onClick={handleMoreLinkClick}
                     className={`flex flex-col items-start justify-center text-primary rounded-xl bg-opposite/5 p-4 hover:bg-opposite/20 transition-all ${
                       isActive(item.href) ? "ring-2 ring-primary" : ""
                     } 

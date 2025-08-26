@@ -32,9 +32,8 @@ const Projects = () => {
     };
 
     const resizeHandler = () => {
-      isDesktop = window.innerWidth >= 768; // ✅ update on resize
+      isDesktop = window.innerWidth >= 768;
       if (!isDesktop) {
-        // hide cursor immediately on mobile
         if (CrsrRef.current) gsap.set(CrsrRef.current, { opacity: 0 });
         if (ImgRef.current) gsap.set(ImgRef.current, { opacity: 0 });
       }
@@ -60,7 +59,7 @@ const Projects = () => {
           x: x - offsetX,
           y: y - offsetY,
           opacity: 1,
-          duration: 1.5,
+          duration: 2.5,
           ease: "power3.out",
         });
       }
@@ -172,7 +171,7 @@ const Projects = () => {
                 projects_overlay relative"
               onMouseEnter={() => handleMouseEnter(project.image)}
               onMouseLeave={handleMouseLeave}
-              onClick={() => navigate(`/projects/${project.id}`)} // 👈 open ProjectDetails
+              onClick={() => navigate(`/projects/${project.id}`)}
             >
               <div className="h-48 overflow-hidden mb-4 md:hidden rounded-lg pointer-events-none">
                 <img
@@ -208,7 +207,7 @@ const Projects = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                  onClick={(e) => e.stopPropagation()} // 👈 stop bubbling
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <ExternalLink size={20} />
                 </a>
@@ -217,7 +216,7 @@ const Projects = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                  onClick={(e) => e.stopPropagation()} // 👈 stop bubbling
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <Github size={20} />
                 </a>
