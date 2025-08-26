@@ -46,133 +46,99 @@ export const navItems = [
 ];
 
 export const skills = [
-  // Core Stack
-  {
-    name: "HTML",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-  },
-  {
-    name: "CSS",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-  },
-  {
-    name: "JavaScript",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-  },
-  {
-    name: "TypeScript",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-  },
   {
     name: "React.js",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    image: "/skills/react.png",
   },
   {
     name: "Next.js",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    image: "/skills/nextjs.svg",
+  },
+  {
+    name: "TypeScript",
+    image: "/skills/typescript.svg",
   },
   {
     name: "Node.js",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    image: "/skills/nodejs.svg",
   },
   {
     name: "Express.js",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    image: "/skills/express.svg",
   },
   {
     name: "MongoDB",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    image: "/skills/mongodb.svg",
   },
-
   // Animations & UI
   {
     name: "Tailwind CSS",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+    image: "/skills/tailwindcss.png",
+  },
+  {
+    name: "Shadcn",
+    image: "/skills/shadcn.png",
   },
   {
     name: "Framer Motion",
-    image:
-      "https://seeklogo.com/images/F/framer-motion-logo-DA1E33CAA1-seeklogo.com.png",
+    image: "/skills/framer-motion.png",
   },
   {
     name: "GSAP",
-    image:
-      "https://greensock.com/uploads/monthly_2020_05/gsap-logo.png.7c0c2d5a36.png",
+    image: "/skills/gsap.png",
   },
-  { name: "Swiper.js", image: "https://swiperjs.com/images/swiper-logo.svg" },
+  { name: "Swiper.js", image: "/skills/swiperjs.svg" },
   {
     name: "Lenis",
-    image: "https://avatars.githubusercontent.com/u/99412718?s=200&v=4",
+    image: "/skills/lenis.png",
   },
   {
     name: "Three.js",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg",
+    image: "/skills/threejs.png",
   },
 
   // DevOps & Hosting
   {
     name: "Docker",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    image: "/skills/docker.svg",
   },
   {
     name: "Linux",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+    image: "/skills/linux.svg",
   },
   {
     name: "AWS",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+    image: "skills/aws.webp",
   },
   {
     name: "Vercel",
-    image:
-      "https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico",
+    image: "/skills/vercel.svg",
   },
   {
-    name: "pnpm",
-    image:
-      "https://seeklogo.com/images/P/pnpm-logo-402F407EE0-seeklogo.com.png",
+    name: "npm",
+    image: "/skills/npm.png",
   },
 
-  // Tools & Extras
   {
     name: "Git",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    image: "/skills/git.svg",
   },
   {
     name: "GitHub",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    image: "/skills/github.svg",
   },
   {
     name: "VS Code",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+    image: "/skills/vscode.svg",
   },
-  { name: "Sanity", image: "https://cdn.worldvectorlogo.com/logos/sanity.svg" },
+  { name: "Sanity", image: "/skills/sanity.svg" },
   {
     name: "Zustand",
-    image:
-      "https://raw.githubusercontent.com/pmndrs/zustand/main/docs/logo.svg",
+    image: "/skills/zustand.svg",
   },
   {
     name: "Expo",
-    image:
-      "https://seeklogo.com/images/E/expo-logo-01BB2BCFC3-seeklogo.com.png",
+    image: "/skills/expo.svg",
   },
 ];
 

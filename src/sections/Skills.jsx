@@ -16,12 +16,12 @@ const Skills = () => {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="flex items-center gap-x-2 px-4 py-2 rounded-xl  hover:bg-primary-foreground/10 border border-opposite/30 transition duration-300 shadow-md"
+            className="flex items-center gap-x-2 px-4 py-2 rounded-xl bg-primary/5  hover:bg-primary-foreground/10 border border-opposite/30 transition duration-300 shadow-md"
           >
             <img
               src={skill.image}
               className="h-5 w-5 object-contain"
-              alt={skill.name}
+              alt={skill.name} 
             />
             <h4 className="text-[10px] md:text-md font-medium">{skill.name}</h4>
           </div>
