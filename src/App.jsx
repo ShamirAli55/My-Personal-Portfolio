@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import ReactLenis from "lenis/react";
 import Navbar from "./components/Navbar";
-import OverLay from "./components/OverLay";
 import HomePage from "./pages/HomePage";
 import ErrorPage from "./pages/ErrorPage";
 import ContactPage from "./pages/ContactPage";
@@ -11,7 +10,6 @@ const App = () => {
     <ReactLenis root={true}>
       <section id="home" className="w-full min-h-screen relative z-[10]">
         <Navbar />
-        <OverLay />
         <Routes>
           <Route index path="/" element={<HomePage />} />
           <Route path="/about" element={<ContactPage />} />

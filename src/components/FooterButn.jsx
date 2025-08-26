@@ -47,7 +47,7 @@ const FooterButn = ({ name, to }) => {
       <div
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
-        className="px-12 py-4 transition-all h-10 w-full relative overflow-hidden text-left hover:text-primary"
+        className="px-14 py-4 transition-all h-10 w-full relative overflow-hidden text-left hover:text-primary"
       >
         <div
           ref={txtRef}
