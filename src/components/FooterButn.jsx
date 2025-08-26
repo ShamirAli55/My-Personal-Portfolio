@@ -13,7 +13,7 @@ const FooterButn = ({ name, to }) => {
   const handleEnter = () => {
     if (!isMdUp() || !txtRef.current) return;
     gsap.to(txtRef.current, {
-      top: "-100%", 
+      top: "-100%",
       duration: 0.5,
       ease: "power2.out",
     });
@@ -22,7 +22,7 @@ const FooterButn = ({ name, to }) => {
   const handleLeave = () => {
     if (!isMdUp() || !txtRef.current) return;
     gsap.to(txtRef.current, {
-      top: "0%", 
+      top: "0%",
       duration: 0.5,
       ease: "power2.out",
     });
@@ -32,7 +32,7 @@ const FooterButn = ({ name, to }) => {
     const sync = () => {
       if (!txtRef.current) return;
       if (isMdUp()) {
-        gsap.set(txtRef.current, { top: "0%" }); 
+        gsap.set(txtRef.current, { top: "0%" });
       } else {
         gsap.set(txtRef.current, { clearProps: "top" });
       }
