@@ -82,7 +82,7 @@ const About = () => {
           <div className="h-full z-10 w-full text-left px-8 flex flex-col md:justify-between">
             <div className="pointer-events-none">
               <p className=" text-4xl py-4">Time Zone</p>
-              <p className="text-xs md:text-xl w-2/3  md:w-1/2">
+              <p className="text-xs md:text-lg md:px-2 w-2/3  md:w-1/2">
                 I'm based in Mars, and open to remote work worldwide.
               </p>
             </div>

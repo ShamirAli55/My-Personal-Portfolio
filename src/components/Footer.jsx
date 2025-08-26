@@ -18,18 +18,27 @@ const Footer = () => {
         rounded-xl bg-footer"
       >
         <div className="h-full w-full flex flex-col md:flex-row ">
-          <div className="h-1/2 w-full md:h-full md:w-1/2  rounded-lg">
-            <div>
+          <div className="h-1/2 w-full md:h-full md:w-1/2  rounded-lg ">
+            <div className="text-left">
               <img
-                src="/public/assets/logo.png"
+                src="/assets/logo.png"
                 className="h-10 w-10 object-cover"
                 alt="Logo"
               />
-              <p>Hello, I'm Shamir Ali a Full Stack developer</p>
+              <div className="text-sm md:text-lg md:pr-46">
+                <p>
+                  Open to exciting collaborations & projects. Let’s create
+                  something amazing together.
+                </p>
+              </div>
+
+              <p className="mt-4 text-sm md:text-lg md:pt-22">
+                Crafted with ❤️ by Shamir Ali | Full Stack Developer
+              </p>
             </div>
           </div>
 
-          <div className="h-1/2 w-full md:h-full md:w-1/2 rounded-lg">
+          <div className="h-1/2 w-full md:h-full md:w-1/2 rounded-lg pt-12 md:pt-0">
             <div className="flex items-start justify-around">
               <div className="text-left">
                 <h1 className="text-xl font-bold pb-2">General</h1>
@@ -49,19 +58,24 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-left flex items-center justify-between px-8 pb-8 pt-4 cursor-pointer">
-        <p>© {date.getFullYear()} Shamir Ali. All rights reserved</p>
-        <div className="flex items-center gap-x-4 cursor-pointer">
+      <div className="text-left flex items-center justify-between px-4 md:px-8 pb-8 pt-28 md:pt-4 cursor-pointer">
+        <p className="text-[8px] md:text-[15px] whitespace-nowrap px-4">
+          © {date.getFullYear()} Shamir Ali. All rights reserved
+        </p>
+
+        <div className=" flex items-center gap-4 cursor-pointer mt-16 md:mt-0">
           <ThemeToggle />
-          <a href="https://github.com/ShamirAli55" target="_blank">
-            <Github />
-          </a>
-          <a href="" target="_blank">
-            <Linkedin />
-          </a>
-          <a href="#" target="_blank">
-            <Twitter />
-          </a>
+          <div className="flex gap-4 justify-evenly pr-8">
+            <a href="https://github.com/ShamirAli55" target="_blank">
+              <Github />
+            </a>
+            <a href="" target="_blank">
+              <Linkedin />
+            </a>
+            <a href="#" target="_blank">
+              <Twitter />
+            </a>
+          </div>
         </div>
       </div>
     </section>
