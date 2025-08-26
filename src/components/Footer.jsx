@@ -31,24 +31,20 @@ const Footer = () => {
                   something amazing together.
                 </p>
               </div>
-
-              <p className="mt-4 text-sm md:text-lg md:pt-22">
-                Crafted with ❤️ by Shamir Ali | Full Stack Developer
-              </p>
             </div>
           </div>
 
           <div className="h-1/2 w-full md:h-full md:w-1/2 rounded-lg pt-12 md:pt-0">
             <div className="flex items-start justify-around">
               <div className="text-left">
-                <h1 className="text-xl font-bold pb-2">General</h1>
+                <h1 className="text-xl text-primary/50 font-semibold pb-2">General</h1>
                 {Navigation.map((item, index) => (
                   <FooterButn name={item.name} to={item.href} key={index} />
                 ))}
               </div>
 
               <div className="text-left">
-                <h1 className="text-xl font-bold pb-2">Social</h1>
+                <h1 className="text-xl text-primary/50 font-semibold pb-2">Social</h1>
                 {socialLinks.map((item, index) => (
                   <FooterButn name={item.name} to={item.href} key={index} />
                 ))}
@@ -58,7 +54,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-left flex items-center justify-between px-4 md:px-8 pb-8 pt-28 md:pt-4 cursor-pointer">
+      <div className="text-left flex items-center justify-between px-2 pr-8  md:px-8 pb-8 pt-28 md:pt-4 cursor-pointer">
         <p className="text-[8px] md:text-[15px] whitespace-nowrap px-4">
           © {date.getFullYear()} Shamir Ali. All rights reserved
         </p>
@@ -77,6 +73,12 @@ const Footer = () => {
             </a>
           </div>
         </div>
+      </div>
+
+      <div>
+        <p className="pb-4 text-xs md:text-lg md:pt-1 md:pb-10">
+          Crafted with ❤️ by Shamir Ali | Full Stack Developer
+        </p>
       </div>
     </section>
   );
