@@ -135,7 +135,7 @@ const About = () => {
               there’s nothing more satisfying than bringing interfaces to life.
             </p>
 
-            <p className="text-primary  text-sm px-.5 md:px-2.5 w-full md:text-xl leading-[23px] font-light tracking-wide">
+            <p className="text-primary text-sm px-.5 md:px-2.5 w-full md:text-xl leading-[23px] font-light tracking-wide">
               Using the MERN stack and a solid foundation in JavaScript, I
               transform rough ideas into smooth, functional, and intuitive
               experiences.

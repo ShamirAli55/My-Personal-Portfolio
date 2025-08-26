@@ -18,12 +18,12 @@ export const navItems = [
   { name: "Work", href: "/projects", icon: Code, category: "Navigation" },
   { name: "Contact", href: "/contact", icon: Mail, category: "Navigation" },
 
-  {name:"Experience", href:"/experience", icon:User, category:"Personal"},
+  { name: "Experience", href: "/experience", icon: User, category: "Personal" },
   { name: "Resume", href: "/resume", icon: Folder, category: "Personal" },
   { name: "Links", href: "/links", icon: Link2, category: "Personal" },
   { name: "Info", href: "/info", icon: BookHeart, category: "Personal" },
 
-  { name: "Blog", href: "/blog", icon: BookOpen, category: "Resources" },
+  { name: "Blog", href: "/error", icon: BookOpen, category: "Resources" },
 
   {
     name: "GitHub",

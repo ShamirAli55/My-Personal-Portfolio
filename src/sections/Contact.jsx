@@ -3,7 +3,7 @@ import MagneticButton from "../components/MagneticButn";
 
 const Contact = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col justify-center items-center px-6 py-16 text-center text-primary relative">
+    <section className="w-full min-h-screen flex flex-col justify-center items-center px-6 pt-16 text-center text-primary relative">
       <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 tracking-wide ">
         CODE <span className="gradient-text">ANIMATE</span> CREATE
       </h1>
@@ -14,10 +14,10 @@ const Contact = () => {
         </MagneticButton>
       </div>
 
-      <p className="text-lg font-semibold mb-2 py-4">
+      <p className="text-sm md:text-xl font-semibold mb-2 py-4">
         Building more than websites creating digital experiences that last.
       </p>
-      <p className="text-gray-400 max-w-xl px-8">
+      <p className="text-gray-400 max-w-xl md:px-8 text-xs md:text-lg">
         I design and build experiences that not only look good but work
         seamlessly — balancing creativity with performance.
       </p>
