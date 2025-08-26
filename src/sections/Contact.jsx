@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <section className="w-full min-h-screen flex flex-col justify-center items-center px-6 py-16 text-center text-primary bg-background opacity-95">
       <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 tracking-wide ">
-        CODE <span className="text-blue-500">ANIMATE</span> CREATE
+        CODE <span className="gradient-text">ANIMATE</span> CREATE
       </h1>
 
       <div className="py-8">

@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-left flex items-center justify-between px-2 pr-8  md:px-8 pb-8 pt-28 md:pt-4 cursor-pointer">
+      <div className="text-left flex items-center justify-between px-2 pr-8  md:px-8 pb-8 pt-28 md:pt-4 cursor-pointer overflow-hidden">
         <p className="text-[8px] md:text-[15px] whitespace-nowrap px-4">
           © {date.getFullYear()} Shamir Ali. All rights reserved
         </p>

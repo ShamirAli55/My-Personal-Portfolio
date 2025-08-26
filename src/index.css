@@ -30,7 +30,14 @@ html, body, #root {
     --color-shadow:hsl(var(--shadow));
     --color-bento-background:hsl(var(--bento-background));
     --color-footer:hsl(var(--footer));
+    
+    --gradient-light-from: 190 95% 65%; /* cyan-400 */
+    --gradient-light-mid: 200 92% 62%;  /* blue-cyan blend */
+    --gradient-light-to: 220 90% 60%;   /* blue-500 */
 
+    --gradient-dark-from: 200 95% 72%;  /* cyan-300 */
+    --gradient-dark-mid: 210 93% 68%;   /* soft teal */
+    --gradient-dark-to: 225 90% 70%;    /* blue-400 */
 
     --animate-float: float 6s ease-in-out infinite;
     --animate-pulse-subtle:pulse-subtle 4s ease-in-out infinite;
@@ -187,7 +194,29 @@ html.dark {
   background-position: center;
   background-attachment: fixed;
 }
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
+.gradient-text {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(
+    to right,
+    hsl(var(--gradient-light-from)),
+    hsl(var(--gradient-light-mid)),
+    hsl(var(--gradient-light-to))
+  );
+  background-size: 200% 200%;
+  animation: gradient-move 6s ease-in-out infinite;
+}
 .textline {
   position: relative;
   overflow: hidden;
