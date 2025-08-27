@@ -35,7 +35,6 @@ const Contact = () => {
       );
   };
 
-
   return (
     <section
       id="contact"
@@ -47,10 +46,8 @@ const Contact = () => {
             Get in touch
           </p>
           <h2 className="text-4xl md:text-5xl font-bold whitespace-nowrap">
-            Fuel for{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
-              Innovation
-            </span>
+            Let’s Build{" "}
+            <span className="text-transparent gradient-text">Together</span>
           </h2>
         </div>
 

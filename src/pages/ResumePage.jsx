@@ -7,21 +7,23 @@ import Footer from "../components/Footer";
 
 const Resume = () => {
   return (
-    <div className="min-h-screen w-full bg-background flex flex-col items-center py-10 px-4">
+    <div className="container min-h-screen w-full bg-background flex flex-col items-center py-10 px-4">
       <h2 className="text-4xl md:text-5xl font-bold my-22">
         My <span className="gradient-text">Resume</span>
       </h2>
 
-      {/* PDF Viewer */}
-      <div className="w-full max-w-4xl h-[80vh] border rounded-xl shadow-lg overflow-hidden mb-6">
+      <div className="w-full max-w-4xl h-[80vh] md:h-[85vh] border rounded-xl shadow-lg overflow-y-auto overflow-x-hidden mb-6">
         <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
-          <Viewer fileUrl="/assets/Docs/Shamir_Ali_Resume.pdf" />
+          <Viewer
+            fileUrl="/assets/Docs/Shamir_Ali_Resume.pdf"
+            defaultScale="PageWidth" 
+          />
         </Worker>
       </div>
 
-      {/* Buttons */}
+
       <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-        {/* Download button */}
+
         <a
           href="/assets/Docs/Shamir_Ali_Resume.pdf"
           download="Shamir_Ali_Resume.pdf"

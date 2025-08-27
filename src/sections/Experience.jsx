@@ -51,7 +51,7 @@ const Experience = () => {
           My Experience
         </p>
         <h2 className="text-4xl md:text-5xl font-bold">
-          Fuel for <span className="gradient-text">Innovation</span>
+          Driven by <span className="gradient-text">Curiosity </span>
         </h2>
       </div>
 
