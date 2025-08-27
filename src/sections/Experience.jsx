@@ -97,7 +97,7 @@ const Experience = () => {
                   {exp.contents.map((content, idx) => (
                     <li
                       key={idx}
-                      className="leading-relaxed text-left px-4 tracking-wide"
+                      className="leading-relaxed text-left md:px-4 md:tracking-wide"
                     >
                       {content}
                     </li>
