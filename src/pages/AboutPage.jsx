@@ -1,4 +1,6 @@
 import AboutBottomPart from "../components/AboutBottomPart";
+import Experience from "../sections/Experience";
+import { experiences } from "../constants";
 const AboutPage = () => {
   return (
     <section className="min-h-screen w-full bg-background text-primary">
@@ -6,6 +8,11 @@ const AboutPage = () => {
         About Me
       </h1>
       <AboutBottomPart />
+
+      <div className="w-full">
+      <Experience data={experiences}/>
+      </div>
+
     </section>
   );
 };

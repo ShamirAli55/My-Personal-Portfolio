@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { cn } from "../lib/utils.js";
 import { navItems } from "../constants";
 import emailjs from "@emailjs/browser";
@@ -35,7 +35,6 @@ const Contact = () => {
       );
   };
 
-  const socials = navItems.filter((item) => item.category === "Social");
 
   return (
     <section
@@ -56,69 +55,7 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-10">
-            <h3 className="text-2xl font-semibold">Contact Information</h3>
-
-            <div className="space-y-6">
-              <div className="flex items-center gap-4 p-4 rounded-lg bg-card shadow-sm hover:shadow-md transition">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Mail className="text-primary h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="font-medium">Email</h4>
-                  <a
-                    href="mailto:abc@gmail.com"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    abc@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 p-4 rounded-lg bg-card shadow-sm hover:shadow-md transition">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Phone className="text-primary h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="font-medium">Phone</h4>
-                  <a
-                    href="tel:+123444834"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    +1 23444834
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 p-4 rounded-lg bg-card shadow-sm hover:shadow-md transition">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <MapPin className="text-primary h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="font-medium">Location</h4>
-                  <p className="text-muted-foreground">ABC City, England</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-medium mb-4">Connect with me</h4>
-              <div className="flex gap-4 justify-center">
-                {socials.map((social, idx) => (
-                  <a
-                    key={idx}
-                    href={social.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-3 rounded-full bg-card shadow hover:bg-primary hover:text-white transition-colors"
-                  >
-                    <social.icon className="h-5 w-5" />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
+          <div className="bg-red-200"></div>
 
           <div className="bg-card p-8 rounded-xl shadow-md">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
@@ -180,7 +117,7 @@ const Contact = () => {
                 type="submit"
                 disabled={loading}
                 className={cn(
-                  "cosmic-button w-full flex justify-center items-center gap-2",
+                  "w-full flex justify-center items-center gap-2",
                   loading && "opacity-70 cursor-not-allowed"
                 )}
               >
@@ -196,7 +133,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </section>
   );
 };

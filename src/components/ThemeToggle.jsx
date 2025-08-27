@@ -4,7 +4,7 @@ import { cn } from "../lib/utils.js";
 import gsap from "gsap";
 
 const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const ActiveTheme = useRef(null);
 
   useLayoutEffect(() => {

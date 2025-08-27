@@ -207,6 +207,15 @@ html.dark {
   }
 }
 
+.timeline-gradient {
+  background: linear-gradient(
+    to bottom,
+    hsl(var(--gradient-light-from)),
+    hsl(var(--gradient-light-mid)),
+    hsl(var(--gradient-light-to))
+  );
+}
+
 .gradient-text {
   @apply bg-clip-text text-transparent;
   background-image: linear-gradient(
