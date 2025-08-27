@@ -1,32 +1,47 @@
-import { Download } from "lucide-react";
+import { Worker, Viewer } from "@react-pdf-viewer/core";
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+import { Download, Maximize2 } from "lucide-react";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 const Resume = () => {
   return (
     <div className="min-h-screen w-full bg-background flex flex-col items-center py-10 px-4">
-      
-      {/* Header */}
-      <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-        My Resume
-      </h1>
+      <h2 className="text-4xl md:text-5xl font-bold my-22">
+        My <span className="gradient-text">Resume</span>
+      </h2>
 
-      {/* Download Button */}
-      <a
-        href="/Shamir_Ali_Resume.pdf"
-        download
-        className="flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-xl shadow-lg hover:bg-primary/80 transition"
-      >
-        <Download className="w-5 h-5" />
-        Download PDF
-      </a>
-
-      {/* Resume Preview */}
-      <div className="mt-8 w-full max-w-5xl h-[80vh] shadow-2xl border rounded-2xl overflow-hidden">
-        <iframe
-          src="/assets/Docs/Shamir_Ali_Resume.pdf"
-          className="w-full h-full"
-          title="Resume"
-        ></iframe>
+      {/* PDF Viewer */}
+      <div className="w-full max-w-4xl h-[80vh] border rounded-xl shadow-lg overflow-hidden mb-6">
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+          <Viewer fileUrl="/assets/Docs/Shamir_Ali_Resume.pdf" />
+        </Worker>
       </div>
+
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+        {/* Download button */}
+        <a
+          href="/assets/Docs/Shamir_Ali_Resume.pdf"
+          download="Shamir_Ali_Resume.pdf"
+          className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-5 py-2 rounded-xl shadow hover:shadow-lg hover:opacity-90 transition w-full sm:w-auto"
+        >
+          <Download size={18} />
+          Download Resume
+        </a>
+        <a
+          href="/assets/Docs/Shamir_Ali_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground px-5 py-2 rounded-xl shadow hover:shadow-lg hover:opacity-90 transition w-full sm:w-auto"
+        >
+          <Maximize2 size={18} />
+          View Fullscreen
+        </a>
+      </div>
+      <Contact />
+      <Footer />
     </div>
   );
 };
