@@ -11,24 +11,23 @@ const LinksPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-background text-primary pt-20 px-5 flex flex-col items-center">
+    <div className="min-h-screen bg-background text-primary pt-20 flex flex-col items-center">
       <h1 className="text-4xl font-bold mb-12 pt-6 text-center gradient-text">
         Shamir Ali
       </h1>
 
-      <a
-        href={`mailto:${email}`}
-        className="flex items-center gap-4 w-full max-w-md p-4 mb-6 rounded-2xl
+      <div className="flex flex-col w-full max-w-md space-y-4 px-5">
+        <a
+          href={`mailto:${email}`}
+          className="container flex items-center gap-4 w-full max-w-md p-4 mb-6 rounded-2xl 
                    bg-white/10 backdrop-blur-md border border-white/20
                    shadow-lg hover:scale-105 
                    hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500
                    transition-all duration-300"
-      >
-        <Mail className="w-6 h-6" color="hsl(var(--opposite))" />
-        <span className="text-lg font-semibold">{email}</span>
-      </a>
-
-      <div className="flex flex-col w-full max-w-md space-y-4">
+        >
+          <Mail className="w-6 h-6" color="hsl(var(--opposite))" />
+          <span className="text-lg font-semibold">{email}</span>
+        </a>
         {links.map((link, index) => (
           <a
             key={index}

@@ -118,7 +118,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="absolute animate-spin-slow text-[12px] font-semibold tracking-[3px] text-white uppercase">
+        <div className="absolute animate-spin-slow text-[12px] font-semibold tracking-[2px] text-white uppercase">
           <svg viewBox="0 0 120 120" className="w-22 h-22 fill-current">
             <defs>
               <path

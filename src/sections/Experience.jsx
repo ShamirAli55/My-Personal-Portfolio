@@ -51,7 +51,7 @@ const Experience = () => {
           My Experience
         </p>
         <h2 className="text-4xl md:text-5xl font-bold">
-          Driven by <span className="gradient-text">Curiosity </span>
+          Driven by <span className="gradient-text">Curiosity</span>
         </h2>
       </div>
 
@@ -99,7 +99,7 @@ const Experience = () => {
                   {exp.date}
                 </p>
                 <h3 className="mt-2 text-xl font-bold">{exp.title}</h3>
-                <p className="text-neutral-400 text-sm font-medium">
+                <p className="text-neutral-400 text-xs font-medium">
                   {exp.job}
                 </p>
                 <ul className="mt-4 space-y-2 list-disc list-inside text-opposite">

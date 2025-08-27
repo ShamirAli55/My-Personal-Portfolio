@@ -6,15 +6,15 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 const AboutPage = () => {
   return (
-    <section className="container min-h-screen w-full bg-background text-primary">
-      <h1 className="text-3xl md:hidden font-bold text-primary pt-8 font-[Funnel-Sans] graident-text">
+    <section className="min-h-screen w-full bg-background text-primary">
+      <h1 className="container text-3xl md:hidden font-bold text-primary pt-8 font-[Funnel-Sans] graident-text">
         About Me
       </h1>
       <AboutBottomPart />
-      <div className="w-full relative">
+      <div className="w-full relative container">
         <Experience data={experiences} />
       </div>
-      <div className="relative">
+      <div className="relative container">
         <GitHubStats />
       </div>
       <Contact />
