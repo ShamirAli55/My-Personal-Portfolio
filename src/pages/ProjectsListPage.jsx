@@ -119,7 +119,7 @@ const ProjectsListPage = () => {
 
   return (
     <>
-      {/* ✅ Desktop/Large devices */}
+
       <div className="hidden lg:block min-h-screen bg-background text-primary px-6 md:px-12 lg:px-20 py-16">
         <div
           className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-10 lg:gap-20"

@@ -164,7 +164,7 @@ const Projects = () => {
           {myProjects.map((project) => (
             <div
               key={project.id}
-              className="group bg-primary rounded-lg overflow-hidden shadow-sm 
+              className="group bg-primary-foreground rounded-lg overflow-hidden shadow-sm 
                 border border-opposite/20 md:border-0 md:border-b p-6 
                 flex flex-col md:flex-row md:items-center md:justify-between 
                 hover:shadow-md hover:border-primary/40 transition-all duration-500 

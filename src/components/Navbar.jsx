@@ -111,7 +111,8 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[199]">
-      <nav className="flex justify-between items-center px-5 pt-8 pb-4 text-foreground">
+      <nav className="flex justify-between items-center px-5 pt-8 pb-4 text-foreground relative">
+        <div className="absolute inset-0 h-[75%] w-full z-[-1] pointer-events-none bg-opposite/ opacity-0.8 backdrop-blur-md rounded-b-xl"></div>
         {isOpen && (
           <HiddenMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
         )}
@@ -191,8 +192,8 @@ const Navbar = () => {
                     } 
                     ${
                       idx === 0
-                        ? "col-span-2 row-span-2 text-center" 
-                        : "col-span-2 row-span-1 items-start" 
+                        ? "col-span-2 row-span-2 text-center"
+                        : "col-span-2 row-span-1 items-start"
                     }`}
                   >
                     {idx === 0 ? (
