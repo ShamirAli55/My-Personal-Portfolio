@@ -14,7 +14,6 @@ const ProjectsListPage = () => {
   const posRef = useRef({ x: 0, y: 0 });
   const containerRef = useRef(null);
 
-  // 🎯 GSAP cursor effect
   useEffect(() => {
     let isDesktop = window.innerWidth >= 768;
     if (CrsrRef.current) gsap.set(CrsrRef.current, { opacity: 0 });
@@ -100,7 +99,6 @@ const ProjectsListPage = () => {
     });
   };
 
-  // IntersectionObserver for sticky content
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -121,13 +119,12 @@ const ProjectsListPage = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-[#0e0e0f] text-white px-6 md:px-12 lg:px-20 py-16">
+      <div className="min-h-screen bg-background text-primary px-6 md:px-12 lg:px-20 py-16">
         <div
           className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-10 lg:gap-20"
           ref={containerRef}
         >
-          {/* Left side project previews */}
-          <div className="space-y-40 overflow-hidden">
+          <div className="space-y-40 overflow-hidden cursor-pointer">
             {myProjects.map((project, i) => (
               <div
                 key={i}
@@ -151,18 +148,17 @@ const ProjectsListPage = () => {
             ))}
           </div>
 
-          {/* Right side sticky info */}
           <div className="relative">
-            <div className="sticky top-28 h-[80vh] flex flex-col justify-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+            <div className="sticky top-28 h-[80vh] flex flex-col justify-center px-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-opposite">
                 {myProjects[activeIndex].title}
               </h2>
-              <p className="text-gray-300 mb-8 text-left leading-relaxed">
+              <p className=" mb-8 text-left leading-relaxed px-8">
                 {myProjects[activeIndex].description}
               </p>
               <ul className="space-y-3 mb-8 text-left">
                 {myProjects[activeIndex].subDescription.map((point, j) => (
-                  <li key={j} className="flex items-start  text-gray-200">
+                  <li key={j} className="flex items-start text-sm ">
                     <span className="mr-3 text-purple-400 text-lg">✦</span>
                     <span className="flex-1">{point}</span>
                   </li>
@@ -172,7 +168,7 @@ const ProjectsListPage = () => {
                 {myProjects[activeIndex].tags.map((tag, j) => (
                   <span
                     key={j}
-                    className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#1c1c1f] text-sm shadow-md border border-gray-700"
+                    className="flex items-center gap-2 px-3 py-1 rounded-full  text-sm shadow-md border border-opposite/15"
                   >
                     <img src={tag.path} alt={tag.name} className="h-4 w-4" />
                     {tag.name}
@@ -184,25 +180,24 @@ const ProjectsListPage = () => {
         </div>
       </div>
 
-      {/* Custom Cursor */}
       <div
         ref={CrsrRef}
         className="md:opacity-100 fixed h-22 top-0 w-22 rounded-full pointer-events-none z-[999]"
         style={{ opacity: 0 }}
       >
         <div
-          className="absolute inset-0 rounded-full bg-purple-500/10 backdrop-blur-xl 
-            border border-purple-400/40 shadow-lg flex items-center justify-center
+          className="absolute inset-0 rounded-full  bg-opposite/10 backdrop-blur-xl 
+            border border-white/30 shadow-lg flex items-center justify-center
             before:content-[''] before:absolute before:inset-0 
             before:rounded-full before:bg-gradient-to-tr 
-            before:from-purple-400/30 before:to-transparent before:opacity-50"
+            before:from-white/20 before:to-transparent before:opacity-50"
         >
-          <div className="border-2 border-purple-300/60 p-2 rounded-full bg-transparent">
-            <Eye className="text-purple-200 drop-shadow-md" size={25} />
+          <div className="border-2 border-white/60 p-2 rounded-full bg-transparent">
+            <Eye className="text-white drop-shadow-md" size={25} />
           </div>
         </div>
 
-        <div className="absolute animate-spin-slow text-[12px] font-semibold tracking-[2px] text-purple-200 uppercase">
+        <div className="absolute animate-spin-slow text-[12px] font-semibold tracking-[2px] text-white uppercase">
           <svg viewBox="0 0 120 120" className="w-22 h-22 fill-current">
             <defs>
               <path
