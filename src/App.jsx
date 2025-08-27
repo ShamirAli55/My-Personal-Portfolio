@@ -6,7 +6,9 @@ import AboutPage from "./pages/AboutPage";
 import ErrorPage from "./pages/ErrorPage";
 import ContactPage from "./pages/ContactPage";
 import ProjectPage from "./pages/ProjectPage";
+import ExperiencePage from "./pages/ExperiencePage";
 import LinksPage from "./pages/LinksPage";
+import PersonalInfo from "./pages/BioPage";
 import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
@@ -21,6 +23,8 @@ const App = () => {
           <Route path="/projects" element={<ProjectPage />} />
           <Route path="/projects/:id" element={<ProjectPage />} />
           <Route path="/links" element={<LinksPage />} />
+          <Route path="/experience" element={<ExperiencePage />} />
+          <Route path="/bio" element={<PersonalInfo />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/error" element={<ErrorPage />} />
         </Routes>

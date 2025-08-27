@@ -21,7 +21,7 @@ export const navItems = [
   { name: "Experience", href: "/experience", icon: User, category: "Personal" },
   { name: "Resume", href: "/resume", icon: Folder, category: "Personal" },
   { name: "Links", href: "/links", icon: Link2, category: "Personal" },
-  { name: "Info", href: "/info", icon: BookHeart, category: "Personal" },
+  { name: "Info", href: "/bio", icon: BookHeart, category: "Personal" },
 
   { name: "Blog", href: "/error", icon: BookOpen, category: "Resources" },
 

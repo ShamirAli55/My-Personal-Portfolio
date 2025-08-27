@@ -4,7 +4,7 @@ import { experiences } from "../constants";
 
 const Experience = () => {
   const containerRef = useRef(null);
-  const [heightPx, setHeightPx] = useState(0);
+  const [lineHeight, setLineHeight] = useState(0);
   const [dotPositions, setDotPositions] = useState([]);
 
   useEffect(() => {
@@ -12,13 +12,15 @@ const Experience = () => {
     if (!el) return;
 
     const measure = () => {
-      const rect = el.getBoundingClientRect();
-      setHeightPx(rect.height);
-
       const dots = Array.from(el.querySelectorAll(".timeline-dot")).map(
         (dot) => dot.offsetTop
       );
       setDotPositions(dots);
+
+      const lineEl = el.querySelector(".timeline-line");
+      if (lineEl) {
+        setLineHeight(lineEl.offsetHeight);
+      }
     };
 
     measure();
@@ -31,24 +33,33 @@ const Experience = () => {
     offset: ["start center", "end center"],
   });
 
+  const markerSize = 48; // w-12 h-12 marker
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, Math.max(0, heightPx - 48)]
+    [0, Math.max(0, lineHeight - markerSize)]
   );
-
-  const lineFill = useTransform(y, (val) => `${val + 24}px`);
+  const lineFill = useTransform(y, (val) => `${val + markerSize / 2}px`);
 
   return (
     <div
       ref={containerRef}
-      className="sm:px-10 px-5 lg:px-15 min-h-screen mt-20 md:my-30 relative"
+      className="sm:px-10 px-5 lg:px-15 min-h-screen mt-20 md:my-40 relative"
     >
-      <h2 className="text-heading mb-10 text-center">My Work Experience</h2>
+      <div className="mb-32 text-center">
+        <p className="uppercase tracking-widest text-opposite-400 text-sm">
+          My Experience
+        </p>
+        <h2 className="text-4xl md:text-5xl font-bold">
+          Fuel for <span className="gradient-text">Innovation</span>
+        </h2>
+      </div>
 
       <div className="relative flex justify-center">
-        {/* Timeline line - visible only on md+ */}
-        <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[4px] bg-neutral-700 hidden md:block" />
+        <div
+          className="timeline-line absolute top-0 bottom-0 left-1/2 -translate-x-1/2 
+                     w-[4px] bg-neutral-700 hidden md:block"
+        />
 
         <motion.div
           style={{ height: lineFill }}
@@ -56,7 +67,6 @@ const Experience = () => {
                      timeline-gradient rounded-full hidden md:block"
         />
 
-        {/* Moving marker image - visible only on md+ */}
         <motion.div
           style={{ x: "-50%", y }}
           className="absolute top-0 left-1/2 w-12 h-12 rounded-full 
@@ -69,7 +79,6 @@ const Experience = () => {
           />
         </motion.div>
 
-        {/* Experience cards */}
         <div className="flex flex-col gap-20 w-full">
           {experiences.map((exp, index) => (
             <div
@@ -97,7 +106,7 @@ const Experience = () => {
                   {exp.contents.map((content, idx) => (
                     <li
                       key={idx}
-                      className="leading-relaxed text-left md:px-4 md:tracking-wide"
+                      className="text-sm md:text-lg lg:text-xlleading-relaxed text-left md:px-4 md:tracking-wide"
                     >
                       {content}
                     </li>
@@ -105,7 +114,6 @@ const Experience = () => {
                 </ul>
               </motion.div>
 
-              {/* Dots - visible only on md+ */}
               <motion.div
                 className="timeline-dot absolute left-1/2 -translate-x-1/2 
                            bg-sky-300 border-4 border-neutral-900 w-5 h-5 rounded-full z-10 hidden md:block"
