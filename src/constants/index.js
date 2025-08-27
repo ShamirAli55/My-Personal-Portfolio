@@ -8,19 +8,26 @@ import {
   Github,
   Linkedin,
   Twitter,
-  BookHeart,
+  BriefcaseBusiness,
   CircleUserRound,
+  FileText,
+  FolderOpen,
   Link2,
 } from "lucide-react";
 
 export const navItems = [
   { name: "Home", href: "/", icon: Home, category: "Navigation" },
   { name: "About", href: "/about", icon: User, category: "Navigation" },
-  { name: "Work", href: "/projects", icon: Code, category: "Navigation" },
+  { name: "Work", href: "/projects", icon: FolderOpen, category: "Navigation" },
   { name: "Contact", href: "/contact", icon: Mail, category: "Navigation" },
 
-  { name: "Experience", href: "/experience", icon: User, category: "Personal" },
-  { name: "Resume", href: "/resume", icon: Folder, category: "Personal" },
+  {
+    name: "Experience",
+    href: "/experience",
+    icon: BriefcaseBusiness,
+    category: "Personal",
+  },
+  { name: "Resume", href: "/resume", icon: FileText, category: "Personal" },
   { name: "Links", href: "/links", icon: Link2, category: "Personal" },
   { name: "Bio", href: "/bio", icon: CircleUserRound, category: "Personal" },
 
