@@ -119,7 +119,8 @@ const ProjectsListPage = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-background text-primary px-6 md:px-12 lg:px-20 py-16">
+      {/* ✅ Desktop/Large devices */}
+      <div className="hidden lg:block min-h-screen bg-background text-primary px-6 md:px-12 lg:px-20 py-16">
         <div
           className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-10 lg:gap-20"
           ref={containerRef}
@@ -180,6 +181,40 @@ const ProjectsListPage = () => {
         </div>
       </div>
 
+      {/* ✅ Mobile/Small devices */}
+      <div className="lg:hidden bg-background text-primary px-4 py-10 space-y-6">
+        {myProjects.map((project, i) => (
+          <div
+            key={i}
+            className="border border-border rounded-xl p-4 shadow-sm bg-card hover:shadow-md transition cursor-pointer"
+            onClick={() => navigate(`/projects/${project.id}`)}
+          >
+            {/* Image */}
+            <div
+              className="flex items-center justify-center rounded-lg mb-4 overflow-hidden"
+              style={{
+                background: project.gradient,
+              }}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-40 object-contain rounded-md"
+              />
+            </div>
+
+            {/* Title */}
+            <h2 className="text-lg font-semibold mb-2">{project.title}</h2>
+
+            {/* Description */}
+            <p className="text-sm text-muted-foreground line-clamp-3">
+              {project.description}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* Cursor effect (only for desktop) */}
       <div
         ref={CrsrRef}
         className="md:opacity-100 fixed h-22 top-0 w-22 rounded-full pointer-events-none z-[999]"

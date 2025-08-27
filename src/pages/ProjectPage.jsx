@@ -33,8 +33,10 @@ const ProjectPage = () => {
 
       <div className="container mx-auto max-w-5xl px-4">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-4 mb-6">
-          <h1 className="text-4xl font-bold text-left">{project.title}</h1>
-          <div className="flex gap-3">
+          <h1 className="mt-6 md:mt-0 text-4xl font-bold text-left">
+            {project.title}
+          </h1>
+          <div className="hidden md:flex gap-3">
             {project.demoUrl && (
               <a
                 href={project.demoUrl}
@@ -62,7 +64,7 @@ const ProjectPage = () => {
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-[400px] object-cover"
+            className="w-full h-1/2 md:h-[400px] object-cover"
           />
         </div>
 

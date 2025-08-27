@@ -1,6 +1,5 @@
 import { Send } from "lucide-react";
 import { cn } from "../lib/utils.js";
-import { navItems } from "../constants";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import Footer from "../components/Footer";
@@ -38,14 +37,14 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen w-full  bg-background md:pt-42"
+      className="min-h-screen w-full bg-background md:pt-42 overflow-x-hidden relative"
     >
       <div className="container mx-auto max-w-6xl mb-22">
-        <div className="mb-22 text-center">
+        <div className="mt-22 md:mt-0 md:mb-22 text-center">
           <p className="uppercase tracking-widest text-opposite-400 text-sm">
             Get in touch
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold whitespace-nowrap">
+          <h2 className="text-3xl md:text-5xl font-bold whitespace-nowrap">
             Let’s Build{" "}
             <span className="text-transparent gradient-text">Together</span>
           </h2>
