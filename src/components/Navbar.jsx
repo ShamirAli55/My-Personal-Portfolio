@@ -70,7 +70,6 @@ const Navbar = () => {
     }
   }, [location.pathname]);
 
-
   useEffect(() => {
     return () => {
       if (closeTimerRef.current) {
@@ -187,16 +186,20 @@ const Navbar = () => {
                     key={idx}
                     to={item.href}
                     onClick={handleMoreLinkClick}
-                    className={`flex flex-col items-start justify-center text-primary rounded-xl bg-opposite/5 p-4 hover:bg-opposite/20 transition-all ${
+                    className={`flex flex-col items-center justify-center text-primary rounded-xl bg-opposite/5 p-4 hover:bg-opposite/20 transition-all ${
                       isActive(item.href) ? "ring-2 ring-primary" : ""
                     } 
                     ${
-                      idx % 7 === 0
-                        ? "col-span-2 row-span-2"
-                        : "col-span-2 row-span-1"
+                      idx === 0
+                        ? "col-span-2 row-span-2 text-center" 
+                        : "col-span-2 row-span-1 items-start" 
                     }`}
                   >
-                    <item.icon className="h-6 w-6 mb-2 text-primary" />
+                    {idx === 0 ? (
+                      <item.icon className="h-10 w-10 mb-2 text-primary" />
+                    ) : (
+                      <item.icon className="h-5 w-5 mb-2 text-primary" />
+                    )}
                     <span className="text-sm font-medium">{item.name}</span>
                   </NavLink>
                 ))}

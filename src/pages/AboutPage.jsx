@@ -2,6 +2,8 @@ import AboutBottomPart from "../components/AboutBottomPart";
 import Experience from "../sections/Experience";
 import { experiences } from "../constants";
 import GitHubStats from "../components/GitHubStats";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 const AboutPage = () => {
   return (
     <section className="container min-h-screen w-full bg-background text-primary">
@@ -13,8 +15,10 @@ const AboutPage = () => {
         <Experience data={experiences} />
       </div>
       <div className="relative">
-      <GitHubStats />
+        <GitHubStats />
       </div>
+      <Contact />
+      <Footer />
     </section>
   );
 };
