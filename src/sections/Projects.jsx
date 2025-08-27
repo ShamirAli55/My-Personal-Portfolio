@@ -142,7 +142,7 @@ const Projects = () => {
           </p>
           <h2 className="text-4xl md:text-5xl font-bold">
             Code{" "}
-            <span className="text-transparent  gradient-text">Chronicles</span>
+            <span className="text-transparent gradient-text">Chronicles</span>
           </h2>
         </div>
 
@@ -201,7 +201,7 @@ const Projects = () => {
                 </div>
               </div>
 
-              <div className="flex justify-end items-center space-x-4 mt-4 md:mt-0 cursor-pointer">
+              <div className="flex justify-end items-center space-x-4 mt-4 md:mt-0 cursor-pointer md:hidden">
                 <a
                   href={project.demoUrl}
                   target="_blank"
