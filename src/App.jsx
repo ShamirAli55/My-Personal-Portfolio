@@ -11,6 +11,7 @@ import LinksPage from "./pages/LinksPage";
 import PersonalInfo from "./pages/BioPage";
 import Resume from "./pages/ResumePage";
 import ScrollToTop from "./components/ScrollToTop";
+import ProjectsListPage from "./pages/ProjectsListPage";
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
         <Routes>
           <Route index path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/projects" element={<ProjectPage />} />
+          <Route path="/projects" element={<ProjectsListPage />} />
           <Route path="/projects/:id" element={<ProjectPage />} />
           <Route path="/links" element={<LinksPage />} />
           <Route path="/experience" element={<ExperiencePage />} />

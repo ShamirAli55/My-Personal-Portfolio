@@ -155,37 +155,30 @@ export const myProjects = [
     id: 1,
     title: "E-commerce Platform",
     description:
-      "Facilitates purchases from  websites, allowing customers to shop from these sites.",
+      "Facilitates purchases from websites, allowing customers to shop from these sites.",
     subDescription: [
       "Built a scalable application with ASP.NET Core MVC, integrating global platforms like Amazon for domestic delivery.",
       "Implemented secure authentication and database management using ASP.NET Core Identity and Entity Framework Core.",
       "Designed a responsive frontend with Tailwind CSS, enhancing user experience.",
       "Added payment systems, localization, and product filtering for functionality improvements.",
     ],
-    href: "",
-    logo: "",
+    overview:
+      "A full-stack e-commerce solution showcasing secure transactions, product filtering, and responsive UI using ASP.NET Core MVC and Tailwind CSS.",
+    features: [
+      "User authentication & authorization",
+      "Product management dashboard",
+      "Shopping cart & checkout system",
+      "Integrated payments",
+    ],
+    demoUrl: "https://your-demo-link.com/ecommerce",
+    githubUrl: "https://github.com/yourusername/ecommerce-platform",
+    gradient: "linear-gradient(135deg, #ff007a, #5900ff)",
     image: "/assets/projects/accessories.jpg",
     tags: [
-      {
-        id: 1,
-        name: "C#",
-        path: "/assets/logos/csharp.svg",
-      },
-      {
-        id: 2,
-        name: ".Net",
-        path: "/assets/logos/dotnet.svg",
-      },
-      {
-        id: 3,
-        name: "Ef Core",
-        path: "/assets/logos/efcore.png",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
+      { id: 1, name: "C#", path: "/assets/logos/csharp.svg" },
+      { id: 2, name: ".Net", path: "/assets/logos/dotnet.svg" },
+      { id: 3, name: "Ef Core", path: "/assets/logos/efcore.png" },
+      { id: 4, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
     ],
   },
   {
@@ -199,33 +192,24 @@ export const myProjects = [
       "Developed a React-based frontend with Tailwind CSS for a sleek user experience.",
       "Connected to a secure SQLite database for user data storage.",
     ],
-    href: "",
-    logo: "",
+    overview:
+      "A robust authentication platform leveraging Auth0 for identity management and React for frontend integration.",
+    features: [
+      "OAuth and JWT authentication",
+      "Multi-factor authentication",
+      "Role-based access control",
+    ],
+    demoUrl: "https://your-demo-link.com/auth-system",
+    githubUrl: "https://github.com/yourusername/auth-system",
+    gradient: "linear-gradient(135deg, #ff007a, #5900ff)",
     image: "/assets/projects/auth-system.jpg",
     tags: [
-      {
-        id: 1,
-        name: "Auth0",
-        path: "/assets/logos/auth0.svg",
-      },
-      {
-        id: 2,
-        name: "React",
-        path: "/assets/logos/react.svg",
-      },
-      {
-        id: 3,
-        name: "SQLite",
-        path: "/assets/logos/sqlite.svg",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
+      { id: 1, name: "Auth0", path: "/assets/logos/auth0.svg" },
+      { id: 2, name: "React", path: "/assets/logos/react.svg" },
+      { id: 3, name: "SQLite", path: "/assets/logos/sqlite.svg" },
+      { id: 4, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
     ],
   },
-
   {
     id: 4,
     title: "C++ Game Engine",
@@ -237,30 +221,22 @@ export const myProjects = [
       "Implemented a scripting system for easy game customization.",
       "Optimized performance with multi-threading and efficient memory management.",
     ],
-    href: "",
-    logo: "",
+    overview:
+      "A custom-built game engine in C++ supporting both 2D and 3D rendering, physics, and scripting.",
+    features: [
+      "Physics engine with collision detection",
+      "2D & 3D rendering support",
+      "Custom scripting system",
+    ],
+    demoUrl: "https://your-demo-link.com/game-engine",
+    githubUrl: "https://github.com/yourusername/cpp-game-engine",
+    gradient: "linear-gradient(135deg, #ff007a, #5900ff)",
     image: "/assets/projects/game-engine.jpg",
     tags: [
-      {
-        id: 1,
-        name: "C++",
-        path: "/assets/logos/cplusplus.svg",
-      },
-      {
-        id: 2,
-        name: "C#",
-        path: "/assets/logos/csharp.svg",
-      },
-      {
-        id: 3,
-        name: "Git",
-        path: "/assets/logos/git.svg",
-      },
-      {
-        id: 4,
-        name: "Microsoft",
-        path: "/assets/logos/microsoft.svg",
-      },
+      { id: 1, name: "C++", path: "/assets/logos/cplusplus.svg" },
+      { id: 2, name: "C#", path: "/assets/logos/csharp.svg" },
+      { id: 3, name: "Git", path: "/assets/logos/git.svg" },
+      { id: 4, name: "Microsoft", path: "/assets/logos/microsoft.svg" },
     ],
   },
   {
@@ -274,30 +250,22 @@ export const myProjects = [
       "Optimized SEO and page speed using Vite.js for fast builds.",
       "Implemented custom widgets and plugin compatibility for extended functionality.",
     ],
-    href: "",
-    logo: "",
+    overview:
+      "A modern WordPress theme with Tailwind CSS styling and Vite.js optimizations for SEO and performance.",
+    features: [
+      "Responsive custom theme",
+      "SEO & page speed optimization",
+      "Plugin compatibility",
+    ],
+    demoUrl: "https://your-demo-link.com/wordpress-theme",
+    githubUrl: "https://github.com/yourusername/wordpress-theme",
+    gradient: "linear-gradient(135deg, #ff007a, #5900ff)",
     image: "/assets/projects/wordpress-theme.jpg",
     tags: [
-      {
-        id: 1,
-        name: "WordPress",
-        path: "/assets/logos/wordpress.svg",
-      },
-      {
-        id: 2,
-        name: "HTML5",
-        path: "/assets/logos/html5.svg",
-      },
-      {
-        id: 3,
-        name: "CSS3",
-        path: "/assets/logos/css3.svg",
-      },
-      {
-        id: 4,
-        name: "Vite.js",
-        path: "/assets/logos/vitejs.svg",
-      },
+      { id: 1, name: "WordPress", path: "/assets/logos/wordpress.svg" },
+      { id: 2, name: "HTML5", path: "/assets/logos/html5.svg" },
+      { id: 3, name: "CSS3", path: "/assets/logos/css3.svg" },
+      { id: 4, name: "Vite.js", path: "/assets/logos/vitejs.svg" },
     ],
   },
   {
@@ -311,30 +279,23 @@ export const myProjects = [
       "Added a quiz system with dynamic question generation and real-time grading.",
       "Integrated Stripe API for secure payment processing.",
     ],
-    href: "",
-    logo: "",
+    overview:
+      "An e-learning platform supporting video courses, real-time quizzes, and secure payments with Blazor and Azure.",
+    features: [
+      "Course enrollment system",
+      "Video streaming with Azure",
+      "Dynamic quizzes with grading",
+      "Stripe-powered payments",
+    ],
+    demoUrl: "https://your-demo-link.com/elearning",
+    githubUrl: "https://github.com/yourusername/elearning-platform",
+    gradient: "linear-gradient(135deg, #ff007a, #5900ff)",
     image: "/assets/projects/elearning.jpg",
     tags: [
-      {
-        id: 1,
-        name: "Blazor",
-        path: "/assets/logos/blazor.svg",
-      },
-      {
-        id: 2,
-        name: "Azure",
-        path: "/assets/logos/azure.svg",
-      },
-      {
-        id: 3,
-        name: "Stripe",
-        path: "/assets/logos/stripe.svg",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
+      { id: 1, name: "Blazor", path: "/assets/logos/blazor.svg" },
+      { id: 2, name: "Azure", path: "/assets/logos/azure.svg" },
+      { id: 3, name: "Stripe", path: "/assets/logos/stripe.svg" },
+      { id: 4, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
     ],
   },
 ];
