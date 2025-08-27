@@ -33,7 +33,7 @@ export const navItems = [
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/yourprofile",
+    href: "www.linkedin.com/in/shamirali55",
     icon: Linkedin,
     category: "Social",
   },

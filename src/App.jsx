@@ -7,11 +7,14 @@ import ErrorPage from "./pages/ErrorPage";
 import ContactPage from "./pages/ContactPage";
 import ProjectPage from "./pages/ProjectPage";
 import LinksPage from "./pages/LinksPage";
+import ScrollToTop from "./components/ScrollToTop";
+
 const App = () => {
   return (
     <ReactLenis root={true}>
       <section id="home" className="w-full min-h-screen relative z-[10]">
         <Navbar />
+        <ScrollToTop />
         <Routes>
           <Route index path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />

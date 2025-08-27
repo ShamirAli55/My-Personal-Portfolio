@@ -67,17 +67,17 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6 mt-2 md:mt-0">
+        <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6 mt-2 md:mt-0 transition-all duration-300">
           <ThemeToggle />
           <div className="flex gap-3 md:gap-4">
             <a href="https://github.com/ShamirAli55" target="_blank">
-              <Github className="w-5 h-5 md:h-6 md:w-6" />
+              <Github className="w-5 h-5 md:h-6 md:w-6  hover:scale-110" />
             </a>
-            <a href="" target="_blank">
-              <Linkedin className="w-5 h-5 md:h-6 md:w-6" />
+            <a href="https://linkedin.com/in/shamirali55" target="_blank">
+              <Linkedin className="w-5 h-5 md:h-6 md:w-6 hover:scale-110" />
             </a>
             <a href="#" target="_blank">
-              <Twitter className="w-5 h-5 md:h-6 md:w-6" />
+              <Twitter className="w-5 h-5 md:h-6 md:w-6 hover:scale-110" />
             </a>
           </div>
         </div>
@@ -86,7 +86,6 @@ const Footer = () => {
       <p className="text-xs md:text-lg py-6 w-full md:w-auto text-center">
         Crafted with ❤️ by Shamir Ali | Full Stack Developer
       </p>
-
     </section>
   );
 };
