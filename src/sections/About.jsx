@@ -83,7 +83,7 @@ const About = () => {
             <div className="pointer-events-none">
               <p className=" text-4xl py-4">Time Zone</p>
               <p className="text-xs md:text-lg md:px-2 w-2/3  md:w-1/2">
-                I'm based in Mars, and open to remote work worldwide.
+                I'm based in Pakistan, and open to remote work worldwide.
               </p>
             </div>
 
@@ -96,8 +96,9 @@ const About = () => {
             <Globe />
           </figure> */}
         </div>
+        
         {/* Card 4 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl p-4 flex border border-opposite/20 transition duration-300 shadow-md items-center justify-center"></div>
+        <div className="col-span-1 sm:col-span-full md:col-span-4 rounded-xl p-4 flex border border-opposite/20 transition duration-300 shadow-md items-center justify-center"></div>
 
         {/* Card 5 */}
         <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-lg border border-opposite/20 transition duration-300 shadow-md p-4">
@@ -111,10 +112,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Card 6 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-xl border border-opposite/20 transition duration-300 shadow-md p-4 flex items-center justify-center">
-          <p>Flexible Timezones</p>
-        </div>
+
       </div>
 
       <h1 className="text-3xl  md:hidden font-bold text-primary pt-8 font-[Funnel-Sans] gradient-text">

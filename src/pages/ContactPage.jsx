@@ -3,6 +3,49 @@ import { cn } from "../lib/utils.js";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import Footer from "../components/Footer";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import { Model } from "../components/3DEmail.jsx";
+
+
+
+const RotatingModel = () => {
+  const ref = useRef();
+
+  const original = {
+    position: [0, -4, 0],
+    rotation: [0, 0, 0],
+    scale: 6
+  };
+
+  useFrame(() => {
+    if (ref.current) {
+      // Smoothly reset rotation on X and Z to original
+      ref.current.rotation.x += (original.rotation[0] - ref.current.rotation.x) * 0.05;
+      ref.current.rotation.z += (original.rotation[2] - ref.current.rotation.z) * 0.05;
+
+      // Auto-rotate Y
+      ref.current.rotation.y += 0.01;
+
+      // Smoothly reset position if dragged
+      ref.current.position.x += (original.position[0] - ref.current.position.x) * 0.1;
+      ref.current.position.y += (original.position[1] - ref.current.position.y) * 0.1;
+      ref.current.position.z += (original.position[2] - ref.current.position.z) * 0.1;
+
+      // Keep scale fixed
+      ref.current.scale.set(original.scale, original.scale, original.scale);
+    }
+  });
+
+  return (
+    <group ref={ref}>
+      <Model />
+    </group>
+  );
+};
+
+
+
 const Contact = () => {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
@@ -24,7 +67,6 @@ const Contact = () => {
           setLoading(false);
           setSent(true);
           formRef.current.reset();
-
           setTimeout(() => setSent(false), 3000);
         },
         (err) => {
@@ -51,8 +93,21 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="bg-red-200"></div>
 
+          <div className="bg-card flex items-center justify-center rounded-xl shadow-md p-4">
+<Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
+  <ambientLight intensity={0.8} />
+  <directionalLight position={[5, 10, 5]} intensity={1.2} castShadow />
+  <spotLight position={[-5, 10, 5]} angle={0.3} intensity={0.8} penumbra={0.5} castShadow />
+
+  <RotatingModel />
+
+  {/* OrbitControls rotates the parent, not the model itself */}
+  <OrbitControls enableZoom={false} enablePan={false} />
+</Canvas>
+          </div>
+
+          {/* Contact Form */}
           <div className="bg-card p-8 rounded-xl shadow-md">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
