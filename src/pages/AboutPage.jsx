@@ -4,8 +4,8 @@ import { experiences } from "../constants";
 import GitHubStats from "../components/GitHubStats";
 const AboutPage = () => {
   return (
-    <section className="min-h-screen w-full bg-background text-primary">
-      <h1 className="container text-3xl md:hidden font-bold text-primary pt-8 font-[Funnel-Sans] graident-text">
+    <section className="min-h-screen w-full bg-background text-primary pt-12 md:pt-0">
+      <h1 className="container text-3xl gradient-text md:hidden font-bold text-primary pt-8 font-[Funnel-Sans] graident-text">
         About Me
       </h1>
       <AboutBottomPart />

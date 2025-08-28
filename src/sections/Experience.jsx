@@ -123,7 +123,7 @@ const Experience = () => {
         <p className="uppercase tracking-widest text-opposite-400 text-sm">
           My Experience
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold">
+        <h2 className="text-3xl md:text-5xl font-bold">
           Driven by <span className="gradient-text">Curiosity</span>
         </h2>
       </div>

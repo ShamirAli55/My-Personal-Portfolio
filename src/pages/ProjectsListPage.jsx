@@ -120,7 +120,7 @@ const ProjectsListPage = () => {
   return (
     <>
 
-      <div className="hidden lg:block min-h-screen bg-background text-primary px-6 md:px-12 lg:px-20 py-16">
+      <div className="hidden lg:block min-h-screen bg-background text-primary px-6 md:px-12 lg:px-20 py-22">
         <div
           className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-10 lg:gap-20"
           ref={containerRef}
@@ -181,7 +181,7 @@ const ProjectsListPage = () => {
       </div>
 
 
-      <div className="lg:hidden bg-background text-primary px-4 py-10 space-y-6">
+      <div className="lg:hidden bg-background text-primary px-4 pt-22 pb-10 md:pt-0 md:pb-10 space-y-6">
         {myProjects.map((project, i) => (
           <div
             key={i}
