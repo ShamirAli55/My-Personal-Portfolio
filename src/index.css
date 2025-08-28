@@ -242,8 +242,6 @@ html.dark {
   background-color: hsl(var(--foreground));
   transform: translateX(-110%);
 }
-
-/* Hover in → slide left → right */
 .showborder:hover.textline::after {
   animation: slideIn 0.5s forwards;
 }
@@ -463,6 +461,23 @@ html.dark {
     .animate-slideUp {
     animation: slideUp 0.3s ease-out;
   }
+
+.slider {
+  display: flex;
+  gap: 2rem;
+  animation: sliding-banner 40s linear infinite;
+  width: max-content; 
+}
+
+@keyframes sliding-banner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* move half the repeated width */
+  }
+}
+
 #root
 {
   max-width: 100%;
