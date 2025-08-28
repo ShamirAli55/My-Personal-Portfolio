@@ -48,7 +48,7 @@ const Button = ({ name, to }) => {
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         className="
-    px-4 md:px-6 py-2 md:font-bold rounded-full transition-all flex items-center md:justify-between
+    px-4 md:px-6 md:py-2 md:font-bold rounded-full transition-all flex items-center md:justify-between
     duration-300 active:scale-95 cursor-pointer 
     text-primary md:text-sm text-lg
     bg-white/10 backdrop-blur-md border border-primary-foreground/20 
@@ -63,7 +63,7 @@ const Button = ({ name, to }) => {
               ref={arrRef}
               className="absolute flex items-center gap-2 top-1/2 right-[-55%] -translate-x-1/2 -translate-y-1/2"
             >
-              <ArrowRight size={20} color="hsl(var(--background))"/>
+              <ArrowRight size={20} color="hsl(var(--background))" />
               <ArrowRight size={20} color="hsl(var(--background))" />
             </div>
           </div>
