@@ -4,11 +4,40 @@ import Banner from "../components/Banner";
 import { Frameworks } from "../components/Frameworks";
 import AboutBottomPart from "../components/AboutBottomPart";
 import { Globe } from "../components/Globe";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { MapPin } from "lucide-react";
 
 const About = () => {
   const grid2Container = useRef();
+
+
+  const [showFrameworks, setShowFrameworks] = useState(false);
+  const [showCards, setShowCards] = useState(false);
+  const [showGlobe, setShowGlobe] = useState(false);
+
+
+  const useVisibility = (ref, setter) => {
+    useEffect(() => {
+      if (!ref.current) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setter(entry.isIntersecting);
+        },
+        { threshold: 0.2 }
+      );
+      observer.observe(ref.current);
+      return () => observer.disconnect();
+    }, [ref]);
+  };
+
+  // refs for each
+  const frameworksRef = useRef();
+  const cardsRef = useRef();
+  const globeRef = useRef();
+
+  useVisibility(frameworksRef, setShowFrameworks);
+  useVisibility(cardsRef, setShowCards);
+  useVisibility(globeRef, setShowGlobe);
 
   return (
     <section
@@ -17,7 +46,7 @@ const About = () => {
     >
       <div className="grid gap-6 grid-cols-1 md:grid-cols-6 auto-rows-[200px] px-6">
         {/* Card 1 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-2  md:row-span-3 rounded-xl  p-4 relative duration-200 overflow-hidden pointer-events-none z-10 border border-opposite/20 transition shadow-md">
+        <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-2 md:row-span-3 rounded-xl p-4 relative duration-200 overflow-hidden pointer-events-none z-10 border border-opposite/20 transition shadow-md">
           <img
             src="assets/coding-pov.png"
             className="absolute scale-[2.1] right-[-4rem] top-[2rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
@@ -33,81 +62,96 @@ const About = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-3 rounded-xl p-5 relative border border-opposite/20 transition duration-300 shadow-md overflow-hidden">
+        <div
+          ref={frameworksRef}
+          className="col-span-1 sm:col-span-full md:col-span-3 rounded-xl p-5 relative border border-opposite/20 transition duration-300 shadow-md overflow-hidden"
+        >
           <div className="z-10 flex text-start flex-col h-full w-full relative">
-            <p className="text-4xl font-bold">Teck Stack</p>
+            <p className="text-4xl font-bold">Tech Stack</p>
             <p className="text-xs md:text-lg w-2/3 pr-2 md:pr-4 py-6 md:tracking-tight">
               A blend of code and creativity. I combine languages, frameworks,
               and tools to turn ideas into smooth, interactive experiences.
             </p>
           </div>
-          <div className="absolute right-0 top-0 w-full h-full start-[67%] md:start-[40%] scale-100">
-            <Frameworks />
-          </div>
+          {showFrameworks && (
+            <div className="absolute right-0 top-0 w-full h-full start-[67%] md:start-[40%] scale-100">
+              <Frameworks />
+            </div>
+          )}
         </div>
 
         {/* Card 3 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-2 rounded-xl border border-opposite/20 transition duration-300 shadow-md p-4 relative overflow-hidden z-10 text-primary">
+        <div
+          ref={globeRef}
+          className="col-span-1 sm:col-span-full md:col-span-3 row-span-2 rounded-xl border border-opposite/20 transition duration-300 shadow-md p-4 relative overflow-hidden z-10 text-primary"
+        >
           <div className="h-full z-10 w-full text-left px-4 flex flex-col md:justify-between">
             <div className="pointer-events-none">
-              <p className=" text-4xl py-4">Time Zone</p>
+              <p className="text-4xl py-4">Time Zone</p>
               <p className="text-xs md:text-lg ">
                 I'm based in Pakistan, and open{" "}
                 <span className="block">to remote work worldwide.</span>
               </p>
             </div>
 
-            <div className="flex items-center gap-2 pt-6 md:py-15 text-primary cursor-pointer ">
+            <div className="flex items-center gap-2 pt-6 md:py-15 text-primary cursor-pointer">
               <MapPin size={30} color="hsl(var(--primary))" />
-              <span className="text-sm md:text-xl ">Islamabad, Pakistan</span>
+              <span className="text-sm md:text-xl">Islamabad, Pakistan</span>
             </div>
           </div>
-          {/* <figure className="absolute top-40 -right-50 md:right-[-25%] md:top-[5%] cursor-grab">
-            <Globe />
-          </figure> */}
+          {/* {showGlobe && (
+            <figure className="absolute top-40 -right-50 md:right-[-25%] md:top-[5%] cursor-grab">
+              <Globe />
+            </figure>
+          )} */}
         </div>
 
         {/* Card 4 */}
-        <div className="col-span-1 sm:col-span-full md:col-span-4 rounded-xl p-4 flex border border-opposite/20 transition duration-300 shadow-md items-center justify-center overflow-hidden">
-          <div
-            ref={grid2Container}
-            className="relative flex items-center justify-center w-full h-full "
-          >
-            <p className="flex items-end text-3xl md:text-5xl text-primary/60 pointer-events-none cursor-none">
-              CODE IS CRAFT
-            </p>
+        <div
+          ref={cardsRef}
+          className="col-span-1 sm:col-span-full md:col-span-4 rounded-xl p-4 flex border border-opposite/20 transition duration-300 shadow-md items-center justify-center overflow-hidden"
+        >
+          {showCards && (
+            <div
+              ref={grid2Container}
+              className="relative flex items-center justify-center w-full h-full"
+            >
+              <p className="flex items-end text-3xl md:text-5xl text-primary/60 pointer-events-none cursor-none">
+                CODE IS CRAFT
+              </p>
 
-            <Card
-              style={{ rotate: "-30deg", top: "55%", left: "45%" }}
-              text="SOLID"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "90deg", bottom: "30%", left: "70%" }}
-              text="Design Patterns"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-45deg", top: "50%", left: "0%" }}
-              text="Design Principles"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "20deg", top: "10%", left: "38%" }}
-              text="SRP"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-45deg", top: "70%", left: "25%" }}
-              image="assets/logos/dotnet-pink.png"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-45deg", top: "5%", left: "10%" }}
-              image="assets/logos/blazor-pink.png"
-              containerRef={grid2Container}
-            />
-          </div>
+              <Card
+                style={{ rotate: "-30deg", top: "55%", left: "45%" }}
+                text="SOLID"
+                containerRef={grid2Container}
+              />
+              <Card
+                style={{ rotate: "90deg", bottom: "30%", left: "70%" }}
+                text="Design Patterns"
+                containerRef={grid2Container}
+              />
+              <Card
+                style={{ rotate: "-45deg", top: "50%", left: "0%" }}
+                text="Design Principles"
+                containerRef={grid2Container}
+              />
+              <Card
+                style={{ rotate: "20deg", top: "10%", left: "38%" }}
+                text="SRP"
+                containerRef={grid2Container}
+              />
+              <Card
+                style={{ rotate: "-45deg", top: "70%", left: "25%" }}
+                image="assets/logos/dotnet-pink.png"
+                containerRef={grid2Container}
+              />
+              <Card
+                style={{ rotate: "-45deg", top: "5%", left: "10%" }}
+                image="assets/logos/blazor-pink.png"
+                containerRef={grid2Container}
+              />
+            </div>
+          )}
         </div>
 
         {/* Card 5 */}
@@ -123,7 +167,7 @@ const About = () => {
         </div>
       </div>
 
-      <h1 className="text-3xl  md:hidden font-bold text-primary pt-8 font-[Funnel-Sans] gradient-text">
+      <h1 className="text-3xl md:hidden font-bold text-primary pt-8 font-[Funnel-Sans] gradient-text">
         About Me
       </h1>
 
