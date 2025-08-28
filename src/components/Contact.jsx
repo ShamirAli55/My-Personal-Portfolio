@@ -19,7 +19,7 @@ const Contact = () => {
       </p>
       <p className="text-gray-400 max-w-xl md:px-8 px-4 text-[10px] md:text-lg">
         I design and build experiences that not only look good but work
-        seamlessly — balancing creativity with performance.
+        seamlessly balancing creativity with performance.
       </p>
     </section>
   );
