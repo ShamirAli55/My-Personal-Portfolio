@@ -1,5 +1,6 @@
 import EmailCopyButton from "../components/EmailCopyButton";
 import Card from "../components/Card";
+import Banner from "../components/Banner";
 import { Frameworks } from "../components/Frameworks";
 import AboutBottomPart from "../components/AboutBottomPart";
 import { Globe } from "../components/Globe";
@@ -12,23 +13,23 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen w-full px-6 py-10 bg-background text-primary"
+      className="min-h-screen w-full py-10 bg-background text-primary overflow-x-hidden"
     >
-      <div className="grid gap-6 grid-cols-1 md:grid-cols-6 auto-rows-[200px]">
+      <div className="grid gap-6 grid-cols-1 md:grid-cols-6 auto-rows-[200px] px-6">
         {/* Card 1 */}
         <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-2  md:row-span-3 rounded-xl  p-4 relative duration-200 overflow-hidden pointer-events-none z-10 border border-opposite/20 transition shadow-md">
           <img
             src="assets/coding-pov.png"
-            className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
+            className="absolute scale-[2.1] right-[-4rem] top-[2rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
           />
           <div className="z-10 relative h-full flex flex-col text-left justify-end pb-4 md:py-10 px-2 md:px-6">
-            <p className="mt-2 mb-2 text-xl w-full">Hi, I'm Ali Sanati</p>
+            <p className="mt-2 mb-2 text-xl w-full">Hi, I'm Shamir Ali</p>
             <p className="text-neutral-400 text-sm md:text-base text-pretty md:pr-8">
-              Over the last 4 years, I developed my frontend and backend dev
-              skills to deliver dynamic and software and web applications.
+              Software engineering student focused on creating modern,
+              user-friendly web applications.
             </p>
           </div>
-          <div className="absolute inset-x-0 pointer-evets-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
+          <div className="absolute inset-x-0 pointer-evets-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-opposite/10 via-opposite/10 to-primary-foreground/" />
         </div>
 
         {/* Card 2 */}
@@ -127,6 +128,8 @@ const About = () => {
       </h1>
 
       <AboutBottomPart />
+
+      <Banner />
     </section>
   );
 };

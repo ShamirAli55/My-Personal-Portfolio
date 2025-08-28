@@ -1,7 +1,7 @@
 import ImageWrapper from "./ImageWrapper";
 const AboutBottomPart = () => {
   return (
-    <div className="container min-h-screen w-full mt-12 md:mt-28 flex flex-col md:flex-row items-center md:px-22 relative">
+    <div className="min-h-screen w-full mt-12 md:mt-28 flex flex-col md:flex-row items-center md:px-22 relative px-6">
       <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12 items-center">
         <ImageWrapper />
 
