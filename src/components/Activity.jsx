@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { BookOpen, GitFork, GitPullRequest, Folder } from "lucide-react";
 
 const GITHUB_USERNAME = "ShamirAli55";
-const GITHUB_TOKEN =
-  "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";
+const GITHUB_TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
 
 const fetchGitHubData = async () => {
   const query = `
