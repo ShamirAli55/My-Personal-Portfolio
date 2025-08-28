@@ -171,7 +171,7 @@ const Projects = () => {
                 projects_overlay relative"
               onMouseEnter={() => handleMouseEnter(project.image)}
               onMouseLeave={handleMouseLeave}
-              onClick={() => navigate(`/projects/${project.id}`)}
+              onClick={() => navigate(`/projects/${project.slug}`)}
             >
               <div className="h-48 overflow-hidden mb-4 md:hidden rounded-lg pointer-events-none">
                 <img
