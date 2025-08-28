@@ -1,6 +1,6 @@
 import { navItems } from "../constants";
 import { NavLink, useLocation } from "react-router-dom";
-import { AppWindow } from "lucide-react";
+import { AppWindow, Menu } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import HiddenMenu from "./HiddenMenu";
 
@@ -11,8 +11,8 @@ const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("theme") === "dark"
   );
-  const [isOpen, setIsOpen] = useState(false); // right-side hidden menu
-  const [isMoreOpen, setIsMoreOpen] = useState(false); // controlled by hover + timers
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
   const closeTimerRef = useRef(null);
 
   const handleAnimation = (e) => {
@@ -209,7 +209,15 @@ const Navbar = () => {
         </div>
 
         <div
-          className="cursor-pointer"
+          className="cursor-pointer md:hidden"
+          onClick={() => setIsOpen((prev) => !prev)}
+          ref={MenuRef}
+        >
+          <Menu color="hsl(var(--primary))" />
+        </div>
+
+        <div
+          className="cursor-pointer hidden md:block"
           onClick={() => setIsOpen((prev) => !prev)}
           ref={MenuRef}
         >

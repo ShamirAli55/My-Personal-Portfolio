@@ -21,12 +21,10 @@ const HiddenMenu = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  // Filter links based on search
   const filteredItems = navItems.filter((item) =>
     item.name.toLowerCase().includes(query.toLowerCase())
   );
 
-  // Group by category
   const grouped = filteredItems.reduce((acc, item) => {
     if (!acc[item.category]) acc[item.category] = [];
     acc[item.category].push(item);
@@ -38,7 +36,8 @@ const HiddenMenu = ({ isOpen, onClose }) => {
 
   return (
     <div className="min-h-[70vh] md:w-1/2 w-[80%] left-[10%] top-[50%] md:left-[25%] absolute z-[200]">
-      <div className="h-full w-full shadow-[0_8px_32px_rgba(0,0,0,0.25)] bg-background/25 backdrop-blur-xl border border-primary-foreground/20 rounded-xl">
+      <div className="h-full w-full flex flex-col shadow-[0_8px_32px_rgba(0,0,0,0.25)] bg-background/25 backdrop-blur-xl border border-primary-foreground/20 rounded-xl">
+        {/* Search Bar */}
         <div className="flex items-center justify-between px-8 py-3 w-full relative border-b">
           <div className="flex items-center relative w-full">
             <Search className="absolute left-3 text-primary" size={18} />
@@ -58,7 +57,7 @@ const HiddenMenu = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        <div className="max-h-[60vh] overflow-y-auto custom-scrollbar">
+        <div className="flex-1 max-h-[60vh] overflow-y-auto custom-scrollbar">
           {sortedCategories.length > 0 ? (
             sortedCategories.map((category) => (
               <div key={category} className="mt-4">
@@ -73,8 +72,8 @@ const HiddenMenu = ({ isOpen, onClose }) => {
                       to={item.href}
                       onClick={onClose}
                       className={({ isActive }) =>
-                        ` px-8 py-2 w-full flex items-center text-primary gap-3 cursor-pointer rounded-lg 
-                         ${isActive ? "bg-primary/5" : "hover:bg-primary/10"}`
+                        `px-8 py-2 w-full flex items-center text-primary gap-3 cursor-pointer rounded-lg 
+                        ${isActive ? "bg-primary/5" : "hover:bg-primary/10"}`
                       }
                     >
                       {({ isActive }) => (
@@ -116,6 +115,30 @@ const HiddenMenu = ({ isOpen, onClose }) => {
           ) : (
             <p className="px-8 py-3 text-sm text-gray-400">No results found</p>
           )}
+        </div>
+
+        <div className="flex justify-end items-center bg-opposite/15 rounded-b-xl gap-6 px-6 py-2 border-t text-xs text-primary/60">
+          <span className="flex items-center gap-1">
+            <kbd className="px-1.5 py-0.5 rounded bg-primary/10 text-primary text-[10px]">
+              ↑
+            </kbd>
+            <kbd className="px-1.5 py-0.5 rounded bg-primary/10 text-primary text-[10px]">
+              ↓
+            </kbd>
+            navigate
+          </span>
+          <span className="flex items-center gap-1">
+            <kbd className="px-1.5 py-0.5 rounded bg-primary/10 text-primary text-[10px]">
+              ↵
+            </kbd>
+            select
+          </span>
+          <span className="flex items-center gap-1">
+            <kbd className="px-1.5 py-0.5 rounded bg-primary/10 text-primary text-[10px]">
+              esc
+            </kbd>
+            close
+          </span>
         </div>
       </div>
     </div>

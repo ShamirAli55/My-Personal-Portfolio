@@ -9,7 +9,7 @@ import {
   Linkedin,
   Twitter,
   BriefcaseBusiness,
-  CircleUserRound,
+  Star,
   FileText,
   FolderOpen,
   Link2,
@@ -29,7 +29,7 @@ export const navItems = [
   },
   { name: "Resume", href: "/resume", icon: FileText, category: "Personal" },
   { name: "Links", href: "/links", icon: Link2, category: "Personal" },
-  { name: "Bio", href: "/bio", icon: CircleUserRound, category: "Personal" },
+  { name: "Interests", href: "/interests", icon: Star, category: "Personal" },
 
   { name: "Blog", href: "/error", icon: BookOpen, category: "Resources" },
 

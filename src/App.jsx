@@ -8,7 +8,7 @@ import ContactPage from "./pages/ContactPage";
 import ProjectPage from "./pages/ProjectPage";
 import ExperiencePage from "./pages/ExperiencePage";
 import LinksPage from "./pages/LinksPage";
-import PersonalInfo from "./pages/BioPage";
+import InterestsPage from "./pages/InterestsPage";
 import Resume from "./pages/ResumePage";
 import ScrollToTop from "./components/ScrollToTop";
 import ProjectsListPage from "./pages/ProjectsListPage";
@@ -33,7 +33,7 @@ const App = () => {
           <Route path="/projects/:slug" element={<ProjectPage />} />
           <Route path="/links" element={<LinksPage />} />
           <Route path="/experience" element={<ExperiencePage />} />
-          <Route path="/bio" element={<PersonalInfo />} />
+          <Route path="/interests" element={<InterestsPage />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/error" element={<ErrorPage />} />
