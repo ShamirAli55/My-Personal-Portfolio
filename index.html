@@ -1,23 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shamir Ali - Portfolio </title>
-    <script>
-  const theme = localStorage.getItem("theme");
+    <title>Shamir Ali - Portfolio</title>
+    <style>
+      @font-face {
+        font-family: "Funnel-Sans";
+        src: url("/fonts/FunnelSans-VariableFont_wght.woff2") format("woff2");
+        font-display: swap;
+      }
 
-  if (theme === "dark") {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
+      @font-face {
+        font-family: "Funnel-Display";
+        src: url("/fonts/FunnelDisplay-VariableFont_wght.woff2") format("woff2");
+        font-display: swap;
+      }
+    </style>
+
+    <script>
+      const theme = localStorage.getItem("theme");
+
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
     </script>
-      </head>
-      <body>
-        <div id="root"></div>
-    </script>
+  </head>
+  <body>
+    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
