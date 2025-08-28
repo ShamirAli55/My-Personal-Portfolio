@@ -4,7 +4,7 @@ import MagneticButton from "../components/MagneticButn";
 const Contact = () => {
   return (
     <section className="w-full min-h-screen flex flex-col justify-center items-center px-6 pt-16 text-center text-primary relative">
-      <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 tracking-wide ">
+      <h1 className="text-2xl md:text-6xl font-extrabold leading-tight mb-6 tracking-wide">
         CODE <span className="gradient-text">ANIMATE</span> CREATE
       </h1>
 
