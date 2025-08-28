@@ -10,8 +10,8 @@ const Section = ({ title, children }) => (
 );
 
 const ProjectPage = () => {
-  const { id } = useParams();
-  const project = myProjects.find((p) => p.id.toString() === id);
+  const { slug } = useParams();
+  const project = myProjects.find((p) => p.slug === slug); 
 
   if (!project) {
     return (
@@ -69,7 +69,6 @@ const ProjectPage = () => {
         </div>
 
         <div className="max-w-3xl text-left">
-          {/* Overview */}
           {project.overview && (
             <Section title="Overview">
               <p className="text-lg text-muted-foreground leading-relaxed">

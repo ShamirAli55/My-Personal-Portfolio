@@ -154,6 +154,7 @@ export const myProjects = [
   {
     id: 1,
     title: "E-commerce Platform",
+    slug: "e-commerce-platform",
     description:
       "Facilitates purchases from websites, allowing customers to shop from these sites.",
     subDescription: [
@@ -184,6 +185,7 @@ export const myProjects = [
   {
     id: 2,
     title: "Authentication System",
+    slug: "authentication-system",
     description:
       "A secure authentication and authorization system using Auth0 for seamless user management.",
     subDescription: [
@@ -213,6 +215,7 @@ export const myProjects = [
   {
     id: 4,
     title: "C++ Game Engine",
+    slug: "cpp-game-engine",
     description:
       "A lightweight C++ game engine designed for 2D and 3D game development.",
     subDescription: [
@@ -242,6 +245,7 @@ export const myProjects = [
   {
     id: 5,
     title: "WordPress Custom Theme",
+    slug: "wordpress-custom-theme",
     description:
       "A fully customizable WordPress theme optimized for performance and SEO.",
     subDescription: [
@@ -271,6 +275,7 @@ export const myProjects = [
   {
     id: 6,
     title: "Online Learning Platform",
+    slug: "online-learning-platform",
     description:
       "A web application that allows users to enroll in courses, watch video lectures, and take quizzes.",
     subDescription: [

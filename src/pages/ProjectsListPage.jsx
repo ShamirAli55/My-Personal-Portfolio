@@ -137,13 +137,12 @@ const ProjectsListPage = () => {
                 }}
                 onMouseEnter={() => handleMouseEnter(project.image)}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => navigate(`/projects/${project.id}`)}
+                onClick={() => navigate(`/projects/${project.slug}`)}
               >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="h-full w-auto object-contain rounded-2xl 
-                    transition-transform duration-500 ease-out hover:-rotate-2 hover:scale-[1.08] drop-shadow-2xl"
+                  className="h-full w-auto object-contain rounded-2xl transition-transform duration-500 ease-out hover:-rotate-2 hover:scale-[1.08] drop-shadow-2xl"
                 />
               </div>
             ))}
@@ -169,7 +168,7 @@ const ProjectsListPage = () => {
                 {myProjects[activeIndex].tags.map((tag, j) => (
                   <span
                     key={j}
-                    className="flex items-center gap-2 px-3 py-1 rounded-full  text-sm shadow-md border border-opposite/15"
+                    className="flex items-center gap-2 px-3 py-1 rounded-full text-sm shadow-md border border-opposite/15"
                   >
                     <img src={tag.path} alt={tag.name} className="h-4 w-4" />
                     {tag.name}
@@ -181,15 +180,14 @@ const ProjectsListPage = () => {
         </div>
       </div>
 
-      {/* ✅ Mobile/Small devices */}
+
       <div className="lg:hidden bg-background text-primary px-4 py-10 space-y-6">
         {myProjects.map((project, i) => (
           <div
             key={i}
             className="border border-border rounded-xl p-4 shadow-sm bg-card hover:shadow-md transition cursor-pointer"
-            onClick={() => navigate(`/projects/${project.id}`)}
+            onClick={() => navigate(`/projects/${project.slug}`)}
           >
-            {/* Image */}
             <div
               className="flex items-center justify-center rounded-lg mb-4 overflow-hidden"
               style={{
@@ -203,10 +201,7 @@ const ProjectsListPage = () => {
               />
             </div>
 
-            {/* Title */}
             <h2 className="text-lg font-semibold mb-2">{project.title}</h2>
-
-            {/* Description */}
             <p className="text-sm text-muted-foreground line-clamp-3">
               {project.description}
             </p>
@@ -214,14 +209,13 @@ const ProjectsListPage = () => {
         ))}
       </div>
 
-      {/* Cursor effect (only for desktop) */}
       <div
         ref={CrsrRef}
         className="md:opacity-100 fixed h-22 top-0 w-22 rounded-full pointer-events-none z-[999]"
         style={{ opacity: 0 }}
       >
         <div
-          className="absolute inset-0 rounded-full  bg-opposite/10 backdrop-blur-xl 
+          className="absolute inset-0 rounded-full bg-opposite/10 backdrop-blur-xl 
             border border-white/30 shadow-lg flex items-center justify-center
             before:content-[''] before:absolute before:inset-0 
             before:rounded-full before:bg-gradient-to-tr 

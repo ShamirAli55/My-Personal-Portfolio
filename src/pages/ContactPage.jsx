@@ -7,27 +7,31 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Model } from "../components/3DEmail.jsx";
 
+import { useThree } from "@react-three/fiber";
+import { useMemo } from "react";
+
 const RotatingModel = () => {
   const ref = useRef();
+  const { size } = useThree();
 
-  const original = {
-    position: [0, -4, 0],
-    rotation: [0, 0, 0],
-    scale: 6,
-  };
+  const original = useMemo(() => {
+    if (size.width < 640) {
+      return { position: [0, -2, 0], rotation: [0, 0, 0], scale: 3 };
+    } else if (size.width < 1024) {
+      return { position: [0, -3, 0], rotation: [0, 0, 0], scale: 4.5 };
+    } else {
+      return { position: [0, -4, 0], rotation: [0, 0, 0], scale: 6 };
+    }
+  }, [size.width]);
 
   useFrame(() => {
     if (ref.current) {
-      // Smoothly reset rotation on X and Z to original
       ref.current.rotation.x +=
         (original.rotation[0] - ref.current.rotation.x) * 0.05;
       ref.current.rotation.z +=
         (original.rotation[2] - ref.current.rotation.z) * 0.05;
-
-      // Auto-rotate Y
       ref.current.rotation.y += 0.01;
 
-      // Smoothly reset position if dragged
       ref.current.position.x +=
         (original.position[0] - ref.current.position.x) * 0.1;
       ref.current.position.y +=
@@ -35,7 +39,6 @@ const RotatingModel = () => {
       ref.current.position.z +=
         (original.position[2] - ref.current.position.z) * 0.1;
 
-      // Keep scale fixed
       ref.current.scale.set(original.scale, original.scale, original.scale);
     }
   });
@@ -95,7 +98,10 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="bg-card flex items-center justify-center rounded-xl shadow-md p-4">
-            <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
+            <Canvas
+              camera={{ position: [0, 0, 10], fov: 50 }}
+              className="w-full h-[350px] md:h-[500px] lg:h-[600px]"
+            >
               <ambientLight intensity={0.8} />
               <directionalLight
                 position={[5, 10, 5]}
@@ -175,7 +181,8 @@ const Contact = () => {
                 type="submit"
                 disabled={loading}
                 className={cn(
-                  "w-full flex justify-center items-center gap-2",
+                  "w-full flex justify-center items-center gap-2 px-6 py-3 rounded-lg cursor-pointer font-medium transition-all duration-300",
+                  "bg-opposite text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg active:scale-95",
                   loading && "opacity-70 cursor-not-allowed"
                 )}
               >
