@@ -34,6 +34,8 @@ html, body, #root {
     --color-bento-background:hsl(var(--bento-background));
     --color-footer:hsl(var(--footer));
     
+    --color-indigo: #1f1e39;
+
     --gradient-light-from: 190 95% 65%; /* cyan-400 */
     --gradient-light-mid: 200 92% 62%;  /* blue-cyan blend */
     --gradient-light-to: 220 90% 60%;   /* blue-500 */
