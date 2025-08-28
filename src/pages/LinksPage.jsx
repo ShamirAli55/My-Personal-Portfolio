@@ -1,8 +1,9 @@
 import { navItems } from "../constants";
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 const LinksPage = () => {
   const email = "shamirali9779@gmail.com";
+  const phone = "+92 0317 5266003";
 
   const links = navItems.filter(
     (item) => item.name.toLowerCase() === "resume" || item.category === "Social"
@@ -17,7 +18,7 @@ const LinksPage = () => {
       <div className="flex flex-col w-full max-w-md space-y-4 px-5">
         <a
           href={`mailto:${email}`}
-          className="container flex items-center gap-4 w-full max-w-md p-4 mb-6 rounded-2xl 
+          className="container flex items-center gap-4 w-full max-w-md p-4 rounded-2xl 
                    bg-white/10 backdrop-blur-md border border-white/20
                    shadow-lg hover:scale-105 
                    hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500
@@ -26,6 +27,19 @@ const LinksPage = () => {
           <Mail className="w-6 h-6" color="hsl(var(--opposite))" />
           <span className="text-lg font-semibold">{email}</span>
         </a>
+
+        <a
+          href={`tel:${phone.replace(/\s+/g, "")}`}
+          className="container flex items-center gap-4 w-full max-w-md p-4 rounded-2xl 
+                   bg-white/10 backdrop-blur-md border border-white/20
+                   shadow-lg hover:scale-105 
+                   hover:bg-gradient-to-r hover:from-yellow-400 hover:to-red-500
+                   transition-all duration-300"
+        >
+          <Phone className="w-6 h-6" color="hsl(var(--opposite))" />
+          <span className="text-lg font-semibold">{phone}</span>
+        </a>
+
         {links.map((link, index) => (
           <a
             key={index}
@@ -43,7 +57,6 @@ const LinksPage = () => {
           </a>
         ))}
       </div>
-
     </div>
   );
 };

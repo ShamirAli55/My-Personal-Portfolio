@@ -10,18 +10,16 @@ const Resume = () => {
         My <span className="gradient-text">Resume</span>
       </h2>
 
-      <div className="w-full max-w-4xl h-[80vh] md:h-[85vh] border rounded-xl shadow-lg overflow-y-auto overflow-x-hidden mb-6">
+      <div className="w-full max-w-4xl h-auto md:h-[85vh] border rounded-xl shadow-lg overflow-y-auto overflow-x-hidden mb-6">
         <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
           <Viewer
             fileUrl="/assets/Docs/Shamir_Ali_Resume.pdf"
-            defaultScale="PageWidth" 
+            defaultScale="PageWidth"
           />
         </Worker>
       </div>
 
-
       <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-
         <a
           href="/assets/Docs/Shamir_Ali_Resume.pdf"
           download="Shamir_Ali_Resume.pdf"
