@@ -1,6 +1,3 @@
-// OverLay.jsx
-import React from "react";
-
 const OverLay = () => {
   return (
     <div className="absolute inset-0 -z-10">

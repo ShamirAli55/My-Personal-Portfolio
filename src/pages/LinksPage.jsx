@@ -1,7 +1,5 @@
 import { navItems } from "../constants";
 import { Mail } from "lucide-react";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
 
 const LinksPage = () => {
   const email = "shamirali9779@gmail.com";
@@ -46,8 +44,6 @@ const LinksPage = () => {
         ))}
       </div>
 
-      <Contact />
-      <Footer />
     </div>
   );
 };

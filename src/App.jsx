@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import ReactLenis from "lenis/react";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
@@ -12,8 +12,15 @@ import PersonalInfo from "./pages/BioPage";
 import Resume from "./pages/ResumePage";
 import ScrollToTop from "./components/ScrollToTop";
 import ProjectsListPage from "./pages/ProjectsListPage";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 const App = () => {
+  const location = useLocation();
+
+  const isErrorPage = location.pathname === "/error";
+  const isContactPage = location.pathname === "/contact";
+
   return (
     <ReactLenis root={true}>
       <section id="home" className="w-full min-h-screen relative z-[10]">
@@ -31,6 +38,9 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/error" element={<ErrorPage />} />
         </Routes>
+
+        {!isErrorPage && !isContactPage && <Contact />}
+        {!isErrorPage && <Footer />}
       </section>
     </ReactLenis>
   );
