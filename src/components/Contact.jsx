@@ -14,10 +14,10 @@ const Contact = () => {
         </MagneticButton>
       </div>
 
-      <p className="text-sm md:text-xl font-semibold mb-2 py-4">
+      <p className="text-sm md:text-xl font-semibold md:mb-2 py-4 px-6">
         Building more than websites creating digital experiences that last.
       </p>
-      <p className="text-gray-400 max-w-xl md:px-8 text-xs md:text-lg">
+      <p className="text-gray-400 max-w-xl md:px-8 px-4 text-[10px] md:text-lg">
         I design and build experiences that not only look good but work
         seamlessly — balancing creativity with performance.
       </p>

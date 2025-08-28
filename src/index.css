@@ -468,7 +468,7 @@ html.dark {
 
 .slider {
   display: flex;
-  gap: 2rem;
+  gap:2rem;
   animation: sliding-banner 40s linear infinite;
   width: max-content; 
 }
@@ -478,7 +478,7 @@ html.dark {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* move half the repeated width */
+    transform: translateX(-50%); 
   }
 }
 
