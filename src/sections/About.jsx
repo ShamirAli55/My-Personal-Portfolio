@@ -10,11 +10,9 @@ import { MapPin } from "lucide-react";
 const About = () => {
   const grid2Container = useRef();
 
-
   const [showFrameworks, setShowFrameworks] = useState(false);
   const [showCards, setShowCards] = useState(false);
   const [showGlobe, setShowGlobe] = useState(false);
-
 
   const useVisibility = (ref, setter) => {
     useEffect(() => {
@@ -30,7 +28,6 @@ const About = () => {
     }, [ref]);
   };
 
-  // refs for each
   const frameworksRef = useRef();
   const cardsRef = useRef();
   const globeRef = useRef();
@@ -68,9 +65,9 @@ const About = () => {
         >
           <div className="z-10 flex text-start flex-col h-full w-full relative">
             <p className="text-4xl font-bold">Tech Stack</p>
-            <p className="text-xs md:text-lg w-2/3 pr-2 md:pr-4 py-6 md:tracking-tight">
-              A blend of code and creativity. I combine languages, frameworks,
-              and tools to turn ideas into smooth, interactive experiences.
+            <p className="text-xs md:text-[15px] w-[58%] pr-2 md:pr-4 py-6 md:tracking-tight">
+              Where ideas meet execution. From frontend magic to backend logic,
+              I use a mix of technologies to craft seamless digital experiences.
             </p>
           </div>
           {showFrameworks && (
@@ -117,17 +114,17 @@ const About = () => {
               className="relative flex items-center justify-center w-full h-full"
             >
               <p className="flex items-end text-3xl md:text-5xl text-primary/60 pointer-events-none cursor-none">
-                CODE IS CRAFT
+                CODE IS CANVAS
               </p>
 
               <Card
                 style={{ rotate: "-30deg", top: "55%", left: "45%" }}
-                text="SOLID"
+                text="Frame"
                 containerRef={grid2Container}
               />
               <Card
                 style={{ rotate: "90deg", bottom: "30%", left: "70%" }}
-                text="Design Patterns"
+                text="Logic"
                 containerRef={grid2Container}
               />
               <Card
@@ -137,7 +134,7 @@ const About = () => {
               />
               <Card
                 style={{ rotate: "20deg", top: "10%", left: "38%" }}
-                text="SRP"
+                text="Tools"
                 containerRef={grid2Container}
               />
               <Card
