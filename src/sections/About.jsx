@@ -14,6 +14,7 @@ const About = () => {
   const [showCards, setShowCards] = useState(false);
   const [showGlobe, setShowGlobe] = useState(false);
   const [showBanner, setShowBanner] = useState(false);
+
   const frameworksRef = useRef();
   const cardsRef = useRef();
   const globeRef = useRef();
@@ -30,7 +31,7 @@ const About = () => {
       const observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
           setter(true);
-          if (once) observer.disconnect(); 
+          if (once) observer.disconnect();
         }
       }, options);
 
@@ -39,10 +40,13 @@ const About = () => {
     }, [ref, setter, options, once]);
   };
 
-  useVisibility(frameworksRef, setShowFrameworks);
-  useVisibility(cardsRef, setShowCards);
+  // Keep Globe + Banner lazy (heavy)
   useVisibility(globeRef, setShowGlobe);
   useVisibility(bannerRef, setShowBanner, { threshold: 0.2 }, true);
+
+  // Frameworks + Cards always mounted → just animate opacity
+  useVisibility(frameworksRef, setShowFrameworks);
+  useVisibility(cardsRef, setShowCards);
 
   return (
     <section
@@ -78,11 +82,13 @@ const About = () => {
               I use a mix of technologies to craft seamless digital experiences.
             </p>
           </div>
-          {showFrameworks && (
-            <div className="absolute right-0 top-0 w-full h-full start-[67%] md:start-[45%] scale-100">
-              <Frameworks />
-            </div>
-          )}
+          <div
+            className={`absolute right-0 top-0 w-full h-full start-[67%] md:start-[45%] scale-100 transition-opacity duration-700 ${
+              showFrameworks ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Frameworks />
+          </div>
         </div>
 
         {/* Card 3: Globe / Timezone */}
@@ -103,12 +109,11 @@ const About = () => {
               <span className="text-sm md:text-xl">Islamabad, Pakistan</span>
             </div>
           </div>
-          {/* {showGlobe && (
+          {showGlobe && (
             <figure className="absolute top-40 -right-50 md:right-[-25%] md:top-[5%] cursor-grab">
-              {" "}
-              <Globe />{" "}
+              <Globe />
             </figure>
-          )} */}
+          )}
         </div>
 
         {/* Card 4: CODE IS CANVAS */}
@@ -116,47 +121,47 @@ const About = () => {
           ref={cardsRef}
           className="col-span-1 sm:col-span-full md:col-span-4 rounded-xl p-4 flex border border-opposite/20 transition duration-300 shadow-md items-center justify-center overflow-hidden"
         >
-          {showCards && (
-            <div
-              ref={grid2Container}
-              className="relative flex items-center justify-center w-full h-full"
-            >
-              <p className="flex items-end text-3xl md:text-5xl text-primary/60 pointer-events-none cursor-none">
-                CODE IS CANVAS
-              </p>
+          <div
+            ref={grid2Container}
+            className={`relative flex items-center justify-center w-full h-full transition-opacity duration-700 ${
+              showCards ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <p className="flex items-end text-3xl md:text-5xl text-primary/60 pointer-events-none cursor-none">
+              CODE IS CANVAS
+            </p>
 
-              <Card
-                style={{ rotate: "-30deg", top: "55%", left: "45%" }}
-                text="Frame"
-                containerRef={grid2Container}
-              />
-              <Card
-                style={{ rotate: "90deg", bottom: "30%", left: "70%" }}
-                text="Logic"
-                containerRef={grid2Container}
-              />
-              <Card
-                style={{ rotate: "-45deg", top: "50%", left: "0%" }}
-                text="Design Principles"
-                containerRef={grid2Container}
-              />
-              <Card
-                style={{ rotate: "20deg", top: "10%", left: "38%" }}
-                text="Tools"
-                containerRef={grid2Container}
-              />
-              <Card
-                style={{ rotate: "-45deg", top: "70%", left: "25%" }}
-                image="assets/logos/dotnet-pink.png"
-                containerRef={grid2Container}
-              />
-              <Card
-                style={{ rotate: "-45deg", top: "5%", left: "10%" }}
-                image="assets/logos/blazor-pink.png"
-                containerRef={grid2Container}
-              />
-            </div>
-          )}
+            <Card
+              style={{ rotate: "-30deg", top: "55%", left: "45%" }}
+              text="Frame"
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "90deg", bottom: "30%", left: "70%" }}
+              text="Logic"
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "-45deg", top: "50%", left: "0%" }}
+              text="Design Principles"
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "20deg", top: "10%", left: "38%" }}
+              text="Tools"
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "-45deg", top: "70%", left: "25%" }}
+              image="assets/logos/dotnet-pink.png"
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "-45deg", top: "5%", left: "10%" }}
+              image="assets/logos/blazor-pink.png"
+              containerRef={grid2Container}
+            />
+          </div>
         </div>
 
         {/* Card 5: Project CTA */}

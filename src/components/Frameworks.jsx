@@ -21,6 +21,7 @@ export function Frameworks() {
     "wordpress",
   ];
 
+
   useEffect(() => {
     skills.forEach((skill) => {
       const img = new Image();
