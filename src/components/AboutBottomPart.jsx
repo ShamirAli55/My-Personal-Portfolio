@@ -1,9 +1,16 @@
-import ImageWrapper from "./ImageWrapper";
+import { lazy, Suspense } from "react";
+
+const ImageWrapper = lazy(() => import("./ImageWrapper"));
+
 const AboutBottomPart = () => {
   return (
     <div className="min-h-screen w-full mt-12 md:mt-28 flex flex-col md:flex-row items-center md:px-22 relative px-6">
       <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12 items-center">
-        <ImageWrapper />
+        <Suspense
+          fallback={<div className="h-64 w-full bg-gray-200 animate-pulse" />}
+        >
+          <ImageWrapper />
+        </Suspense>
 
         <div className="space-y-6 text-left ml-2 leading-[20px] font-[Funnel-Display]">
           <h1 className="text-3xl hidden md:block md:text-5xl font-bold font-[Funnel-Sans] gradient-text">
@@ -11,7 +18,7 @@ const AboutBottomPart = () => {
           </h1>
 
           <p className="text-primary text-sm px-.5 md:px-2.5 w-full md:text-xl leading-[23px] font-light tracking-wide">
-            I build for the web because UI and animations keep me engaged
+            I build for the web because UI and animations keep me engaged —
             there’s nothing more satisfying than bringing interfaces to life.
           </p>
 
@@ -21,12 +28,12 @@ const AboutBottomPart = () => {
             experiences.
           </p>
 
-          <p className="text-primary  text-sm px-.5 md:px-2.5 w-full md:text-xl leading-[23px] font-light tracking-wide">
-            I also work with GSAP, Framer Motion, Swiper, and Lenis and I’m
+          <p className="text-primary text-sm px-.5 md:px-2.5 w-full md:text-xl leading-[23px] font-light tracking-wide">
+            I also work with GSAP, Framer Motion, Swiper, and Lenis, and I’m
             currently exploring Three.js to bring 3D interactions to the web.
           </p>
 
-          <p className="text-primary  text-sm px-.5 md:px-2.5 w-full md:text-xl leading-[23px] font-light tracking-wide">
+          <p className="text-primary text-sm px-.5 md:px-2.5 w-full md:text-xl leading-[23px] font-light tracking-wide">
             On the academic side, I’m strengthening my skills in C++ and diving
             into Python, sharpening the problem-solving foundations that enable
             me to tackle projects beyond web development.

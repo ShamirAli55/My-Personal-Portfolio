@@ -1,17 +1,19 @@
-import { ArrowRight } from "lucide-react";
+import { lazy, Suspense, useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+
+// Lazy load ArrowRight icon from lucide-react
+const ArrowRight = lazy(() =>
+  import("lucide-react").then((mod) => ({ default: mod.ArrowRight }))
+);
 
 const Banner = () => {
   const arrowsRef = useRef([]); // DOM nodes of arrow wrappers
   const bannerRef = useRef(null);
-  const lastScrollY = useRef(
-    typeof window !== "undefined" ? window.scrollY : 0
-  );
+  const lastScrollY = useRef(typeof window !== "undefined" ? window.scrollY : 0);
   const inViewRef = useRef(false);
   const ticking = useRef(false);
 
-  // helper: attach refs safely
+  // Attach refs safely
   const setArrowRef = (el, i) => {
     if (el) arrowsRef.current[i] = el;
   };
@@ -22,7 +24,6 @@ const Banner = () => {
       ([entry]) => {
         inViewRef.current = entry.isIntersecting;
         if (!entry.isIntersecting) {
-          // optional: reset rotation when leaving view
           gsap.to(arrowsRef.current, {
             rotate: 0,
             duration: 0.2,
@@ -38,16 +39,15 @@ const Banner = () => {
     };
   }, []);
 
-  // Prepare transform origin once
+  // Set transform origin once
   useEffect(() => {
     gsap.set(arrowsRef.current, { transformOrigin: "50% 50%" });
   }, []);
 
-  // Single scroll listener, throttled with rAF
+  // Scroll listener with requestAnimationFrame
   useEffect(() => {
     const onScroll = () => {
       if (!inViewRef.current) {
-        // keep lastScrollY in sync even when not animating
         lastScrollY.current = window.scrollY;
         return;
       }
@@ -80,6 +80,9 @@ const Banner = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Labels for each arrow group
+  const labels = ["Experience", "Content", "Development"];
+
   return (
     <section
       ref={bannerRef}
@@ -87,45 +90,27 @@ const Banner = () => {
     >
       <div className="slider md:h-1/2 bg-opposite text-primary-foreground py-4 pointer-events-none">
         {[...Array(5)].map((_, i) => (
-          <div
-            key={i}
-            className="flex text-lg md:text-5xl gap-x-5 items-center"
-          >
-            <span
-              ref={(el) => setArrowRef(el, i * 3)}
-              className="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
-            >
-              <ArrowRight
-                className="h-7 w-7 md:h-9 md:w-9"
-                color="hsl(var(--primary))"
-              />
-            </span>
-
-            <h4>Experience</h4>
-
-            <span
-              ref={(el) => setArrowRef(el, i * 3 + 1)}
-              className="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
-            >
-              <ArrowRight
-                className="h-7 w-7 md:h-9 md:w-9"
-                color="hsl(var(--primary))"
-              />
-            </span>
-
-            <h4>Content</h4>
-
-            <span
-              ref={(el) => setArrowRef(el, i * 3 + 2)}
-              className="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
-            >
-              <ArrowRight
-                className="h-7 w-7 md:h-9 md:w-9"
-                color="hsl(var(--primary))"
-              />
-            </span>
-
-            <h4>Development</h4>
+          <div key={i} className="flex text-lg md:text-5xl gap-x-5 items-center">
+            {labels.map((label, j) => (
+              <span key={j} className="flex items-center gap-x-3">
+                <span
+                  ref={(el) => setArrowRef(el, i * labels.length + j)}
+                  className="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
+                >
+                  <Suspense
+                    fallback={
+                      <div className="h-7 w-7 md:h-9 md:w-9 bg-gray-400 rounded-full" />
+                    }
+                  >
+                    <ArrowRight
+                      className="h-7 w-7 md:h-9 md:w-9"
+                      color="hsl(var(--primary))"
+                    />
+                  </Suspense>
+                </span>
+                <h4>{label}</h4>
+              </span>
+            ))}
           </div>
         ))}
       </div>

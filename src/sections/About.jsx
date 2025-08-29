@@ -1,9 +1,9 @@
 import EmailCopyButton from "../components/EmailCopyButton";
 import Card from "../components/Card";
-import Banner from "../components/Banner";
 import { Frameworks } from "../components/Frameworks";
 import AboutBottomPart from "../components/AboutBottomPart";
 import { Globe } from "../components/Globe";
+import LazyBanner from "../components/LazyLoad";
 import { useRef, useEffect, useState } from "react";
 import { MapPin } from "lucide-react";
 
@@ -13,28 +13,36 @@ const About = () => {
   const [showFrameworks, setShowFrameworks] = useState(false);
   const [showCards, setShowCards] = useState(false);
   const [showGlobe, setShowGlobe] = useState(false);
-
-  const useVisibility = (ref, setter) => {
-    useEffect(() => {
-      if (!ref.current) return;
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setter(entry.isIntersecting);
-        },
-        { threshold: 0.2 }
-      );
-      observer.observe(ref.current);
-      return () => observer.disconnect();
-    }, [ref]);
-  };
-
+  const [showBanner, setShowBanner] = useState(false);
   const frameworksRef = useRef();
   const cardsRef = useRef();
   const globeRef = useRef();
+  const bannerRef = useRef();
+
+  const useVisibility = (
+    ref,
+    setter,
+    options = { threshold: 0.2 },
+    once = false
+  ) => {
+    useEffect(() => {
+      if (!ref.current) return;
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          setter(true);
+          if (once) observer.disconnect(); // Load once if flagged
+        }
+      }, options);
+
+      observer.observe(ref.current);
+      return () => observer.disconnect();
+    }, [ref, setter, options, once]);
+  };
 
   useVisibility(frameworksRef, setShowFrameworks);
   useVisibility(cardsRef, setShowCards);
   useVisibility(globeRef, setShowGlobe);
+  useVisibility(bannerRef, setShowBanner, { threshold: 0.2 }, true);
 
   return (
     <section
@@ -55,10 +63,10 @@ const About = () => {
               user-friendly web applications.
             </p>
           </div>
-          <div className="absolute inset-x-0 pointer-evets-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-opposite/10 via-opposite/10 to-primary-foreground/" />
+          <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-opposite/10 via-opposite/10 to-primary-foreground/" />
         </div>
 
-        {/* Card 2 */}
+        {/* Card 2: Frameworks */}
         <div
           ref={frameworksRef}
           className="col-span-1 sm:col-span-full md:col-span-3 rounded-xl p-5 relative border border-opposite/20 transition duration-300 shadow-md overflow-hidden"
@@ -71,13 +79,13 @@ const About = () => {
             </p>
           </div>
           {showFrameworks && (
-            <div className="absolute right-0 top-0 w-full h-full start-[67%] md:start-[40%] scale-100">
+            <div className="absolute right-0 top-0 w-full h-full start-[67%] md:start-[45%] scale-100">
               <Frameworks />
             </div>
           )}
         </div>
 
-        {/* Card 3 */}
+        {/* Card 3: Globe / Timezone */}
         <div
           ref={globeRef}
           className="col-span-1 sm:col-span-full md:col-span-3 row-span-2 rounded-xl border border-opposite/20 transition duration-300 shadow-md p-4 relative overflow-hidden z-10 text-primary"
@@ -85,12 +93,11 @@ const About = () => {
           <div className="h-full z-10 w-full text-left px-4 flex flex-col md:justify-between">
             <div className="pointer-events-none">
               <p className="text-4xl py-4">Time Zone</p>
-              <p className="text-xs md:text-lg ">
+              <p className="text-xs md:text-lg">
                 I'm based in Pakistan, and open{" "}
                 <span className="block">to remote work worldwide.</span>
               </p>
             </div>
-
             <div className="flex items-center gap-2 pt-6 md:py-15 text-primary cursor-pointer">
               <MapPin size={30} color="hsl(var(--primary))" />
               <span className="text-sm md:text-xl">Islamabad, Pakistan</span>
@@ -98,12 +105,13 @@ const About = () => {
           </div>
           {/* {showGlobe && (
             <figure className="absolute top-40 -right-50 md:right-[-25%] md:top-[5%] cursor-grab">
-              <Globe />
+              {" "}
+              <Globe />{" "}
             </figure>
           )} */}
         </div>
 
-        {/* Card 4 */}
+        {/* Card 4: CODE IS CANVAS */}
         <div
           ref={cardsRef}
           className="col-span-1 sm:col-span-full md:col-span-4 rounded-xl p-4 flex border border-opposite/20 transition duration-300 shadow-md items-center justify-center overflow-hidden"
@@ -151,7 +159,7 @@ const About = () => {
           )}
         </div>
 
-        {/* Card 5 */}
+        {/* Card 5: Project CTA */}
         <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-lg border border-opposite/20 transition duration-300 shadow-md p-4">
           <div className="flex flex-col justify-center items-center py-5 px-2">
             <h2 className="text-xl md:text-2xl font-bold mb-6 text-primary">
@@ -170,7 +178,9 @@ const About = () => {
 
       <AboutBottomPart />
 
-      <Banner />
+      <div ref={bannerRef} className="min-h-[50vh]">
+        {showBanner && <LazyBanner />}
+      </div>
     </section>
   );
 };

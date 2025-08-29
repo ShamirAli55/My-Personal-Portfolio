@@ -14,7 +14,7 @@ export const FlipWords = ({ words, duration = 3000, className }) => {
           setIsVisible(entry.isIntersecting);
         });
       },
-      { threshold: 0.3 } 
+      { threshold: 0.3 }
     );
 
     if (containerRef.current) observer.observe(containerRef.current);
