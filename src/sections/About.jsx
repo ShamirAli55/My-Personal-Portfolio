@@ -3,7 +3,7 @@ import Card from "../components/Card";
 import { Frameworks } from "../components/Frameworks";
 import AboutBottomPart from "../components/AboutBottomPart";
 import { Globe } from "../components/Globe";
-import LazyBanner from "../components/LazyLoad";
+import Banner from "../components/Banner";
 import { useRef, useEffect, useState } from "react";
 import { MapPin } from "lucide-react";
 
@@ -179,7 +179,7 @@ const About = () => {
       <AboutBottomPart />
 
       <div ref={bannerRef} className="min-h-[50vh]">
-        {showBanner && <LazyBanner />}
+        {showBanner && <Banner />}
       </div>
     </section>
   );

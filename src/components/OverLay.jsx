@@ -1,14 +1,13 @@
 const OverLay = () => {
   return (
     <div className="absolute inset-0 -z-1">
-      {/* Background image */}
       <img
         className="absolute inset-0 w-full h-full object-cover"
-        src="https://c8.alamy.com/comp/2B2H22G/beautiful-fluid-abstract-paint-background-blue-acrylic-texture-with-gold-marble-pattern-oil-painting-background-of-abstract-ocean-2B2H22G.jpg"
+        src="/assets/Gradient Liquid.jpg"
         alt="overlay texture"
       />
 
-      <div className="absolute inset-0 bg-background opacity-90"></div>
+      <div className="absolute inset-0 bg-background opacity-93"></div>
 
       <div
         className="absolute top-0 left-0 w-full h-28 

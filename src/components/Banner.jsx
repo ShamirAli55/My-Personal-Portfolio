@@ -1,6 +1,6 @@
-import { Suspense, useEffect, useRef } from "react";
-import gsap from "gsap";
 import { ArrowRight } from "lucide-react";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 
 const Banner = () => {
   const arrowsRef = useRef([]); // DOM nodes of arrow wrappers
@@ -11,7 +11,7 @@ const Banner = () => {
   const inViewRef = useRef(false);
   const ticking = useRef(false);
 
-  // Attach refs safely
+  // helper: attach refs safely
   const setArrowRef = (el, i) => {
     if (el) arrowsRef.current[i] = el;
   };
@@ -22,6 +22,7 @@ const Banner = () => {
       ([entry]) => {
         inViewRef.current = entry.isIntersecting;
         if (!entry.isIntersecting) {
+          // optional: reset rotation when leaving view
           gsap.to(arrowsRef.current, {
             rotate: 0,
             duration: 0.2,
@@ -37,15 +38,16 @@ const Banner = () => {
     };
   }, []);
 
-  // Set transform origin once
+  // Prepare transform origin once
   useEffect(() => {
     gsap.set(arrowsRef.current, { transformOrigin: "50% 50%" });
   }, []);
 
-  // Scroll listener with requestAnimationFrame
+  // Single scroll listener, throttled with rAF
   useEffect(() => {
     const onScroll = () => {
       if (!inViewRef.current) {
+        // keep lastScrollY in sync even when not animating
         lastScrollY.current = window.scrollY;
         return;
       }
@@ -78,9 +80,6 @@ const Banner = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Labels for each arrow group
-  const labels = ["Experience", "Content", "Development"];
-
   return (
     <section
       ref={bannerRef}
@@ -92,26 +91,41 @@ const Banner = () => {
             key={i}
             className="flex text-lg md:text-5xl gap-x-5 items-center"
           >
-            {labels.map((label, j) => (
-              <span key={j} className="flex items-center gap-x-3">
-                <span
-                  ref={(el) => setArrowRef(el, i * labels.length + j)}
-                  className="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
-                >
-                  <Suspense
-                    fallback={
-                      <div className="h-7 w-7 md:h-9 md:w-9 bg-gray-400 rounded-full" />
-                    }
-                  >
-                    <ArrowRight
-                      className="h-7 w-7 md:h-9 md:w-9"
-                      color="hsl(var(--primary))"
-                    />
-                  </Suspense>
-                </span>
-                <h4>{label}</h4>
-              </span>
-            ))}
+            <span
+              ref={(el) => setArrowRef(el, i * 3)}
+              className="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
+            >
+              <ArrowRight
+                className="h-7 w-7 md:h-9 md:w-9"
+                color="hsl(var(--primary))"
+              />
+            </span>
+
+            <h4>Experience</h4>
+
+            <span
+              ref={(el) => setArrowRef(el, i * 3 + 1)}
+              className="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
+            >
+              <ArrowRight
+                className="h-7 w-7 md:h-9 md:w-9"
+                color="hsl(var(--primary))"
+              />
+            </span>
+
+            <h4>Content</h4>
+
+            <span
+              ref={(el) => setArrowRef(el, i * 3 + 2)}
+              className="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
+            >
+              <ArrowRight
+                className="h-7 w-7 md:h-9 md:w-9"
+                color="hsl(var(--primary))"
+              />
+            </span>
+
+            <h4>Development</h4>
           </div>
         ))}
       </div>
