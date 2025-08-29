@@ -12,7 +12,7 @@ import InterestsPage from "./pages/InterestsPage";
 import Resume from "./pages/ResumePage";
 import ScrollToTop from "./components/ScrollToTop";
 import ProjectsListPage from "./pages/ProjectsListPage";
-import Contact from "./components/Contact";
+import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
 
 const App = () => {
