@@ -4,12 +4,16 @@ const OverLay = () => {
       {/* Background image */}
       <img
         className="absolute inset-0 w-full h-full object-cover"
-        src="https://images.pexels.com/photos/5243527/pexels-photo-5243527.jpeg"
+        src="https://c8.alamy.com/comp/2B2H22G/beautiful-fluid-abstract-paint-background-blue-acrylic-texture-with-gold-marble-pattern-oil-painting-background-of-abstract-ocean-2B2H22G.jpg"
         alt="overlay texture"
       />
 
+      <div className="absolute inset-0 bg-background opacity-90"></div>
 
-      <div className="absolute inset-0 bg-background opacity-93"></div>
+      <div
+        className="absolute top-0 left-0 w-full h-28 
+     bg-gradient-to-b from-background via-background/80 to-transparent"
+      ></div>
 
       <svg
         className="absolute top-0 left-0 w-full h-24"
@@ -23,7 +27,6 @@ const OverLay = () => {
         />
       </svg>
 
-      {/* Bottom shape */}
       <svg
         className="absolute bottom-0 left-0 w-full h-24"
         xmlns="http://www.w3.org/2000/svg"
