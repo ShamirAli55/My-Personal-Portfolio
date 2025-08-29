@@ -1,16 +1,11 @@
-import { lazy, Suspense } from "react";
-
-const ImageWrapper = lazy(() => import("./ImageWrapper"));
+import ImageWrapper from "./ImageWrapper";
 
 const AboutBottomPart = () => {
   return (
     <div className="min-h-screen w-full mt-12 md:mt-28 flex flex-col md:flex-row items-center md:px-22 relative px-6">
       <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12 items-center">
-        <Suspense
-          fallback={<div className="h-64 w-full bg-gray-200 animate-pulse" />}
-        >
-          <ImageWrapper />
-        </Suspense>
+        
+        <ImageWrapper />
 
         <div className="space-y-6 text-left ml-2 leading-[20px] font-[Funnel-Display]">
           <h1 className="text-3xl hidden md:block md:text-5xl font-bold font-[Funnel-Sans] gradient-text">
@@ -18,7 +13,7 @@ const AboutBottomPart = () => {
           </h1>
 
           <p className="about-text">
-            Crafting digital experiences excites me blending design,
+            Crafting digital experiences excites me — blending design,
             interaction, and motion is where ideas truly come alive.
           </p>
 
