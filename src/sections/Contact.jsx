@@ -1,6 +1,6 @@
 import Button from "../components/Button";
 import MagneticButton from "../components/MagneticButn";
-import OverLay from "../components/Overlay";
+import OverLay from "../components/OverLay";
 
 const Contact = () => {
   return (
