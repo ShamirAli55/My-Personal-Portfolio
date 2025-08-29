@@ -1,9 +1,11 @@
 import Button from "../components/Button";
 import MagneticButton from "../components/MagneticButn";
+import OverLay from "../components/Overlay";
 
 const Contact = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col justify-center items-center px-6 pt-16 text-center text-primary relative">
+    <section className="w-full min-h-screen flex flex-col justify-center items-center px-6 pt-16 text-center text-primary relative overflow-x-hidden">
+      <OverLay />
       <h1 className="text-2xl md:text-6xl font-extrabold leading-tight mb-6 tracking-wide">
         CODE <span className="gradient-text">ANIMATE</span> CREATE
       </h1>

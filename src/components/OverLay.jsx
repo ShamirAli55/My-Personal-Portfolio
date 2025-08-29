@@ -1,15 +1,15 @@
 const OverLay = () => {
   return (
-    <div className="absolute inset-0 -z-10">
+    <div className="absolute inset-0 -z-1">
       {/* Background image */}
       <img
         className="absolute inset-0 w-full h-full object-cover"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNjbGX_nLD5oYspEtkNB4fIWepHsccxJfaqeUv1PfO6yCG6u_Aag_KujuirD8Yxpwtfy4&usqp=CAU"
+        src="https://images.pexels.com/photos/5243527/pexels-photo-5243527.jpeg"
         alt="overlay texture"
       />
 
 
-      <div className="absolute inset-0 bg-background opacity-94"></div>
+      <div className="absolute inset-0 bg-background opacity-93"></div>
 
       <svg
         className="absolute top-0 left-0 w-full h-24"
