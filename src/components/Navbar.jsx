@@ -13,6 +13,9 @@ const Navbar = () => {
   );
   const [isOpen, setIsOpen] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
   const closeTimerRef = useRef(null);
 
   const handleAnimation = (e) => {
@@ -79,6 +82,31 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth < 768) return;
+
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+
+          if (currentScrollY > lastScrollY.current + 10) {
+            setIsVisible(false);
+          } else if (currentScrollY < lastScrollY.current - 5) {
+            setIsVisible(true);
+          }
+
+          lastScrollY.current = currentScrollY;
+          ticking.current = false;
+        });
+        ticking.current = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const openMore = () => {
     if (closeTimerRef.current) {
       clearTimeout(closeTimerRef.current);
@@ -110,7 +138,11 @@ const Navbar = () => {
     .some((item) => location.pathname === item.href);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[199]">
+    <header
+      className={`fixed top-0 left-0 right-0 z-[199] transform transition-transform duration-500 ease-in-out
+    ${isVisible ? "translate-y-0" : "-translate-y-[120%]"}
+  `}
+    >
       <nav className="flex justify-between items-center px-5 pt-8 pb-4 text-foreground relative">
         <div className="absolute inset-0 h-[75%] w-full z-[-1] pointer-events-none bg-opposite/ opacity-0.8 backdrop-blur-md rounded-b-xl"></div>
         {isOpen && (
@@ -133,6 +165,7 @@ const Navbar = () => {
           )}
         </div>
 
+        {/* Middle Nav Items */}
         <div className="items-center shadow-[0_8px_32px_rgba(0,0,0,0.25)] bg-white/15 backdrop-blur-md border border-primary-foreground/20 justify-between gap-x-10 py-1.5 px-6 rounded-full hidden md:flex">
           {navItems
             .filter((item) => item.category === "Navigation")
@@ -151,6 +184,7 @@ const Navbar = () => {
               </NavLink>
             ))}
 
+          {/* More Dropdown */}
           <div
             className="relative"
             onMouseEnter={openMore}
@@ -208,6 +242,7 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* Mobile Menu Button */}
         <div
           className="cursor-pointer md:hidden"
           onClick={() => setIsOpen((prev) => !prev)}
@@ -216,6 +251,7 @@ const Navbar = () => {
           <Menu color="hsl(var(--primary))" />
         </div>
 
+        {/* Desktop Menu Button */}
         <div
           className="cursor-pointer hidden md:block"
           onClick={() => setIsOpen((prev) => !prev)}
