@@ -1,15 +1,13 @@
-import { lazy, Suspense, useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import gsap from "gsap";
-
-// Lazy load ArrowRight icon from lucide-react
-const ArrowRight = lazy(() =>
-  import("lucide-react").then((mod) => ({ default: mod.ArrowRight }))
-);
+import { ArrowRight } from "lucide-react";
 
 const Banner = () => {
   const arrowsRef = useRef([]); // DOM nodes of arrow wrappers
   const bannerRef = useRef(null);
-  const lastScrollY = useRef(typeof window !== "undefined" ? window.scrollY : 0);
+  const lastScrollY = useRef(
+    typeof window !== "undefined" ? window.scrollY : 0
+  );
   const inViewRef = useRef(false);
   const ticking = useRef(false);
 
@@ -90,7 +88,10 @@ const Banner = () => {
     >
       <div className="slider md:h-1/2 bg-opposite text-primary-foreground py-4 pointer-events-none">
         {[...Array(5)].map((_, i) => (
-          <div key={i} className="flex text-lg md:text-5xl gap-x-5 items-center">
+          <div
+            key={i}
+            className="flex text-lg md:text-5xl gap-x-5 items-center"
+          >
             {labels.map((label, j) => (
               <span key={j} className="flex items-center gap-x-3">
                 <span
