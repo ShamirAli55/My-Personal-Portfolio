@@ -79,7 +79,7 @@ const Banner = () => {
       ref={bannerRef}
       className="min-h-[50vh] relative bg-muted w-full overflow-hidden flex items-center py-32"
     >
-      <div className="slider md:h-1/2 bg-opposite text-primary-foreground py-4 pointer-events-none uppercase">
+      <div className="slider h-[10%] md:h-1/2 bg-opposite text-primary-foreground py-4 pointer-events-none uppercase">
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
@@ -87,10 +87,10 @@ const Banner = () => {
           >
             <span
               ref={(el) => setArrowRef(el, i * 3)}
-              className="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
+              className="inline-flex h-8 w-8 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
             >
               <ArrowRight
-                className="h-7 w-7 md:h-9 md:w-9"
+                className="h-6 w-6 md:h-9 md:w-9"
                 color="hsl(var(--primary))"
               />
             </span>
@@ -99,10 +99,10 @@ const Banner = () => {
 
             <span
               ref={(el) => setArrowRef(el, i * 3 + 1)}
-              className="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
+              className="inline-flex h-8 w-8 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
             >
               <ArrowRight
-                className="h-7 w-7 md:h-9 md:w-9"
+                className="h-6 w-6 md:h-9 md:w-9"
                 color="hsl(var(--primary))"
               />
             </span>
@@ -111,10 +111,10 @@ const Banner = () => {
 
             <span
               ref={(el) => setArrowRef(el, i * 3 + 2)}
-              className="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
+              className="inline-flex h-8 w-8 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
             >
               <ArrowRight
-                className="h-7 w-7 md:h-9 md:w-9"
+                className="h-6 w-6 md:h-9 md:w-9"
                 color="hsl(var(--primary))"
               />
             </span>
