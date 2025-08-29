@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
 const Banner = () => {
-  const arrowsRef = useRef([]); // DOM nodes of arrow wrappers
+  const arrowsRef = useRef([]);
   const bannerRef = useRef(null);
   const lastScrollY = useRef(
     typeof window !== "undefined" ? window.scrollY : 0
@@ -11,18 +11,15 @@ const Banner = () => {
   const inViewRef = useRef(false);
   const ticking = useRef(false);
 
-  // helper: attach refs safely
   const setArrowRef = (el, i) => {
     if (el) arrowsRef.current[i] = el;
   };
 
-  // Observe visibility of banner
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         inViewRef.current = entry.isIntersecting;
         if (!entry.isIntersecting) {
-          // optional: reset rotation when leaving view
           gsap.to(arrowsRef.current, {
             rotate: 0,
             duration: 0.2,
@@ -38,16 +35,13 @@ const Banner = () => {
     };
   }, []);
 
-  // Prepare transform origin once
   useEffect(() => {
     gsap.set(arrowsRef.current, { transformOrigin: "50% 50%" });
   }, []);
 
-  // Single scroll listener, throttled with rAF
   useEffect(() => {
     const onScroll = () => {
       if (!inViewRef.current) {
-        // keep lastScrollY in sync even when not animating
         lastScrollY.current = window.scrollY;
         return;
       }
@@ -85,7 +79,7 @@ const Banner = () => {
       ref={bannerRef}
       className="min-h-[50vh] relative bg-muted w-full overflow-hidden flex items-center py-32"
     >
-      <div className="slider md:h-1/2 bg-opposite text-primary-foreground py-4 pointer-events-none">
+      <div className="slider md:h-1/2 bg-opposite text-primary-foreground py-4 pointer-events-none uppercase">
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
@@ -101,7 +95,7 @@ const Banner = () => {
               />
             </span>
 
-            <h4>Experience</h4>
+            <h4>Innovative</h4>
 
             <span
               ref={(el) => setArrowRef(el, i * 3 + 1)}
@@ -125,7 +119,7 @@ const Banner = () => {
               />
             </span>
 
-            <h4>Development</h4>
+            <h4>Mindset</h4>
           </div>
         ))}
       </div>

@@ -30,7 +30,7 @@ const About = () => {
       const observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
           setter(true);
-          if (once) observer.disconnect(); // Load once if flagged
+          if (once) observer.disconnect();
         }
       }, options);
 

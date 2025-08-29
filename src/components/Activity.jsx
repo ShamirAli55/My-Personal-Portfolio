@@ -79,7 +79,7 @@ export default function GitHubActivityApp() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-primary-foreground to-opposite/10 text-primary-foreground p-6 py-10 flex flex-col items-center">
+    <div className="min-h-screen w-full bg-opposite/3 text-primary-foreground rounded-lg p-6 py-10 flex flex-col items-center">
       <div className="mb-10 text-center">
         <p className="uppercase tracking-widest text-sm text-primary">My</p>
         <h2 className="text-4xl md:text-5xl font-bold text-primary">
