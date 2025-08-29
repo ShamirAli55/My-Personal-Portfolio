@@ -2,53 +2,6 @@ import { Send } from "lucide-react";
 import { cn } from "../lib/utils.js";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
-import Footer from "../components/Footer";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import { Model } from "../components/3DEmail.jsx";
-
-import { useThree } from "@react-three/fiber";
-import { useMemo } from "react";
-
-const RotatingModel = () => {
-  const ref = useRef();
-  const { size } = useThree();
-
-  const original = useMemo(() => {
-    if (size.width < 640) {
-      return { position: [0, -2, 0], rotation: [0, 0, 0], scale: 3 };
-    } else if (size.width < 1024) {
-      return { position: [0, -3, 0], rotation: [0, 0, 0], scale: 4.5 };
-    } else {
-      return { position: [0, -4, 0], rotation: [0, 0, 0], scale: 6 };
-    }
-  }, [size.width]);
-
-  useFrame(() => {
-    if (ref.current) {
-      ref.current.rotation.x +=
-        (original.rotation[0] - ref.current.rotation.x) * 0.05;
-      ref.current.rotation.z +=
-        (original.rotation[2] - ref.current.rotation.z) * 0.05;
-      ref.current.rotation.y += 0.01;
-
-      ref.current.position.x +=
-        (original.position[0] - ref.current.position.x) * 0.1;
-      ref.current.position.y +=
-        (original.position[1] - ref.current.position.y) * 0.1;
-      ref.current.position.z +=
-        (original.position[2] - ref.current.position.z) * 0.1;
-
-      ref.current.scale.set(original.scale, original.scale, original.scale);
-    }
-  });
-
-  return (
-    <group ref={ref}>
-      <Model />
-    </group>
-  );
-};
 
 const Contact = () => {
   const formRef = useRef();
@@ -97,28 +50,7 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="bg-card flex items-center justify-center rounded-xl shadow-md p-4">
-            <Canvas
-              camera={{ position: [0, 0, 10], fov: 50 }}
-              className="w-full h-[350px] md:h-[500px] lg:h-[600px]"
-            >
-              <ambientLight intensity={0.8} />
-              <directionalLight
-                position={[5, 10, 5]}
-                intensity={1.2}
-                castShadow
-              />
-              <spotLight
-                position={[-5, 10, 5]}
-                angle={0.3}
-                intensity={0.8}
-                penumbra={0.5}
-                castShadow
-              />
-
-              <RotatingModel />
-            </Canvas>
-          </div>
+          <div className="bg-card flex items-center justify-center rounded-xl shadow-md p-4"></div>
 
           {/* Contact Form */}
           <div className="bg-card p-8 rounded-xl shadow-md">

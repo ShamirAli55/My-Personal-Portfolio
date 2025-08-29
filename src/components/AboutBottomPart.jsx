@@ -17,26 +17,26 @@ const AboutBottomPart = () => {
             About Me
           </h1>
 
-          <p className="text-primary text-sm px-.5 md:px-2.5 w-full md:text-xl leading-[23px] font-light tracking-wide">
-            I build for the web because UI and animations keep me engaged —
-            there’s nothing more satisfying than bringing interfaces to life.
+          <p className="about-text">
+            Crafting digital experiences excites me blending design,
+            interaction, and motion is where ideas truly come alive.
           </p>
 
-          <p className="text-primary text-sm px-.5 md:px-2.5 w-full md:text-xl leading-[23px] font-light tracking-wide">
-            Using the MERN stack and a solid foundation in JavaScript, I
-            transform rough ideas into smooth, functional, and intuitive
-            experiences.
+          <p className="about-text">
+            With the MERN stack and a solid foundation in JavaScript, I
+            transform concepts into seamless, functional, and intuitive
+            applications.
           </p>
 
-          <p className="text-primary text-sm px-.5 md:px-2.5 w-full md:text-xl leading-[23px] font-light tracking-wide">
-            I also work with GSAP, Framer Motion, Swiper, and Lenis, and I’m
-            currently exploring Three.js to bring 3D interactions to the web.
+          <p className="about-text">
+            I also work with GSAP, Framer Motion, Swiper, and Lenis, while
+            exploring Three.js to bring immersive 3D interactions to the web.
           </p>
 
-          <p className="text-primary text-sm px-.5 md:px-2.5 w-full md:text-xl leading-[23px] font-light tracking-wide">
-            On the academic side, I’m strengthening my skills in C++ and diving
-            into Python, sharpening the problem-solving foundations that enable
-            me to tackle projects beyond web development.
+          <p className="about-text">
+            On the academic side, I’m sharpening my skills in C++ and diving
+            deeper into Python, building the problem-solving mindset that powers
+            projects beyond just web development.
           </p>
 
           <p className="hidden md:block text-primary md:text-center px-2 md:text-md md:py-2 tracking-tight md:tracking-wider leading-[22px]">

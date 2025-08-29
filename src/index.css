@@ -441,6 +441,11 @@ html.dark {
   }
 }
 
+.about-text
+{
+  @apply text-primary tracking-tight px-1.5 leading-relaxed text-xs w-full md:text-xl md:leading-[23px] font-light md:tracking-wide;
+}
+
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
