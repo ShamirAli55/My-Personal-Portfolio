@@ -73,7 +73,7 @@ const About = () => {
         >
           <div className="z-10 flex text-start flex-col h-full w-full relative">
             <p className="text-4xl font-bold">Tech Stack</p>
-            <p className="text-xs md:text-[15px] w-[58%] pr-2 md:pr-4 py-6 md:tracking-tight">
+            <p className="text-xs md:text-[15px] w-[70%] pr-2 md:pr-4 py-6 md:tracking-tight">
               Where ideas meet execution. From frontend magic to backend logic,
               I use a mix of technologies to craft seamless digital experiences.
             </p>

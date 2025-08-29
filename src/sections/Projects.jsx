@@ -8,9 +8,9 @@ import gsap from "gsap";
 
 const Projects = () => {
   const sectionRef = useRef(null);
-  const CrsrRef = useRef(null); // circular cursor wrapper
-  const ImgRef = useRef(null); // floating image container
-  const ImgElRef = useRef(null); // <img> element inside preview
+  const CrsrRef = useRef(null);
+  const ImgRef = useRef(null);
+  const ImgElRef = useRef(null);
   const navigate = useNavigate();
   const isDesktopRef = useRef(
     typeof window !== "undefined" ? window.innerWidth >= 768 : true
@@ -25,13 +25,11 @@ const Projects = () => {
   useEffect(() => {
     if (!CrsrRef.current || !ImgRef.current) return;
 
-    // initial styles
     gsap.set([CrsrRef.current, ImgRef.current], {
       opacity: 0,
       willChange: "transform, opacity",
     });
 
-    // measure preview size
     const measurePreview = () => {
       const rect = ImgRef.current?.getBoundingClientRect();
       if (rect) previewSizeRef.current = { w: rect.width, h: rect.height };
@@ -130,6 +128,12 @@ const Projects = () => {
       cancelAnimationFrame(rafId);
     };
   }, []);
+  useEffect(() => {
+    myProjects.forEach((project) => {
+      const img = new Image();
+      img.src = project.image;
+    });
+  }, []);
 
   const handleMouseEnter = (image) => {
     if (!isDesktopRef.current) return;
@@ -204,7 +208,8 @@ const Projects = () => {
           <img
             ref={ImgElRef}
             alt="preview"
-            loading="lazy"
+            fetchpriority="high"
+            loading="eager"
             className="w-full h-full object-cover scale-110"
           />
         </div>
