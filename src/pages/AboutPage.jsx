@@ -10,7 +10,7 @@ const AboutPage = () => {
         About Me
       </h1>
       <AboutBottomPart />
-      <div className="w-full relative container">
+      <div className="w-full relative ">
         <Experience data={experiences} />
       </div>
       <div className="relative container">
