@@ -10,7 +10,7 @@ const BASE_CONFIG = {
   theta: 0.3,
   dark: 1,
   diffuse: 0.4,
-  mapSamples: 8000, 
+  mapSamples: 6000,
   mapBrightness: 1.2,
   baseColor: [1, 1, 1],
   markerColor: [1, 1, 1],
@@ -32,32 +32,36 @@ export function Globe({ className, config = BASE_CONFIG }) {
   const rs = useSpring(r, { mass: 1, damping: 30, stiffness: 100 });
 
   useEffect(() => {
-    let width = canvasRef.current.offsetWidth;
-    const dpr = Math.min(window.devicePixelRatio, 1.5); 
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-    const globe = createGlobe(canvasRef.current, {
+    let width = canvas.offsetWidth;
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+
+    const globe = createGlobe(canvas, {
       ...config,
       devicePixelRatio: dpr,
       width: width * dpr,
       height: width * dpr,
       onRender: (state) => {
-        if (!pointerInteracting.current) phi += 0.0025; 
+        if (!pointerInteracting.current) phi += 0.0005;
         state.phi = phi + rs.get();
         state.width = width * dpr;
         state.height = width * dpr;
       },
     });
 
-    canvasRef.current.style.opacity = "1";
+    canvas.style.opacity = "1";
 
-    const onResize = () => {
-      width = canvasRef.current.offsetWidth;
-    };
-    window.addEventListener("resize", onResize);
+    const resizeObserver = new ResizeObserver(() => {
+      width = canvas.offsetWidth;
+    });
+    resizeObserver.observe(canvas);
 
     return () => {
       globe.destroy();
-      window.removeEventListener("resize", onResize);
+      resizeObserver.disconnect();
     };
   }, [rs, config]);
 
@@ -74,22 +78,29 @@ export function Globe({ className, config = BASE_CONFIG }) {
         onPointerDown={(e) => (pointerInteracting.current = e.clientX)}
         onPointerUp={() => (pointerInteracting.current = null)}
         onPointerOut={() => (pointerInteracting.current = null)}
-        onMouseMove={(e) =>
-          pointerInteracting.current &&
-          r.set(
-            r.get() +
-              (e.clientX - pointerInteracting.current) / MOVEMENT_DAMPING
-          )
+        onMouseMove={(e) => {
+          if (pointerInteracting.current) {
+            r.set(
+              r.get() +
+                (e.clientX - pointerInteracting.current) / MOVEMENT_DAMPING
+            );
+            pointerInteracting.current = e.clientX;
+          }
+        }}
+        onTouchStart={(e) =>
+          (pointerInteracting.current = e.touches[0]?.clientX || null)
         }
-        onTouchMove={(e) =>
-          e.touches[0] &&
-          pointerInteracting.current &&
-          r.set(
-            r.get() +
-              (e.touches[0].clientX - pointerInteracting.current) /
-                MOVEMENT_DAMPING
-          )
-        }
+        onTouchEnd={() => (pointerInteracting.current = null)}
+        onTouchMove={(e) => {
+          if (pointerInteracting.current && e.touches[0]) {
+            r.set(
+              r.get() +
+                (e.touches[0].clientX - pointerInteracting.current) /
+                  MOVEMENT_DAMPING
+            );
+            pointerInteracting.current = e.touches[0].clientX;
+          }
+        }}
       />
     </div>
   );

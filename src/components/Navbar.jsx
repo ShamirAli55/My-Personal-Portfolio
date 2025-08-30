@@ -13,12 +13,14 @@ const Navbar = () => {
   );
   const [isOpen, setIsOpen] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const closeTimerRef = useRef(null);
 
   const handleAnimation = (e) => {
     e.currentTarget.classList.add("showborder");
   };
 
+  // Detect dark mode toggle
   useEffect(() => {
     const observer = new MutationObserver(() => {
       setIsDarkMode(document.documentElement.classList.contains("dark"));
@@ -40,6 +42,7 @@ const Navbar = () => {
     };
   }, []);
 
+  // Detect keyboard shortcuts
   useEffect(() => {
     const handleKey = (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
@@ -60,6 +63,7 @@ const Navbar = () => {
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
+  // Close "More" menu on navigation
   useEffect(() => {
     if (isMoreOpen) {
       setIsMoreOpen(false);
@@ -70,6 +74,7 @@ const Navbar = () => {
     }
   }, [location.pathname]);
 
+  // Cleanup
   useEffect(() => {
     return () => {
       if (closeTimerRef.current) {
@@ -77,6 +82,17 @@ const Navbar = () => {
         closeTimerRef.current = null;
       }
     };
+  }, []);
+
+  // Smooth scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = window.innerHeight * 0.95;
+      setScrolled(window.scrollY > heroHeight);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const openMore = () => {
@@ -112,7 +128,14 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-[199]">
       <nav className="flex justify-between items-center px-5 pt-8 pb-4 text-foreground relative">
-        <div className="absolute inset-0 h-[75%] w-full z-[-1] pointer-events-none bg-opposite/ opacity-0.8 backdrop-blur-md rounded-b-xl"></div>
+        <div
+          className={`absolute inset-0 h-[75%] w-full z-[-1] pointer-events-none rounded-b-xl transition-all duration-500 ease-out ${
+            scrolled
+              ? "bg-opposite/3 backdrop-blur-md opacity-100 translate-y-0"
+              : "bg-transparent opacity-0 -translate-y-2"
+          }`}
+        ></div>
+
         {isOpen && (
           <HiddenMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
         )}

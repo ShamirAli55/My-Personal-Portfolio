@@ -4,11 +4,9 @@ import { useEffect, useRef } from "react";
 
 const Banner = () => {
   const arrowsRef = useRef([]);
-  const bannerRef = useRef(null);
   const lastScrollY = useRef(
     typeof window !== "undefined" ? window.scrollY : 0
   );
-  const inViewRef = useRef(false);
   const ticking = useRef(false);
 
   const setArrowRef = (el, i) => {
@@ -16,35 +14,11 @@ const Banner = () => {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        inViewRef.current = entry.isIntersecting;
-        if (!entry.isIntersecting) {
-          gsap.to(arrowsRef.current, {
-            rotate: 0,
-            duration: 0.2,
-            overwrite: true,
-          });
-        }
-      },
-      { threshold: 0.2 }
-    );
-    if (bannerRef.current) observer.observe(bannerRef.current);
-    return () => {
-      if (bannerRef.current) observer.unobserve(bannerRef.current);
-    };
-  }, []);
-
-  useEffect(() => {
     gsap.set(arrowsRef.current, { transformOrigin: "50% 50%" });
   }, []);
 
   useEffect(() => {
     const onScroll = () => {
-      if (!inViewRef.current) {
-        lastScrollY.current = window.scrollY;
-        return;
-      }
       if (ticking.current) return;
       ticking.current = true;
 
@@ -75,10 +49,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <section
-      ref={bannerRef}
-      className="min-h-[50vh] relative bg-muted w-full overflow-hidden flex items-center py-32"
-    >
+    <section className="min-h-[50vh] relative bg-muted w-full overflow-hidden flex items-center py-32">
       <div className="slider h-[10%] md:h-1/2 bg-opposite text-primary-foreground py-4 pointer-events-none uppercase">
         {[...Array(5)].map((_, i) => (
           <div

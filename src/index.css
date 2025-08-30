@@ -271,22 +271,13 @@ html.dark {
     transform: translateX(110%);
   }
 }
-.spin
-{
-  animation-name: rotating-globe;
-  animation-duration: 10s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: reverse;
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
-@keyframes rotating-globe {
-  0%{
-    transform: rotate(0deg);
-  }
-  100%
-  {
-    transform: rotate(360deg);
-  }
+
+.spin {
+  animation: spin-slow 6s linear infinite;
 }
 @utility hey
 {

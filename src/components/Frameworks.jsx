@@ -21,7 +21,7 @@ export function Frameworks() {
     "wordpress",
   ];
 
-
+  // Preload images
   useEffect(() => {
     skills.forEach((skill) => {
       const img = new Image();
@@ -36,6 +36,7 @@ export function Frameworks() {
       )),
     []
   );
+
   const IconsSmall = useMemo(
     () =>
       [...skills]
@@ -57,7 +58,6 @@ export function Frameworks() {
 const Icon = ({ src }) => (
   <img
     src={src}
-    loading="lazy"
     className="duration-200 rounded-sm hover:scale-110"
   />
 );

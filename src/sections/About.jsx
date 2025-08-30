@@ -4,49 +4,11 @@ import { Frameworks } from "../components/Frameworks";
 import AboutBottomPart from "../components/AboutBottomPart";
 import { Globe } from "../components/Globe";
 import Banner from "../components/Banner";
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { MapPin } from "lucide-react";
 
 const About = () => {
   const grid2Container = useRef();
-
-  const [showFrameworks, setShowFrameworks] = useState(false);
-  const [showCards, setShowCards] = useState(false);
-  const [showGlobe, setShowGlobe] = useState(false);
-  const [showBanner, setShowBanner] = useState(false);
-
-  const frameworksRef = useRef();
-  const cardsRef = useRef();
-  const globeRef = useRef();
-  const bannerRef = useRef();
-
-  const useVisibility = (
-    ref,
-    setter,
-    options = { threshold: 0.2 },
-    once = false
-  ) => {
-    useEffect(() => {
-      if (!ref.current) return;
-      const observer = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) {
-          setter(true);
-          if (once) observer.disconnect();
-        }
-      }, options);
-
-      observer.observe(ref.current);
-      return () => observer.disconnect();
-    }, [ref, setter, options, once]);
-  };
-
-  // Keep Globe + Banner lazy (heavy)
-  useVisibility(globeRef, setShowGlobe);
-  useVisibility(bannerRef, setShowBanner, { threshold: 0.2 }, true);
-
-  // Frameworks + Cards always mounted → just animate opacity
-  useVisibility(frameworksRef, setShowFrameworks);
-  useVisibility(cardsRef, setShowCards);
 
   return (
     <section
@@ -71,10 +33,7 @@ const About = () => {
         </div>
 
         {/* Card 2: Frameworks */}
-        <div
-          ref={frameworksRef}
-          className="col-span-1 sm:col-span-full md:col-span-3 rounded-xl p-5 relative border border-opposite/20 transition duration-300 shadow-md overflow-hidden"
-        >
+        <div className="col-span-1 sm:col-span-full md:col-span-3 rounded-xl p-5 relative border border-opposite/20 transition duration-300 shadow-md overflow-hidden">
           <div className="z-10 flex text-start flex-col h-full w-full relative">
             <p className="text-4xl font-bold">Tech Stack</p>
             <p className="text-xs md:text-[15px] w-[70%] pr-2 md:pr-4 py-6 md:tracking-tight">
@@ -82,20 +41,13 @@ const About = () => {
               I use a mix of technologies to craft seamless digital experiences.
             </p>
           </div>
-          <div
-            className={`absolute right-0 top-0 w-full h-full start-[67%] md:start-[45%] scale-100 transition-opacity duration-700 ${
-              showFrameworks ? "opacity-100" : "opacity-0"
-            }`}
-          >
+          <div className="absolute right-0 top-0 w-full h-full start-[67%] md:start-[45%] scale-100">
             <Frameworks />
           </div>
         </div>
 
         {/* Card 3: Globe / Timezone */}
-        <div
-          ref={globeRef}
-          className="col-span-1 sm:col-span-full md:col-span-3 row-span-2 rounded-xl border border-opposite/20 transition duration-300 shadow-md p-4 relative overflow-hidden z-10 text-primary"
-        >
+        <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-2 rounded-xl border border-opposite/20 transition duration-300 shadow-md p-4 relative overflow-hidden z-10 text-primary">
           <div className="h-full z-10 w-full text-left px-4 flex flex-col md:justify-between">
             <div className="pointer-events-none">
               <p className="text-4xl py-4">Time Zone</p>
@@ -109,23 +61,16 @@ const About = () => {
               <span className="text-sm md:text-xl">Islamabad, Pakistan</span>
             </div>
           </div>
-          {showGlobe && (
-            <figure className="absolute top-40 -right-50 md:right-[-25%] md:top-[5%] cursor-grab">
-              <Globe />
-            </figure>
-          )}
+          <figure className="absolute top-40 -right-50 md:right-[-25%] md:top-[5%] cursor-grab">
+            <Globe />
+          </figure>
         </div>
 
         {/* Card 4: CODE IS CANVAS */}
-        <div
-          ref={cardsRef}
-          className="col-span-1 sm:col-span-full md:col-span-4 rounded-xl p-4 flex border border-opposite/20 transition duration-300 shadow-md items-center justify-center overflow-hidden"
-        >
+        <div className="col-span-1 sm:col-span-full md:col-span-4 rounded-xl p-4 flex border border-opposite/20 transition duration-300 shadow-md items-center justify-center overflow-hidden">
           <div
             ref={grid2Container}
-            className={`relative flex items-center justify-center w-full h-full transition-opacity duration-700 ${
-              showCards ? "opacity-100" : "opacity-0"
-            }`}
+            className="relative flex items-center justify-center w-full h-full"
           >
             <p className="flex items-end text-3xl md:text-5xl text-primary/60 pointer-events-none cursor-none">
               CODE IS CANVAS
@@ -183,8 +128,8 @@ const About = () => {
 
       <AboutBottomPart />
 
-      <div ref={bannerRef} className="min-h-[50vh]">
-        {showBanner && <Banner />}
+      <div className="min-h-[50vh]">
+        <Banner />
       </div>
     </section>
   );

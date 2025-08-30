@@ -22,26 +22,24 @@ const App = () => {
   const isContactPage = location.pathname === "/contact";
 
   return (
-    <ReactLenis root={true}>
-      <section id="home" className="w-full min-h-screen relative z-[10]">
-        <Navbar />
-        <ScrollToTop />
-        <Routes>
-          <Route index path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/projects" element={<ProjectsListPage />} />
-          <Route path="/projects/:slug" element={<ProjectPage />} />
-          <Route path="/links" element={<LinksPage />} />
-          <Route path="/experience" element={<ExperiencePage />} />
-          <Route path="/interests" element={<InterestsPage />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/error" element={<ErrorPage />} />
-        </Routes>
+    <ReactLenis root={true} className="w-full min-h-screen relative z-[10]">
+      <Navbar />
+      <ScrollToTop />
+      <Routes>
+        <Route index path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/projects" element={<ProjectsListPage />} />
+        <Route path="/projects/:slug" element={<ProjectPage />} />
+        <Route path="/links" element={<LinksPage />} />
+        <Route path="/experience" element={<ExperiencePage />} />
+        <Route path="/interests" element={<InterestsPage />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/error" element={<ErrorPage />} />
+      </Routes>
 
-        {!isErrorPage && !isContactPage && <Contact />}
-        {!isErrorPage && <Footer />}
-      </section>
+      {!isErrorPage && !isContactPage && <Contact />}
+      {!isErrorPage && <Footer />}
     </ReactLenis>
   );
 };

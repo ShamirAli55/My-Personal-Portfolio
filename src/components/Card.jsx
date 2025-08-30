@@ -1,29 +1,8 @@
 import { motion } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 
-const LazyCard = ({ style, text, image, containerRef }) => {
+const Card = ({ style, text, image, containerRef }) => {
   const cardRef = useRef();
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    if (!cardRef.current) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { root: containerRef.current, threshold: 0.1 }
-    );
-
-    observer.observe(cardRef.current);
-
-    return () => observer.disconnect();
-  }, [containerRef]);
-
-  if (!isVisible) return <div ref={cardRef} style={style} />;
 
   return image && !text ? (
     <motion.img
@@ -51,4 +30,4 @@ const LazyCard = ({ style, text, image, containerRef }) => {
   );
 };
 
-export default LazyCard;
+export default Card;
