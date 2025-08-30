@@ -23,7 +23,7 @@ const App = () => {
   const isContactPage = location.pathname === "/contact";
 
   return (
-    <ReactLenis root={true} className="w-full min-h-screen relative z-[10]">
+    <ReactLenis root className="w-full min-h-screen relative z-[10]">
       <Navbar />
       <ScrollToTop />
       <Routes>
