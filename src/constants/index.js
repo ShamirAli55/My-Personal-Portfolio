@@ -13,7 +13,11 @@ import {
   FileText,
   FolderOpen,
   Link2,
+  Facebook,
+  MessageCircle,
+  Send,
 } from "lucide-react";
+import { FaDiscord } from "react-icons/fa";
 
 export const navItems = [
   { name: "Home", href: "/", icon: Home, category: "Navigation" },
@@ -337,4 +341,22 @@ export const experiences = [
       "Continuously learning and improving skills in MERN stack, backend systems, and deployment strategies.",
     ],
   },
+];
+
+export const socialLinks = [
+  { name: "GitHub", href: "https://github.com/ShamirAli55", icon: Github },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/shamirali55",
+    icon: Linkedin,
+  },
+  { name: "Twitter", href: "https://twitter.com/yourprofile", icon: Twitter },
+  {
+    name: "Facebook",
+    href: "https://facebook.com/yourprofile",
+    icon: Facebook,
+  },
+  { name: "Discord", href: "https://discord.gg/yourinvite", icon: FaDiscord },
+  { name: "Telegram", href: "https://t.me/yourusername", icon: Send }, 
+  { name: "WhatsApp", href: "https://wa.me/1234567890", icon: MessageCircle },
 ];
