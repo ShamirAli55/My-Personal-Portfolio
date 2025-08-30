@@ -3,7 +3,7 @@ import { myProjects } from "../constants";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import MagneticButton from "../components/MagneticButn";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 
 const Projects = () => {
@@ -22,7 +22,14 @@ const Projects = () => {
   const cursorQuick = useRef({ x: null, y: null, op: null });
   const imgQuick = useRef({ x: null, y: null, op: null });
 
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     if (!CrsrRef.current || !ImgRef.current) return;
 
     gsap.set([CrsrRef.current, ImgRef.current], {
@@ -127,7 +134,8 @@ const Projects = () => {
       io.disconnect();
       cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [mounted]);
+
   useEffect(() => {
     myProjects.forEach((project) => {
       const img = new Image();
@@ -155,39 +163,41 @@ const Projects = () => {
       ref={sectionRef}
       className="min-h-screen w-full pt-32 relative text-primary bg-background"
     >
-      <div
-        ref={CrsrRef}
-        className="md:opacity-100 fixed top-0 left-0 h-22 w-22 rounded-full pointer-events-none z-[999]"
-        style={{ willChange: "transform, opacity" }}
-      >
+      {mounted && (
         <div
-          className="absolute inset-0 rounded-full bg-opposite/10 backdrop-blur-xl
+          ref={CrsrRef}
+          className="md:opacity-100 fixed top-0 left-0 h-22 w-22 rounded-full pointer-events-none z-[999]"
+          style={{ opacity: 0, willChange: "transform, opacity" }}
+        >
+          <div
+            className="absolute inset-0 rounded-full bg-opposite/10 backdrop-blur-xl
           border border-white/30 shadow-lg flex items-center justify-center
           before:content-[''] before:absolute before:inset-0
           before:rounded-full before:bg-gradient-to-tr
           before:from-white/20 before:to-transparent before:opacity-40"
-        >
-          <div className="border-2 border-white/60 p-2 rounded-full bg-transparent">
-            <Eye className="text-white drop-shadow-md" size={25} />
+          >
+            <div className="border-2 border-white/60 p-2 rounded-full bg-transparent">
+              <Eye className="text-white drop-shadow-md" size={25} />
+            </div>
+          </div>
+
+          <div className="absolute animate-spin-slow text-[12px] font-semibold tracking-[2.5px] text-white uppercase">
+            <svg viewBox="0 0 120 120" className="w-22 h-22 fill-current">
+              <defs>
+                <path
+                  id="circlePath"
+                  d="M 60, 60 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"
+                />
+              </defs>
+              <text>
+                <textPath href="#circlePath">
+                  • View Details • View Details
+                </textPath>
+              </text>
+            </svg>
           </div>
         </div>
-
-        <div className="absolute animate-spin-slow text-[12px] font-semibold tracking-[2.5px] text-white uppercase">
-          <svg viewBox="0 0 120 120" className="w-22 h-22 fill-current">
-            <defs>
-              <path
-                id="circlePath"
-                d="M 60, 60 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"
-              />
-            </defs>
-            <text>
-              <textPath href="#circlePath">
-                • View Details • View Details
-              </textPath>
-            </text>
-          </svg>
-        </div>
-      </div>
+      )}
 
       <div className="container mx-auto max-w-5xl md:mx-0 md:max-w-7xl cursor-pointer">
         <div className="mb-22 text-center overflow-hidden">
@@ -200,19 +210,21 @@ const Projects = () => {
           </h2>
         </div>
 
-        <div
-          ref={ImgRef}
-          className="hidden md:block fixed top-0 left-0 h-56 w-92 rounded-xl overflow-hidden opacity-0 pointer-events-none z-40"
-          style={{ willChange: "transform, opacity" }}
-        >
-          <img
-            ref={ImgElRef}
-            alt="preview"
-            fetchPriority="high"
-            loading="eager"
-            className="w-full h-full object-cover scale-110"
-          />
-        </div>
+        {mounted && (
+          <div
+            ref={ImgRef}
+            className="hidden md:block fixed top-0 left-0 h-56 w-92 rounded-xl overflow-hidden opacity-0 pointer-events-none z-40"
+            style={{ opacity: 0, willChange: "transform, opacity" }}
+          >
+            <img
+              ref={ImgElRef}
+              alt="preview"
+              fetchPriority="high"
+              loading="eager"
+              className="w-full h-full object-cover scale-110"
+            />
+          </div>
+        )}
 
         <div className="flex flex-col gap-6 md:gap-0 relative">
           {myProjects.map((project) => (
