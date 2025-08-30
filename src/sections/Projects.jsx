@@ -208,7 +208,7 @@ const Projects = () => {
           <img
             ref={ImgElRef}
             alt="preview"
-            fetchpriority="high"
+            fetchPriority="high"
             loading="eager"
             className="w-full h-full object-cover scale-110"
           />

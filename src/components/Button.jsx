@@ -43,7 +43,7 @@ const Button = ({ name, to }) => {
   }, []);
 
   return (
-    <NavLink to={to} smooth duration={500} offset={-50} className="relative">
+    <NavLink to={to} duration={500} offset={-50} className="relative">
       <button
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}

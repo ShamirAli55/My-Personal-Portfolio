@@ -15,7 +15,7 @@ const MagneticButton = ({ children }) => {
     const offsetX = e.clientX - (left + width / 2);
     const offsetY = e.clientY - (top + height / 2);
 
-    x.set(offsetX * 0.4); 
+    x.set(offsetX * 0.4);
     y.set(offsetY * 0.4);
   };
 
@@ -25,7 +25,7 @@ const MagneticButton = ({ children }) => {
   };
 
   return (
-    <motion.button
+    <motion.div
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -36,7 +36,7 @@ const MagneticButton = ({ children }) => {
       className="relative hover:scale-110"
     >
       {children}
-    </motion.button>
+    </motion.div>
   );
 };
 

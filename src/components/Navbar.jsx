@@ -72,7 +72,7 @@ const Navbar = () => {
     }
   }, [location.pathname]);
 
-  // Cleanup
+
   useEffect(() => {
     return () => {
       if (closeTimerRef.current) {
