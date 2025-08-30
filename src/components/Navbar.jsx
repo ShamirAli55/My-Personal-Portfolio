@@ -3,15 +3,13 @@ import { NavLink, useLocation } from "react-router-dom";
 import { AppWindow, Menu } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import HiddenMenu from "./HiddenMenu";
+import Logo from "./Logo";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
   const MenuRef = useRef(null);
   const location = useLocation();
 
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("theme") === "dark"
-  );
   const [isOpen, setIsOpen] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -20,27 +18,6 @@ const Navbar = () => {
   const handleAnimation = (e) => {
     e.currentTarget.classList.add("showborder");
   };
-
-  useEffect(() => {
-    const observer = new MutationObserver(() => {
-      setIsDarkMode(document.documentElement.classList.contains("dark"));
-    });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    const handleStorage = () => {
-      setIsDarkMode(localStorage.getItem("theme") === "dark");
-    };
-    window.addEventListener("storage", handleStorage);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("storage", handleStorage);
-    };
-  }, []);
 
   useEffect(() => {
     const handleKey = (e) => {
@@ -71,7 +48,6 @@ const Navbar = () => {
       }
     }
   }, [location.pathname]);
-
 
   useEffect(() => {
     return () => {
@@ -138,19 +114,7 @@ const Navbar = () => {
         )}
 
         <div className="h-12">
-          {isDarkMode ? (
-            <img
-              src="/assets/logo.svg"
-              className="h-full object-cover cursor-pointer"
-              alt="Logo"
-            />
-          ) : (
-            <img
-              src="/assets/Dark_logo.png"
-              className="h-full object-cover cursor-pointer"
-              alt="Logo"
-            />
-          )}
+          <Logo />
         </div>
 
         <div className="items-center shadow-[0_8px_32px_rgba(0,0,0,0.25)] bg-white/15 backdrop-blur-md border border-primary-foreground/20 justify-between gap-x-10 py-1.5 px-6 rounded-full hidden md:flex">

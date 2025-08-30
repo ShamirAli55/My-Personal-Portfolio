@@ -1,6 +1,7 @@
 import ThemeToggle from "./ThemeToggle";
 import { navItems } from "../constants";
 import { Github, Linkedin, Twitter } from "lucide-react";
+import Logo from "./Logo";
 import FooterButn from "./FooterButn";
 
 const Footer = () => {
@@ -21,12 +22,7 @@ const Footer = () => {
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="h-1/2 w-full md:h-full md:w-1/2 rounded-lg">
             <div className="text-left">
-              <img
-                src="/assets/logo.png"
-                className="h-10 w-10 object-cover"
-                alt="Logo"
-                loading="lazy"
-              />
+              <Logo />
               <p className="text-sm md:text-lg md:pr-46 mt-2">
                 Open to exciting collaborations & projects. Let’s create
                 something amazing together.

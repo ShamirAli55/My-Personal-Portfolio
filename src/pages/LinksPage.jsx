@@ -26,7 +26,6 @@ const LinksPage = () => {
           <span className="text-lg font-semibold">{email}</span>
         </a>
 
-        {/* Phone */}
         <a
           href={`tel:${phone.replace(/\s+/g, "")}`}
           className="container flex items-center gap-4 w-full max-w-md p-4 rounded-2xl 
