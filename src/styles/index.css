@@ -370,7 +370,7 @@ html.dark {
 
 .about-text
 {
-  @apply text-primary tracking-tight px-1.5 leading-relaxed text-xs w-full md:text-xl md:leading-[23px] font-light md:tracking-wide;
+  @apply text-primary tracking-tight px-1.5 md:px-0 leading-relaxed text-xs w-full md:text-xl md:leading-[21px] font-light md:tracking-wide;
 }
 
 
