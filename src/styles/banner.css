@@ -1,0 +1,23 @@
+.slider {
+    display: flex;
+    gap: 2rem;
+    animation: sliding-banner 40s linear infinite;
+    width: max-content;
+}
+
+.slider:hover
+{
+    animation-play-state: paused !important;
+    cursor: move;
+}
+
+
+@keyframes sliding-banner {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

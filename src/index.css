@@ -231,72 +231,8 @@ html.dark {
   background-size: 200% 200%;
   animation: gradient-move 6s ease-in-out infinite;
 }
-.textline {
-  position: relative;
-  overflow: hidden;
-}
 
-.textline::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: hsl(var(--foreground));
-  transform: translateX(-110%);
-}
-.showborder:hover.textline::after {
-  animation: slideIn 0.5s forwards;
-}
 
-.showborder.textline::after {
-  animation: slideOut 0.5s forwards;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-
-@keyframes slideOut {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(110%);
-  }
-}
-@keyframes spin-slow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.spin {
-  animation: spin-slow 6s linear infinite;
-}
-@utility hey
-{
-  animation-name:Waving;
-  animation-duration:.2s;
-  animation-timing-function:linear;
-  animation-iteration-count:infinite;
-  animation-direction:alternate;
-}
-@keyframes Waving 
-{
-  0%{
-    transform: rotate(-2deg);
-  }  
-  100%
-{
-  transform: rotate(5deg);
-}
-}
 @utility star
 {
   @apply absolute rounded-full bg-primary;
@@ -437,18 +373,6 @@ html.dark {
   @apply text-primary tracking-tight px-1.5 leading-relaxed text-xs w-full md:text-xl md:leading-[23px] font-light md:tracking-wide;
 }
 
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 12s linear infinite;
-}
 
 @keyframes slideUp {
     0% {
@@ -462,21 +386,7 @@ html.dark {
     animation: slideUp 0.3s ease-out;
   }
 
-.slider {
-  display: flex;
-  gap:2rem;
-  animation: sliding-banner 40s linear infinite;
-  width: max-content; 
-}
 
-@keyframes sliding-banner {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%); 
-  }
-}
 
 #root
 {

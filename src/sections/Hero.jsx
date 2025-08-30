@@ -2,6 +2,7 @@ import Button from "../components/Button";
 import EmailCopyButton from "../components/EmailCopyButton";
 import { FlipWords } from "../components/FlipWords";
 import StarsBackground from "../components/StarsBackground";
+import "../styles/Hero.css"
 const Hero = () => {
   const words = [
     "Full-Stack Dev",

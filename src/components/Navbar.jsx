@@ -3,6 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { AppWindow, Menu } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import HiddenMenu from "./HiddenMenu";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   const MenuRef = useRef(null);
@@ -20,7 +21,6 @@ const Navbar = () => {
     e.currentTarget.classList.add("showborder");
   };
 
-  // Detect dark mode toggle
   useEffect(() => {
     const observer = new MutationObserver(() => {
       setIsDarkMode(document.documentElement.classList.contains("dark"));
@@ -42,7 +42,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Detect keyboard shortcuts
   useEffect(() => {
     const handleKey = (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
@@ -63,7 +62,6 @@ const Navbar = () => {
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
-  // Close "More" menu on navigation
   useEffect(() => {
     if (isMoreOpen) {
       setIsMoreOpen(false);
@@ -84,7 +82,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Smooth scroll detection
   useEffect(() => {
     const handleScroll = () => {
       const heroHeight = window.innerHeight * 0.95;

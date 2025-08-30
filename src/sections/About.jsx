@@ -4,6 +4,7 @@ import { Frameworks } from "../components/Frameworks";
 import AboutBottomPart from "../components/AboutBottomPart";
 import { Globe } from "../components/Globe";
 import Banner from "../components/Banner";
+import "../styles/AboutMe.css"
 import { useRef } from "react";
 import { MapPin } from "lucide-react";
 
