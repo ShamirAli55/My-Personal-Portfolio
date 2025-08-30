@@ -38,8 +38,8 @@ const Contact = () => {
       id="contact"
       className="min-h-screen w-full bg-background text-primary flex items-center justify-center py-20"
     >
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
+      <div className="mx-auto max-w-6xl">
+        <div className="text-center py-12">
           <p className="uppercase tracking-widest text-opposite-400 text-sm">
             Get in touch
           </p>
@@ -49,10 +49,10 @@ const Contact = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-12">
           <div className="bg-card p-8 rounded-xl shadow-md border border-gray-700">
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              Say Hello 👋
+              Say Hello <span className="hey">👋</span>
             </h3>
             <p className="text-sm text-gray-400 mb-6">
               Feel free to reach out via the form below

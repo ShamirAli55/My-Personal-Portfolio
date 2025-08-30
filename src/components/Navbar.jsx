@@ -59,6 +59,8 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    if (location.pathname !== "/") return;
+
     const handleScroll = () => {
       const heroHeight = window.innerHeight * 0.95;
       setScrolled(window.scrollY > heroHeight);
@@ -66,7 +68,7 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const openMore = () => {
     if (closeTimerRef.current) {
