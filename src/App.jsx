@@ -19,6 +19,7 @@ const App = () => {
   const location = useLocation();
 
   const isErrorPage = location.pathname === "/error";
+  const isLinkPage = location.pathname === "/links";
   const isContactPage = location.pathname === "/contact";
 
   return (
@@ -38,7 +39,7 @@ const App = () => {
         <Route path="/error" element={<ErrorPage />} />
       </Routes>
 
-      {!isErrorPage && !isContactPage && <Contact />}
+      {!isErrorPage && !isContactPage && !isLinkPage && <Contact />}
       {!isErrorPage && <Footer />}
     </ReactLenis>
   );

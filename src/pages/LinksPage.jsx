@@ -1,4 +1,5 @@
 import { socialLinks } from "../constants";
+import OverLay from "../components/OverLay";
 import { Mail, Phone } from "lucide-react";
 
 const LinksPage = () => {
@@ -8,7 +9,8 @@ const LinksPage = () => {
   const socials = socialLinks.filter((link) => link.name !== "WhatsApp");
 
   return (
-    <div className="min-h-screen bg-background text-primary pt-20 flex flex-col items-center">
+    <div className="min-h-screen bg-background text-primary py-20 flex flex-col items-center relative z-1">
+      <OverLay src={"/assets/GradientLiquid.jpg"} ShowCurves={false} />
       <h1 className="text-4xl font-bold mb-12 pt-6 text-center gradient-text">
         Shamir Ali
       </h1>
