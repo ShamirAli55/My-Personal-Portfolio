@@ -36,7 +36,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen w-full bg-background flex items-center justify-center py-20"
+      className="min-h-screen w-full bg-background text-primary flex items-center justify-center py-20"
     >
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
@@ -113,9 +113,10 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-md hover:opacity-90 transition"
+                className="w-full flex items-center justify-center gap-2 bg-opposite text-primary-foreground cursor-pointer py-3 rounded-md hover:opacity-80 transition"
               >
-                {loading ? "Sending..." : "Send Message"} <Send size={18} />
+                {loading ? "Sending..." : "Send Message"}{" "}
+                <Send size={18} color="hsl(var(--opposite))" />
               </button>
 
               {sent && (
@@ -150,7 +151,7 @@ const Contact = () => {
 
               <div className="flex justify-center md:justify-start">
                 <a
-                  href="https://wa.me/1234567890"
+                  href="https://wa.me/03175266003"
                   target="_blank"
                   className="flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-600 transition"
                 >
