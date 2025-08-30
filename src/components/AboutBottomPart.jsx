@@ -20,15 +20,17 @@ const AboutBottomPart = () => {
             className="w-full max-w-[420px] h-72 md:h-[460px] rounded-2xl bg-gradient-to-tr from-purple-500 to-blue-500 p-[3px] [perspective:1200px]"
           >
             <div className="w-full h-full bg-neutral-900 rounded-2xl flex items-center justify-center overflow-hidden">
-              <motion.img
-                src="assets/images/Profile_image.png"
-                alt="Shamir Ali"
-                loading="lazy"
-                className="rounded-2xl object-cover w-full h-full"
-                initial={{ rotateY: -90 }}
-                whileInView={{ rotateY: 0 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-              />
+              <div className="relative w-full h-full overflow-hidden rounded-2xl">
+                <motion.img
+                  src="assets/images/Profile_image.png"
+                  alt="Shamir Ali"
+                  loading="lazy"
+                  className="rounded-2xl object-cover w-full h-full"
+                  initial={{ filter: "blur(8px) contrast(200%)", scale: 0.9 }} 
+                  whileInView={{ filter: "blur(0px) contrast(100%)", scale: 1 }} 
+                  transition={{ duration: 1, ease: "easeOut" }}
+                />
+              </div>
             </div>
           </motion.div>
         </div>

@@ -16,6 +16,19 @@ import {
   Facebook,
   MessageCircle,
   Send,
+  TerminalSquare,
+  Cloud,
+  Globe,
+  Layout,
+  Database,
+  Palette,
+  Box,
+  Code2,
+  Wand2,
+  Layers,
+  Compass,
+  Cpu,
+  BrainCircuit,
 } from "lucide-react";
 import { FaDiscord } from "react-icons/fa";
 
@@ -357,6 +370,105 @@ export const socialLinks = [
     icon: Facebook,
   },
   { name: "Discord", href: "https://discord.gg/yourinvite", icon: FaDiscord },
-  { name: "Telegram", href: "https://t.me/yourusername", icon: Send }, 
+  { name: "Telegram", href: "https://t.me/yourusername", icon: Send },
   { name: "WhatsApp", href: "https://wa.me/1234567890", icon: MessageCircle },
+];
+
+export const tools = [
+  {
+    name: "VS Code",
+    description: "Code editor for development",
+    icon: Code2,
+    iconClass: "w-7 h-7 text-blue-500",
+  },
+  {
+    name: "Cursor AI",
+    description: "AI-powered coding assistant",
+    icon: BrainCircuit,
+    iconClass: "w-7 h-7 text-purple-500",
+  },
+  {
+    name: "PyCharm",
+    description: "Python IDE by JetBrains",
+    icon: Cpu,
+    iconClass: "w-7 h-7 text-green-500",
+  },
+  {
+    name: "Postman",
+    description: "API testing platform",
+    icon: Globe,
+    iconClass: "w-7 h-7 text-orange-500",
+  },
+  {
+    name: "Figma",
+    description: "UI/UX design tool",
+    icon: Layout,
+    iconClass: "w-7 h-7 text-pink-500",
+  },
+  {
+    name: "Blender",
+    description: "3D modeling and animation",
+    icon: Box,
+    iconClass: "w-7 h-7 text-orange-400",
+  },
+  {
+    name: "Kraken.io",
+    description: "Image optimization service",
+    icon: Wand2,
+    iconClass: "w-7 h-7 text-cyan-500",
+  },
+  {
+    name: "WebStorm",
+    description: "JavaScript IDE by JetBrains",
+    icon: Cpu,
+    iconClass: "w-7 h-7 text-sky-500",
+  },
+  {
+    name: "GitHub",
+    description: "Version control hosting platform",
+    icon: Github,
+    iconClass: "w-7 h-7 text-gray-700 dark:text-gray-300",
+  },
+  {
+    name: "MongoDB Compass",
+    description: "GUI for MongoDB management",
+    icon: Compass,
+    iconClass: "w-7 h-7 text-green-600",
+  },
+  {
+    name: "MongoDB Atlas",
+    description: "Cloud database service",
+    icon: Database,
+    iconClass: "w-7 h-7 text-emerald-500",
+  },
+  {
+    name: "Netlify",
+    description: "Static site deployment platform",
+    icon: Cloud,
+    iconClass: "w-7 h-7 text-cyan-400",
+  },
+  {
+    name: "Cloudinary",
+    description: "Image and video storage/CDN",
+    icon: Cloud,
+    iconClass: "w-7 h-7 text-indigo-400",
+  },
+  {
+    name: "Spline",
+    description: "3D web design tool",
+    icon: Palette,
+    iconClass: "w-7 h-7 text-pink-400",
+  },
+  {
+    name: "Brave Browser",
+    description: "Privacy-focused web browser",
+    icon: Globe,
+    iconClass: "w-7 h-7 text-red-500",
+  },
+  {
+    name: "Claude AI",
+    description: "AI conversational assistant",
+    icon: Wand2,
+    iconClass: "w-7 h-7 text-yellow-400",
+  },
 ];
