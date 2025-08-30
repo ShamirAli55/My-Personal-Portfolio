@@ -3,11 +3,10 @@ const OverLay = () => {
     <div className="absolute inset-0 -z-1">
       <img
         className="absolute inset-0 w-full h-full object-cover"
-        src="/assets/Gradient Liquid.jpg"
+        src="/assets/GradientLiquid.jpg"
         alt="overlay texture"
       />
-
-      <div className="absolute inset-0 bg-background opacity-93"></div>
+      <div className="absolute inset-0 bg-background opacity-90"></div>
 
       <div
         className="absolute top-0 left-0 w-full h-28 
