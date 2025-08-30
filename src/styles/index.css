@@ -138,6 +138,13 @@ html, body, #root {
   --bento-background:210, 2%, 80%;
   --footer:240, 14%, 94%;
 
+
+  --gh-contrib-0: #ebedf0; /* empty (light gray) */
+  --gh-contrib-1: #9be9a8; /* low activity */
+  --gh-contrib-2: #40c463; /* medium activity */
+  --gh-contrib-3: #30a14e; /* high activity */
+  --gh-contrib-4: #216e39; /* very high activity */
+
 }
 
 html.dark {
@@ -152,6 +159,12 @@ html.dark {
   --shadow:278, 8%, 75%; 
   --bento-background:0, 4%, 89%;
   --footer:0, 0%, 5%;
+
+  --gh-contrib-0: #1a1a1a; /* empty */
+  --gh-contrib-1: #014421;
+  --gh-contrib-2: #017a35;
+  --gh-contrib-3: #01a94d;
+  --gh-contrib-4: #00ff66;
 
 }
   html
@@ -400,12 +413,14 @@ html.dark {
     animation: slideUp 0.3s ease-out;
   }
 
-
-
 #root
 {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
   text-align:center;
+}
+html, body {
+  position: relative;
+  height: 100%;
 }

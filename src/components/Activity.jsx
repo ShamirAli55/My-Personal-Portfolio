@@ -148,14 +148,14 @@ export default function GitHubActivityApp() {
                   const dayIndex = i % 7;
                   const color =
                     day.count === 0
-                      ? "#1a1a1a"
+                      ? "var(--gh-contrib-0)"
                       : day.count < 3
-                      ? "#014421"
+                      ? "var(--gh-contrib-1)"
                       : day.count < 6
-                      ? "#017a35"
+                      ? "var(--gh-contrib-2)"
                       : day.count < 10
-                      ? "#01a94d"
-                      : "#00ff66";
+                      ? "var(--gh-contrib-3)"
+                      : "var(--gh-contrib-4)";
 
                   return (
                     <rect
