@@ -134,16 +134,16 @@ const Contact = () => {
               </p>
 
               <div className="flex flex-wrap justify-center md:justify-start gap-6 mb-8">
-                {filteredLinks.map(({ name, href, icon: Icon }) => (
+                {filteredLinks.map((link) => (
                   <a
-                    key={name}
-                    href={href}
+                    key={link.name}
+                    href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={name}
+                    aria-label={link.name}
                     className="p-4 bg-card rounded-full hover:bg-primary/20 transition flex items-center justify-center"
                   >
-                    <Icon size={24} />
+                    <link.icon size={24} />
                   </a>
                 ))}
               </div>
