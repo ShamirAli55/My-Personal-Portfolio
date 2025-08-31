@@ -423,7 +423,5 @@ html.dark {
 
 html, body {
   height: auto;
-  overflow-x: hidden;
-  overflow-y: auto;  
   -webkit-overflow-scrolling: touch; 
 }
