@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 
@@ -30,7 +30,6 @@ export default function Preloader({ onDone }) {
     }
   }, [phase]);
 
-
   const RollingNumber = ({ value, pad = 3 }) => (
     <div className="flex space-x-[4px]">
       {String(value)
@@ -47,12 +46,22 @@ export default function Preloader({ onDone }) {
     </div>
   );
 
-  const columns = 8; 
+  const columns = 8;
+
   const columnVariants = {
     initial: { y: 0 },
     up: { y: "-100%", transition: { duration: 1, ease: "easeInOut" } },
     down: { y: "100%", transition: { duration: 1, ease: "easeInOut" } },
   };
+
+  const columnData = useMemo(
+    () =>
+      Array.from({ length: columns }).map((_, i) => ({
+        direction: i % 2 === 0 ? "up" : "down",
+        delay: i * 0.1,
+      })),
+    [columns]
+  );
 
   return (
     <AnimatePresence>
@@ -82,32 +91,28 @@ export default function Preloader({ onDone }) {
             </>
           )}
 
-
           {phase === "reveal" && (
             <div className="absolute inset-0 flex">
-              {Array.from({ length: columns }).map((_, i) => {
-                const direction = Math.random() > 0.5 ? "up" : "down";
-                return (
-                  <motion.div
-                    key={i}
-                    className="flex-1 bg-opposite"
-                    variants={columnVariants}
-                    initial="initial"
-                    animate={direction}
-                    transition={{
-                      duration: 1.2,
-                      ease: "easeInOut",
-                      delay: i * 0.1,
-                    }}
-                    onAnimationComplete={() => {
-                      if (i === columns - 1) {
-                        setPhase("done");
-                        onDone?.();
-                      }
-                    }}
-                  />
-                );
-              })}
+              {columnData.map((col, i) => (
+                <motion.div
+                  key={i}
+                  className="flex-1 bg-opposite"
+                  variants={columnVariants}
+                  initial="initial"
+                  animate={col.direction}
+                  transition={{
+                    duration: 1.2,
+                    ease: "easeInOut",
+                    delay: col.delay,
+                  }}
+                  onAnimationComplete={() => {
+                    if (i === columnData.length - 1) {
+                      setPhase("done");
+                      onDone?.();
+                    }
+                  }}
+                />
+              ))}
             </div>
           )}
         </motion.div>
