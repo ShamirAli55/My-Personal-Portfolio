@@ -161,7 +161,7 @@ const Projects = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen w-full pt-32 relative text-primary bg-background overflow-x-hidden"
+      className="min-h-screen w-full pt-32 relative text-primary bg-background overflow-x-hidden "
     >
       {mounted && (
         <div
