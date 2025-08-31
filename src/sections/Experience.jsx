@@ -50,7 +50,7 @@ const Experience = () => {
     [0, 1],
     [0, Math.max(0, lineHeight - markerSize)]
   );
-  const lineFill = useTransform(y, (val) => `${val + markerSize / 2}px`);
+  const lineFill = useTransform(y, (val) => `${val + markerSize/3 }px`);
 
   useMotionValueEvent(y, "change", (latest) => {
     setCurrentY(latest);

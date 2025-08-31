@@ -320,34 +320,34 @@ export const myProjects = [
 
 export const experiences = [
   {
-    title: "Student Developer",
+    title: "Software Engineering Student",
     job: "Capital University of Science & Technology (CUST)",
-    date: "2021 - Present",
+    date: "2021 – Present",
     contents: [
-      "Pursuing a Bachelor's degree in Software Engineering with a focus on web development, operating systems, and AI tools.",
-      "Gained hands-on experience through academic projects in C++, JavaScript, React, and database management.",
-      "Collaborated with classmates on team projects, applying Agile methodology and version control (Git/GitHub).",
+      "Pursuing a Bachelor's degree in Software Engineering with coursework in web development, operating systems, and artificial intelligence.",
+      "Building strong programming foundations through projects in C++, JavaScript, React, and database management.",
+      "Collaborating on academic projects using Agile practices and version control with Git/GitHub.",
     ],
   },
   {
-    title: "Personal & Academic Projects",
-    job: "Independent Work",
-    date: "2022 - Present",
+    title: "Academic & Personal Projects",
+    job: "Independent / University Work",
+    date: "2022 – Present",
     contents: [
-      "Built multiple frontend clones and small full-stack applications to strengthen problem-solving and design skills.",
-      "Developed a train reservation system in C++ with features like booking, deletion, and admin panel.",
-      "Worked on a pet store system including e-commerce features, vet appointments, and chatbot integration.",
-      "Explored AI/ML by creating simple models using HuggingFace Transformers for Q&A tasks.",
+      "Developed a full-stack book reservation system as a semester project with user authentication, database handling, and CRUD operations.",
+      "Created an online pet store in the following semester, featuring product listings, appointment booking, and basic e-commerce functionality.",
+      "Built a train reservation system in C++ with ticket booking, deletion, and an admin panel.",
+      "Explored machine learning by experimenting with HuggingFace Transformers for simple Q&A tasks.",
     ],
   },
   {
-    title: "Freelance / Portfolio Developer",
-    job: "Self-Employed",
-    date: "2024 - Present",
+    title: "Freelance & Portfolio Projects",
+    job: "Self-Directed",
+    date: "2024 – Present",
     contents: [
-      "Created a personal portfolio using React, Vite, TailwindCSS, and Framer Motion to showcase skills.",
-      "Experimented with Three.js for interactive 3D web experiences.",
-      "Continuously learning and improving skills in MERN stack, backend systems, and deployment strategies.",
+      "Designed and deployed a personal portfolio website using React, Vite, TailwindCSS, and Framer Motion to showcase skills.",
+      "Experimented with Three.js to create interactive 3D web experiences.",
+      "Continuously expanding expertise in the MERN stack, backend systems, and deployment workflows.",
     ],
   },
 ];
