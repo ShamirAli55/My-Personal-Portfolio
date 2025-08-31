@@ -20,7 +20,7 @@ const About = () => {
         {/* Card 1 */}
         <div className="col-span-1 sm:col-span-full md:col-span-3 row-span-2 md:row-span-3 rounded-xl p-4 relative duration-200 overflow-hidden pointer-events-none z-10 border border-opposite/20 transition shadow-md">
           <img
-            src="assets/coding-pov.png"
+            src="assets/images/coding-pov.png"
             className="absolute scale-[2.1] right-[-4rem] top-[2rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
           />
           <div className="z-10 relative h-full flex flex-col text-left justify-end pb-4 md:py-10 px-2 md:px-6">
