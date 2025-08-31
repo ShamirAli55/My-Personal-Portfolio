@@ -13,8 +13,7 @@ const About = () => {
 
   return (
     <section
-      id="about"
-      className="min-h-screen w-full py-10 bg-background text-primary overflow-x-hidden"
+      className="min-h-screen w-full py-10 bg-background text-primary overflow-x-hidden relative"
     >
       <div className="grid gap-6 grid-cols-1 md:grid-cols-6 auto-rows-[200px] px-6">
         {/* Card 1 */}
@@ -99,12 +98,12 @@ const About = () => {
             />
             <Card
               style={{ rotate: "-45deg", top: "70%", left: "25%" }}
-              image="/skills/vscode.svg"
+              image="/assets/skills/vscode.svg"
               containerRef={grid2Container}
             />
             <Card
-              style={{ rotate: "-45deg", top: "5%", left: "10%" }}
-              image="/skills/stackoverflow.svg"
+              style={{ rotate: "-45deg", top: "5%", left: "20%" }}
+              image="/assets/skills/stackoverflow.svg"
               containerRef={grid2Container}
             />
           </div>

@@ -3,7 +3,7 @@ import { skills } from "../constants";
 const Skills = () => {
   return (
     <section
-      className="min-h-screen w-full bg-primary-foreground text-primary opacity-95 cursor-pointer flex flex-col items-center justify-center py-20"
+      className="min-h-screen w-full bg-background text-primary cursor-pointer flex flex-col items-center justify-center py-20 relative"
       aria-labelledby="skills-heading"
     >
       <div className="mb-22 text-center">
