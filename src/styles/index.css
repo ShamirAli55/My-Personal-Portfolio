@@ -420,7 +420,3 @@ html.dark {
   padding: 0;
   text-align:center;
 }
-html, body ,#root{
-  position: relative;
-  height: 100%;
-}
