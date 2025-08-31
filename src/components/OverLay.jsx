@@ -6,7 +6,7 @@ const OverLay = ({ src, ShowCurves }) => {
         src={src}
         alt="overlay texture"
       />
-      <div className="absolute inset-0 bg-background opacity-90"></div>
+      <div className="absolute inset-0 bg-background opacity-94.5"></div>
 
       <div
         className="absolute top-0 left-0 w-full h-28 

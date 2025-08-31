@@ -12,7 +12,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="container min-h-screen w-full flex items-start text-primary bg-background opacity-95 relative overflow-x-hidden">
+    <section className="min-h-screen w-full flex items-start text-primary bg-background opacity-95 relative overflow-x-hidden">
       <div>
         <StarsBackground />
       </div>
