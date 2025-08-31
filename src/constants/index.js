@@ -133,7 +133,7 @@ export const skills = [
   },
   {
     name: "AWS",
-    image: "skills/aws.webp",
+    image: "skills/aws.png",
   },
   {
     name: "Vercel",
