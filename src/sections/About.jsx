@@ -13,7 +13,7 @@ const About = () => {
 
   return (
     <section
-      className="min-h-screen w-full py-10 bg-background text-primary overflow-x-hidden relative"
+      className="min-h-screen w-full py-10 bg-background text-primary"
     >
       <div className="grid gap-6 grid-cols-1 md:grid-cols-6 auto-rows-[200px] px-6">
         {/* Card 1 */}
