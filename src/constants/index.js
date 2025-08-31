@@ -468,3 +468,89 @@ export const tools = [
     iconClass: "w-7 h-7 text-yellow-400",
   },
 ];
+
+export const favoriteGames = [
+  {
+    title: "Elden Ring",
+    cover:
+      "https://m.media-amazon.com/images/M/MV5BMWNlMDBiYzYtMWMyMC00Zjc5LTlhMjItMjRlMzBmYmVkOGM0XkEyXkFqcGc@.jpg",
+    hours: 240,
+    rating: 5,
+  },
+  {
+    title: "Delta Force",
+    cover:
+      "https://cdn2.unrealengine.com/delta-force-key-vision-1920x1080-f1917e903306.png",
+    hours: 180,
+    rating: 5,
+  },
+  {
+    title: "Valorant",
+    cover:
+      "https://wallpapercat.com/w/full/9/b/0/1869042-2560x1440-desktop-hd-valorant-wallpaper-image.jpg",
+    hours: 600,
+    rating: 4,
+  },
+  {
+    title: "Fall Guys",
+    cover:
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1097150/header.jpg?t=1698763175",
+    hours: 350,
+    rating: 4,
+  },
+];
+
+export const animeList = [
+  {
+    title: "Demon Slayer: S3",
+    meta: "12 eps this month",
+    poster:
+      "https://static0.srcdn.com/wordpress/wp-content/uploads/2023/11/demon-slayer-kimetsu-no-yaiba-4.jpg?q=70&fit=crop&w=825&dpr=1",
+  },
+  {
+    title: "Jujutsu Kaisen",
+    meta: "Rewatching fights",
+    poster:
+      "https://images.squarespace-cdn.com/content/v1/571abd61e3214001fb3b9966/1632339785640-P5VYWWUXH2E5G3GEQSC3/Jujutsu+Kaisen+Key+Animation+Vol.+1+Cover",
+  },
+  {
+    title: "Attack on Titan",
+    meta: "Finale binge",
+    poster:
+      "https://imgs.search.brave.com/IEU70h1aItSf9CVAFP7YteV-Soare43CBh-5uSDELLc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDEy/MzY5MDU3My11aHV5/cjctdDUwMHg1MDAu/anBn",
+  },
+  {
+    title: "One Piece",
+    meta: "Arc: Egghead",
+    poster:
+      "https://i.pinimg.com/originals/0f/93/e7/0f93e757a9113476be66e3ab611653f1.jpg",
+  },
+  {
+    title: "Your Name",
+    meta: "Movie night",
+    poster:
+      "https://imgs.search.brave.com/i9yquXXfVdhTgn-kjX6xO6U8mU845UPHIdoHwyCvZ6E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2I0/ODIyNThlLTYwNjct/NDFkOS1iN2Q1LWU0/ZDE5YTJmYmE2Ny9k/YjFtd3J0LWIxYjIy/ODAwLTE0OTUtNDNi/Ny1hNmZlLTdkYjUy/ODA3OGU3ZS5qcGcv/djEvZmlsbC93XzYw/MCxoXzYwMCxxXzc1/LHN0cnAveW91cl9u/YW1lX19maWxtX2Fs/YnVtX19yYWR3aW1w/c19fY3VzdG9tX2Nv/dmVyX2J5X2phZ2Vy/c3phYW1fZGIxbXdy/dC1mdWxsdmlldy5q/cGc_dG9rZW49ZXlK/MGVYQWlPaUpLVjFR/aUxDSmhiR2NpT2lK/SVV6STFOaUo5LmV5/SnpkV0lpT2lKMWNt/NDZZWEJ3T2pkbE1H/UXhPRGc1T0RJeU5q/UXpOek5oTldZd1pE/UXhOV1ZoTUdReU5t/VXdJaXdpYVhOeklq/b2lkWEp1T21Gd2NE/bzNaVEJrTVRnNE9U/Z3lNalkwTXpjellU/Vm1NR1EwTVRWbFlU/QmtNalpsTUNJc0lt/OWlhaUk2VzF0N0lu/QmhkR2dpT2lKY0wy/WmNMMkkwT0RJeU5U/aGxMVFl3TmpjdE5E/RmtPUzFpTjJRMUxX/VTBaREU1WVRKbVlt/RTJOMXd2WkdJeGJY/ZHlkQzFpTVdJeU1q/Z3dNQzB4TkRrMUxU/UXpZamN0WVRabVpT/MDNaR0kxTWpnd056/aGxOMlV1YW5Cbklp/d2lhR1ZwWjJoMElq/b2lQRDAyTURBaUxD/SjNhV1IwYUNJNklq/dzlOakF3SW4xZFhT/d2lZWFZrSWpwYklu/VnlianB6WlhKMmFX/TmxPbWx0WVdkbExu/ZGhkR1Z5YldGeWF5/SmRMQ0ozYldzaU9u/c2ljR0YwYUNJNkls/d3ZkMjFjTDJJME9E/SXlOVGhsTFRZd05q/Y3ROREZrT1MxaU4y/UTFMV1UwWkRFNVlU/Sm1ZbUUyTjF3dmFt/Rm5aWEp6ZW1GaGJT/MDBMbkJ1WnlJc0lt/OXdZV05wZEhraU9q/azFMQ0p3Y205d2Iz/SjBhVzl1Y3lJNk1D/NDBOU3dpWjNKaGRt/bDBlU0k2SW1ObGJu/UmxjaUo5ZlEucVNz/N1ViQ3c3d0tYamRm/SEdKaThENERFbjRo/czYzVzhwMjNyZWpa/RW5uOA",
+  },
+  {
+    title: "Suzume",
+    meta: "Makoto Shinkai",
+    poster:
+      "https://imgs.search.brave.com/C6dHSUTCSPZ2N6jBOf_Zmq59sBnqoIzCouDJVNVMEWE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLU5MbW5a/elJQZXZFdXg5WE8t/OEs5MUdRLXQxMDgw/eDEwODAuanBn",
+  },
+  {
+    title: "Haikyuu!!",
+    meta: "Training arc",
+    poster:
+      "https://imgs.search.brave.com/QOkXuPd8smX5ChjuB81cHYybdu_RFuSgMCQ2YrznLFI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvaGFp/a3l1dS1tYWdhemlu/ZS1jb3Zlci16YmQy/dHZid3oyYjFkZ2xu/LmpwZw",
+  },
+];
+
+export const codingRhythm = [
+  { day: "Mon", hours: 5 },
+  { day: "Tue", hours: 7 },
+  { day: "Wed", hours: 6 },
+  { day: "Thu", hours: 4 },
+  { day: "Fri", hours: 8 },
+  { day: "Sat", hours: 10 },
+  { day: "Sun", hours: 3 },
+];
