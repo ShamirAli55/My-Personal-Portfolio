@@ -19,7 +19,7 @@ const Hero = () => {
       <div className=" h-full w-full relative">
         <h1 className="text-lg md:text-5xl font-bold pt-38 pb-18 md:px-28 capitalize leading-[45px] md:leading-[65px]">
           I craft seamless digital experiences{" "}
-         <span className="whitespace-nowrap">while learning and growing everyday</span>
+         <span className="whitespace-nowrap pr-2">while learning and growing everyday</span>
         </h1>
         <h3 className="text-lg md:text-3xl font-bold md:px-28 pb-5">
           <span className="text-lg md:text-4xl hey mr-2 inline-block">👋</span>
