@@ -29,9 +29,10 @@ const App = () => {
     <>
       {!loadingDone && <Preloader onDone={() => setLoadingDone(true)} />}
       {loadingDone && (
-        <ReactLenis root className="w-full min-h-screen relative z-[10]">
+        <>
           <Navbar />
           <ScrollToTop />
+        <ReactLenis root className="w-full min-h-screen relative z-[10]">
           <Routes>
             <Route index path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -48,6 +49,7 @@ const App = () => {
           {!isErrorPage && !isContactPage && !isLinkPage && <Contact />}
           {!isErrorPage && <Footer />}
         </ReactLenis>
+        </>
       )}
     </>
   );
