@@ -73,97 +73,97 @@ export const navItems = [
 export const skills = [
   {
     name: "React.js",
-    image: "/skills/react.png",
+    image: "/assets/skills/react.png",
   },
   {
     name: "Next.js",
-    image: "/skills/nextjs.svg",
+    image: "/assets/skills/nextjs.svg",
   },
   {
     name: "TypeScript",
-    image: "/skills/typescript.svg",
+    image: "/assets/skills/typescript.svg",
   },
   {
     name: "Node.js",
-    image: "/skills/nodejs.svg",
+    image: "/assets/skills/nodejs.svg",
   },
   {
     name: "Express.js",
-    image: "/skills/express.svg",
+    image: "/assets/skills/express.svg",
   },
   {
     name: "MongoDB",
-    image: "/skills/mongodb.svg",
+    image: "/assets/skills/mongodb.svg",
   },
   // Animations & UI
   {
     name: "Tailwind CSS",
-    image: "/skills/tailwindcss.png",
+    image: "/assets/skills/tailwindcss.png",
   },
   {
     name: "Shadcn",
-    image: "/skills/shadcn.png",
+    image: "/assets/skills/shadcn.png",
   },
   {
     name: "Framer Motion",
-    image: "/skills/framer-motion.svg",
+    image: "/assets/skills/framer-motion.svg",
   },
   {
     name: "GSAP",
-    image: "/skills/gsap.svg",
+    image: "/assets/skills/gsap.svg",
   },
-  { name: "Swiper.js", image: "/skills/swiperjs.svg" },
+  { name: "Swiper.js", image: "/assets/skills/swiperjs.svg" },
   {
     name: "Lenis",
-    image: "/skills/lenis.svg",
+    image: "/assets/skills/lenis.svg",
   },
   {
     name: "Three.js",
-    image: "/skills/threejs.svg",
+    image: "/assets/skills/threejs.svg",
   },
 
   // DevOps & Hosting
   {
     name: "Docker",
-    image: "/skills/docker.svg",
+    image: "/assets/skills/docker.svg",
   },
   {
     name: "Linux",
-    image: "/skills/linux.svg",
+    image: "/assets/skills/linux.svg",
   },
   {
     name: "AWS",
-    image: "skills/aws.png",
+    image: "/assets/skills/aws.png",
   },
   {
     name: "Vercel",
-    image: "/skills/vercel.svg",
+    image: "/assets/skills/vercel.svg",
   },
   {
     name: "npm",
-    image: "/skills/npm.png",
+    image: "/assets/skills/npm.png",
   },
 
   {
     name: "Git",
-    image: "/skills/git.svg",
+    image: "/assets/skills/git.svg",
   },
   {
     name: "GitHub",
-    image: "/skills/github.svg",
+    image: "/assets/skills/github.svg",
   },
   {
     name: "VS Code",
-    image: "/skills/vscode.svg",
+    image: "/assets/skills/vscode.svg",
   },
-  { name: "Sanity", image: "/skills/sanity.svg" },
+  { name: "Sanity", image: "/assets/skills/sanity.svg" },
   {
     name: "Zustand",
-    image: "/skills/zustand.svg",
+    image: "/assets/skills/zustand.svg",
   },
   {
     name: "Expo",
-    image: "/skills/expo.svg",
+    image: "/assets/skills/expo.svg",
   },
 ];
 

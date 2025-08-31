@@ -12,9 +12,10 @@ export function Frameworks() {
     "javascript",
     "git",
     "figma",
+    "mongodb",
     "php",
-    "cplusplus",
-    "python",
+    "docker",
+    "vmware",
   ];
 
   useEffect(() => {
