@@ -420,3 +420,10 @@ html.dark {
   padding: 0;
   text-align:center;
 }
+
+html, body {
+  height: auto;
+  overflow-x: hidden; /* stop horizontal overflow */
+  overflow-y: auto;   /* allow vertical scroll */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
