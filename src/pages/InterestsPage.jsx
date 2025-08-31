@@ -33,7 +33,7 @@ const GameCarousel = ({ games }) => {
           <img
             src={games[index].cover}
             alt={games[index].title}
-            className="rounded-lg shadow-lg border border-zinc-700 mb-4 h-40 w-full object-cover"
+            className="rounded-lg shadow-lg border border-zinc-700 mb-4 h-40 w-full object-cover aspect-auto"
           />
           <p className="text-lg font-bold text-rose-400">{games[index].title}</p>
           <p className="text-zinc-400 text-sm">
@@ -115,11 +115,12 @@ const AnimeScroller = () => {
         gsap.to(track, {
           x: () => -distance,
           ease: "none",
+          duration:1,
           scrollTrigger: {
             trigger: el,
             start: "top top",
             end: () => `+=${distance}`,
-            scrub: 1,
+            scrub: 3,
             pin: true,
             anticipatePin: 1,
             invalidateOnRefresh: true,
