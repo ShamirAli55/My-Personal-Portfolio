@@ -39,7 +39,7 @@ const About = () => {
             <p className="text-4xl font-bold">Tech Stack</p>
             <p className="text-xs md:text-[15px] w-[70%] pr-2 md:pr-4 py-6 md:tracking-tight">
               Where ideas meet execution. From frontend magic to backend logic,
-              I use a mix of technologies to craft seamless digital experiences.
+              I use a mix of technologies to craft <span className="md:block"> seamless digital experiences.</span>
             </p>
           </div>
           <div className="absolute right-0 top-0 w-full h-full start-[67%] md:start-[45%] scale-100">
@@ -99,12 +99,12 @@ const About = () => {
             />
             <Card
               style={{ rotate: "-45deg", top: "70%", left: "25%" }}
-              image="assets/logos/dotnet-pink.png"
+              image="/skills/vscode.svg"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "-45deg", top: "5%", left: "10%" }}
-              image="assets/logos/blazor-pink.png"
+              image="/skills/stackoverflow.svg"
               containerRef={grid2Container}
             />
           </div>

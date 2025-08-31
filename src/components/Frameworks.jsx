@@ -4,24 +4,19 @@ import { useMemo, useEffect } from "react";
 export function Frameworks() {
   const skills = [
     "auth0",
-    "blazor",
-    "cplusplus",
-    "csharp",
-    "css3",
-    "dotnet",
-    "dotnetcore",
-    "git",
-    "html5",
-    "javascript",
-    "microsoft",
     "react",
-    "sqlite",
+    "nextjs",
+    "nodejs",
     "tailwindcss",
     "vitejs",
-    "wordpress",
+    "javascript",
+    "git",
+    "figma",
+    "php",
+    "cplusplus",
+    "python",
   ];
 
-  // Preload images
   useEffect(() => {
     skills.forEach((skill) => {
       const img = new Image();
