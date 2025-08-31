@@ -10,7 +10,7 @@ const LinksPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-primary py-20 flex flex-col items-center relative z-1">
-      <OverLay src={"/assets/GradientLiquid.jpg"} ShowCurves={false} />
+      <OverLay src={"/assets/images/GradientLiquid.jpg"} ShowCurves={false} />
       <h1 className="text-4xl font-bold mb-12 pt-6 text-center gradient-text">
         Shamir Ali
       </h1>
