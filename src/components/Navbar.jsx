@@ -1,6 +1,6 @@
 import { navItems } from "../constants";
 import { NavLink, useLocation } from "react-router-dom";
-import { AppWindow, Menu } from "lucide-react";
+import { AppWindow, Menu , Command} from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import HiddenMenu from "./HiddenMenu";
 import Logo from "./Logo";
@@ -207,7 +207,7 @@ const Navbar = () => {
           onClick={() => setIsOpen((prev) => !prev)}
           ref={MenuRef}
         >
-          <AppWindow color="hsl(var(--primary))" />
+          <Command color="hsl(var(--primary))" />
         </div>
       </nav>
     </header>
