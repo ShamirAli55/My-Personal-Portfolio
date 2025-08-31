@@ -137,7 +137,7 @@ export const skills = [
   },
   {
     name: "npm",
-    image: "/assets/skills/npm.png",
+    image: "/assets/skills/npm.svg",
   },
 
   {
