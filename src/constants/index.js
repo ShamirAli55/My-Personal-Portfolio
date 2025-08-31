@@ -106,20 +106,20 @@ export const skills = [
   },
   {
     name: "Framer Motion",
-    image: "/skills/framer-motion.png",
+    image: "/skills/framer-motion.svg",
   },
   {
     name: "GSAP",
-    image: "/skills/gsap.png",
+    image: "/skills/gsap.svg",
   },
   { name: "Swiper.js", image: "/skills/swiperjs.svg" },
   {
     name: "Lenis",
-    image: "/skills/lenis.png",
+    image: "/skills/lenis.svg",
   },
   {
     name: "Three.js",
-    image: "/skills/threejs.png",
+    image: "/skills/threejs.svg",
   },
 
   // DevOps & Hosting
