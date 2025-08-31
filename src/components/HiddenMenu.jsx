@@ -37,7 +37,6 @@ const HiddenMenu = ({ isOpen, onClose }) => {
   return (
     <div className="min-h-[70vh] md:w-1/2 w-[80%] left-[10%] top-[50%] md:left-[25%] absolute z-[200]">
       <div className="h-full w-full flex flex-col shadow-[0_8px_32px_rgba(0,0,0,0.25)] bg-background/25 backdrop-blur-xl border border-primary-foreground/20 rounded-xl">
-        {/* 🔍 Search Bar */}
         <div className="flex items-center justify-between px-8 py-3 w-full relative border-b">
           <div className="flex items-center relative w-full">
             <Search className="absolute left-3 text-primary" size={18} />
@@ -57,8 +56,7 @@ const HiddenMenu = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        {/* 🧭 Filtered Nav Items */}
-        <div className="flex-1 max-h-[60vh] overflow-y-auto custom-scrollbar">
+        <div className="flex-1 max-h-[60vh] overflow-y-auto custom-scrollbar pb-4">
           {sortedCategories.length > 0 ? (
             sortedCategories.map((category) => (
               <div key={category} className="mt-4">
@@ -99,7 +97,6 @@ const HiddenMenu = ({ isOpen, onClose }) => {
             <p className="px-8 py-3 text-sm text-gray-400">No results found</p>
           )}
 
-          {/* 🌐 Social Links at Last */}
           <div className="mt-6 border-t pt-4">
             <h4 className="text-left px-8 pb-2 text-xs uppercase text-primary/40 tracking-wider">
               Social
@@ -122,7 +119,6 @@ const HiddenMenu = ({ isOpen, onClose }) => {
           </div>
         </div>
 
-        {/* ⌨️ Shortcuts Footer */}
         <div className="flex justify-end items-center bg-opposite/15 rounded-b-xl gap-6 px-6 py-2 border-t text-xs text-primary/60">
           <span className="flex items-center gap-1">
             <kbd className="px-1.5 py-0.5 rounded bg-primary/10 text-primary text-[10px]">
