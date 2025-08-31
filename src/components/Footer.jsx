@@ -1,6 +1,7 @@
 import ThemeToggle from "./ThemeToggle";
 import { navItems } from "../constants";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Send, Facebook } from "lucide-react";
+import { FaDiscord } from "react-icons/fa";
 import Logo from "./Logo";
 import FooterButn from "./FooterButn";
 
@@ -76,7 +77,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               aria-label="GitHub"
             >
-              <Github className="w-5 h-5 md:h-6 md:w-6 hover:scale-110 transition-transform" />
+              <FaDiscord className="w-5 h-5 md:h-6 md:w-6 hover:scale-110 transition-transform" />
             </a>
             <a
               href="https://linkedin.com/in/shamirali55"
@@ -84,7 +85,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-5 h-5 md:h-6 md:w-6 hover:scale-110 transition-transform" />
+              <Facebook className="w-5 h-5 md:h-6 md:w-6 hover:scale-110 transition-transform" />
             </a>
             <a
               href="#"
@@ -92,7 +93,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               aria-label="Twitter"
             >
-              <Twitter className="w-5 h-5 md:h-6 md:w-6 hover:scale-110 transition-transform" />
+              <Send className="w-5 h-5 md:h-6 md:w-6 hover:scale-110 transition-transform" />
             </a>
           </div>
         </div>
