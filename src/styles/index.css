@@ -203,15 +203,6 @@ html.dark {
   }
 }
 
-@utility background
-{
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNjbGX_nLD5oYspEtkNB4fIWepHsccxJfaqeUv1PfO6yCG6u_Aag_KujuirD8Yxpwtfy4&usqp=CAU');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
 @keyframes gradient-move {
   0% {
     background-position: 0% 50%;
@@ -270,7 +261,6 @@ html.dark {
   from { transform: translate(0,0); }
   to   { transform: translate(80px, -60px); }
 }
-
 
 
 
@@ -343,63 +333,6 @@ html.dark {
   scrollbar-color: rgb(195, 195, 195) transparent;
 }
 
-
-.projects_overlay{
-  position: relative;
-  overflow: hidden;
-}
-
-.projects_overlay > * {
-  position: relative;
-  z-index: 1;
-}
-
-@media (min-width: 768px) {
-
-  .projects_overlay::after {
-    content: "";
-    position: absolute;
-    top:-100%;
-    left: 0;
-    height: 100%;
-    width:100%; 
- background: linear-gradient(
-  to right,
-  hsl(262 83% 58%),
-  hsl(330 81% 60%)
-);
-    opacity: 0;
-    transform-origin:top center;
-    transition: all 0.3s ease-in-out;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .projects_overlay:hover::after {
-    opacity: 1;
-    top:0%;
-  }
-}
-
-.about-text {
-  @apply text-primary w-full px-1.5 md:px-0
-         text-sm md:text-lg
-         leading-relaxed md:leading-7
-         font-light tracking-normal md:tracking-wide;
-}
-
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 12s linear infinite;
-}
 
 @keyframes slideUp {
     0% {

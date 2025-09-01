@@ -3,6 +3,7 @@ import { myProjects } from "../constants";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import MagneticButton from "../components/MagneticButn";
+import "../styles/Projects.css";
 import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 
