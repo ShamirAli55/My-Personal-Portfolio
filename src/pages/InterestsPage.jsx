@@ -8,12 +8,19 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { Star, Headphones, Code2, Clapperboard } from "lucide-react";
+import { Star, Code2, Clapperboard } from "lucide-react";
 import TiltCard from "../components/Interests/ui/TiltCard";
 import CanvasCard from "../components/Interests/effects/CanvasCard";
 import CodingFocusChart from "../components/Interests/charts/CodingFocusChart";
 import GamePrefsChart from "../components/Interests/charts/GamePrefsChart";
-import { animeList, favoriteGames, codingRhythm,codingTime,gamePrefs } from "../constants";
+import MusicCard from "../components/Interests/ui/MusicCard";
+import {
+  animeList,
+  favoriteGames,
+  codingRhythm,
+  codingTime,
+  gamePrefs,
+} from "../constants";
 import Cursor from "../components/Interests/effects/Cursor";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -41,13 +48,17 @@ const GameCarousel = ({ games }) => {
           <img
             src={games[index].cover}
             alt={games[index].title}
-            className="rounded-lg shadow-lg border border-zinc-700 mb-4 h-40 w-full object-cover aspect-auto"
+            className="rounded-lg shadow-lg border border-opposite/5 mb-4 h-50 w-full object-cover aspect-auto"
           />
           <p className="text-lg font-bold text-rose-400">
             {games[index].title}
           </p>
-          <p className="text-zinc-400 text-sm">
-            {games[index].hours} Hours • {"⭐".repeat(games[index].rating)}
+          <p className="text-opposite/50 text-sm">
+            Hours Played • {games[index].hours}
+          </p>
+          <p>
+            <span className="text-opposite/50 text-sm">Rating : </span>
+            {"⭐".repeat(games[index].rating)}
           </p>
         </motion.div>
       </AnimatePresence>
@@ -56,19 +67,19 @@ const GameCarousel = ({ games }) => {
 };
 
 const PlayingBars = () => {
-  const bars = Array.from({ length: 14 }, (_, i) => i);
+  const bars = Array.from({ length: 40 }, (_, i) => i);
   return (
     <div className="flex items-end justify-center gap-1 h-10">
       {bars.map((b) => (
         <motion.div
           key={b}
-          className="w-1 rounded-full bg-green-400/90"
+          className="w-1 rounded-full bg-indigo-400"
           initial={{ height: 4 }}
           animate={{ height: [8, 28, 14, 36, 12, 22, 10] }}
           transition={{
             repeat: Infinity,
-            duration: 1 + (b % 5) * 0.12,
-            delay: (b % 7) * 0.05,
+            duration: 4 + (b % 5) * 0.5,
+            delay: (b % 7) * 0.2,
             ease: "easeInOut",
           }}
         />
@@ -122,12 +133,12 @@ const AnimeScroller = () => {
     <section
       ref={wrapRef}
       className="relative w-full overflow-hidden my-20"
-      aria-label="Anime & Movies"
+      aria-label="Favourite Animes"
     >
       <div className="mb-6 flex items-center gap-2 px-2 md:px-6">
         <Clapperboard className="h-5 w-5 text-violet-400" />
-        <h3 className="text-xl md:text-2xl font-semibold text-zinc-100">
-          Anime & Movies I’m into
+        <h3 className="text-xl md:text-2xl font-semibold text-opposite">
+          Favourite Animes
         </h3>
       </div>
 
@@ -138,7 +149,12 @@ const AnimeScroller = () => {
         {animeList.map((item) => (
           <div
             key={item.title}
-            className="anime-card min-w-[240px] md:min-w-[320px] rounded-2xl border border-violet-500/20 bg-gradient-to-br from-violet-500/10 via-zinc-900/60 to-fuchsia-400/10 backdrop-blur-xl shadow-[0_0_24px_rgba(168,85,247,0.15)] overflow-hidden"
+            style={{
+              background: "var(--card-bg)",
+              border: "1px solid var(--card-border)",
+              boxShadow: "0 8px 24px var(--card-shadow)",
+            }}
+            className="anime-card min-w-[240px] md:min-w-[320px] rounded-2xl overflow-hidden backdrop-blur-xl transition-all duration-300 hover:scale-[1.03]"
           >
             <div className="h-44 md:h-56 w-full overflow-hidden">
               <img
@@ -148,13 +164,16 @@ const AnimeScroller = () => {
               />
             </div>
             <div className="p-4">
-              <p className="text-zinc-100 font-semibold">{item.title}</p>
-              <p className="text-zinc-400 text-sm">{item.meta}</p>
+              <p className="text-opposite font-semibold">{item.title}</p>
+              <p className="text-opposite/60 text-sm">{item.meta}</p>
 
-              <div className="mt-3 h-2 w-full rounded-full bg-zinc-800 overflow-hidden">
+              <div className="mt-3 h-2 w-full rounded-full bg-opposite/10 overflow-hidden">
                 <div
-                  className="h-full bg-violet-400"
-                  style={{ width: `${60 + Math.floor(Math.random() * 30)}%` }}
+                  style={{
+                    width: `${60 + Math.floor(Math.random() * 30)}%`,
+                    background: "var(--accent-color)",
+                  }}
+                  className="h-full"
                 />
               </div>
             </div>
@@ -168,38 +187,53 @@ const AnimeScroller = () => {
 };
 
 export default function StatsSection() {
-
   return (
     <section className="container mx-auto py-20 px-6 md:px-12 lg:px-24">
       <Cursor />
       <NeonText className="text-red-300 text-3xl mt-6">
-        Interests Beyond the Screen: My Flow
+        Interests Beyond the Screen
       </NeonText>
-      <p className="text-center text-zinc-400 my-12 max-w-2xl mx-auto w-full md:w-[35%]">
+      <p className="text-center text-opposite my-12 max-w-2xl mx-auto w-full md:w-[35%]">
         Coding, gaming, and music are my rhythm here’s a peek into the vibes
         that keep me going 🎧🔥
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto ">
         {/* Row 1 */}
-        <div className="bg-opposite/10 p-6 rounded-xl shadow">
+        <div className="bg-opposite/10 p-6 rounded-xl shadow ">
           <TiltCard>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6">
-              <h4 className="mb-4 flex items-center gap-2 font-semibold text-zinc-200">
+            <div
+              style={{
+                background: "var(--card-bg)",
+                boxShadow: `0 8px 24px var(--card-shadow)`,
+                border: `1px solid var(--card-border)`,
+              }}
+              className="rounded-2xl p-6 backdrop-blur-xl transition-all duration-300 hover:scale-[1.02]"
+            >
+              <h4 className="mb-4 flex items-center gap-2 font-semibold text-opposite">
                 <Code2 className="h-5 w-5 text-sky-400" /> Coding Rhythm
               </h4>
               <div className="h-72">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={codingRhythm}>
-                    <XAxis dataKey="day" tick={{ fill: "#e5e7eb" }} />
-                    <YAxis tick={{ fill: "#e5e7eb" }} />
-                    <Tooltip />
+                    <XAxis
+                      dataKey="day"
+                      tick={{ fill: "hsl(var(--opposite))" }}
+                    />
+                    <YAxis tick={{ fill: "hsl(var(--opposite))" }} />
+                    <Tooltip
+                      contentStyle={{
+                        background: "var(--card-bg)",
+                        border: `1px solid var(--card-border)`,
+                        color: "hsl(var(--opposite))",
+                      }}
+                    />
                     <Line
                       type="monotone"
                       dataKey="hours"
-                      stroke="#38bdf8"
+                      stroke="hsl(200 90% 70%)"
                       strokeWidth={3}
-                      dot={{ r: 6, fill: "#38bdf8" }}
+                      dot={{ r: 6, fill: "hsl(200 90% 70%)" }}
                     />
                   </LineChart>
                 </ResponsiveContainer>
@@ -212,10 +246,17 @@ export default function StatsSection() {
         </div>
 
         {/* Row 2 */}
-        <div className=" bg-opposite/10 p-6 rounded-xl shadow">
+        <div className=" bg-opposite/10 p-6 rounded-xl shadow ">
           <TiltCard>
-            <div className="rounded-2xl border border-background/50 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-6 relative overflow-hidden">
-              <h4 className="mb-4 flex items-center gap-2 font-semibold text-zinc-200">
+            <div
+              style={{
+                background: "var(--card-bg)",
+                boxShadow: `0 8px 24px var(--card-shadow)`,
+                border: `1px solid var(--card-border)`,
+              }}
+              className="rounded-2xl p-6 backdrop-blur-xl transition-all duration-300 hover:scale-[1.02]"
+            >
+              <h4 className="mb-4 flex items-center gap-2 font-semibold text-opposite">
                 <Star className="h-5 w-5 text-rose-400" /> Favorite Games
               </h4>
               <GameCarousel games={favoriteGames} />
@@ -227,39 +268,10 @@ export default function StatsSection() {
         </div>
 
         {/* Row 3 */}
-        <div className="bg-opposite/10 p-6 rounded-xl shadow h-auto md:h-[340px]">
+        <div className="bg-opposite/10 p-6 rounded-xl shadow h-auto md:h-[340px] relative">
           <TiltCard>
-            <motion.div
-              className="p-6 rounded-2xl bg-gradient-to-br from-green-500/10 via-zinc-900/60 to-green-400/5 backdrop-blur-xl border border-green-500/20 shadow-[0_0_20px_rgba(34,197,94,0.2)] h-full"
-              whileHover={{ scale: 1.03 }}
-            >
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <Headphones className="text-green-400" /> Music Stats
-              </h2>
-
-              <div className="flex flex-col items-center justify-center space-y-4">
-                <p className="text-lg font-semibold text-green-400 tracking-wide">
-                  Spotify •{" "}
-                  <span className="text-white">1200+ hrs this year</span>
-                </p>
-
-                <div className="w-full bg-zinc-800 rounded-full h-2 relative overflow-hidden">
-                  <motion.div
-                    className="absolute left-0 top-0 h-full bg-green-400"
-                    initial={{ width: "10%" }}
-                    animate={{ width: ["10%", "35%", "55%", "80%", "90%"] }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 6,
-                      ease: "easeInOut",
-                    }}
-                  />
-                </div>
-                <p className="text-xs text-zinc-400">Lo-Fi / OSTs on repeat</p>
-
-                <PlayingBars />
-              </div>
-            </motion.div>
+            <MusicCard />
+            <PlayingBars className="mt-2" />
           </TiltCard>
         </div>
 
