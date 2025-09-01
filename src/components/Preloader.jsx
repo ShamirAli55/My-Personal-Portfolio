@@ -25,8 +25,10 @@ export default function Preloader({ onDone }) {
   useEffect(() => {
     if (phase !== "done") {
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     }
   }, [phase]);
 

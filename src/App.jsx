@@ -18,7 +18,7 @@ import Footer from "./components/Footer";
 import Preloader from "./components/Preloader"; 
 
 const App = () => {
-  const [loadingDone, setLoadingDone] = useState(true);
+  const [loadingDone, setLoadingDone] = useState(false);
   const location = useLocation();
 
   const isErrorPage = location.pathname === "/error";
@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <>
-      {/* {!loadingDone && <Preloader onDone={() => setLoadingDone(true)} />} */}
+      {!loadingDone && <Preloader onDone={() => setLoadingDone(true)} />}
       {loadingDone && (
         <>
           <Navbar />
