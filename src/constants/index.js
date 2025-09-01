@@ -471,33 +471,55 @@ export const tools = [
 
 export const favoriteGames = [
   {
-    title: "Elden Ring",
-    cover:
-      "https://m.media-amazon.com/images/M/MV5BMWNlMDBiYzYtMWMyMC00Zjc5LTlhMjItMjRlMzBmYmVkOGM0XkEyXkFqcGc@.jpg",
-    hours: 240,
+    title: "PUBG",
+    cover: "assets/FavGames/pubg.jpeg",
+    hours: 300,
     rating: 5,
   },
   {
     title: "Delta Force",
-    cover:
-      "https://cdn2.unrealengine.com/delta-force-key-vision-1920x1080-f1917e903306.png",
-    hours: 180,
+    cover: "assets/FavGames/delta-force.jpeg",
+    hours: 20,
     rating: 5,
   },
   {
-    title: "Valorant",
-    cover:
-      "https://wallpapercat.com/w/full/9/b/0/1869042-2560x1440-desktop-hd-valorant-wallpaper-image.jpg",
-    hours: 600,
-    rating: 4,
+    title: "Tekken 6",
+    cover: "assets/FavGames/tekken6.jpeg",
+    hours: 60,
+    rating: 5,
   },
   {
     title: "Fall Guys",
-    cover:
-      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1097150/header.jpg?t=1698763175",
-    hours: 350,
+    cover: "/assets/FavGames/fall-guys.jpg",
+    hours: 60,
     rating: 4,
   },
+];
+
+export const codingRhythm = [
+  { day: "Mon", hours: 5 },
+  { day: "Tue", hours: 7 },
+  { day: "Wed", hours: 6 },
+  { day: "Thu", hours: 4 },
+  { day: "Fri", hours: 8 },
+  { day: "Sat", hours: 10 },
+  { day: "Sun", hours: 3 },
+];
+
+export const codingTime = [
+  { hour: "Morning", focus: 40 },
+  { hour: "Afternoon", focus: 65 },
+  { hour: "Evening", focus: 85 },
+  { hour: "Late Night", focus: 95 },
+];
+
+export const gamePrefs = [
+  { metric: "Action", score: 92 },
+  { metric: "RPG", score: 88 },
+  { metric: "Shooter", score: 84 },
+  { metric: "Open-World", score: 95 },
+  { metric: "Indie", score: 70 },
+  { metric: "Strategy", score: 64 },
 ];
 
 export const animeList = [
@@ -505,7 +527,7 @@ export const animeList = [
     title: "Demon Slayer: S3",
     meta: "12 eps this month",
     poster:
-      "https://static0.srcdn.com/wordpress/wp-content/uploads/2023/11/demon-slayer-kimetsu-no-yaiba-4.jpg?q=70&fit=crop&w=825&dpr=1",
+      "/assets/FavAnimes/demon-slayer.jpeg",
   },
   {
     title: "Jujutsu Kaisen",
@@ -543,30 +565,4 @@ export const animeList = [
     poster:
       "https://imgs.search.brave.com/QOkXuPd8smX5ChjuB81cHYybdu_RFuSgMCQ2YrznLFI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvaGFp/a3l1dS1tYWdhemlu/ZS1jb3Zlci16YmQy/dHZid3oyYjFkZ2xu/LmpwZw",
   },
-];
-
-export const codingRhythm = [
-  { day: "Mon", hours: 5 },
-  { day: "Tue", hours: 7 },
-  { day: "Wed", hours: 6 },
-  { day: "Thu", hours: 4 },
-  { day: "Fri", hours: 8 },
-  { day: "Sat", hours: 10 },
-  { day: "Sun", hours: 3 },
-];
-
-export const codingTime = [
-  { hour: "Morning", focus: 40 },
-  { hour: "Afternoon", focus: 65 },
-  { hour: "Evening", focus: 85 },
-  { hour: "Late Night", focus: 95 },
-];
-
-export const gamePrefs = [
-  { metric: "Action", score: 92 },
-  { metric: "RPG", score: 88 },
-  { metric: "Shooter", score: 84 },
-  { metric: "Open-World", score: 95 },
-  { metric: "Indie", score: 70 },
-  { metric: "Strategy", score: 64 },
 ];
