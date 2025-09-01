@@ -12,16 +12,12 @@ import {
   Star,
   Headphones,
   Code2,
-  Cpu,
-  Monitor,
-  HardDrive,
   Clapperboard,
 } from "lucide-react";
 import TiltCard from "../components/Interests/ui/TiltCard";
 import CanvasCard from "../components/Interests/effects/CanvasCard";
 import CodingFocusChart from "../components/Interests/charts/CodingFocusChart";
 import GamePrefsChart from "../components/Interests/charts/GamePrefsChart";
-import LifestyleBalanceChart from "../components/Interests/charts/LifestyleBalanceChart";
 import { animeList, favoriteGames, codingRhythm } from "../constants";
 import Cursor from "../components/Interests/effects/Cursor";
 import gsap from "gsap";
@@ -189,7 +185,7 @@ export default function StatsSection() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-        
+
         {/* Row 1 */}
         <div className="bg-zinc-800 p-6 rounded-xl shadow">
           <TiltCard>
@@ -221,7 +217,6 @@ export default function StatsSection() {
         </div>
 
         {/* Row 2 */}
-
         <div className="bg-zinc-800 p-6 rounded-xl shadow">
           <TiltCard>
             <div className="rounded-2xl border border-background/50 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-6 relative overflow-hidden">
@@ -232,17 +227,15 @@ export default function StatsSection() {
             </div>
           </TiltCard>
         </div>
-
         <div className="bg-zinc-800 p-6 rounded-xl shadow">
           <GamePrefsChart />
         </div>
 
         {/* Row 3 */}
-
-        <div className="bg-zinc-800 p-6 rounded-xl shadow">
+        <div className="bg-zinc-800 p-6 rounded-xl shadow h-auto md:h-[340px]">
           <TiltCard>
             <motion.div
-              className="p-6 rounded-2xl bg-gradient-to-br from-green-500/10 via-zinc-900/60 to-green-400/5 backdrop-blur-xl border border-green-500/20 shadow-[0_0_20px_rgba(34,197,94,0.2)]"
+              className="p-6 rounded-2xl bg-gradient-to-br from-green-500/10 via-zinc-900/60 to-green-400/5 backdrop-blur-xl border border-green-500/20 shadow-[0_0_20px_rgba(34,197,94,0.2)] h-full"
               whileHover={{ scale: 1.03 }}
             >
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
@@ -275,14 +268,8 @@ export default function StatsSection() {
           </TiltCard>
         </div>
 
-        <div className="bg-zinc-800 p-6 rounded-xl shadow">
+        <div className="bg-zinc-800 p-6 rounded-xl shadow h-auto md:h-[340px]">
           <CanvasCard />
-        </div>
-
-        {/* Row 4 */}
-
-        <div className="bg-zinc-800 p-6 rounded-xl shadow col-span-2">
-          <LifestyleBalanceChart />
         </div>
       </div>
 
