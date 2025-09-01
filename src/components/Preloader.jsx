@@ -54,7 +54,6 @@ export default function Preloader({ onDone }) {
     [columns]
   );
 
-  // 🔹 Remove preloader completely when phase is done
   if (phase === "done") return null;
 
   return (
