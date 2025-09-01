@@ -8,19 +8,18 @@ function StarBackground() {
     generateStars();
     generateMeteors();
 
-    const handleResize = () => {
-      generateStars();
-    };
+    const handleResize = () => generateStars();
+    window.addEventListener("resize", handleResize);
 
-    return () => window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   const generateStars = () => {
     const numberOfStars = Math.floor(
       (window.innerWidth * window.innerHeight) / 15000
     );
 
     const newStars = [];
-
     for (let i = 0; i < numberOfStars; i++) {
       newStars.push({
         id: i,
@@ -36,7 +35,6 @@ function StarBackground() {
 
   const generateMeteors = () => {
     const numberOfMeteors = 4;
-
     const newMeteors = [];
 
     for (let i = 0; i < numberOfMeteors; i++) {
@@ -51,42 +49,39 @@ function StarBackground() {
     }
     setMeteors(newMeteors);
   };
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-      {stars.map((star) => {
-        return (
-          <div
-            key={star.id}
-            className="star animate-pulse-subtle"
-            style={{
-              width: `${star.size}px`,
-              height: `${star.size}px`,
-              left: `${star.x}%`,
-              top: `${star.y}%`,
-              opacity: star.opacity,
-              animationDuration: `${star.animationDuration}s`,
-            }}
-          />
-        );
-      })}
+      {stars.map((star) => (
+        <div
+          key={star.id}
+          className="star animate-pulse-subtle"
+          style={{
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+            left: `${star.x}%`,
+            top: `${star.y}%`,
+            opacity: star.opacity,
+            animationDuration: `${star.animationDuration}s`,
+          }}
+        />
+      ))}
 
-      {meteors.map((m) => {
-        return (
-          <div
-            key={m.id}
-            className="meteor animate-meteor"
-            style={{
-              width: `${m.size * 50}px`,
-              height: `${m.size * 2}px`,
-              left: `${m.x}%`,
-              top: `${m.y}%`,
-              delay: m.delay,
-              animationDuration: `${m.animationDuration}s`,
-            }}
-          />
-        );
-      })}
-    </div>
+      {meteors.map((m) => (
+        <div
+          key={m.id}
+          className="meteor animate-meteor"
+          style={{
+            width: `${m.size * 50}px`,
+            height: `${m.size * 2}px`,
+            left: `${m.x}%`,
+            top: `${m.y}%`,
+            animationDuration: `${m.animationDuration}s`,
+            animationDelay: `${m.delay}s`,
+          }}
+        />
+      ))}
+</div>
   );
 }
 
