@@ -8,12 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import {
-  Star,
-  Headphones,
-  Code2,
-  Clapperboard,
-} from "lucide-react";
+import { Star, Headphones, Code2, Clapperboard } from "lucide-react";
 import TiltCard from "../components/Interests/ui/TiltCard";
 import CanvasCard from "../components/Interests/effects/CanvasCard";
 import CodingFocusChart from "../components/Interests/charts/CodingFocusChart";
@@ -176,18 +171,17 @@ export default function StatsSection() {
   return (
     <section className="container mx-auto py-20 px-6 md:px-12 lg:px-24">
       <Cursor />
-      <NeonText className="text-red-300">
+      <NeonText className="text-red-300 text-3xl mt-6">
         Interests Beyond the Screen: My Flow
       </NeonText>
-      <p className="text-center text-zinc-400 mb-12 max-w-2xl mx-auto">
-        Coding, gaming, and music are my rhythm — here’s a peek into the vibes
+      <p className="text-center text-zinc-400 my-12 max-w-2xl mx-auto w-full md:w-[35%]">
+        Coding, gaming, and music are my rhythm here’s a peek into the vibes
         that keep me going 🎧🔥
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto ">
         {/* Row 1 */}
-        <div className="bg-zinc-800 p-6 rounded-xl shadow">
+        <div className="bg-opposite/10 p-6 rounded-xl shadow">
           <TiltCard>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6">
               <h4 className="mb-4 flex items-center gap-2 font-semibold text-zinc-200">
@@ -212,12 +206,12 @@ export default function StatsSection() {
             </div>
           </TiltCard>
         </div>
-        <div className="bg-zinc-800 p-6 rounded-xl shadow">
+        <div className="bg-opposite/10  p-6 rounded-xl shadow">
           <CodingFocusChart />
         </div>
 
         {/* Row 2 */}
-        <div className="bg-zinc-800 p-6 rounded-xl shadow">
+        <div className=" bg-opposite/10 p-6 rounded-xl shadow">
           <TiltCard>
             <div className="rounded-2xl border border-background/50 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-6 relative overflow-hidden">
               <h4 className="mb-4 flex items-center gap-2 font-semibold text-zinc-200">
@@ -227,12 +221,12 @@ export default function StatsSection() {
             </div>
           </TiltCard>
         </div>
-        <div className="bg-zinc-800 p-6 rounded-xl shadow">
+        <div className="bg-opposite/10  p-6 rounded-xl shadow">
           <GamePrefsChart />
         </div>
 
         {/* Row 3 */}
-        <div className="bg-zinc-800 p-6 rounded-xl shadow h-auto md:h-[340px]">
+        <div className="bg-opposite/10 p-6 rounded-xl shadow h-auto md:h-[340px]">
           <TiltCard>
             <motion.div
               className="p-6 rounded-2xl bg-gradient-to-br from-green-500/10 via-zinc-900/60 to-green-400/5 backdrop-blur-xl border border-green-500/20 shadow-[0_0_20px_rgba(34,197,94,0.2)] h-full"
@@ -268,7 +262,7 @@ export default function StatsSection() {
           </TiltCard>
         </div>
 
-        <div className="bg-zinc-800 p-6 rounded-xl shadow h-auto md:h-[340px]">
+        <div className="bg-opposite/10 p-6 rounded-xl shadow h-auto md:h-[340px] overflow-hidden">
           <CanvasCard />
         </div>
       </div>
