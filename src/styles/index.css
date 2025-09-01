@@ -264,6 +264,7 @@ html.dark {
 
 
 
+
 @utility meteor {
   @apply absolute bg-gradient-to-r from-white via-white/80 to-transparent rounded-full;
   transition: box-shadow 0.3s ease, filter 0.3s ease;

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { myProjects } from "../constants";
+import "../styles/Projects.css";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { Eye } from "lucide-react";
