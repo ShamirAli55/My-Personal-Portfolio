@@ -1,65 +1,66 @@
-import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Stars } from "@react-three/drei";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import { useEffect, useRef } from "react";
+import { useMediaQuery } from "react-responsive";
+import * as THREE from "three";
 
-function AuroraPlane() {
-  const mesh = useRef();
-  useFrame((state) => {
-    mesh.current.rotation.x = Math.sin(state.clock.elapsedTime / 2) * 0.05;
-    mesh.current.rotation.y = Math.cos(state.clock.elapsedTime / 2) * 0.05;
-  });
-  return (
-    <mesh ref={mesh} position={[0, 0, -10]}>
-      <planeGeometry args={[50, 50, 64, 64]} />
-      <meshStandardMaterial
-        color={"#1a1a2e"}
-        emissive={"#3f0071"}
-        emissiveIntensity={0.6}
-        wireframe
-      />
-    </mesh>
-  );
-}
+function AmongUs(props) {
+  const { scene, animations } = useGLTF("/models/among_us.glb");
+  const mixer = useRef();
 
-function FloatingOrb({ position, color }) {
-  const ref = useRef();
-  useFrame((state) => {
-    ref.current.position.y =
-      position[1] + Math.sin(state.clock.elapsedTime + position[0]) * 0.5;
-    ref.current.rotation.y += 0.01;
-  });
-  return (
-    <mesh ref={ref} position={position}>
-      <sphereGeometry args={[0.5, 32, 32]} />
-      <meshStandardMaterial emissive={color} emissiveIntensity={1.5} />
-    </mesh>
-  );
-}
+  useEffect(() => {
+    if (animations && animations.length) {
+      mixer.current = new THREE.AnimationMixer(scene);
+      const action = mixer.current.clipAction(
+        animations.find((clip) => clip.name === "Take 001") || animations[0]
+      );
+      action.play();
+    }
+  }, [animations, scene]);
 
-function Vinyl() {
-  const ref = useRef();
-  useFrame(() => {
-    ref.current.rotation.z += 0.01;
-  });
-  return (
-    <mesh ref={ref} position={[0, -1, -5]}>
-      <circleGeometry args={[2, 64]} />
-      <meshStandardMaterial color={"black"} />
-    </mesh>
-  );
+  useFrame((state, delta) => mixer.current?.update(delta));
+
+  return <primitive object={scene} {...props} />;
 }
 
 const CanvasCard = () => {
+  const isMobile = useMediaQuery({ maxWidth: 640 });
+  const isTablet = useMediaQuery({ minWidth: 641, maxWidth: 1024 });
+  const isLaptop = useMediaQuery({ minWidth: 1025 });
+
+  let scale = 1.2;
+  if (isMobile) scale = 0.6;
+  else if (isTablet) scale = 0.9;
+  else if (isLaptop) scale = 1.2;
+
   return (
-    <div className="relative w-full h-[400px] bg-black rounded-2xl shadow-lg overflow-hidden">
-      <Canvas camera={{ position: [0, 0, 10], fov: 75 }}>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} />
-        <AuroraPlane />
-        <Stars radius={50} depth={20} count={3000} factor={4} fade />
-        <FloatingOrb position={[3, 1, -6]} color="#ff0080" />
-        <FloatingOrb position={[-4, -2, -6]} color="#00ffff" />
-        <Vinyl />
+    <div
+      className="relative w-full h-[500px] rounded-2xl shadow-lg overflow-hidden"
+      style={{ background: "white" }}
+    >
+      <Canvas camera={{ position: [0, 1, 6], fov: 50 }}>
+        {/* 💡 Lighting setup */}
+        <ambientLight intensity={0.4} />
+        <directionalLight
+          position={[5, 5, 5]}
+          intensity={1.5}
+          color={"#ffffff"}
+        />
+        <directionalLight
+          position={[-4, 2, 4]}
+          intensity={0.7}
+          color={"#87cefa"}
+        />
+        <spotLight
+          position={[0, 6, -6]}
+          angle={0.5}
+          intensity={1}
+          color={"#ffb347"}
+          penumbra={0.8}
+        />
+
+        <AmongUs position={[0, -1, 0]} rotation={[0, -1.3, 0]} scale={scale} />
+
         <OrbitControls enableZoom={false} enablePan={false} />
       </Canvas>
     </div>

@@ -189,6 +189,7 @@ export default function StatsSection() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        
         {/* Row 1 */}
         <div className="bg-zinc-800 p-6 rounded-xl shadow">
           <TiltCard>
@@ -231,6 +232,7 @@ export default function StatsSection() {
             </div>
           </TiltCard>
         </div>
+
         <div className="bg-zinc-800 p-6 rounded-xl shadow">
           <GamePrefsChart />
         </div>
@@ -279,7 +281,7 @@ export default function StatsSection() {
 
         {/* Row 4 */}
 
-        <div className="bg-zinc-800 p-6 rounded-xl shadow">
+        <div className="bg-zinc-800 p-6 rounded-xl shadow col-span-2">
           <LifestyleBalanceChart />
         </div>
       </div>
