@@ -49,8 +49,8 @@ const Contact = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-12">
-          <div className="bg-card p-8 rounded-xl shadow-md border border-gray-700 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-12 px-6 md">
+          <div className="bg-card p-8 rounded-xl shadow-md border border-gray-700">
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
               Say Hello <span className="hey">👋</span>
             </h3>
