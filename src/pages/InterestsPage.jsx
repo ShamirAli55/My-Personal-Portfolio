@@ -13,7 +13,7 @@ import TiltCard from "../components/Interests/ui/TiltCard";
 import CanvasCard from "../components/Interests/effects/CanvasCard";
 import CodingFocusChart from "../components/Interests/charts/CodingFocusChart";
 import GamePrefsChart from "../components/Interests/charts/GamePrefsChart";
-import { animeList, favoriteGames, codingRhythm } from "../constants";
+import { animeList, favoriteGames, codingRhythm,codingTime,gamePrefs } from "../constants";
 import Cursor from "../components/Interests/effects/Cursor";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -168,6 +168,7 @@ const AnimeScroller = () => {
 };
 
 export default function StatsSection() {
+
   return (
     <section className="container mx-auto py-20 px-6 md:px-12 lg:px-24">
       <Cursor />
@@ -207,7 +208,7 @@ export default function StatsSection() {
           </TiltCard>
         </div>
         <div className="bg-opposite/10  p-6 rounded-xl shadow">
-          <CodingFocusChart />
+          <CodingFocusChart data={codingTime} />
         </div>
 
         {/* Row 2 */}
@@ -222,7 +223,7 @@ export default function StatsSection() {
           </TiltCard>
         </div>
         <div className="bg-opposite/10  p-6 rounded-xl shadow">
-          <GamePrefsChart />
+          <GamePrefsChart data={gamePrefs} />
         </div>
 
         {/* Row 3 */}

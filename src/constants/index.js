@@ -554,3 +554,19 @@ export const codingRhythm = [
   { day: "Sat", hours: 10 },
   { day: "Sun", hours: 3 },
 ];
+
+export const codingTime = [
+  { hour: "Morning", focus: 40 },
+  { hour: "Afternoon", focus: 65 },
+  { hour: "Evening", focus: 85 },
+  { hour: "Late Night", focus: 95 },
+];
+
+export const gamePrefs = [
+  { metric: "Action", score: 92 },
+  { metric: "RPG", score: 88 },
+  { metric: "Shooter", score: 84 },
+  { metric: "Open-World", score: 95 },
+  { metric: "Indie", score: 70 },
+  { metric: "Strategy", score: 64 },
+];

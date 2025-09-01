@@ -3,15 +3,8 @@ import { ResponsiveContainer, RadarChart, Radar, PolarGrid, PolarAngleAxis, Pola
 import { Gauge } from "lucide-react";
 import TiltCard from "../ui/TiltCard";
 
-export default function GamePrefsChart() {
-    const gamePrefs = [
-  { metric: "Action", score: 92 },
-  { metric: "RPG", score: 88 },
-  { metric: "Shooter", score: 84 },
-  { metric: "Open-World", score: 95 },
-  { metric: "Indie", score: 70 },
-  { metric: "Strategy", score: 64 },
-];
+export default function GamePrefsChart({data}) {
+
 
   return (
     <TiltCard>
@@ -21,7 +14,7 @@ export default function GamePrefsChart() {
         </h4>
         <div className="h-72">
           <ResponsiveContainer>
-            <RadarChart data={gamePrefs}>
+            <RadarChart data={data}>
               <PolarGrid />
               <PolarAngleAxis dataKey="metric" />
               <PolarRadiusAxis angle={30} domain={[0, 100]} />

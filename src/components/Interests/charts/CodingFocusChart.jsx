@@ -3,16 +3,8 @@ import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tool
 import { Clock } from "lucide-react";
 import TiltCard from "../ui/TiltCard";
 
-export default function CodingFocusChart() {
+export default function CodingFocusChart({data}) {
   
-const codingTime = [
-  { hour: "Morning", focus: 40 },
-  { hour: "Afternoon", focus: 65 },
-  { hour: "Evening", focus: 85 },
-  { hour: "Late Night", focus: 95 },
-];
-
-
   return (
     <TiltCard>
       <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4">
@@ -21,7 +13,7 @@ const codingTime = [
         </h4>
         <div className="h-72">
           <ResponsiveContainer>
-            <LineChart data={codingTime}>
+            <LineChart data={data}>
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
               <XAxis dataKey="hour" tick={{ fill: "#e5e7eb" }} />
               <YAxis tick={{ fill: "#e5e7eb" }} />
