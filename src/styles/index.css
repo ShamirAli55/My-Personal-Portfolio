@@ -103,23 +103,22 @@ html, body, #root {
         transform:translateY(0);
       }
     }
-
-    @keyframes meteor
-    {
-      0%
-      {
-        opacity:1;
-        transform:rotate(215deg) translateX(0);
-      }
-      70%{
-        opacity:1;
-      }
-      100%
-      {
-        opacity:0;
-        transform:rotate(215deg) translateX(-200px);
-      }
-    }
+@keyframes meteor {
+  0% {
+    opacity: 0; /* start hidden */
+    transform: rotate(215deg) translateX(0);
+  }
+  5% {
+    opacity: 1; /* fade in right after animation actually starts */
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(215deg) translateX(-200px);
+  }
+}
     
 }
 
@@ -264,9 +263,8 @@ html.dark {
 
 
 
-
 @utility meteor {
-  @apply absolute bg-gradient-to-r from-white via-white/80 to-transparent rounded-full;
+  @apply absolute bg-gradient-to-r from-white via-white/80 to-transparent rounded-full opacity-0;
   transition: box-shadow 0.3s ease, filter 0.3s ease;
 }
 

@@ -1,6 +1,6 @@
 import { navItems } from "../constants";
 import { NavLink, useLocation } from "react-router-dom";
-import { AppWindow, Menu , Command} from "lucide-react";
+import { AppWindow, Menu, Command } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import HiddenMenu from "./HiddenMenu";
 import Logo from "./Logo";
@@ -59,7 +59,10 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (location.pathname !== "/") return;
+    if (location.pathname !== "/") {
+      setScrolled(true);
+      return;
+    }
 
     const handleScroll = () => {
       const heroHeight = window.innerHeight * 0.95;

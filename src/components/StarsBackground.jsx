@@ -43,7 +43,7 @@ function StarBackground() {
         size: Math.random() * 2 + 1,
         x: Math.random() * 100,
         y: Math.random() * 20,
-        delay: Math.random() * 15,
+        delay: Math.random() * 8,
         animationDuration: Math.random() * 3 + 3,
       });
     }
@@ -76,7 +76,7 @@ function StarBackground() {
             height: `${m.size * 2}px`,
             left: `${m.x}%`,
             top: `${m.y}%`,
-            animationDuration: `${m.animationDuration}s`,
+            animationDuration: `-${Math.random() * m.animationDuration}s`,
             animationDelay: `${m.delay}s`,
           }}
         />
