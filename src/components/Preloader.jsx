@@ -22,16 +22,6 @@ export default function Preloader({ onDone }) {
     });
   }, []);
 
-  useEffect(() => {
-    if (phase !== "done") {
-      document.body.style.overflow = "hidden";
-      document.documentElement.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
-    }
-  }, [phase]);
-
   const RollingNumber = ({ value, pad = 3 }) => (
     <div className="flex space-x-[4px]">
       {String(value)
@@ -49,7 +39,6 @@ export default function Preloader({ onDone }) {
   );
 
   const columns = 8;
-
   const columnVariants = {
     initial: { y: 0 },
     up: { y: "-100%", transition: { duration: 1, ease: "easeInOut" } },
@@ -65,60 +54,61 @@ export default function Preloader({ onDone }) {
     [columns]
   );
 
+  // 🔹 Remove preloader completely when phase is done
+  if (phase === "done") return null;
+
   return (
     <AnimatePresence>
-      {phase !== "done" && (
-        <motion.div
-          className="fixed top-0 left-0 w-full h-full z-[9999] flex flex-col items-center justify-center pointer-events-none"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          {phase === "loading" && (
-            <>
-              <div className="w-[300px] h-[20px] bg-opposite overflow-hidden rounded">
-                <motion.div
-                  className="h-full bg-primary-foreground"
-                  initial={{ width: 0 }}
-                  animate={{ width: `${percent}%` }}
-                  transition={{ duration: 0.2 }}
-                />
-              </div>
-
-              <div className="absolute bottom-6 left-6">
-                <RollingNumber value={percent} pad={3} />
-              </div>
-
-              <div className="absolute inset-0 bg-primary -z-10" />
-            </>
-          )}
-
-          {phase === "reveal" && (
-            <div className="absolute inset-0 flex">
-              {columnData.map((col, i) => (
-                <motion.div
-                  key={i}
-                  className="flex-1 bg-opposite"
-                  variants={columnVariants}
-                  initial="initial"
-                  animate={col.direction}
-                  transition={{
-                    duration: 1.2,
-                    ease: "easeInOut",
-                    delay: col.delay,
-                  }}
-                  onAnimationComplete={() => {
-                    if (i === columnData.length - 1) {
-                      setPhase("done");
-                      onDone?.();
-                    }
-                  }}
-                />
-              ))}
+      <motion.div
+        className="fixed top-0 left-0 w-full h-full z-[9999] flex flex-col items-center justify-center"
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        {phase === "loading" && (
+          <>
+            <div className="w-[300px] h-[20px] bg-opposite overflow-hidden rounded">
+              <motion.div
+                className="h-full bg-primary-foreground"
+                initial={{ width: 0 }}
+                animate={{ width: `${percent}%` }}
+                transition={{ duration: 0.2 }}
+              />
             </div>
-          )}
-        </motion.div>
-      )}
+
+            <div className="absolute bottom-6 left-6">
+              <RollingNumber value={percent} pad={3} />
+            </div>
+
+            <div className="absolute inset-0 bg-primary -z-10" />
+          </>
+        )}
+
+        {phase === "reveal" && (
+          <div className="absolute inset-0 flex">
+            {columnData.map((col, i) => (
+              <motion.div
+                key={i}
+                className="flex-1 bg-opposite"
+                variants={columnVariants}
+                initial="initial"
+                animate={col.direction}
+                transition={{
+                  duration: 1.2,
+                  ease: "easeInOut",
+                  delay: col.delay,
+                }}
+                onAnimationComplete={() => {
+                  if (i === columnData.length - 1) {
+                    setPhase("done");
+                    onDone?.();
+                  }
+                }}
+              />
+            ))}
+          </div>
+        )}
+      </motion.div>
     </AnimatePresence>
   );
 }
