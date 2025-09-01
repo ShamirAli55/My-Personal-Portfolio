@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect, useRef } from "react";
+import { useState, useEffect, useLayoutEffect, useRef ,useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   LineChart,
@@ -108,7 +108,7 @@ const AnimeScroller = () => {
           duration: 1,
           scrollTrigger: {
             trigger: el,
-            start: "top top",
+            start: "top-=120vh top",
             end: () => `+=${distance}`,
             scrub: 3,
             pin: true,
@@ -128,6 +128,18 @@ const AnimeScroller = () => {
     }, wrapRef);
     return () => ctx.revert();
   }, []);
+const rotations = useMemo(() => {
+  return animeList.map((_, idx) => {
+    let deg;
+    if (idx % 2 === 0) {
+      deg = (Math.random() * 6 - 3).toFixed(2);  
+    } else {
+      deg = (Math.random() * 12 - 6).toFixed(2);  
+    }
+    return `rotate(${deg}deg)`;
+  });
+}, []);
+
 
   return (
     <section
@@ -146,15 +158,16 @@ const AnimeScroller = () => {
         ref={trackRef}
         className="anime-track flex gap-4 md:gap-6 px-2 md:px-6 will-change-transform"
       >
-        {animeList.map((item) => (
+        {animeList.map((item, i) => (
           <div
             key={item.title}
             style={{
               background: "var(--card-bg)",
               border: "1px solid var(--card-border)",
               boxShadow: "0 8px 24px var(--card-shadow)",
+              transform: rotations[i],
             }}
-            className="anime-card min-w-[240px] md:min-w-[320px] rounded-2xl overflow-hidden backdrop-blur-xl transition-all duration-300 hover:scale-[1.03]"
+            className="anime-card min-w-[240px] md:min-w-[320px] rounded-2xl overflow-hidden backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:rotate-0"
           >
             <div className="h-44 md:h-56 w-full overflow-hidden">
               <img
@@ -166,16 +179,6 @@ const AnimeScroller = () => {
             <div className="p-4">
               <p className="text-opposite font-semibold">{item.title}</p>
               <p className="text-opposite/60 text-sm">{item.meta}</p>
-
-              <div className="mt-3 h-2 w-full rounded-full bg-opposite/10 overflow-hidden">
-                <div
-                  style={{
-                    width: `${60 + Math.floor(Math.random() * 30)}%`,
-                    background: "var(--accent-color)",
-                  }}
-                  className="h-full"
-                />
-              </div>
             </div>
           </div>
         ))}
@@ -185,6 +188,7 @@ const AnimeScroller = () => {
     </section>
   );
 };
+
 
 export default function StatsSection() {
   return (

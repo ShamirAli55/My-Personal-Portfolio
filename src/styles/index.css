@@ -151,6 +151,7 @@ html, body, #root {
   --card-shadow: hsl(150, 40%, 40% / 0.15);
   --card-border: hsl(150, 40%, 50% / 0.25);
 
+
 }
 
 html.dark {
