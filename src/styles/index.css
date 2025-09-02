@@ -259,11 +259,11 @@ html.dark {
 
 .star:nth-child(even) {
   animation: twinkle 4s ease-in-out infinite alternate,
-             drift1 120s linear infinite;
+             drift1 600s linear infinite;
 }
 .star:nth-child(odd) {
   animation: twinkle 6s ease-in-out infinite alternate,
-             drift2 150s linear infinite;
+             drift2 800s linear infinite;
 }
 
 @keyframes drift1 {

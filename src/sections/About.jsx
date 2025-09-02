@@ -29,7 +29,7 @@ const About = () => {
               user-friendly web applications.
             </p>
           </div>
-          <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-opposite/10 via-opposite/10 to-primary-foreground/" />
+          {/* <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-opposite/10 via-opposite/10 to-primary-foreground/" /> */}
         </div>
 
         {/* Card 2: Frameworks */}
