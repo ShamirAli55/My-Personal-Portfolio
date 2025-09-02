@@ -63,7 +63,6 @@ const GameCarousel = ({ games }) => {
   );
 };
 
-
 const AnimeScroller = () => {
   const wrapRef = useRef(null);
   const trackRef = useRef(null);
@@ -167,7 +166,7 @@ export default function StatsSection() {
   return (
     <section className="container mx-auto py-20 px-6 md:px-12 lg:px-24">
       <div className="hidden md:block">
-      <Cursor />
+        <Cursor />
       </div>
       <NeonText className="text-opposite text-3xl mt-6">
         Interests Beyond the Screen
@@ -179,7 +178,7 @@ export default function StatsSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto ">
         {/* Row 1 */}
-        <div className="bg-opposite/10 md:p-6 rounded-xl shadow ">
+        <div className="bg-opposite/10 md:p-8 rounded-xl shadow">
           <TiltCard>
             <div
               style={{
@@ -192,14 +191,20 @@ export default function StatsSection() {
               <h4 className="mb-4 flex items-center gap-2 font-semibold text-opposite">
                 <Code2 className="h-5 w-5 text-sky-400" /> Coding Rhythm
               </h4>
-              <div className="h-72">
+
+              <div
+                className="w-full"
+                style={{ height: "clamp(220px, 40vw, 400px)" }}
+              >
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={codingRhythm}>
                     <XAxis
                       dataKey="day"
-                      tick={{ fill: "hsl(var(--opposite))" }}
+                      tick={{ fill: "hsl(var(--opposite))", fontSize: 12 }}
                     />
-                    <YAxis tick={{ fill: "sl(var(--opposite))" }} />
+                    <YAxis
+                      tick={{ fill: "hsl(var(--opposite))", fontSize: 12 }}
+                    />
                     <Tooltip
                       contentStyle={{
                         background: "var(--card-bg)",
@@ -212,7 +217,7 @@ export default function StatsSection() {
                       dataKey="hours"
                       stroke="hsl(200 90% 70%)"
                       strokeWidth={3}
-                      dot={{ r: 6, fill: "hsl(200 90% 70%)" }}
+                      dot={{ r: 5, fill: "hsl(200 90% 70%)" }}
                     />
                   </LineChart>
                 </ResponsiveContainer>
@@ -220,8 +225,11 @@ export default function StatsSection() {
             </div>
           </TiltCard>
         </div>
-        <div className="bg-opposite/10 md:p-6  rounded-xl shadow">
-          <CodingFocusChart data={codingTime} />
+
+        <div className="bg-opposite/10 md:p-6 rounded-xl shadow">
+          <div className="w-full md:[height:clamp(220px,40vw,400px)]">
+            <CodingFocusChart data={codingTime} />
+          </div>
         </div>
 
         {/* Row 2 */}
@@ -248,10 +256,10 @@ export default function StatsSection() {
 
         {/* Row 3 */}
         <div className="bg-opposite/10 md:p-6 rounded-xl shadow h-auto md:h-[340px] relative">
-        <div className="pt-22 pb-4 md:py-0">
-          <TiltCard>
-            <MusicCard />
-          </TiltCard>
+          <div className="pt-22 pb-4 md:py-0">
+            <TiltCard>
+              <MusicCard />
+            </TiltCard>
           </div>
         </div>
 
