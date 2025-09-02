@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect, useRef ,useMemo } from "react";
+import { useState, useEffect, useLayoutEffect, useRef, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   LineChart,
@@ -128,23 +128,22 @@ const AnimeScroller = () => {
     }, wrapRef);
     return () => ctx.revert();
   }, []);
-const rotations = useMemo(() => {
-  return animeList.map((_, idx) => {
-    let deg;
-    if (idx % 2 === 0) {
-      deg = (Math.random() * 6 - 3).toFixed(2);  
-    } else {
-      deg = (Math.random() * 12 - 6).toFixed(2);  
-    }
-    return `rotate(${deg}deg)`;
-  });
-}, []);
-
+  const rotations = useMemo(() => {
+    return animeList.map((_, idx) => {
+      let deg;
+      if (idx % 2 === 0) {
+        deg = (Math.random() * 6 - 3).toFixed(2);
+      } else {
+        deg = (Math.random() * 12 - 6).toFixed(2);
+      }
+      return `rotate(${deg}deg)`;
+    });
+  }, []);
 
   return (
     <section
       ref={wrapRef}
-      className="relative w-full overflow-hidden my-20"
+      className="relative min-h-screen w-full overflow-hidden my-20"
       aria-label="Favourite Animes"
     >
       <div className="mb-6 flex items-center gap-2 px-2 md:px-6">
@@ -169,7 +168,7 @@ const rotations = useMemo(() => {
             }}
             className="anime-card min-w-[240px] md:min-w-[320px] rounded-2xl overflow-hidden backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:rotate-0"
           >
-            <div className="h-44 md:h-56 w-full overflow-hidden">
+            <div className="h-44 md:h-52 w-full aspect-[2/3] overflow-hidden rounded-xl">
               <img
                 src={item.poster}
                 alt={item.title}
@@ -188,7 +187,6 @@ const rotations = useMemo(() => {
     </section>
   );
 };
-
 
 export default function StatsSection() {
   return (

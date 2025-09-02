@@ -479,13 +479,13 @@ export const favoriteGames = [
   {
     title: "Delta Force",
     cover: "assets/FavGames/delta-force.jpeg",
-    hours: 20,
+    hours: 30,
     rating: 5,
   },
   {
     title: "Tekken 6",
     cover: "assets/FavGames/tekken6.jpeg",
-    hours: 60,
+    hours: 80,
     rating: 5,
   },
   {
@@ -526,43 +526,36 @@ export const animeList = [
   {
     title: "Demon Slayer: S3",
     meta: "12 eps this month",
-    poster:
-      "/assets/FavAnimes/demon-slayer.jpeg",
+    poster: "/assets/FavAnimes/demon-slayer.jpeg",
   },
   {
     title: "Jujutsu Kaisen",
     meta: "Rewatching fights",
-    poster:
-      "https://images.squarespace-cdn.com/content/v1/571abd61e3214001fb3b9966/1632339785640-P5VYWWUXH2E5G3GEQSC3/Jujutsu+Kaisen+Key+Animation+Vol.+1+Cover",
+    poster: "/assets/FavAnimes/jujutsu-kaisen.jpeg",
   },
   {
     title: "Attack on Titan",
     meta: "Finale binge",
-    poster:
-      "https://imgs.search.brave.com/IEU70h1aItSf9CVAFP7YteV-Soare43CBh-5uSDELLc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDEy/MzY5MDU3My11aHV5/cjctdDUwMHg1MDAu/anBn",
+    poster: "/assets/FavAnimes/Titan.jpeg",
   },
   {
     title: "One Piece",
     meta: "Arc: Egghead",
-    poster:
-      "https://i.pinimg.com/originals/0f/93/e7/0f93e757a9113476be66e3ab611653f1.jpg",
+    poster: "/assets/FavAnimes/OnePiece.jpeg",
   },
   {
     title: "Your Name",
     meta: "Movie night",
-    poster:
-      "https://imgs.search.brave.com/i9yquXXfVdhTgn-kjX6xO6U8mU845UPHIdoHwyCvZ6E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2I0/ODIyNThlLTYwNjct/NDFkOS1iN2Q1LWU0/ZDE5YTJmYmE2Ny9k/YjFtd3J0LWIxYjIy/ODAwLTE0OTUtNDNi/Ny1hNmZlLTdkYjUy/ODA3OGU3ZS5qcGcv/djEvZmlsbC93XzYw/MCxoXzYwMCxxXzc1/LHN0cnAveW91cl9u/YW1lX19maWxtX2Fs/YnVtX19yYWR3aW1w/c19fY3VzdG9tX2Nv/dmVyX2J5X2phZ2Vy/c3phYW1fZGIxbXdy/dC1mdWxsdmlldy5q/cGc_dG9rZW49ZXlK/MGVYQWlPaUpLVjFR/aUxDSmhiR2NpT2lK/SVV6STFOaUo5LmV5/SnpkV0lpT2lKMWNt/NDZZWEJ3T2pkbE1H/UXhPRGc1T0RJeU5q/UXpOek5oTldZd1pE/UXhOV1ZoTUdReU5t/VXdJaXdpYVhOeklq/b2lkWEp1T21Gd2NE/bzNaVEJrTVRnNE9U/Z3lNalkwTXpjellU/Vm1NR1EwTVRWbFlU/QmtNalpsTUNJc0lt/OWlhaUk2VzF0N0lu/QmhkR2dpT2lKY0wy/WmNMMkkwT0RJeU5U/aGxMVFl3TmpjdE5E/RmtPUzFpTjJRMUxX/VTBaREU1WVRKbVlt/RTJOMXd2WkdJeGJY/ZHlkQzFpTVdJeU1q/Z3dNQzB4TkRrMUxU/UXpZamN0WVRabVpT/MDNaR0kxTWpnd056/aGxOMlV1YW5Cbklp/d2lhR1ZwWjJoMElq/b2lQRDAyTURBaUxD/SjNhV1IwYUNJNklq/dzlOakF3SW4xZFhT/d2lZWFZrSWpwYklu/VnlianB6WlhKMmFX/TmxPbWx0WVdkbExu/ZGhkR1Z5YldGeWF5/SmRMQ0ozYldzaU9u/c2ljR0YwYUNJNkls/d3ZkMjFjTDJJME9E/SXlOVGhsTFRZd05q/Y3ROREZrT1MxaU4y/UTFMV1UwWkRFNVlU/Sm1ZbUUyTjF3dmFt/Rm5aWEp6ZW1GaGJT/MDBMbkJ1WnlJc0lt/OXdZV05wZEhraU9q/azFMQ0p3Y205d2Iz/SjBhVzl1Y3lJNk1D/NDBOU3dpWjNKaGRt/bDBlU0k2SW1ObGJu/UmxjaUo5ZlEucVNz/N1ViQ3c3d0tYamRm/SEdKaThENERFbjRo/czYzVzhwMjNyZWpa/RW5uOA",
+    poster: "/assets/FavAnimes/your-name.png",
   },
   {
-    title: "Suzume",
+    title: "Bleach",
     meta: "Makoto Shinkai",
-    poster:
-      "https://imgs.search.brave.com/C6dHSUTCSPZ2N6jBOf_Zmq59sBnqoIzCouDJVNVMEWE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLU5MbW5a/elJQZXZFdXg5WE8t/OEs5MUdRLXQxMDgw/eDEwODAuanBn",
+    poster: "/assets/FavAnimes/bleach.jpeg",
   },
   {
     title: "Haikyuu!!",
     meta: "Training arc",
-    poster:
-      "https://imgs.search.brave.com/QOkXuPd8smX5ChjuB81cHYybdu_RFuSgMCQ2YrznLFI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvaGFp/a3l1dS1tYWdhemlu/ZS1jb3Zlci16YmQy/dHZid3oyYjFkZ2xu/LmpwZw",
+    poster: "/assets/FavAnimes/haikyuu.jpeg",
   },
 ];
