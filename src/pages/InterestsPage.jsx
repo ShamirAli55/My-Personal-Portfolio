@@ -177,8 +177,10 @@ export default function StatsSection() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto ">
+        
         {/* Row 1 */}
-        <div className="bg-opposite/10 md:p-8 rounded-xl shadow">
+
+        <div className="bg-opposite/10 md:p-6 rounded-xl shadow h-auto md:h-[340px]">
           <TiltCard>
             <div
               style={{
@@ -186,16 +188,13 @@ export default function StatsSection() {
                 boxShadow: `0 8px 24px var(--card-shadow)`,
                 border: `1px solid var(--card-border)`,
               }}
-              className="rounded-2xl p-6 backdrop-blur-xl transition-all duration-300 hover:scale-[1.02]"
+              className="rounded-2xl p-3 sm:p-4 backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] h-full"
             >
-              <h4 className="mb-4 flex items-center gap-2 font-semibold text-opposite">
-                <Code2 className="h-5 w-5 text-sky-400" /> Coding Rhythm
+              <h4 className="mb-2 flex items-center gap-2 font-semibold text-opposite text-sm sm:text-base md:text-lg">
+                <Code2 className="h-4 w-4 sm:h-5 sm:w-5 text-sky-400" />
+                Coding Rhythm
               </h4>
-
-              <div
-                className="w-full"
-                style={{ height: "clamp(220px, 40vw, 400px)" }}
-              >
+              <div className="h-52 sm:h-64 md:[height:clamp(200px,35vh,260px)]">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={codingRhythm}>
                     <XAxis
@@ -225,11 +224,8 @@ export default function StatsSection() {
             </div>
           </TiltCard>
         </div>
-
-        <div className="bg-opposite/10 md:p-6 rounded-xl shadow">
-          <div className="w-full md:[height:clamp(220px,40vw,400px)]">
-            <CodingFocusChart data={codingTime} />
-          </div>
+        <div className="bg-opposite/10 md:p-6 rounded-xl shadow h-auto md:h-[340px]">
+          <CodingFocusChart data={codingTime} />
         </div>
 
         {/* Row 2 */}
