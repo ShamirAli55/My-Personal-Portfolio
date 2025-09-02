@@ -23,8 +23,8 @@ const About = () => {
             className="absolute scale-[2.1] right-[-4rem] top-[2rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
           />
           <div className="z-10 relative h-full flex flex-col text-left justify-end pb-4 md:py-10 px-2 md:px-6">
-            <p className="mt-2 mb-2 text-xl w-full">Hi, I'm Shamir Ali</p>
-            <p className="text-neutral-400 text-sm md:text-base text-pretty md:pr-8">
+            <p className="mt-2 mb-2 text-2xl w-full">Hi, I'm Shamir Ali</p>
+            <p className="text-opposite/50 text-sm md:text-base text-pretty md:pr-22">
               Software engineering student focused on creating modern,
               user-friendly web applications.
             </p>
