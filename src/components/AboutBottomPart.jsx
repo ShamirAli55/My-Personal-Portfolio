@@ -2,7 +2,17 @@ import { motion } from "framer-motion";
 import TiltCard from "../components/Interests/ui/TiltCard";
 const AboutBottomPart = () => {
   return (
-    <section className="min-h-screen w-full mt-12 md:mt-28 flex flex-col md:flex-row items-center md:px-16 px-6 relative">
+    <>
+          <div className="mt-12 md:mt-24 text-center">
+        <p className="uppercase tracking-widest text-opposite-400 text-sm">
+          About Me
+        </p>
+        <h2 className="text-4xl md:text-5xl font-bold">
+          Digital {" "}
+          <span className="text-transparent gradient-text">Tales</span>
+        </h2>
+      </div>
+    <section className="min-h-screen w-full mt-12 md:mt-0 flex flex-col md:flex-row items-center md:px-16 px-6 relative">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
         <div className="flex justify-center md:justify-start w-full">
           <motion.div
@@ -21,33 +31,26 @@ const AboutBottomPart = () => {
           >
             <div className="w-full h-full bg-neutral-900 rounded-2xl flex items-center justify-center overflow-hidden">
               <TiltCard>
-              <div className="relative w-full h-full overflow-hidden rounded-2xl">
-                <motion.img
-                  src="assets/images/Profile_image.png"
-                  alt="Shamir Ali"
-                  loading="lazy"
-                  className="rounded-2xl object-cover w-full h-full"
-                  initial={{ filter: "blur(8px) contrast(200%)", scale: 0.9 }} 
-                  whileInView={{ filter: "blur(0px) contrast(100%)", scale: 1 }} 
-                  transition={{ duration: 1, ease: "easeOut" }}
-                />
-              </div>
+                <div className="relative w-full h-full overflow-hidden rounded-2xl">
+                  <motion.img
+                    src="assets/images/Profile_image.png"
+                    alt="Shamir Ali"
+                    loading="lazy"
+                    className="rounded-2xl object-cover w-full h-full"
+                    initial={{ filter: "blur(8px) contrast(200%)", scale: 0.9 }}
+                    whileInView={{
+                      filter: "blur(0px) contrast(100%)",
+                      scale: 1,
+                    }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                  />
+                </div>
               </TiltCard>
             </div>
           </motion.div>
         </div>
 
         <div className="space-y-5 text-left font-[Funnel-Display]">
-          <motion.h1
-            initial={{ y: 40, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold font-[Funnel-Sans] gradient-text"
-          >
-            About Me
-          </motion.h1>
-
           <motion.p
             className="about-text"
             initial={{ opacity: 0, y: 20 }}
@@ -104,7 +107,7 @@ const AboutBottomPart = () => {
           </motion.p>
         </div>
       </div>
-    </section>
+    </section></>
   );
 };
 
