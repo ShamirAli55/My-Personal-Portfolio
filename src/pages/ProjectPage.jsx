@@ -11,7 +11,7 @@ const Section = ({ title, children }) => (
 
 const ProjectPage = () => {
   const { slug } = useParams();
-  const project = myProjects.find((p) => p.slug === slug); 
+  const project = myProjects.find((p) => p.slug === slug);
 
   if (!project) {
     return (
@@ -85,7 +85,12 @@ const ProjectPage = () => {
                     key={i}
                     className="flex items-start gap-3 text-primary leading-relaxed"
                   >
-                    <span className="text-purple-400 text-base flex-shrink-0 mt-1">
+                    <span
+                      className="text-base flex-shrink-0 mt-1 bg-clip-text text-transparent"
+                      style={{
+                        backgroundImage: project.gradient,
+                      }}
+                    >
                       ✦
                     </span>
                     <span>{point}</span>
@@ -97,14 +102,26 @@ const ProjectPage = () => {
 
           {project.features && (
             <Section title="Features">
-              <ul className="list-disc list-inside space-y-2">
+              <ul className="space-y-2">
                 {project.features.map((f, i) => (
-                  <li key={i}>{f}</li>
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-primary leading-relaxed"
+                  >
+                    <span
+                      className="text-base flex-shrink-0 mt-1 bg-clip-text text-transparent"
+                      style={{
+                        backgroundImage: project.gradient,
+                      }}
+                    >
+                      ✦
+                    </span>
+                    <span>{f}</span>
+                  </li>
                 ))}
               </ul>
             </Section>
           )}
-
           {project.tags && (
             <Section title="Technologies">
               <div className="flex flex-wrap gap-3">
