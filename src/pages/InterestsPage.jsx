@@ -160,7 +160,7 @@ const AnimeScroller = () => {
             style={{
               background: "var(--card-bg)",
               border: "1px solid var(--card-border)",
-              boxShadow: "0 8px 24px var(--card-shadow)",
+              boxShadow: "0 8px 24px var(--opposite)",
               transform: rotations[i],
             }}
             className="anime-card min-w-[240px] md:min-w-[320px] rounded-2xl overflow-hidden backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:rotate-0"
@@ -189,10 +189,10 @@ export default function StatsSection() {
   return (
     <section className="container mx-auto py-20 px-6 md:px-12 lg:px-24">
       <Cursor />
-      <NeonText className="text-red-300 text-3xl mt-6">
+      <NeonText className="text-opposite text-3xl mt-6">
         Interests Beyond the Screen
       </NeonText>
-      <p className="text-center text-opposite my-12 max-w-2xl mx-auto w-full md:w-[35%]">
+      <p className="text-center text-opposite mb-12 mt-4 max-w-2xl mx-auto w-full md:w-[35%]">
         Coding, gaming, and music are my rhythm here’s a peek into the vibes
         that keep me going 🎧🔥
       </p>

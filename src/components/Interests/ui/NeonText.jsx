@@ -1,8 +1,9 @@
 export default function NeonText({ children, className = "" }) {
   return (
     <span
-      className={`relative inline-block text-red-300
-        [text-shadow:_0_0_5px_#ff0000,_0_0_10px_#ff0000,_0_0_20px_#ff0000,_0_0_40px_#ff0000]
+      className={`relative inline-block 
+        text-[hsl(var(--opposite))] 
+        [text-shadow:_0_0_5px_hsl(var(--shadow)),_0_0_10px_hsl(var(--shadow)),_0_0_20px_hsl(var(--shadow)),_0_0_40px_hsl(var(--shadow))]
         ${className}`}
     >
       {children}
