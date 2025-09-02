@@ -525,37 +525,37 @@ export const gamePrefs = [
 export const animeList = [
   {
     title: "Demon Slayer: S3",
-    meta: "12 eps this month",
+    meta: "Swordsmith Village Arc",
     poster: "/assets/FavAnimes/demon-slayer.jpeg",
   },
   {
     title: "Jujutsu Kaisen",
-    meta: "Rewatching fights",
+    meta: "Shibuya Incident Arc",
     poster: "/assets/FavAnimes/jujutsu-kaisen.jpeg",
   },
   {
     title: "Attack on Titan",
-    meta: "Finale binge",
+    meta: "The Final Season Part 4",
     poster: "/assets/FavAnimes/Titan.jpeg",
   },
   {
     title: "One Piece",
-    meta: "Arc: Egghead",
+    meta: "Egghead Island Arc",
     poster: "/assets/FavAnimes/OnePiece.jpeg",
   },
   {
     title: "Your Name",
-    meta: "Movie night",
+    meta: "Makoto Shinkai’s Masterpiece",
     poster: "/assets/FavAnimes/your-name.png",
   },
   {
     title: "Bleach",
-    meta: "Makoto Shinkai",
+    meta: "Thousand-Year Blood War",
     poster: "/assets/FavAnimes/bleach.jpeg",
   },
   {
     title: "Haikyuu!!",
-    meta: "Training arc",
+    meta: "Karasuno’s Nationals Journey",
     poster: "/assets/FavAnimes/haikyuu.jpeg",
   },
 ];
