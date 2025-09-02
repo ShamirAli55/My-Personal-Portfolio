@@ -7,6 +7,7 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
+  CartesianGrid
 } from "recharts";
 import { Star, Code2, Clapperboard } from "lucide-react";
 import TiltCard from "../components/Interests/ui/TiltCard";
@@ -177,7 +178,7 @@ export default function StatsSection() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto ">
-        
+
         {/* Row 1 */}
 
         <div className="bg-opposite/10 md:p-6 rounded-xl shadow h-auto md:h-[340px]">
@@ -195,31 +196,44 @@ export default function StatsSection() {
                 Coding Rhythm
               </h4>
               <div className="h-52 sm:h-64 md:[height:clamp(200px,35vh,260px)]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={codingRhythm}>
-                    <XAxis
-                      dataKey="day"
-                      tick={{ fill: "hsl(var(--opposite))", fontSize: 12 }}
-                    />
-                    <YAxis
-                      tick={{ fill: "hsl(var(--opposite))", fontSize: 12 }}
-                    />
-                    <Tooltip
-                      contentStyle={{
-                        background: "var(--card-bg)",
-                        border: `1px solid var(--card-border)`,
-                        color: "hsl(var(--opposite))",
-                      }}
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="hours"
-                      stroke="hsl(200 90% 70%)"
-                      strokeWidth={3}
-                      dot={{ r: 5, fill: "hsl(200 90% 70%)" }}
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
+<ResponsiveContainer width="100%" height="100%">
+  <LineChart data={codingRhythm}>
+    <CartesianGrid
+      strokeDasharray="3 3"
+      stroke="transparent"
+    />
+    <XAxis
+      dataKey="day"
+      tick={{ fill: "hsl(var(--opposite))", fontSize: 12 }}
+      padding={{ left: 0, right: 0 }}
+      axisLine={true}   // ✅ show X-axis line
+      tickLine={false}
+    />
+    <YAxis
+      tick={{ fill: "hsl(var(--opposite))", fontSize: 12 }}
+      axisLine={true}   // ✅ show Y-axis line
+      tickLine={false}
+      width={28}
+      padding={{ top: 0, bottom: 0 }}
+    />
+    <Tooltip
+      contentStyle={{
+        background: "var(--card-bg)",
+        border: `1px solid var(--card-border)`,
+        color: "hsl(var(--opposite))",
+      }}
+    />
+    <Line
+      type="monotone"
+      dataKey="hours"
+      stroke="hsl(200 90% 70%)"
+      strokeWidth={3}
+      dot={{ r: 5, fill: "hsl(200 90% 70%)" }}
+    />
+  </LineChart>
+</ResponsiveContainer>
+
+
               </div>
             </div>
           </TiltCard>
