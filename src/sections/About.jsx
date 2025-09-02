@@ -41,7 +41,7 @@ const About = () => {
               I use a mix of technologies to craft <span className="md:block"> seamless digital experiences.</span>
             </p>
           </div>
-          <div className="absolute right-0 top-0 w-full h-full start-[67%] md:start-[45%] scale-100">
+          <div className="absolute right-0 top-0 w-full h-full start-[70%] md:start-[45%] scale-100">
             <Frameworks />
           </div>
         </div>
