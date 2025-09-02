@@ -56,10 +56,7 @@ const GameCarousel = ({ games }) => {
           <p className="text-opposite/50 text-sm">
             Hours Played • {games[index].hours}
           </p>
-          <p>
-            <span className="text-opposite/50 text-sm">Rating : </span>
-            {"⭐".repeat(games[index].rating)}
-          </p>
+          <p>{"⭐".repeat(games[index].rating)}</p>
         </motion.div>
       </AnimatePresence>
     </div>
