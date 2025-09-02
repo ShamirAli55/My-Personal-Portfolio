@@ -17,6 +17,7 @@
     "@react-three/fiber": "^9.3.0",
     "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/vite": "^4.1.12",
+    "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
     "cobe": "^0.6.4",
     "framer-motion": "^12.23.12",

@@ -1,5 +1,6 @@
 import { Send, MessageCircle } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import confetti from "canvas-confetti";
 import { socialLinks } from "../constants";
 import { useRef, useState } from "react";
 const Contact = () => {
@@ -23,6 +24,20 @@ const Contact = () => {
           setLoading(false);
           setSent(true);
           formRef.current.reset();
+
+          confetti({
+            particleCount: 100,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+          });
+          confetti({
+            particleCount: 100,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+          });
+
           setTimeout(() => setSent(false), 3000);
         },
         (err) => {
