@@ -1,4 +1,3 @@
-import React from "react";
 import {
   ResponsiveContainer,
   RadarChart,
@@ -28,10 +27,7 @@ export default function GamePrefsChart({ data }) {
         <div className="h-72">
           <ResponsiveContainer>
             <RadarChart data={data}>
-              <PolarGrid
-                stroke="hsl(var(--opposite))"
-                strokeDasharray="3 3"
-              />
+              <PolarGrid stroke="hsl(var(--opposite))" strokeDasharray="3 3" />
               <PolarAngleAxis
                 dataKey="metric"
                 tick={{ fill: "hsl(var(--opposite))" }}

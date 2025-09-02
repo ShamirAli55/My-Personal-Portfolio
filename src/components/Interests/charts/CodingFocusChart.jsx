@@ -1,4 +1,3 @@
-import React from "react";
 import {
   ResponsiveContainer,
   LineChart,
@@ -20,33 +19,47 @@ export default function CodingFocusChart({ data }) {
           boxShadow: `0 8px 24px var(--card-shadow)`,
           border: `1px solid var(--card-border)`,
         }}
-        className="rounded-2xl p-4 backdrop-blur-xl transition-all duration-300 hover:scale-[1.02]"
+        className="rounded-2xl p-3 sm:p-4 backdrop-blur-xl transition-all duration-300 hover:scale-[1.02]"
       >
-        <h4 className="mb-2 flex items-center gap-2 font-semibold text-opposite">
-          <Clock className="h-5 w-5 text-rose-400" /> Coding Focus by Time
+        <h4 className="mb-2 flex items-center gap-2 font-semibold text-opposite text-sm sm:text-base md:text-lg">
+          <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-rose-400" />
+          Coding Focus by Time
         </h4>
-        <div className="h-72">
-          <ResponsiveContainer>
+
+        <div className="h-52 sm:h-64 md:h-72">
+          <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data}>
               <CartesianGrid
                 strokeDasharray="3 3"
-                stroke="hsl(var(--opposite))" 
+                stroke="hsl(var(--opposite))"
               />
-              <XAxis dataKey="hour" tick={{ fill: "hsl(var(--opposite))" }} />
-              <YAxis tick={{ fill: "hsl(var(--opposite))" }} />
+              <XAxis
+                dataKey="hour"
+                tick={{ fill: "hsl(var(--opposite))", fontSize: 10 }}
+                tickMargin={6}
+              />
+              <YAxis
+                tick={{ fill: "hsl(var(--opposite))", fontSize: 10 }}
+                width={30}
+              />
               <Tooltip
                 contentStyle={{
                   background: "var(--card-bg)",
                   border: `1px solid var(--card-border)`,
                   color: "hsl(var(--opposite))",
+                  fontSize: "0.8rem",
                 }}
               />
               <Line
                 type="monotone"
                 dataKey="focus"
-                stroke="hsl(350 90% 70%)" 
+                stroke="hsl(350 90% 70%)"
                 strokeWidth={2}
-                dot={{ stroke: "hsl(350 90% 70%)", strokeWidth: 2 }}
+                dot={{
+                  stroke: "hsl(350 90% 70%)",
+                  strokeWidth: 2,
+                  r: 3,
+                }}
               />
             </LineChart>
           </ResponsiveContainer>
