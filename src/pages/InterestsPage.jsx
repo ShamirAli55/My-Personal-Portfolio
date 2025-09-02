@@ -274,7 +274,7 @@ export default function StatsSection() {
           </TiltCard>
         </div>
 
-        <div className="bg-opposite/10 p-6 rounded-xl shadow h-auto md:h-[340px] overflow-hidden">
+        <div className="bg-opposite/10 p-6 rounded-xl shadow h-auto md:h-[340px] overflow-hidden pointer-events-none">
           <CanvasCard />
         </div>
       </div>
