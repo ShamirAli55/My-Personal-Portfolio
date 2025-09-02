@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import TiltCard from "../components/Interests/ui/TiltCard";
 const AboutBottomPart = () => {
   return (
     <section className="min-h-screen w-full mt-12 md:mt-28 flex flex-col md:flex-row items-center md:px-16 px-6 relative">
@@ -20,6 +20,7 @@ const AboutBottomPart = () => {
             className="w-full max-w-[420px] h-72 md:h-[460px] rounded-2xl bg-gradient-to-tr from-purple-500 to-blue-500 p-[3px] [perspective:1200px]"
           >
             <div className="w-full h-full bg-neutral-900 rounded-2xl flex items-center justify-center overflow-hidden">
+              <TiltCard>
               <div className="relative w-full h-full overflow-hidden rounded-2xl">
                 <motion.img
                   src="assets/images/Profile_image.png"
@@ -31,6 +32,7 @@ const AboutBottomPart = () => {
                   transition={{ duration: 1, ease: "easeOut" }}
                 />
               </div>
+              </TiltCard>
             </div>
           </motion.div>
         </div>
