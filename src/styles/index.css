@@ -372,3 +372,28 @@ html.dark {
   padding: 0;
   text-align:center;
 }
+
+::-webkit-scrollbar {
+  width: 10px;             
+  height: 10px;        
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--opposite));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--opposite));   
+  border-radius: 10px;
+  border: 2px solid hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--opposite));    
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--opposite)) hsl(var(--background));
+}
