@@ -159,11 +159,10 @@ const AnimeScroller = () => {
             key={item.title}
             style={{
               background: "var(--card-bg)",
-              border: "1px solid var(--card-border)",
-              boxShadow: "0 8px 24px var(--opposite)",
+              border: "1px solid var(--opposite)",
               transform: rotations[i],
             }}
-            className="anime-card min-w-[240px] md:min-w-[320px] rounded-2xl overflow-hidden backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:rotate-0"
+            className="anime-card min-w-[240px] md:min-w-[320px] rounded-2xl overflow-hidden backdrop-blur-xl transition-all duration-300  hover:scale-[1.03] hover:rotate-0 shadow-[0_8px_24px_hsl(0_0%_0%_/_0.1)]"
           >
             <div className="h-44 md:h-52 w-full aspect-[2/3] overflow-hidden rounded-xl">
               <img

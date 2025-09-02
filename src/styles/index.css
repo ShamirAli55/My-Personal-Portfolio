@@ -36,6 +36,7 @@ html, body, #root {
     --color-card-bg:hsl(var(--card-bg));
     --color-card-shadow:hsl(var(--card-shadow));
     --color-card-border:hsl(var(--card-border));
+    --color-card-anime:hsl(var(--card-anime));
     
     --color-indigo: #1f1e39;
 
@@ -150,6 +151,7 @@ html, body, #root {
   --card-bg: hsl(150, 40%, 98%);
   --card-shadow: hsl(150, 40%, 40% / 0.15);
   --card-border: hsl(150, 40%, 50% / 0.25);
+  --card-anime: hsl(222, 47%, 20% / 0.15); 
 
 
 }
@@ -176,6 +178,7 @@ html.dark {
   --card-bg: hsl(150, 15%, 12%);
   --card-shadow: hsl(150, 15%, 5% / 0.6);
   --card-border: hsl(150, 40%, 50% / 0.2);
+  --card-anime: hsl(0, 0%, 0% / 0.6);
 
 }
   html
