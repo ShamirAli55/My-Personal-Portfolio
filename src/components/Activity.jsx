@@ -5,35 +5,40 @@ const GITHUB_USERNAME = "ShamirAli55";
 const GITHUB_TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
 
 const fetchGitHubData = async () => {
+  const currentYear = new Date().getFullYear();
+
   const query = `
-    query {
-      user(login: "${GITHUB_USERNAME}") {
-        repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
-          totalCount
-          nodes {
-            forkCount
-          }
+  query {
+    user(login: "${GITHUB_USERNAME}") {
+      repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
+        totalCount
+        nodes {
+          forkCount
         }
-        publicRepos: repositories(privacy: PUBLIC, first: 1) {
-          totalCount
-        }
-        pullRequests(first: 1) {
-          totalCount
-        }
-        contributionsCollection {
-          contributionCalendar {
-            totalContributions
-            weeks {
-              contributionDays {
-                date
-                contributionCount
-              }
+      }
+      publicRepos: repositories(privacy: PUBLIC, first: 1) {
+        totalCount
+      }
+      pullRequests(first: 1) {
+        totalCount
+      }
+      contributionsCollection(
+        from: "${currentYear}-01-01T00:00:00Z"
+        to: "${currentYear}-12-31T23:59:59Z"
+      ) {
+        contributionCalendar {
+          totalContributions
+          weeks {
+            contributionDays {
+              date
+              contributionCount
             }
           }
         }
       }
     }
-  `;
+  }
+`;
 
   const response = await fetch("https://api.github.com/graphql", {
     method: "POST",
