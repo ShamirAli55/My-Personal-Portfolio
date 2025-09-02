@@ -187,7 +187,9 @@ const AnimeScroller = () => {
 export default function StatsSection() {
   return (
     <section className="container mx-auto py-20 px-6 md:px-12 lg:px-24">
+      <div className="hidden md:block">
       <Cursor />
+      </div>
       <NeonText className="text-opposite text-3xl mt-6">
         Interests Beyond the Screen
       </NeonText>
@@ -198,7 +200,7 @@ export default function StatsSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto ">
         {/* Row 1 */}
-        <div className="bg-opposite/10 p-6 rounded-xl shadow ">
+        <div className="bg-opposite/10 md:p-6 rounded-xl shadow ">
           <TiltCard>
             <div
               style={{
@@ -239,12 +241,12 @@ export default function StatsSection() {
             </div>
           </TiltCard>
         </div>
-        <div className="bg-opposite/10  p-6 rounded-xl shadow">
+        <div className="bg-opposite/10 md:p-6  rounded-xl shadow">
           <CodingFocusChart data={codingTime} />
         </div>
 
         {/* Row 2 */}
-        <div className=" bg-opposite/10 p-6 rounded-xl shadow ">
+        <div className=" bg-opposite/10 md:p-6  rounded-xl shadow ">
           <TiltCard>
             <div
               style={{
@@ -261,19 +263,21 @@ export default function StatsSection() {
             </div>
           </TiltCard>
         </div>
-        <div className="bg-opposite/10  p-6 rounded-xl shadow">
+        <div className="bg-opposite/10 md:p-6  rounded-xl shadow">
           <GamePrefsChart data={gamePrefs} />
         </div>
 
         {/* Row 3 */}
-        <div className="bg-opposite/10 p-6 rounded-xl shadow h-auto md:h-[340px] relative">
+        <div className="bg-opposite/10 md:p-6 rounded-xl shadow h-auto md:h-[340px] relative">
+        <div className="pt-22 pb-4 md:py-0">
           <TiltCard>
             <MusicCard />
             <PlayingBars className="mt-2" />
           </TiltCard>
+          </div>
         </div>
 
-        <div className="bg-opposite/10 p-6 rounded-xl shadow h-auto md:h-[340px] overflow-hidden pointer-events-none">
+        <div className="bg-opposite/10 md:p-6  rounded-xl shadow h-auto md:h-[340px] overflow-hidden pointer-events-none">
           <CanvasCard />
         </div>
       </div>
