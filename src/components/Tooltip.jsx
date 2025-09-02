@@ -1,4 +1,3 @@
-// src/components/Tooltip.jsx
 import { useState } from "react";
 
 const Tooltip = ({ content, children }) => {

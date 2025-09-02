@@ -109,11 +109,11 @@ html, body, #root {
     }
 @keyframes meteor {
   0% {
-    opacity: 0; /* start hidden */
+    opacity: 0;
     transform: rotate(215deg) translateX(0);
   }
   5% {
-    opacity: 1; /* fade in right after animation actually starts */
+    opacity: 1; 
   }
   70% {
     opacity: 1;
@@ -347,6 +347,10 @@ html.dark {
   scrollbar-color: rgb(195, 195, 195) transparent;
 }
 
+*::selection
+{
+  color:hsl(var(--gradient-light-from));
+}
 
 @keyframes slideUp {
     0% {
