@@ -121,11 +121,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
-      <h1 className="text-3xl md:hidden font-bold text-primary pt-8 font-[Funnel-Sans] gradient-text">
-        About Me
-      </h1>
-
       <AboutBottomPart />
 
       <div className="min-h-[50vh]">
