@@ -478,7 +478,7 @@ export const favoriteGames = [
   },
   {
     title: "Delta Force",
-    cover: "assets/FavGames/delta-force.jpeg",
+    cover: "assets/FavGames/delta-force.jpg",
     hours: 30,
     rating: 5,
   },

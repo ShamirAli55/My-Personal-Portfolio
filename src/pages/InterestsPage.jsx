@@ -63,27 +63,6 @@ const GameCarousel = ({ games }) => {
   );
 };
 
-const PlayingBars = () => {
-  const bars = Array.from({ length: 40 }, (_, i) => i);
-  return (
-    <div className="flex items-end justify-center gap-1 h-10">
-      {bars.map((b) => (
-        <motion.div
-          key={b}
-          className="w-1 rounded-full bg-indigo-400"
-          initial={{ height: 4 }}
-          animate={{ height: [8, 28, 14, 36, 12, 22, 10] }}
-          transition={{
-            repeat: Infinity,
-            duration: 4 + (b % 5) * 0.5,
-            delay: (b % 7) * 0.2,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
-    </div>
-  );
-};
 
 const AnimeScroller = () => {
   const wrapRef = useRef(null);
@@ -220,7 +199,7 @@ export default function StatsSection() {
                       dataKey="day"
                       tick={{ fill: "hsl(var(--opposite))" }}
                     />
-                    <YAxis tick={{ fill: "hsl(var(--opposite))" }} />
+                    <YAxis tick={{ fill: "sl(var(--opposite))" }} />
                     <Tooltip
                       contentStyle={{
                         background: "var(--card-bg)",
@@ -272,7 +251,6 @@ export default function StatsSection() {
         <div className="pt-22 pb-4 md:py-0">
           <TiltCard>
             <MusicCard />
-            <PlayingBars className="mt-2" />
           </TiltCard>
           </div>
         </div>
