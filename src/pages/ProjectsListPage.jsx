@@ -159,7 +159,14 @@ const ProjectsListPage = () => {
               <ul className="space-y-3 mb-8 text-left">
                 {myProjects[activeIndex].subDescription.map((point, j) => (
                   <li key={j} className="flex items-start text-sm ">
-                    <span className="mr-3 text-purple-400 text-lg">✦</span>
+                    <span
+                      className="mr-3 text-lg bg-clip-text text-transparent"
+                      style={{
+                        backgroundImage: myProjects[activeIndex].gradient,
+                      }}
+                    >
+                      ✦
+                    </span>
                     <span className="flex-1">{point}</span>
                   </li>
                 ))}

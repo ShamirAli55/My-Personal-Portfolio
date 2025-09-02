@@ -186,7 +186,7 @@ export const myProjects = [
     ],
     demoUrl: "https://your-demo-link.com/ecommerce",
     githubUrl: "https://github.com/yourusername/ecommerce-platform",
-    gradient: "linear-gradient(135deg, #ff007a, #5900ff)",
+    gradient: "linear-gradient(135deg, #ff7eb3, #ff758c, #ff6a88)", // modern pink tones
     image: "/assets/projects/accessories.jpg",
     tags: [
       { id: 1, name: "C#", path: "/assets/logos/csharp.svg" },
@@ -216,7 +216,7 @@ export const myProjects = [
     ],
     demoUrl: "https://your-demo-link.com/auth-system",
     githubUrl: "https://github.com/yourusername/auth-system",
-    gradient: "linear-gradient(135deg, #ff007a, #5900ff)",
+    gradient: "linear-gradient(135deg, #00c6ff, #0072ff)", // blue tech security vibes
     image: "/assets/projects/auth-system.jpg",
     tags: [
       { id: 1, name: "Auth0", path: "/assets/logos/auth0.svg" },
@@ -246,7 +246,7 @@ export const myProjects = [
     ],
     demoUrl: "https://your-demo-link.com/game-engine",
     githubUrl: "https://github.com/yourusername/cpp-game-engine",
-    gradient: "linear-gradient(135deg, #ff007a, #5900ff)",
+    gradient: "linear-gradient(135deg, #1e3c72, #2a5298)", // deep blue for gaming
     image: "/assets/projects/game-engine.jpg",
     tags: [
       { id: 1, name: "C++", path: "/assets/logos/cplusplus.svg" },
@@ -276,7 +276,7 @@ export const myProjects = [
     ],
     demoUrl: "https://your-demo-link.com/wordpress-theme",
     githubUrl: "https://github.com/yourusername/wordpress-theme",
-    gradient: "linear-gradient(135deg, #ff007a, #5900ff)",
+    gradient: "linear-gradient(135deg, #f7971e, #ffd200)", // orange/yellow vibrant
     image: "/assets/projects/wordpress-theme.jpg",
     tags: [
       { id: 1, name: "WordPress", path: "/assets/logos/wordpress.svg" },
@@ -307,7 +307,7 @@ export const myProjects = [
     ],
     demoUrl: "https://your-demo-link.com/elearning",
     githubUrl: "https://github.com/yourusername/elearning-platform",
-    gradient: "linear-gradient(135deg, #ff007a, #5900ff)",
+    gradient: "linear-gradient(135deg, #43cea2, #185a9d)", // teal/blue educational
     image: "/assets/projects/elearning.jpg",
     tags: [
       { id: 1, name: "Blazor", path: "/assets/logos/blazor.svg" },
