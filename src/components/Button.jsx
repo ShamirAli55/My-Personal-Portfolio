@@ -56,7 +56,7 @@ const Button = ({ name, to }) => {
     butn_overlay overflow-hidden
   "
       >
-        <span>{name}</span>
+        <span className="whitespace-nowrap">{name}</span>
         <span className="pl-2">
           <div className="relative bg-primary h-8 w-8 rounded-full overflow-hidden md:right-[-30%]">
             <div

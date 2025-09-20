@@ -5,6 +5,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { useRef, useLayoutEffect, useState, useMemo } from "react";
+import MainHeading from "../components/MainHeading";
 import { experiences } from "../constants";
 
 const Experience = () => {
@@ -119,15 +120,7 @@ const Experience = () => {
       ref={containerRef}
       className="sm:px-10 px-5 lg:px-15 min-h-screen mt-20 md:my-40 relative"
     >
-      <div className="mb-32 text-center">
-        <p className="uppercase tracking-widest text-opposite-400 text-sm">
-          My Experience
-        </p>
-        <h2 className="text-3xl md:text-5xl font-bold">
-          Driven by <span className="gradient-text">Curiosity</span>
-        </h2>
-      </div>
-
+      <MainHeading name={"My Experience"} span1={"Driven by"} span2={"Curiosity"} mainstyles={"my-32"}/>
       <div className="relative flex justify-center">
         <div
           className="timeline-line absolute top-0 bottom-0 left-1/2 -translate-x-1/2 

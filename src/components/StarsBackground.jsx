@@ -81,7 +81,7 @@ function StarBackground() {
           }}
         />
       ))}
-</div>
+    </div>
   );
 }
 

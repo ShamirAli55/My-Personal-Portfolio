@@ -15,7 +15,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import ProjectsListPage from "./pages/ProjectsListPage";
 import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
-import Preloader from "./components/Preloader"; 
+import Preloader from "./components/Preloader";
 
 const App = () => {
   const [loadingDone, setLoadingDone] = useState(false);
@@ -32,23 +32,24 @@ const App = () => {
         <>
           <Navbar />
           <ScrollToTop />
-        <ReactLenis root className="w-full min-h-screen relative z-[10]">
-          <Routes>
-            <Route index path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/projects" element={<ProjectsListPage />} />
-            <Route path="/projects/:slug" element={<ProjectPage />} />
-            <Route path="/links" element={<LinksPage />} />
-            <Route path="/experience" element={<ExperiencePage />} />
-            <Route path="/interests" element={<InterestsPage />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/error" element={<ErrorPage />} />
-          </Routes>
+          <ReactLenis root className="w-full min-h-screen relative z-[10]">
+            <Routes>
+              <Route index path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/projects" element={<ProjectsListPage />} />
+              <Route path="/projects/:slug" element={<ProjectPage />} />
+              <Route path="/links" element={<LinksPage />} />
+              <Route path="/experience" element={<ExperiencePage />} />
+              <Route path="/interests" element={<InterestsPage />} />
+              <Route path="/resume" element={<Resume />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/error" element={<ErrorPage />} />
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
 
-          {!isErrorPage && !isContactPage && !isLinkPage && <Contact />}
-          {!isErrorPage && <Footer />}
-        </ReactLenis>
+            {!isErrorPage && !isContactPage && !isLinkPage && <Contact />}
+            {!isErrorPage && <Footer />}
+          </ReactLenis>
         </>
       )}
     </>

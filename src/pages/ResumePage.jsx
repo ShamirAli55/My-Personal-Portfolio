@@ -1,15 +1,14 @@
 import { Worker, Viewer } from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+import MainHeading from "../components/MainHeading";
 import { Download, Maximize2 } from "lucide-react";
 
 const Resume = () => {
   return (
     <div className="container min-h-screen w-full bg-background flex flex-col items-center py-10 px-4">
-      <h2 className="text-4xl md:text-5xl font-bold my-22">
-        My <span className="gradient-text">Resume</span>
-      </h2>
-
+      
+      <MainHeading name={""} span1={"My"} span2={"Resume"} mainstyles={"my-22"} />
       <div className="w-full max-w-4xl h-auto md:h-[85vh] border rounded-xl shadow-lg overflow-y-auto overflow-x-hidden mb-6">
         <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
           <Viewer

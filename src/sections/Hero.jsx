@@ -12,23 +12,26 @@ const Hero = () => {
   ];
 
   return (
-    <section className="min-h-screen w-full flex items-start text-primary bg-background relative overflow-x-hidden overflow-y-auto">
+    <section className="min-h-screen w-full flex items-center text-primary bg-background relative overflow-x-hidden overflow-y-auto">
       <div>
         <StarsBackground />
       </div>
-      <div className=" h-full w-full relative">
-        <h1 className="text-lg md:text-5xl font-bold pt-38 pb-18 md:px-28 capitalize leading-[45px] md:leading-[65px]">
-          I craft seamless digital experiences{" "}
-         <span className="whitespace-nowrap pr-2">while learning and growing everyday</span>
+
+      <div className="h-full w-full relative container">
+        <h1 className="text-lg md:text-4xl lg:text-6xl lg:leading-snug font-bold pt-22">
+          I craft seamless digital experiences while learning and growing everyday
         </h1>
-        <h3 className="text-lg md:text-3xl font-bold md:px-28 pb-5">
+
+        <h3 className="py-6 mt-12 text-xl md:text-2xl lg:text-3xl font-bold relative">
           <span className="text-lg md:text-4xl hey mr-2 inline-block">👋</span>
-          Hello, I'm Shamir Ali <span className="inline-block">a</span>
-          <span className="md:hidden inline-block">Full Stack developer.</span>
-          <span className="md:inline-block pt-12 md:pt-0 hidden">
-            <FlipWords
+          Hello, I'm Shamir Ali {" "}&nbsp;
+          <span className="inline-block md:hidden">
+            a Full Stack developer.
+          </span>
+          <span className="whitespace-nowrap hidden md:inline-block">
+            a <FlipWords
               words={words}
-              className="font-bold text-primary text-sm md:text-3xl"
+              className="font-bold text-primary text-md md:text-3xl block text-center"
             />
           </span>
         </h3>

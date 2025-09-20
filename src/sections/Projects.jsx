@@ -3,6 +3,7 @@ import { myProjects } from "../constants";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import MagneticButton from "../components/MagneticButn";
+import MainHeading from "../components/MainHeading";
 import "../styles/Projects.css";
 import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
@@ -201,16 +202,8 @@ const Projects = () => {
       )}
 
       <div className="container mx-auto max-w-5xl md:mx-0 md:max-w-7xl cursor-pointer">
-        <div className="mb-22 text-center overflow-hidden">
-          <p className="uppercase tracking-widest text-opposite-400 text-sm">
-            My Projects
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Code{" "}
-            <span className="text-transparent gradient-text">Chronicles</span>
-          </h2>
-        </div>
-
+        
+        <MainHeading name={"My Projects"} span1={"Code"} span2={"Chronicles"} mainstyles={"mb-22 overflowhidden"}/>
         {mounted && (
           <div
             ref={ImgRef}
