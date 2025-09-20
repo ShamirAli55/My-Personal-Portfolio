@@ -1,6 +1,7 @@
 import { Send, MessageCircle } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import confetti from "canvas-confetti";
+import MainHeading from "../components/MainHeading";
 import { socialLinks } from "../constants";
 import { useRef, useState } from "react";
 const Contact = () => {
@@ -54,15 +55,8 @@ const Contact = () => {
       className="min-h-screen w-full bg-background text-primary flex items-center justify-center py-20"
     >
       <div className="mx-auto max-w-6xl">
-        <div className="text-center py-12">
-          <p className="uppercase tracking-widest text-opposite-400 text-sm">
-            Get in touch
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold whitespace-nowrap">
-            Let’s Build{" "}
-            <span className="text-transparent gradient-text">Together</span>
-          </h2>
-        </div>
+
+        <MainHeading name={"Get in Touch"} span1={"Let’s Build"} span2={"Together"} mainstyles={"py-12"} />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-12 px-6 md">
           <div className="bg-card p-8 rounded-xl shadow-md border border-gray-700">

@@ -56,14 +56,14 @@ const Banner = () => {
           {[...Array(5)].map((_, i) => (
             <div
               key={i}
-              className="flex text-lg md:text-5xl gap-x-5 items-center"
+              className="flex text-2xl md:text-5xl gap-x-5 items-center"
             >
               <span
                 ref={(el) => setArrowRef(el, i * 3)}
                 className="inline-flex h-8 w-8 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
               >
                 <ArrowRight
-                  className="h-6 w-6 md:h-9 md:w-9"
+                  className="h-7 w-7 md:h-9 md:w-9"
                   color="hsl(var(--primary))"
                 />
               </span>
@@ -75,7 +75,7 @@ const Banner = () => {
                 className="inline-flex h-8 w-8 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
               >
                 <ArrowRight
-                  className="h-6 w-6 md:h-9 md:w-9"
+                  className="h-7 w-7 md:h-9 md:w-9"
                   color="hsl(var(--primary))"
                 />
               </span>
@@ -87,7 +87,7 @@ const Banner = () => {
                 className="inline-flex h-8 w-8 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary-foreground"
               >
                 <ArrowRight
-                  className="h-6 w-6 md:h-9 md:w-9"
+                  className="h-7 w-7 md:h-9 md:w-9"
                   color="hsl(var(--primary))"
                 />
               </span>

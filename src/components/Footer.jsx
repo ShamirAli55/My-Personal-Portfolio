@@ -24,17 +24,17 @@ const Footer = () => {
           <div className="h-1/2 w-full md:h-full md:w-1/2 rounded-lg">
             <div className="text-left">
               <Logo />
-              <p className="text-sm md:text-lg md:pr-46 mt-2">
+              <p className="text-xs md:text-lg md:w-[95%] lg:w-full md:pr-12 lg:pr-46 mt-2">
                 Open to exciting collaborations & projects. Let’s create
                 something amazing together.
               </p>
             </div>
           </div>
 
-          <div className="h-1/2 w-full md:h-full md:w-1/2 rounded-lg md:pt-0 pt-6">
+          <div className="h-1/2 w-full md:h-full md:w-1/2 rounded-lg lg:pt-0 pt-6">
             <div className="flex items-start justify-around">
               <div className="text-left">
-                <h2 className="text-md text-primary/50 font-semibold md:pb-2">
+                <h2 className="text-md text-primary/50 font-semibold py-1 md:py-2">
                   General
                 </h2>
                 {Navigation.map((item) => (
@@ -43,7 +43,7 @@ const Footer = () => {
               </div>
 
               <div className="text-left">
-                <h2 className="text-md text-primary/50 font-semibold md:pb-2">
+                <h2 className="text-md text-primary/50 font-semibold py-1 md:py-2">
                   Social
                 </h2>
                 {Social.map((item) => (

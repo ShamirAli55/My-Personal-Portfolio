@@ -1,4 +1,5 @@
 import { skills } from "../constants";
+import MainHeading from "../components/MainHeading";
 
 const Skills = () => {
   return (
@@ -6,15 +7,7 @@ const Skills = () => {
       className="min-h-screen w-full bg-background text-primary cursor-pointer flex flex-col items-center justify-center py-20 relative"
       aria-labelledby="skills-heading"
     >
-      <div className="mb-22 text-center">
-        <p className="uppercase tracking-widest text-opposite-400 text-sm">
-          My Skills
-        </p>
-        <h2 id="skills-heading" className="text-4xl md:text-5xl font-bold">
-          Fuel for <span className="gradient-text">Innovation</span>
-        </h2>
-      </div>
-
+      <MainHeading name={"My Skills"} span1={"Fuel for"} span2={"Innovation"} mainstyles={"mb-22"}/>
       <div className="flex flex-wrap justify-center gap-4 max-w-5xl md:max-w-[1100px] md:px-24">
         {skills?.map((skill) => (
           <div

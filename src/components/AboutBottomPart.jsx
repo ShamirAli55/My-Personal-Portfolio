@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import TiltCard from "../components/Interests/ui/TiltCard";
+import MainHeading from "./MainHeading";
 const AboutBottomPart = () => {
   return (
     <>
-          <div className="mt-12 md:mt-24 text-center">
+    {/* <div className="mt-12 md:mt-24 text-center">
         <p className="uppercase tracking-widest text-opposite-400 text-sm">
           About Me
         </p>
@@ -11,7 +12,8 @@ const AboutBottomPart = () => {
           Digital {" "}
           <span className="text-transparent gradient-text">Tales</span>
         </h2>
-      </div>
+      </div> */}
+      <MainHeading name={"About Me"} span1={"Digital"} span2={"Tales"} mainstyles={"mt-12 md:mt-24"}/>
     <section className="min-h-screen w-full mt-12 md:mt-0 flex flex-col md:flex-row items-center md:px-16 px-6 relative">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
         <div className="flex justify-center md:justify-start w-full">
@@ -50,7 +52,7 @@ const AboutBottomPart = () => {
           </motion.div>
         </div>
 
-        <div className="space-y-5 text-left font-[Funnel-Display]">
+        <div className="space-y-5 text-left font-[Funnel-Display] container">
           <motion.p
             className="about-text"
             initial={{ opacity: 0, y: 20 }}
@@ -100,8 +102,8 @@ const AboutBottomPart = () => {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="hidden md:flex items-center justify-center md:justify-start gap-2 text-primary md:pt-4"
           >
-            <span className="spin inline-block text-lg">🌍</span>
-            <span className="text-primary/70 text-sm md:text-base font-semibold tracking-wide">
+            <span className="spin inline-block text-md">🌍</span>
+            <span className="text-primary/70 text-sm md:text-[9px] lg:text-sm font-semibold lg:tracking-wide md:tracking-tighter">
               Beyond code, I thrive on sleek design and fresh tech vibes.
             </span>
           </motion.p>

@@ -41,7 +41,7 @@ const About = () => {
               I use a mix of technologies to craft <span className="md:block"> seamless digital experiences.</span>
             </p>
           </div>
-          <div className="absolute right-0 top-0 w-full h-full start-[70%] md:start-[45%] scale-100">
+          <div className="absolute right-0 top-0 w-full h-full start-[70%] md:start-[50%] lg:start-[45%] scale-100">
             <Frameworks />
           </div>
         </div>
@@ -61,7 +61,7 @@ const About = () => {
               <span className="text-sm md:text-xl">Islamabad, Pakistan</span>
             </div>
           </div>
-          <figure className="absolute top-40 -right-50 md:right-[-25%] md:top-[5%] cursor-grab">
+          <figure className="absolute top-40 -right-50 md:right-[-85%] lg:right-[-35%] md:top-[5%] cursor-grab">
             <Globe />
           </figure>
         </div>
@@ -112,7 +112,7 @@ const About = () => {
         {/* Card 5: Project CTA */}
         <div className="col-span-1 sm:col-span-full md:col-span-2 rounded-lg border border-opposite/20 transition duration-300 shadow-md p-4">
           <div className="flex flex-col justify-center items-center py-5 px-2">
-            <h2 className="text-xl md:text-2xl font-bold mb-6 text-primary">
+            <h2 className="text-lg  md:text-xl lg:text-2xl font-bold mb-6 text-primary">
               Do you want to start a project together?
             </h2>
             <div>
@@ -123,7 +123,7 @@ const About = () => {
       </div>
       <AboutBottomPart />
 
-      <div className="min-h-[50vh]">
+      <div className="h-[30vh] md:min-h-[50vh]">
         <Banner />
       </div>
     </section>

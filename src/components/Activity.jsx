@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import MainHeading from "./MainHeading";
 import { BookOpen, GitFork, GitPullRequest, Folder } from "lucide-react";
 
 const GITHUB_USERNAME = "ShamirAli55";
@@ -85,13 +86,13 @@ export default function GitHubActivityApp() {
 
   return (
     <div className="min-h-screen w-full bg-opposite/3 text-primary-foreground rounded-lg p-6 py-10 flex flex-col items-center">
-      <div className="mb-10 text-center">
+      {/* <div className="mb-10 text-center">
         <p className="uppercase tracking-widest text-sm text-primary">My</p>
         <h2 className="text-4xl md:text-5xl font-bold text-primary">
           Github <span className="gradient-text">Activity</span>
         </h2>
-      </div>
-
+      </div> */}
+      <MainHeading name={"My"} span1={"Github"} span2={"Activity"} mainstyles={"mb-10 text-primary"}/>
       {!data ? (
         <p>Loading activity...</p>
       ) : (

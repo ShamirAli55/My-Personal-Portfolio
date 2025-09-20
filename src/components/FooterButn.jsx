@@ -47,16 +47,16 @@ const FooterButn = ({ name, to }) => {
       <div
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
-        className="px-14 py-4 transition-all h-10 w-full relative overflow-hidden text-left hover:text-primary"
+        className="px-14 py-3 lg:py-4 transition-all h-10 w-full relative overflow-hidden text-left hover:text-primary"
       >
         <div
           ref={txtRef}
-          className="absolute flex flex-col md:gap-3 gap-1.5 left-0"
+          className="absolute flex flex-col lg:gap-3 gap-1.5 left-0"
         >
           {[...Array(2)].map((_, i) => (
             <span
               key={i}
-              className="flex items-center text-[10px] md:text-xl font-light"
+              className="flex items-center text-md md:text-xl font-light"
             >
               <span>{name}</span>
               <ArrowUpRight
